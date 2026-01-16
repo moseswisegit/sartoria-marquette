@@ -882,21 +882,98 @@
             img.loading = 'lazy';
             img.style.opacity = '0';
             img.style.transition = 'opacity 0.3s';
+            img.style.display = 'block';
+            img.style.width = '100%';
+            img.style.height = 'auto';
 
-            // Gestionnaire d'erreur
+            // Stratégies de chargement avec fallback pour gérer différents encodages
+            let retryCount = 0;
+            
+            // Construire plusieurs variantes du chemin
+            const buildStrategies = () => {
+                const strategies = [];
+                
+                // 1. Chemin encodé (normalisé NFC) - stratégie principale
+                strategies.push(imagePath);
+                
+                // 2. Chemin avec encodage partiel (garder underscore, tiret, points)
+                try {
+                    const parts = imagePath.split('/');
+                    const partialEncoded = parts.map(part => {
+                        try {
+                            const decoded = decodeURIComponent(part);
+                            // Encoder seulement les caractères spéciaux sauf underscore, tiret, point
+                            return decoded.replace(/[^a-zA-Z0-9_\-\.]/g, (char) => encodeURIComponent(char));
+                        } catch {
+                            return part;
+                        }
+                    }).join('/');
+                    if (partialEncoded !== imagePath) strategies.push(partialEncoded);
+                } catch (e) {}
+                
+                // 3. Chemin avec & non encodé (certains serveurs le gèrent directement)
+                try {
+                    const withAmpersand = imagePath.replace(/%26/g, '&');
+                    if (withAmpersand !== imagePath) strategies.push(withAmpersand);
+                } catch (e) {}
+                
+                // 4. Chemin complètement décodé (pour serveurs qui gèrent l'Unicode directement)
+                try {
+                    const decoded = decodeURIComponent(imagePath);
+                    if (decoded !== imagePath) strategies.push(decoded);
+                } catch (e) {}
+                
+                // 5. Chemin avec basePath non encodé mais folder encodé
+                try {
+                    const baseParts = basePath.split('/');
+                    const folderParts = screen.folder.split('/');
+                    const altPath = `${baseParts.join('/')}/${folderParts.map(p => encodeURIComponent(p.normalize('NFC'))).join('/')}/screen.png`;
+                    if (altPath !== imagePath) strategies.push(altPath);
+                } catch (e) {}
+                
+                return strategies;
+            };
+            
+            const strategies = buildStrategies();
+
             img.onerror = function () {
-                this.onerror = null; // Éviter les boucles infinies
-                this.src = placeholderSvg;
-                this.style.opacity = '1';
+                retryCount++;
+                if (retryCount < strategies.length) {
+                    // Essayer la stratégie suivante
+                    console.log(`Tentative ${retryCount + 1}/${strategies.length} pour: ${screen.name}`);
+                    this.src = strategies[retryCount];
+                } else {
+                    // Toutes les stratégies ont échoué, afficher le placeholder
+                    this.onerror = null;
+                    this.src = placeholderSvg;
+                    this.style.opacity = '1';
+                    console.warn(`Image non disponible après ${strategies.length} tentatives: ${screen.name}`);
+                }
             };
 
-            // Gestionnaire de chargement réussi
             img.onload = function () {
                 this.style.opacity = '1';
+                this.style.display = 'block';
             };
 
-            // Démarrer le chargement
-            img.src = imagePath;
+            // Timeout de sécurité : forcer l'affichage après 2 secondes même si onload ne se déclenche pas
+            const safetyTimeout = setTimeout(() => {
+                if (img.style.opacity === '0' && img.complete && img.naturalWidth > 0) {
+                    // L'image est chargée mais l'événement onload n'a pas été déclenché
+                    img.style.opacity = '1';
+                    img.style.display = 'block';
+                }
+            }, 2000);
+
+            // Nettoyer le timeout si l'image se charge correctement
+            const originalOnload = img.onload;
+            img.onload = function() {
+                clearTimeout(safetyTimeout);
+                if (originalOnload) originalOnload.call(this);
+            };
+
+            // Démarrer avec la première stratégie
+            img.src = strategies[0];
 
             card.innerHTML = `
                 <div class="screen-info">
