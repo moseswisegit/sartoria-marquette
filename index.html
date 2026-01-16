@@ -914,7 +914,24 @@
                 // 3. Chemin avec & non encodé (certains serveurs le gèrent directement)
                 try {
                     const withAmpersand = imagePath.replace(/%26/g, '&');
-                    if (withAmpersand !== imagePath) strategies.push(withAmpersand);
+                    if (withAmpersand !== imagePath && !strategies.includes(withAmpersand)) {
+                        strategies.push(withAmpersand);
+                    }
+                } catch (e) {}
+                
+                // 3b. Chemin avec & directement (pour notation_&_avis_tailleur et autres)
+                try {
+                    // Remplacer tous les %26 par & dans tout le chemin
+                    const withDirectAmpersand = imagePath.replace(/%26/g, '&');
+                    // Aussi remplacer dans les noms de dossiers spécifiques
+                    const altPath = imagePath.replace(/notation_%26_avis_tailleur/g, 'notation_&_avis_tailleur')
+                                             .replace(/analyse_%26_conseils/g, 'analyse_&_conseils')
+                                             .replace(/détails_%26_médiation/g, 'détails_&_médiation')
+                                             .replace(/gestion_abonnements_%26_commissions/g, 'gestion_abonnements_&_commissions')
+                                             .replace(/plan_de_site_%26_architecture/g, 'plan_de_site_&_architecture');
+                    if (altPath !== imagePath && !strategies.includes(altPath)) {
+                        strategies.push(altPath);
+                    }
                 } catch (e) {}
                 
                 // 4. Chemin complètement décodé (pour serveurs qui gèrent l'Unicode directement)
@@ -928,7 +945,19 @@
                     const baseParts = basePath.split('/');
                     const folderParts = screen.folder.split('/');
                     const altPath = `${baseParts.join('/')}/${folderParts.map(p => encodeURIComponent(p.normalize('NFC'))).join('/')}/screen.png`;
-                    if (altPath !== imagePath) strategies.push(altPath);
+                    if (altPath !== imagePath && !strategies.includes(altPath)) {
+                        strategies.push(altPath);
+                    }
+                } catch (e) {}
+                
+                // 6. Chemin complètement non encodé (pour GitHub Pages qui gère bien l'Unicode)
+                try {
+                    const unencodedBase = basePath; // Ne pas encoder le basePath
+                    const unencodedFolder = screen.folder; // Ne pas encoder le folder non plus
+                    const unencodedPath = `${unencodedBase}/${unencodedFolder}/screen.png`;
+                    if (unencodedPath !== imagePath && !strategies.includes(unencodedPath)) {
+                        strategies.push(unencodedPath);
+                    }
                 } catch (e) {}
                 
                 return strategies;
@@ -936,11 +965,44 @@
             
             const strategies = buildStrategies();
 
+            // Timeout de sécurité : forcer l'affichage après 3 secondes même si onload ne se déclenche pas
+            let safetyTimeout;
+            const setupSafetyTimeout = () => {
+                if (safetyTimeout) clearTimeout(safetyTimeout);
+                safetyTimeout = setTimeout(() => {
+                    // Vérifier si l'image est chargée mais invisible
+                    if (img.style.opacity === '0' || img.style.opacity === '') {
+                        if (img.complete && img.naturalWidth > 0) {
+                            // L'image est chargée mais l'événement onload n'a pas été déclenché
+                            img.style.opacity = '1';
+                            img.style.display = 'block';
+                            console.log(`Image ${screen.name} affichée via timeout de sécurité`);
+                        } else if (img.src && !img.src.includes('data:image/svg')) {
+                            // L'image n'est pas encore chargée, vérifier à nouveau
+                            console.log(`Image ${screen.name} toujours en chargement après 3s`);
+                        }
+                    }
+                }, 3000);
+            };
+            
+            setupSafetyTimeout();
+
+            // Gestionnaire de chargement réussi
+            img.onload = function () {
+                if (safetyTimeout) clearTimeout(safetyTimeout);
+                this.style.opacity = '1';
+                this.style.display = 'block';
+            };
+
+            // Gestionnaire d'erreur avec retry
             img.onerror = function () {
+                if (safetyTimeout) clearTimeout(safetyTimeout);
                 retryCount++;
                 if (retryCount < strategies.length) {
                     // Essayer la stratégie suivante
                     console.log(`Tentative ${retryCount + 1}/${strategies.length} pour: ${screen.name}`);
+                    // Réinitialiser le timeout pour la nouvelle tentative
+                    setupSafetyTimeout();
                     this.src = strategies[retryCount];
                 } else {
                     // Toutes les stratégies ont échoué, afficher le placeholder
@@ -949,27 +1011,6 @@
                     this.style.opacity = '1';
                     console.warn(`Image non disponible après ${strategies.length} tentatives: ${screen.name}`);
                 }
-            };
-
-            img.onload = function () {
-                this.style.opacity = '1';
-                this.style.display = 'block';
-            };
-
-            // Timeout de sécurité : forcer l'affichage après 2 secondes même si onload ne se déclenche pas
-            const safetyTimeout = setTimeout(() => {
-                if (img.style.opacity === '0' && img.complete && img.naturalWidth > 0) {
-                    // L'image est chargée mais l'événement onload n'a pas été déclenché
-                    img.style.opacity = '1';
-                    img.style.display = 'block';
-                }
-            }, 2000);
-
-            // Nettoyer le timeout si l'image se charge correctement
-            const originalOnload = img.onload;
-            img.onload = function() {
-                clearTimeout(safetyTimeout);
-                if (originalOnload) originalOnload.call(this);
             };
 
             // Démarrer avec la première stratégie
