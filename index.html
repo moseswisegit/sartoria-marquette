@@ -844,15 +844,33 @@
             totalScreens.textContent = `Total: ${screens.length} écrans`;
         }
 
+        // Fonction utilitaire pour encoder les chemins (compatible GitHub Pages)
+        function encodePath(path) {
+            if (!path) return '';
+            // Normaliser le chemin et encoder chaque segment
+            return path.split('/').map(segment => {
+                // Normaliser Unicode (NFD -> NFC) pour compatibilité GitHub Pages
+                // macOS utilise NFD, GitHub Pages utilise NFC
+                try {
+                    const normalized = segment.normalize('NFC');
+                    return encodeURIComponent(normalized);
+                } catch (e) {
+                    // Fallback si normalize n'est pas supporté
+                    return encodeURIComponent(segment);
+                }
+            }).join('/');
+        }
+
         function createScreenCard(screen) {
             const card = document.createElement('div');
             card.className = 'screen-card';
 
             // Encoder correctement le nom du dossier avec les caractères Unicode
-            // encodeURIComponent encode tous les caractères spéciaux y compris &, espaces, accents, etc.
-            const encodedFolder = encodeURIComponent(screen.folder);
-            const imagePath = `${basePath}/${encodedFolder}/screen.png`;
-            const htmlPath = `${basePath}/${encodedFolder}/code.html`;
+            // Utiliser encodePath pour garantir un encodage correct sur GitHub Pages
+            const encodedBasePath = encodePath(basePath);
+            const encodedFolder = encodePath(screen.folder);
+            const imagePath = `${encodedBasePath}/${encodedFolder}/screen.png`;
+            const htmlPath = `${encodedBasePath}/${encodedFolder}/code.html`;
 
             // Placeholder SVG pour les images manquantes
             const placeholderSvg = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22240%22%3E%3Crect fill=%22%23f7fafc%22 width=%22320%22 height=%22240%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23a0aec0%22 font-family=%22sans-serif%22 font-size=%2214%22%3EImage non disponible%3C/text%3E%3C/svg%3E';
@@ -1041,8 +1059,10 @@
 
             currentPrototypeIndex = index;
             const screen = currentPrototypeScreens[index];
-            const encodedFolder = encodeURIComponent(screen.folder);
-            const htmlPath = `${basePath}/${encodedFolder}/code.html`;
+            // Utiliser la fonction encodePath pour un encodage cohérent
+            const encodedBasePath = encodePath(basePath);
+            const encodedFolder = encodePath(screen.folder);
+            const htmlPath = `${encodedBasePath}/${encodedFolder}/code.html`;
 
             prototypeIframe.src = htmlPath;
             prototypeTitle.textContent = screen.name;
