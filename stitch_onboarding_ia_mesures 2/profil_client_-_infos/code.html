@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profil Client - Infos</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73B5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                        "card-light": "#ffffff",
+                        "card-dark": "#1c192b",
+                        "text-primary-light": "#121118",
+                        "text-primary-dark": "#ffffff",
+                        "text-secondary-light": "#686189",
+                        "text-secondary-dark": "#9ca3af",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 2px 10px rgba(0, 0, 0, 0.03)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-primary-light dark:text-text-primary-dark transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-24">
+<header class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-800/50 px-4 py-3">
+<div class="flex items-center justify-between">
+<button class="flex size-10 items-center justify-center text-primary rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Profil</h2>
+<button class="flex h-10 items-center justify-center px-2">
+<p class="text-primary text-base font-semibold leading-normal">Modifier</p>
+</button>
+</div>
+</header>
+<section class="flex flex-col items-center pt-6 pb-6 px-4">
+<div class="relative group cursor-pointer">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-28 w-28 ring-4 ring-white dark:ring-card-dark shadow-soft object-cover" data-alt="Portrait of a young African woman smiling confidently against a neutral background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOvd3TIKVglcMMng9NVsybYyjcfR1OZKezq-U3ydiYmA09kfHiioFei2vhuahG8bKiDQFTCkFBTxjLM3c2muRQuS7Qf5D-BtUa5w_B4TGeZAuPvxhY-boE90mFfOkgTCPL-dpQPDj_DJ7Xpblp11XULRxRbR3Ja6nFC-NhozJ74q-eUaTpU_OHG1KWsXBmlScnPnzwLJ1U2TSEVruvnU-JwZqeWa5JquJ6OwZCfUriPRoml8x3fOP4fdpKDfUS_o2XJq72mjLoWgmY");'>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary text-white rounded-full p-2 flex items-center justify-center shadow-lg border-2 border-white dark:border-background-dark">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</div>
+</div>
+<div class="mt-4 flex flex-col items-center">
+<h1 class="text-2xl font-bold tracking-tight text-text-primary-light dark:text-white">Amina Diop</h1>
+<div class="flex items-center gap-1 mt-1 text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<p class="text-sm font-medium">Dakar, Sénégal</p>
+</div>
+</div>
+</section>
+<section class="px-4 mb-6">
+<h3 class="text-text-secondary-light dark:text-text-secondary-dark text-xs uppercase font-semibold tracking-wider px-4 pb-2 ml-1">Coordonnées</h3>
+<div class="bg-card-light dark:bg-card-dark rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 dark:bg-primary/20 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary transition-colors">Email</p>
+</div>
+<p class="text-sm font-semibold text-text-primary-light dark:text-white text-right">amina.diop@email.com</p>
+</div>
+<div class="flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 dark:bg-primary/20 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</div>
+<p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary transition-colors">Téléphone</p>
+</div>
+<p class="text-sm font-semibold text-text-primary-light dark:text-white text-right">+221 77 123 45 67</p>
+</div>
+<div class="flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 dark:bg-primary/20 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">Genre</p>
+</div>
+<p class="text-sm font-semibold text-text-primary-light dark:text-white text-right">Femme</p>
+</div>
+<div class="flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 dark:bg-primary/20 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined text-[20px]">cake</span>
+</div>
+<p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">Date de naissance</p>
+</div>
+<p class="text-sm font-semibold text-text-primary-light dark:text-white text-right">12 Mai 1995</p>
+</div>
+</div>
+</section>
+<section class="px-4 mb-8">
+<h3 class="text-text-secondary-light dark:text-text-secondary-dark text-xs uppercase font-semibold tracking-wider px-4 pb-2 ml-1">Morphologie</h3>
+<div class="bg-card-light dark:bg-card-dark rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 dark:bg-primary/20 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined text-[20px]">height</span>
+</div>
+<p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">Taille (Hauteur)</p>
+</div>
+<p class="text-sm font-semibold text-text-primary-light dark:text-white text-right">1m 75</p>
+</div>
+<div class="flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 dark:bg-primary/20 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined text-[20px]">styler</span>
+</div>
+<p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">Taille Standard</p>
+</div>
+<p class="text-sm font-semibold text-text-primary-light dark:text-white text-right">EU 38 (M)</p>
+</div>
+</div>
+<button class="mt-6 w-full bg-primary active:bg-primary/90 hover:bg-primary/90 text-white font-semibold rounded-xl py-4 flex items-center justify-center gap-2 shadow-lg shadow-primary/30 transition-all transform active:scale-[0.98]">
+<span class="material-symbols-outlined">straighten</span>
+<span>Voir Mes Mesures Détaillées</span>
+</button>
+</section>
+<section class="px-4 mb-8">
+<div class="bg-card-light dark:bg-card-dark rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary group-hover:text-primary transition-colors">lock_reset</span>
+<p class="text-sm font-medium text-text-primary-light dark:text-white">Changer mot de passe</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 text-[20px]">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-4 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-red-500">logout</span>
+<p class="text-sm font-medium text-red-500">Se déconnecter</p>
+</div>
+</div>
+</div>
+</section>
+<nav class="fixed bottom-0 w-full bg-card-light dark:bg-card-dark border-t border-gray-200 dark:border-gray-800 px-6 py-3 pb-6 flex justify-between items-center z-40">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary transition-colors text-[26px]">home</span>
+<span class="text-[10px] font-medium text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary transition-colors">Accueil</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary transition-colors text-[26px]">search</span>
+<span class="text-[10px] font-medium text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary transition-colors">Recherche</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary transition-colors text-[26px]">local_mall</span>
+<span class="text-[10px] font-medium text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary transition-colors">Commandes</span>
+</a>
+<a class="flex flex-col items-center gap-1" href="#">
+<span class="material-symbols-outlined text-primary filled text-[26px]">person</span>
+<span class="text-[10px] font-medium text-primary">Profil</span>
+</a>
+</nav>
+</div>
+
+</body></html>

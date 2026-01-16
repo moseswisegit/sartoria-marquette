@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prise de Mesures - Upload Photo</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73B5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white dark:bg-slate-900 shadow-2xl">
+<header class="sticky top-0 z-10 flex items-center bg-white dark:bg-slate-900 p-4 pb-2 justify-between border-b border-slate-100 dark:border-slate-800">
+<button class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">
+            Mesures IA
+        </h2>
+</header>
+<div class="flex w-full flex-row items-center justify-center gap-2 py-6">
+<div class="h-1.5 w-8 rounded-full bg-primary"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-slate-200 dark:bg-slate-700"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-slate-200 dark:bg-slate-700"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-slate-200 dark:bg-slate-700"></div>
+</div>
+<div class="flex-1 flex flex-col px-6">
+<div class="text-center mb-6">
+<h1 class="text-slate-900 dark:text-white tracking-tight text-2xl font-bold leading-tight mb-2">
+                Photos pour mesures
+            </h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">
+                Nous avons besoin de 3 photos pour créer votre modèle 3D.
+            </p>
+</div>
+<div class="flex mb-6 p-1 bg-slate-100 dark:bg-slate-800 rounded-lg">
+<label class="flex-1 cursor-pointer">
+<input checked="" class="peer sr-only" name="pose" type="radio" value="face"/>
+<div class="flex items-center justify-center py-2 text-sm font-medium text-slate-500 dark:text-slate-400 rounded-[4px] transition-all peer-checked:bg-white dark:peer-checked:bg-slate-700 peer-checked:text-primary peer-checked:shadow-sm font-semibold">
+                    Face
+                </div>
+</label>
+<label class="flex-1 cursor-pointer">
+<input class="peer sr-only" name="pose" type="radio" value="profil"/>
+<div class="flex items-center justify-center py-2 text-sm font-medium text-slate-500 dark:text-slate-400 rounded-[4px] transition-all peer-checked:bg-white dark:peer-checked:bg-slate-700 peer-checked:text-primary peer-checked:shadow-sm font-semibold">
+                    Profil
+                </div>
+</label>
+<label class="flex-1 cursor-pointer">
+<input class="peer sr-only" name="pose" type="radio" value="dos"/>
+<div class="flex items-center justify-center py-2 text-sm font-medium text-slate-500 dark:text-slate-400 rounded-[4px] transition-all peer-checked:bg-white dark:peer-checked:bg-slate-700 peer-checked:text-primary peer-checked:shadow-sm font-semibold">
+                    Dos
+                </div>
+</label>
+</div>
+<div class="relative w-full aspect-[3/4] mb-6 bg-slate-50 dark:bg-slate-800 rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 overflow-hidden group hover:border-primary/30 transition-colors">
+<div class="absolute inset-0 flex flex-col items-center justify-center text-slate-300 dark:text-slate-600">
+<span class="material-symbols-outlined text-[120px] opacity-40 text-primary">accessibility_new</span>
+<p class="mt-4 text-sm font-medium text-slate-400 dark:text-slate-500">Vue de face</p>
+</div>
+<div class="absolute inset-0 opacity-0 pointer-events-none bg-gradient-to-b from-transparent to-black/5 dark:to-white/5"></div>
+</div>
+<div class="grid grid-cols-2 gap-3 mb-6">
+<button class="flex flex-col items-center justify-center gap-2 h-20 rounded-xl bg-primary hover:bg-primary/90 text-white transition-all active:scale-[0.98] shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">photo_camera</span>
+<span class="text-xs font-semibold">Prendre photo</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 h-20 rounded-xl bg-primary/5 hover:bg-primary/10 text-primary border border-primary/20 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined">photo_library</span>
+<span class="text-xs font-semibold">Galerie</span>
+</button>
+</div>
+<div class="flex items-start gap-3 p-4 bg-primary/5 dark:bg-primary/10 rounded-lg border border-primary/10 mb-6">
+<span class="material-symbols-outlined text-primary shrink-0 mt-0.5" style="font-size: 20px;">lightbulb</span>
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-primary">Astuce pour une meilleure précision</span>
+<p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    Portez des vêtements près du corps et assurez-vous que la pièce est bien éclairée. Évitez les contre-jours.
+                </p>
+</div>
+</div>
+<div class="flex items-center justify-center gap-2 mb-8 opacity-60">
+<span class="material-symbols-outlined text-xs">lock</span>
+<p class="text-[10px] text-center">Vos photos sont cryptées et utilisées uniquement pour la mesure.</p>
+</div>
+</div>
+<div class="sticky bottom-0 p-4 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+<button class="w-full h-12 flex items-center justify-center rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-600 font-semibold cursor-not-allowed" disabled="">
+            Continuer (0/3)
+        </button>
+</div>
+</div>
+
+</body></html>

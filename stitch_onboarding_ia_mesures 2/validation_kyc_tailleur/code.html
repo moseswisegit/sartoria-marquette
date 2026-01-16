@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Validation KYC - Sartoria</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1152d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-gray-100 font-display transition-colors duration-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden pb-24">
+<!-- TopAppBar -->
+<div class="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 transition-colors">
+<div class="flex items-center p-4 pb-2 justify-between">
+<button class="text-[#111318] dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-[#111318] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Validation KYC</h2>
+</div>
+<!-- Tabs -->
+<div class="px-4">
+<div class="flex border-b border-[#dbdfe6] dark:border-gray-700 justify-between">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary text-[#111318] dark:text-white pb-[13px] pt-4 flex-1 transition-colors" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">En attente (12)</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-[#616f89] dark:text-gray-400 hover:text-primary dark:hover:text-primary pb-[13px] pt-4 flex-1 transition-colors" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Validés</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-[#616f89] dark:text-gray-400 hover:text-primary dark:hover:text-primary pb-[13px] pt-4 flex-1 transition-colors" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Rejetés</p>
+</a>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<div class="p-4 flex flex-col gap-6">
+<!-- Active Review Card (Hero) -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<h3 class="text-[#111318] dark:text-white text-base font-bold leading-tight">Dossier en cours d'examen</h3>
+<span class="px-2 py-1 rounded bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 text-xs font-bold">Urgent</span>
+</div>
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-[#dbdfe6] dark:border-gray-700 overflow-hidden">
+<!-- Profile Header Section -->
+<div class="flex flex-col p-6 items-center border-b border-[#dbdfe6] dark:border-gray-700">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-24 w-24 mb-4 ring-4 ring-primary/10" data-alt="Portrait of tailor Amadou Diallo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC61RxT6xPEuOGmpkLCHBB-Bo83BdcL7Al11zDrdGGrRfkYh-FFJo7ik_QJgXFD5lcWXcUN3Oq-y4-gt8kB6JxfYcpG79rcbJDDRnZUOVEaQkE1058I9K-ONk20VcPKArQ_REuJQknOAQ92Zx9H9SEcIJExS33RWvISXiiHQjPO0gGBhuv0j6fRj88Dsn2mZoaH1DP9J_LwmOYUYAH31TknmNTQzF8xGcNLjFeShjY0Yzfk5OzfBLFr1bSrK5M6iK1_f4v0TubxuEu3");'></div>
+<div class="flex flex-col items-center justify-center">
+<h2 class="text-[#111318] dark:text-white text-xl font-bold leading-tight text-center">Amadou Diallo</h2>
+<p class="text-[#616f89] dark:text-gray-400 text-sm font-normal text-center mt-1">Atelier Couture Dakar</p>
+<div class="flex items-center gap-1 mt-2 text-xs text-primary bg-primary/10 px-2 py-1 rounded-full font-medium">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Identité vérifiée par IA</span>
+</div>
+</div>
+</div>
+<!-- Details Grid -->
+<div class="p-4 grid grid-cols-2 gap-4 border-b border-[#dbdfe6] dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+<div>
+<p class="text-[#616f89] dark:text-gray-400 text-xs font-medium uppercase tracking-wider">ID National</p>
+<p class="text-[#111318] dark:text-white text-sm font-semibold font-mono mt-1">123-456-789</p>
+</div>
+<div>
+<p class="text-[#616f89] dark:text-gray-400 text-xs font-medium uppercase tracking-wider">Téléphone</p>
+<p class="text-[#111318] dark:text-white text-sm font-semibold mt-1">+221 77 654 32 10</p>
+</div>
+<div class="col-span-2">
+<p class="text-[#616f89] dark:text-gray-400 text-xs font-medium uppercase tracking-wider">Adresse de l'atelier</p>
+<p class="text-[#111318] dark:text-white text-sm font-semibold mt-1">Rue 12, Médina, Dakar, Sénégal</p>
+</div>
+</div>
+<!-- Documents Section -->
+<div class="p-5 flex flex-col gap-4">
+<h4 class="text-[#111318] dark:text-white text-sm font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">folder_open</span>
+                            Documents Justificatifs
+                        </h4>
+<!-- Doc 1 -->
+<div class="flex items-start gap-3 p-3 rounded-lg border border-[#dbdfe6] dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-primary transition-colors cursor-pointer group">
+<div class="bg-gray-100 dark:bg-gray-700 h-16 w-24 rounded bg-cover bg-center shrink-0" data-alt="National ID Card Front side" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB85ViQ0JZyyTqkR2y8kJ4HffOC7AOJdT_yKBzsip5PPOR_kCrsd40hOqO2s-xBvwGMfgbqmIgJnEbtbhWHj5zJ6trC1zqgAtr03jjQPhhyzFflE0lcRSlKW0d4dba2LRi17pYkjRqI2mmaqtoHo6DUBIpDcg4aYRHMrWfm_qLeFEGRLNpvtZm5USnPlBpUk0MRxZYbzCdPv1WYYPK9e2Gc-Oo-h6R0txjOOC8r-xpZvtq7PSCZspyTa_KZB5luYhNFpymQtGgkf0q3");'></div>
+<div class="flex-1 min-w-0">
+<p class="text-[#111318] dark:text-white text-sm font-medium truncate">CNI (Recto)</p>
+<p class="text-[#616f89] dark:text-gray-400 text-xs mt-0.5">Ajouté: 10:42 AM</p>
+<div class="mt-2 flex items-center gap-2">
+<button class="text-xs font-medium text-primary hover:underline">Voir en grand</button>
+</div>
+</div>
+<div class="h-6 w-6 rounded-full border-2 border-primary bg-primary flex items-center justify-center text-white shrink-0">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+</div>
+<!-- Doc 2 -->
+<div class="flex items-start gap-3 p-3 rounded-lg border border-[#dbdfe6] dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-primary transition-colors cursor-pointer group">
+<div class="bg-gray-100 dark:bg-gray-700 h-16 w-24 rounded bg-cover bg-center shrink-0" data-alt="National ID Card Back side" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlFlG-5K4H-817gC9cgmQpTnj-lEERvPWIwKBoJJ9CiMDyO4Qr86Ar6E_ASilH52KNwevlEWBf6qfljejeyYIyGvYdFe-YYONXol7r3j6rPmRDOmnq0FzhqOD2vK1VAyCN8cKw1z0JagW-bszhjnl_OizL4PCga5zOFxUejuOwpUAfr1D2LANOahiDCqA4Q54A1z52knB69g9cnTk0viU2ETaMrSemMKfZqvmuB-R4nULi9ztXDAXA5YUyLgRuOZAtWiIXsmziL_Em");'></div>
+<div class="flex-1 min-w-0">
+<p class="text-[#111318] dark:text-white text-sm font-medium truncate">CNI (Verso)</p>
+<p class="text-[#616f89] dark:text-gray-400 text-xs mt-0.5">Ajouté: 10:42 AM</p>
+<div class="mt-2 flex items-center gap-2">
+<button class="text-xs font-medium text-primary hover:underline">Voir en grand</button>
+</div>
+</div>
+<div class="h-6 w-6 rounded-full border-2 border-[#dbdfe6] dark:border-gray-600 flex items-center justify-center text-transparent hover:border-primary hover:text-primary transition-colors shrink-0">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="p-4 pt-2 grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 rounded-lg border border-red-200 dark:border-red-900 bg-red-50 dark:bg-red-900/20 px-4 py-3 text-red-600 dark:text-red-400 font-bold hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors">
+<span class="material-symbols-outlined">close</span>
+                            Rejeter
+                        </button>
+<button class="flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-white font-bold hover:bg-blue-700 transition-colors shadow-md shadow-blue-200 dark:shadow-none">
+<span class="material-symbols-outlined">check</span>
+                            Valider
+                        </button>
+</div>
+</div>
+</div>
+<div class="h-px bg-[#dbdfe6] dark:bg-gray-700 w-full my-2"></div>
+<!-- List of other requests -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between px-1">
+<h3 class="text-[#111318] dark:text-white text-base font-bold leading-tight">Prochains dossiers</h3>
+<button class="text-primary text-sm font-medium">Tout voir</button>
+</div>
+<!-- ListItem 1 -->
+<div class="flex items-center gap-4 bg-white dark:bg-gray-800 rounded-lg p-3 shadow-sm border border-transparent hover:border-gray-200 dark:hover:border-gray-700 cursor-pointer transition-all">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Portrait of Fatou Ndiaye" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCu8TECQmmX__N3FVZMumTMYVPRAk2JVLqOHdMkDlDzRSndfQ1la7-uvehMSh5JhnDsSPilepUtROUAoso0AMjFs7sJUMICN_Qh0vJVFHgQxsVT-AJea2ClAfaE9gVDuN_lZ-8_cOFKt7BUY1mq0N4AgqMt5CPLQUJ0E93tSHZJSnFXRTjMCvErcf1KAgXs992RJbL18jTySf3P_neUJmlhpg8BZYXRyVazO3EpVIUctbUsQXjfJ_QJEERIjzu8BV-pt9nQOdruNBUB");'></div>
+<div class="absolute -bottom-1 -right-1 bg-yellow-400 h-3 w-3 rounded-full border-2 border-white dark:border-gray-800"></div>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-[#111318] dark:text-white text-base font-medium leading-normal line-clamp-1">Fatou Ndiaye</p>
+<p class="text-[#616f89] dark:text-gray-400 text-sm font-normal leading-normal line-clamp-1">Soumis: il y a 2h • <span class="text-orange-500 font-medium">En attente</span></p>
+</div>
+</div>
+<div class="shrink-0 text-[#616f89] dark:text-gray-500">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<!-- ListItem 2 -->
+<div class="flex items-center gap-4 bg-white dark:bg-gray-800 rounded-lg p-3 shadow-sm border border-transparent hover:border-gray-200 dark:hover:border-gray-700 cursor-pointer transition-all">
+<div class="flex items-center gap-4 flex-1">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Portrait of Moussa Sow" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDpCLlbDzAR0yhXLNMCwZ0NiKM33pCsFok-O_TsIevBHNje8Xwy2vmt0l5OvJUN4YO-sG9C-rYGaxYKEZNypx81_5eoVZdqy-Kt5oWq9d_oZQgazzwRUlEf-v1bI4cu6d9H4PhGtIRKNwxiyo6Ebrd3-Yas38reGo-3fq7hVNjCEPQEf8-4V40NYI1Kq8illSCBd6T9KQHbCTWKmG807HGnfieDk3krhJ5Cp1q3JYlymnX6KMtcEHoqjBktCEmOShCr21S3yIxqrHsD");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-[#111318] dark:text-white text-base font-medium leading-normal line-clamp-1">Moussa Sow</p>
+<p class="text-[#616f89] dark:text-gray-400 text-sm font-normal leading-normal line-clamp-1">Soumis: il y a 5h • <span class="text-orange-500 font-medium">En attente</span></p>
+</div>
+</div>
+<div class="shrink-0 text-[#616f89] dark:text-gray-500">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<!-- ListItem 3 -->
+<div class="flex items-center gap-4 bg-white dark:bg-gray-800 rounded-lg p-3 shadow-sm border border-transparent hover:border-gray-200 dark:hover:border-gray-700 cursor-pointer transition-all">
+<div class="flex items-center gap-4 flex-1">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="Portrait of Aïssatou Fall" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVXZsx_Ksh7ddtdjVgn4E70-8xX1ElSCxw4xXcHL6D-jkRBB9ncdQZlSYRL2J7itqVBeYPNTw5Ba5XdfxlStSF3aTbGVY-sLGjG7VR0wxov1KpR6uCrzat1VotmosDX2DUG5HwL0eqiFztw85g9iWP_X_MV-udXrodySs2jK9ovAnPFfhLshsJpBr7pwTzig5vN4V7MDLUX7h5jFniMfCOZyv8GdGBlkxVvS_2eY0fSxBd6Vd55lVknrOpAENV5PYO_WfqvUiwLTDQ");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-[#111318] dark:text-white text-base font-medium leading-normal line-clamp-1">Aïssatou Fall</p>
+<p class="text-[#616f89] dark:text-gray-400 text-sm font-normal leading-normal line-clamp-1">Soumis: hier • <span class="text-orange-500 font-medium">En attente</span></p>
+</div>
+</div>
+<div class="shrink-0 text-[#616f89] dark:text-gray-500">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

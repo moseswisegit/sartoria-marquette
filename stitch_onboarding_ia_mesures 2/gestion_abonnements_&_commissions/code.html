@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sartoria - Finances &amp; Abonnements</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3211d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e1b2e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased transition-colors duration-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-xl">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 p-4 pb-2">
+<div class="flex items-center justify-between">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center">Finances</h2>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-slate-900 dark:text-white relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></span>
+</button>
+</div>
+</header>
+<!-- Stats Section (Horizontal Scroll) -->
+<section class="mt-4 px-4 overflow-x-auto no-scrollbar">
+<div class="flex gap-4 w-max pb-2">
+<!-- Card 1 -->
+<div class="flex min-w-[200px] flex-col gap-3 rounded-xl p-5 bg-primary text-white shadow-lg shadow-primary/20 bg-gradient-to-br from-primary to-indigo-600">
+<div class="flex items-center gap-2 opacity-90">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<p class="text-sm font-medium">Revenus Totaux</p>
+</div>
+<div>
+<p class="text-2xl font-bold tracking-tight">12,450,000 F</p>
+<div class="flex items-center gap-1 mt-1 text-green-300 text-xs font-medium">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+12% ce mois</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex min-w-[200px] flex-col gap-3 rounded-xl p-5 bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+<p class="text-sm font-medium">Abonnements</p>
+</div>
+<div>
+<p class="text-slate-900 dark:text-white text-2xl font-bold tracking-tight">142 Actifs</p>
+<div class="flex items-center gap-1 mt-1 text-green-600 dark:text-green-400 text-xs font-medium">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+5% nouveaux</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex min-w-[200px] flex-col gap-3 rounded-xl p-5 bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[20px]">percent</span>
+<p class="text-sm font-medium">Commissions</p>
+</div>
+<div>
+<p class="text-slate-900 dark:text-white text-2xl font-bold tracking-tight">650,000 F</p>
+<div class="flex items-center gap-1 mt-1 text-green-600 dark:text-green-400 text-xs font-medium">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+2.4% vs N-1</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Commission Settings -->
+<section class="mt-6 px-4">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold mb-3 px-1">Configuration Commissions</h3>
+<div class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-primary/10 dark:bg-primary/20 rounded-lg text-primary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Taux de commission global</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Appliqué sur chaque transaction</p>
+</div>
+</div>
+<span class="text-xl font-bold text-primary">5%</span>
+</div>
+<div class="relative w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full mb-4">
+<div class="absolute top-0 left-0 h-full bg-primary rounded-full" style="width: 25%"></div>
+<div class="absolute top-1/2 -translate-y-1/2 left-[25%] size-5 bg-white border-2 border-primary rounded-full shadow-md cursor-pointer hover:scale-110 transition-transform"></div>
+</div>
+<div class="flex justify-end">
+<button class="text-primary text-sm font-semibold hover:text-primary/80 transition-colors">
+                        Ajuster les règles
+                    </button>
+</div>
+</div>
+</section>
+<!-- Subscription Plans Header -->
+<section class="mt-8 px-4 flex items-center justify-between">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold">Plans d'Abonnement</h2>
+<button class="flex items-center gap-1 text-primary text-sm font-semibold bg-primary/10 hover:bg-primary/20 px-3 py-1.5 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Nouveau
+            </button>
+</section>
+<!-- Pricing Cards -->
+<section class="px-4 py-3 flex flex-col gap-4 pb-24">
+<!-- Plan 1: Débutant -->
+<div class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-700 bg-surface-light dark:bg-surface-dark shadow-sm overflow-hidden relative group">
+<div class="absolute top-0 right-0 p-3">
+<div class="bg-blue-100 dark:bg-blue-900/30 text-primary text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md">Populaire</div>
+</div>
+<div class="p-5 pb-3">
+<h3 class="text-slate-900 dark:text-white text-base font-bold mb-1">Débutant</h3>
+<p class="flex items-baseline gap-1 text-slate-900 dark:text-white mb-4">
+<span class="text-3xl font-black tracking-tight">5,000</span>
+<span class="text-sm text-slate-500 dark:text-slate-400 font-medium">F /mois</span>
+</p>
+<div class="space-y-2 mb-4">
+<div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-green-500 text-[18px]">check_circle</span>
+<span>Accès catalogue basique</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-green-500 text-[18px]">check_circle</span>
+<span>5 articles en vitrine</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-400 dark:text-slate-500 line-through decoration-slate-400">
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-600 text-[18px]">cancel</span>
+<span>Support prioritaire</span>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 dark:bg-gray-800/50 p-3 flex gap-3 border-t border-gray-100 dark:border-gray-800">
+<button class="flex-1 h-9 rounded-lg border border-gray-300 dark:border-gray-600 text-slate-700 dark:text-slate-300 text-sm font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                        Détails
+                    </button>
+<button class="flex-1 h-9 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold hover:bg-slate-800 dark:hover:bg-gray-100 transition-colors">
+                        Modifier
+                    </button>
+</div>
+</div>
+<!-- Plan 2: Maître Tailleur -->
+<div class="flex flex-col rounded-xl border-2 border-primary/20 bg-surface-light dark:bg-surface-dark shadow-md overflow-hidden relative">
+<div class="absolute top-0 right-0 p-3">
+<div class="bg-primary text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md shadow-sm shadow-primary/30">Premium</div>
+</div>
+<div class="p-5 pb-3">
+<h3 class="text-slate-900 dark:text-white text-base font-bold mb-1 text-primary">Maître Tailleur</h3>
+<p class="flex items-baseline gap-1 text-slate-900 dark:text-white mb-4">
+<span class="text-3xl font-black tracking-tight">15,000</span>
+<span class="text-sm text-slate-500 dark:text-slate-400 font-medium">F /mois</span>
+</p>
+<div class="space-y-2 mb-4">
+<div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Visibilité accrue sur l'accueil</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Articles illimités</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>Support client dédié 24/7</span>
+</div>
+</div>
+</div>
+<div class="bg-primary/5 dark:bg-primary/10 p-3 flex gap-3 border-t border-primary/10">
+<button class="flex-1 h-9 rounded-lg border border-primary/20 text-primary dark:text-primary-300 text-sm font-semibold hover:bg-white dark:hover:bg-gray-800 transition-colors">
+                        Détails
+                    </button>
+<button class="flex-1 h-9 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors shadow-sm shadow-primary/30">
+                        Modifier
+                    </button>
+</div>
+</div>
+</section>
+<!-- Floating Action Button for Transactions History (Mobile specific shortcut) -->
+<div class="fixed bottom-6 right-4 z-40">
+<button class="flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-4 py-3 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 active:scale-95">
+<span class="material-symbols-outlined">history</span>
+<span class="text-sm font-bold pr-1">Transactions</span>
+</button>
+</div>
+</div>
+</body></html>

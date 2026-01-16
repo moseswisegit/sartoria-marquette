@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestion Utilisateurs Détaillée - Sartoria</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3211d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }.no-scrollbar {
+            -ms-overflow-style: none;scrollbar-width: none;}
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white dark:bg-background-dark shadow-xl">
+<div class="sticky top-0 z-20 flex items-center bg-white dark:bg-background-dark p-4 pb-2 justify-between border-b border-gray-100 dark:border-gray-800">
+<h2 class="text-[#121118] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] flex-1">Gestion Utilisateurs</h2>
+<div class="flex items-center justify-end gap-3">
+<button class="flex items-center justify-center rounded-full w-10 h-10 bg-primary text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-[24px]">add</span>
+</button>
+</div>
+</div>
+<div class="w-full overflow-x-auto no-scrollbar pt-4 pb-2 pl-4">
+<div class="flex gap-4 pr-4 w-max">
+<div class="flex min-w-[140px] flex-col gap-2 rounded-xl p-4 bg-white dark:bg-[#1e1b2e] border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">group</span>
+<p class="text-[#686189] dark:text-gray-400 text-sm font-medium leading-normal">Total</p>
+</div>
+<p class="text-[#121118] dark:text-white tracking-tight text-2xl font-bold leading-tight">1,250</p>
+</div>
+<div class="flex min-w-[140px] flex-col gap-2 rounded-xl p-4 bg-white dark:bg-[#1e1b2e] border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-500 text-[20px]">shopping_bag</span>
+<p class="text-[#686189] dark:text-gray-400 text-sm font-medium leading-normal">Clients</p>
+</div>
+<p class="text-[#121118] dark:text-white tracking-tight text-2xl font-bold leading-tight">850</p>
+</div>
+<div class="flex min-w-[140px] flex-col gap-2 rounded-xl p-4 bg-white dark:bg-[#1e1b2e] border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-purple-500 text-[20px]">content_cut</span>
+<p class="text-[#686189] dark:text-gray-400 text-sm font-medium leading-normal">Tailleurs</p>
+</div>
+<p class="text-[#121118] dark:text-white tracking-tight text-2xl font-bold leading-tight">400</p>
+</div>
+</div>
+</div>
+<div class="px-4 py-3">
+<label class="flex flex-col h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm">
+<div class="text-[#686189] dark:text-gray-400 flex border-none bg-[#f1f0f4] dark:bg-[#2a273f] items-center justify-center pl-4 rounded-l-xl border-r-0">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#121118] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#f1f0f4] dark:bg-[#2a273f] focus:border-none h-full placeholder:text-[#686189] dark:placeholder:text-gray-500 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Rechercher nom, email..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex px-4 pb-3">
+<div class="flex h-10 flex-1 items-center justify-center rounded-lg bg-[#f1f0f4] dark:bg-[#2a273f] p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-[0.25rem] px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#3211d4] has-[:checked]:shadow-sm has-[:checked]:text-[#121118] dark:has-[:checked]:text-white text-[#686189] dark:text-gray-400 text-sm font-medium leading-normal transition-all duration-200">
+<span class="truncate">Tous</span>
+<input checked="" class="invisible w-0 absolute" name="user_type" type="radio" value="Tous"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-[0.25rem] px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#3211d4] has-[:checked]:shadow-sm has-[:checked]:text-[#121118] dark:has-[:checked]:text-white text-[#686189] dark:text-gray-400 text-sm font-medium leading-normal transition-all duration-200">
+<span class="truncate">Clients</span>
+<input class="invisible w-0 absolute" name="user_type" type="radio" value="Clients"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-[0.25rem] px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-[#3211d4] has-[:checked]:shadow-sm has-[:checked]:text-[#121118] dark:has-[:checked]:text-white text-[#686189] dark:text-gray-400 text-sm font-medium leading-normal transition-all duration-200">
+<span class="truncate">Tailleurs/Stylistes</span>
+<input class="invisible w-0 absolute" name="user_type" type="radio" value="Tailleurs"/>
+</label>
+</div>
+</div>
+<div class="flex gap-2 overflow-x-auto no-scrollbar px-4 pb-2">
+<button class="flex shrink-0 items-center gap-2 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#2a273f] px-3 py-1.5 text-sm font-medium text-[#121118] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">
+<span>Statut: Tous</span>
+<span class="material-symbols-outlined text-[18px] text-[#686189] dark:text-gray-400">arrow_drop_down</span>
+</button>
+<button class="flex shrink-0 items-center gap-2 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#2a273f] px-3 py-1.5 text-sm font-medium text-[#121118] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">
+<span>KYC: Tous</span>
+<span class="material-symbols-outlined text-[18px] text-[#686189] dark:text-gray-400">arrow_drop_down</span>
+</button>
+<button class="flex shrink-0 items-center gap-2 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#2a273f] px-3 py-1.5 text-sm font-medium text-[#121118] dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800">
+<span>Date: Plus récents</span>
+<span class="material-symbols-outlined text-[18px] text-[#686189] dark:text-gray-400">sort</span>
+</button>
+</div>
+<div class="px-4 py-2 flex items-center justify-between">
+<p class="text-[#686189] dark:text-gray-400 text-xs font-bold uppercase tracking-wider">Résultats (124)</p>
+<button class="text-primary text-xs font-medium hover:underline">Réinitialiser</button>
+</div>
+<div class="flex flex-col pb-20">
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark px-4 min-h-[88px] py-3 justify-between border-b border-gray-50 dark:border-gray-800">
+<div class="flex items-center gap-4 flex-1 min-w-0">
+<div class="shrink-0 relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Portrait of a smiling tailor in a workshop" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCd2rOLSmdnSEjticrA_Gf2TAZyCMDA2DVFXf-1aGtUkywwANkoX5ldfOqyK3mbX8CXFCLHRQ8oWoCBCo6VuorPFTKi2wq2w2m1NgpQIjZOTQ5EhHq5XdmGm553VQQcrhK9V1HSWF33vqu4GhOAVC5bkRzk8ZnKi0WC1toMvFxs8q__9dUu73weHOjl7JenyptBY3T8JiA1EOAz7TwzwtOuYOd7jqeoecN_VpxRg6tIM1XQa7lYnoS4l6JipjbuHGXViBPhGAa7XMAD");'></div>
+<div class="absolute -bottom-1 -right-1 bg-green-500 text-white flex items-center justify-center h-4 w-4 rounded-full border-2 border-white dark:border-gray-800">
+<span class="material-symbols-outlined text-[10px] font-bold">check</span>
+</div>
+</div>
+<div class="flex flex-col justify-center min-w-0 gap-0.5">
+<p class="text-[#121118] dark:text-white text-base font-semibold leading-normal truncate">Amadou Diallo</p>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-[#686189] dark:text-gray-400 text-sm font-normal truncate">Tailleur • Dakar</span>
+<span class="inline-flex items-center rounded-sm bg-green-50 dark:bg-green-900/30 px-1.5 py-0.5 text-[10px] font-medium text-green-700 dark:text-green-400 ring-1 ring-inset ring-green-600/20">KYC Validé</span>
+</div>
+<p class="text-[10px] text-gray-400 mt-0.5">Inscrit: 12 Jan 2023</p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-3">
+<label class="relative flex h-[28px] w-[46px] cursor-pointer items-center rounded-full border-none bg-[#f1f0f4] dark:bg-gray-700 p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-colors duration-200">
+<div class="h-[24px] w-[24px] rounded-full bg-white shadow-sm"></div>
+<input checked="" class="invisible absolute w-0" type="checkbox"/>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark px-4 min-h-[88px] py-3 justify-between border-b border-gray-50 dark:border-gray-800">
+<div class="flex items-center gap-4 flex-1 min-w-0">
+<div class="shrink-0 relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Portrait of a young woman client" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDV0Uq5MeiBSOkT0FQoFtoqDRSKtLSwJUz0YDqrziRNmvTFS_7dw_ea-5W3MgXF_oRQiIQZilkxX9zfWbwcgcfLYu1G4JnMxR7riGTw_pYZDrAHnW1IwyxQZ7wMCeDR-MBkSIV0B1TO9zH24AZGSDXMKtfbAakCS_h9ihnHb5Hn4LSb7rRot3T-cIdY_gfDdNBDD147CTmOWWeXWCpltKXdhZU_8NAsbOBOeKUtb1SXy02Oxdwv1VncCFlvnrMypwDhh3bLDu-sOhQz");'></div>
+</div>
+<div class="flex flex-col justify-center min-w-0 gap-0.5">
+<p class="text-[#121118] dark:text-white text-base font-semibold leading-normal truncate">Sophie Kouamé</p>
+<div class="flex items-center gap-2">
+<span class="text-[#686189] dark:text-gray-400 text-sm font-normal truncate">Client • Abidjan</span>
+</div>
+<p class="text-[10px] text-gray-400 mt-0.5">Inscrite: 05 Fév 2023</p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-3">
+<label class="relative flex h-[28px] w-[46px] cursor-pointer items-center rounded-full border-none bg-[#f1f0f4] dark:bg-gray-700 p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-colors duration-200">
+<div class="h-[24px] w-[24px] rounded-full bg-white shadow-sm"></div>
+<input checked="" class="invisible absolute w-0" type="checkbox"/>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark px-4 min-h-[88px] py-3 justify-between border-b border-gray-50 dark:border-gray-800">
+<div class="flex items-center gap-4 flex-1 min-w-0">
+<div class="shrink-0 relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 grayscale border-2 border-gray-100 dark:border-gray-700" data-alt="Portrait of a stylist" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDoJI3OuuJUn9RWg_khrlXPe-K5QVfByrqT7XVX-kxUkmk8cj_bDkAUqON0etuHIGwqb3aOr-fBJEMO49rdTJ7Ipp_16YOmaWvWagPFJ0npEFieqOLmKq_YvFbvvfEyzKXvvunp8OjG29XthfAUkA9mdTU4GT9ZUsyj5MkvmtIPgAZwzVdQ56UAP-yNZskrBi1YPUL7lSXYNiwWvVWeh7UCzWJVyf696bN9XuQZP8u2eTIfGWRDZKyt6eo2E38BWcaM1B83yyOxLhdC");'></div>
+</div>
+<div class="flex flex-col justify-center min-w-0 opacity-75 gap-0.5">
+<p class="text-[#121118] dark:text-white text-base font-semibold leading-normal truncate">Maison Couture</p>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-[#686189] dark:text-gray-400 text-sm font-normal truncate">Styliste • Paris</span>
+<span class="inline-flex items-center rounded-sm bg-orange-50 dark:bg-orange-900/30 px-1.5 py-0.5 text-[10px] font-medium text-orange-700 dark:text-orange-400 ring-1 ring-inset ring-orange-600/20">En attente</span>
+</div>
+<p class="text-[10px] text-gray-400 mt-0.5">Inscrit: 10 Mars 2023</p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-3">
+<label class="relative flex h-[28px] w-[46px] cursor-pointer items-center rounded-full border-none bg-[#f1f0f4] dark:bg-gray-700 p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-colors duration-200">
+<div class="h-[24px] w-[24px] rounded-full bg-white shadow-sm"></div>
+<input class="invisible absolute w-0" type="checkbox"/>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark px-4 min-h-[88px] py-3 justify-between border-b border-gray-50 dark:border-gray-800">
+<div class="flex items-center gap-4 flex-1 min-w-0">
+<div class="shrink-0 relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Portrait of a young man with a beard" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVC_4kGclUDQ_3moZP4j3tOZnjOX9pHU57W4qHBA9GulRIvC8_SHw3mCgQDeTXUpk3TRJkwvE-4fmKAn4lC9--0TD77aw1rElbNrEYkosK9PLXSXS6kfr0ciK8fIbV7Cb4Oq0YYcvGlvinY5DGFu77xc7fbGevL_QuK4vnTEGQWVH-tqGmV_k72q-PE_mAjLfk6atl8OcfJvEQStEpmAA8eQftRzjduLMLD2vo5-Vfd0fGBGaXXxVR-VSKcCuCkOefOfn_uuvYDXj1");'></div>
+<div class="absolute -bottom-1 -right-1 bg-red-500 text-white flex items-center justify-center h-4 w-4 rounded-full border-2 border-white dark:border-gray-800">
+<span class="material-symbols-outlined text-[10px] font-bold">close</span>
+</div>
+</div>
+<div class="flex flex-col justify-center min-w-0 gap-0.5">
+<p class="text-[#121118] dark:text-white text-base font-semibold leading-normal truncate">Kofi Mensah</p>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-[#686189] dark:text-gray-400 text-sm font-normal truncate">Tailleur • Accra</span>
+<span class="inline-flex items-center rounded-sm bg-red-50 dark:bg-red-900/30 px-1.5 py-0.5 text-[10px] font-medium text-red-700 dark:text-red-400 ring-1 ring-inset ring-red-600/20">Rejeté</span>
+</div>
+<p class="text-[10px] text-gray-400 mt-0.5">Inscrit: 15 Avr 2023</p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-3">
+<label class="relative flex h-[28px] w-[46px] cursor-pointer items-center rounded-full border-none bg-[#f1f0f4] dark:bg-gray-700 p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-colors duration-200">
+<div class="h-[24px] w-[24px] rounded-full bg-white shadow-sm"></div>
+<input checked="" class="invisible absolute w-0" type="checkbox"/>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark px-4 min-h-[88px] py-3 justify-between">
+<div class="flex items-center gap-4 flex-1 min-w-0">
+<div class="shrink-0 relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Portrait of a male client wearing sunglasses" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDkO-TFx2-fm076OHDx2ocUbjP79C5dMWRW1C1CXpDPIOO7E_-gpcf50aHlBgZ6cDD4Ef06M6AiDgu_ydy2DFvCHBNUFtvsgSjdtzh8auuwvXD7SBzhO5ZQryxoXjae6WKQD9ieOyy5kThdmhtgNeTh5gLXWWDPijJSQtZ8wSMJOeYFUqet8-gcj1ob1znQoVb0e2LyPuULUM7TdkrwXDoumnpWB-yfbzNSqFSWm1WZbhu7Cs-gO54xyTuH9L6umuZhlwyEDJlUF3LS");'></div>
+</div>
+<div class="flex flex-col justify-center min-w-0 gap-0.5">
+<p class="text-[#121118] dark:text-white text-base font-semibold leading-normal truncate">Jean-Pierre M.</p>
+<div class="flex items-center gap-2">
+<span class="text-[#686189] dark:text-gray-400 text-sm font-normal truncate">Client • Lomé</span>
+</div>
+<p class="text-[10px] text-gray-400 mt-0.5">Inscrit: 22 Avr 2023</p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-3">
+<label class="relative flex h-[28px] w-[46px] cursor-pointer items-center rounded-full border-none bg-[#f1f0f4] dark:bg-gray-700 p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-colors duration-200">
+<div class="h-[24px] w-[24px] rounded-full bg-white shadow-sm"></div>
+<input checked="" class="invisible absolute w-0" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+<div class="sticky bottom-0 bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800 pb-6 pt-3 px-6 flex justify-between items-end z-30">
+<button class="flex flex-col items-center gap-1 text-[#686189] dark:text-gray-400">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<span class="text-[10px] font-medium">Accueil</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[24px] fill-current">group</span>
+<span class="text-[10px] font-medium">Utilisateurs</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#686189] dark:text-gray-400">
+<span class="material-symbols-outlined text-[24px]">bar_chart</span>
+<span class="text-[10px] font-medium">Stats</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#686189] dark:text-gray-400">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span class="text-[10px] font-medium">Paramètres</span>
+</button>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquette Sartoria - Galerie des Écrans</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: white;
+            min-height: 100vh;
+            padding: 2rem;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #718096;
+            font-size: 1.1rem;
+        }
+
+        .search-bar {
+            margin-top: 1.5rem;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: #1A73B5;
+            box-shadow: 0 0 0 3px rgba(26, 115, 181, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #a0aec0;
+            font-size: 1.2rem;
+        }
+
+        .stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: #1A73B5;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .mode-toggle {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn-mode {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #1A73B5;
+            border-radius: 8px;
+            background: white;
+            color: #1A73B5;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-mode.active {
+            background: #1A73B5;
+            color: white;
+            border-color: transparent;
+        }
+
+        .btn-mode:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 115, 181, 0.3);
+        }
+
+        /* Mode Prototype */
+        .prototype-view {
+            display: none;
+        }
+
+        .prototype-view.active {
+            display: block;
+        }
+
+        .prototype-container {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            min-height: 80vh;
+        }
+
+        .prototype-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .prototype-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a202c;
+        }
+
+        .prototype-progress {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #718096;
+            font-weight: 600;
+        }
+
+        .progress-bar-container {
+            width: 200px;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #1A73B5;
+            transition: width 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .prototype-iframe-container {
+            position: relative;
+            width: 100%;
+            min-height: 70vh;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f7fafc;
+        }
+
+        .prototype-iframe {
+            width: 100%;
+            height: 70vh;
+            border: none;
+            display: block;
+        }
+
+        .prototype-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 150px;
+            justify-content: center;
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .nav-btn-prev {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .nav-btn-prev:hover:not(:disabled) {
+            background: #cbd5e0;
+            transform: translateX(-4px);
+        }
+
+        .nav-btn-next {
+            background: #1A73B5;
+            color: white;
+        }
+
+        .nav-btn-next:hover:not(:disabled) {
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(26, 115, 181, 0.4);
+        }
+
+        .prototype-actions {
+            display: flex;
+            gap: 1rem;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .btn-exit-prototype {
+            padding: 0.75rem 1.5rem;
+            background: #fed7d7;
+            color: #c53030;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-exit-prototype:hover {
+            background: #feb2b2;
+        }
+
+        .prototype-jump {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .jump-select {
+            padding: 0.75rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            background: white;
+        }
+
+        .gallery-view {
+            display: block;
+        }
+
+        .gallery-view.hidden {
+            display: none;
+        }
+
+        /* Filtres par profil */
+        .profile-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            background: white;
+            color: #4a5568;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .profile-filter-btn:hover {
+            border-color: #1A73B5;
+            transform: translateY(-2px);
+        }
+
+        .profile-filter-btn.active {
+            background: #1A73B5;
+            color: white;
+            border-color: transparent;
+        }
+
+        .profile-section {
+            margin-bottom: 3rem;
+        }
+
+        .profile-section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .profile-section-title.client {
+            border-bottom-color: #48bb78;
+        }
+
+        .profile-section-title.tailleur {
+            border-bottom-color: #ed8936;
+        }
+
+        .profile-section-title.admin {
+            border-bottom-color: #9f7aea;
+        }
+
+        .profile-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        .profile-badge.client {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .profile-badge.tailleur {
+            background: #feebc8;
+            color: #7c2d12;
+        }
+
+        .profile-badge.admin {
+            background: #e9d8fd;
+            color: #553c9a;
+        }
+
+        .prototype-profile-selector {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-select-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            background: white;
+            color: #4a5568;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .profile-select-btn.active {
+            background: #1A73B5;
+            color: white;
+            border-color: transparent;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .screen-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .screen-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .screen-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background: #f7fafc;
+        }
+
+        .screen-info {
+            padding: 1.5rem;
+        }
+
+        .screen-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .screen-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: #1A73B5;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(26, 115, 181, 0.4);
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .btn-secondary:hover {
+            background: #cbd5e0;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: white;
+            border-radius: 16px;
+            color: #718096;
+            font-size: 1.2rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            overflow: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 95%;
+            max-height: 95vh;
+            overflow: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        .close-btn {
+            background: #e2e8f0;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: #cbd5e0;
+        }
+
+        .modal-body {
+            padding: 0;
+        }
+
+        .modal-body iframe {
+            width: 100%;
+            min-height: 600px;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 Maquette Sartoria - Galerie des Écrans</h1>
+            <p>Visualisez toutes les captures d'écran et leurs fichiers HTML associés</p>
+
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Rechercher un écran...">
+            </div>
+
+            <div class="stats">
+                <div class="stat-card" id="totalScreens">Total: 39 écrans</div>
+                <div class="stat-card" id="visibleScreens">Affichés: 39</div>
+            </div>
+
+            <div class="mode-toggle">
+                <button class="btn-mode active" id="btnGallery" onclick="switchMode('gallery')">📋 Galerie</button>
+                <button class="btn-mode" id="btnPrototype" onclick="switchMode('prototype')">🚀 Mode Prototype</button>
+            </div>
+        </div>
+
+        <!-- Vue Galerie -->
+        <div class="gallery-view" id="galleryView">
+            <div class="profile-filters">
+                <button class="profile-filter-btn active" data-profile="all" onclick="filterByProfile('all')">
+                    👥 Tous les profils
+                </button>
+                <button class="profile-filter-btn" data-profile="client" onclick="filterByProfile('client')">
+                    👤 Client
+                </button>
+                <button class="profile-filter-btn" data-profile="tailleur" onclick="filterByProfile('tailleur')">
+                    ✂️ Tailleur
+                </button>
+                <button class="profile-filter-btn" data-profile="admin" onclick="filterByProfile('admin')">
+                    🛠️ Administrateur
+                </button>
+            </div>
+            <div id="galleryContainer"></div>
+        </div>
+
+        <!-- Vue Prototype -->
+        <div class="prototype-view" id="prototypeView">
+            <div class="prototype-container">
+                <div class="prototype-profile-selector">
+                    <button class="profile-select-btn active" data-profile="all"
+                        onclick="switchPrototypeProfile('all', this)">Tous</button>
+                    <button class="profile-select-btn" data-profile="client"
+                        onclick="switchPrototypeProfile('client', this)">Client</button>
+                    <button class="profile-select-btn" data-profile="tailleur"
+                        onclick="switchPrototypeProfile('tailleur', this)">Tailleur</button>
+                    <button class="profile-select-btn" data-profile="admin"
+                        onclick="switchPrototypeProfile('admin', this)">Admin</button>
+                </div>
+                <div class="prototype-header">
+                    <div class="prototype-title" id="prototypeTitle">Splash Screen</div>
+                    <div class="prototype-progress">
+                        <span id="prototypeProgress">1 / 39</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="progressBar" style="width: 2.56%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prototype-iframe-container">
+                    <iframe id="prototypeIframe" class="prototype-iframe" src=""></iframe>
+                </div>
+
+                <div class="prototype-nav">
+                    <button class="nav-btn nav-btn-prev" id="btnPrev" onclick="navigatePrototype(-1)">
+                        ← Précédent
+                    </button>
+
+                    <div class="prototype-actions">
+                        <div class="prototype-jump">
+                            <label for="jumpSelect" style="color: #718096; font-weight: 600;">Aller à:</label>
+                            <select id="jumpSelect" class="jump-select" onchange="jumpToScreen(this.value)">
+                                <option value="">Sélectionner...</option>
+                            </select>
+                        </div>
+                        <button class="btn-exit-prototype" onclick="switchMode('gallery')">
+                            Quitter le prototype
+                        </button>
+                    </div>
+
+                    <button class="nav-btn nav-btn-next" id="btnNext" onclick="navigatePrototype(1)">
+                        Suivant →
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="no-results" id="noResults" style="display: none;">
+            Aucun écran trouvé pour votre recherche.
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle"></div>
+                <button class="close-btn" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="modalIframe" src=""></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const basePath = "stitch_onboarding_ia_mesures 2";
+
+        // Organisation des écrans par profil
+        const screensByProfile = {
+            client: [
+                { name: "Splash Screen", folder: "splash_screen" },
+                { name: "Écran de Connexion", folder: "écran_de_connexion" },
+                { name: "Écran d'Inscription", folder: "écran_d'inscription" },
+                { name: "Mot de Passe Oublié", folder: "mot_de_passe_oublié" },
+                { name: "Onboarding - IA Mesures", folder: "onboarding_-_ia_mesures" },
+                { name: "Onboarding - Marketplace", folder: "onboarding_-_marketplace" },
+                { name: "Onboarding - Essayage Virtuel 3D", folder: "onboarding_-_essayage_virtuel_3d" },
+                { name: "Accueil / Marketplace", folder: "accueil_/_marketplace" },
+                { name: "Prise de Mesures - Instructions", folder: "prise_de_mesures_-_instructions" },
+                { name: "Prise de Mesures - Upload Photo", folder: "prise_de_mesures_-_upload_photo" },
+                { name: "Prise de Mesures - Résumé IA", folder: "prise_de_mesures_-_résumé_ia" },
+                { name: "Profil Client - Infos", folder: "profil_client_-_infos" },
+                { name: "Profil Client - Mesures", folder: "profil_client_-_mesures" },
+                { name: "Profil Client - Historique Commandes", folder: "profil_client_-_historique_commandes" },
+                { name: "Profil Client - Paiements", folder: "profil_client_-_paiements" },
+                { name: "Création de Commande", folder: "création_de_commande" },
+                { name: "Suivi de Commande - Timeline", folder: "suivi_de_commande_-_timeline" },
+                { name: "Calendrier des Rendez-vous", folder: "calendrier_des_rendez-vous" },
+                { name: "Messagerie - Chat", folder: "messagerie_-_chat" },
+                { name: "Essayage Virtuel 3D Immersif", folder: "essayage_virtuel_3d_immersif" },
+                { name: "Sélecteur de Textures HD", folder: "sélecteur_de_textures_hd" },
+                { name: "Analyse & Conseils Morpho-Style", folder: "analyse_&_conseils_morpho-style" }
+            ],
+            tailleur: [
+                { name: "Écran de Connexion", folder: "écran_de_connexion" },
+                { name: "Validation KYC Tailleur", folder: "validation_kyc_tailleur" },
+                { name: "Forfaits d'Abonnement Tailleurs", folder: "forfaits_d'abonnement_tailleurs" },
+                { name: "Paiement de l'Abonnement", folder: "paiement_de_l'abonnement" },
+                { name: "Dashboard Tailleur - Business KPIs", folder: "dashboard_tailleur_-_business_kpis" },
+                { name: "Gestion des Commandes Tailleur", folder: "gestion_des_commandes_tailleur" },
+                { name: "CRM Tailleur - Fiches Clients", folder: "crm_tailleur_-_fiches_clients" },
+                { name: "Détails Profil Tailleur", folder: "détails_profil_tailleur" },
+                { name: "Facture de Paiement PDF", folder: "facture_de_paiement_pdf" }
+            ],
+            admin: [
+                { name: "Écran de Connexion", folder: "écran_de_connexion" },
+                { name: "Dashboard Statistiques", folder: "dashboard_statistiques" },
+                { name: "Gestion des Utilisateurs", folder: "gestion_des_utilisateurs" },
+                { name: "Gestion du Stock Tissus", folder: "gestion_du_stock_tissus" },
+                { name: "Gestion des Litiges Admin", folder: "gestion_des_litiges_admin" },
+                { name: "Détails & Médiation Litige", folder: "détails_&_médiation_litige" },
+                { name: "Gestion Abonnements & Commissions", folder: "gestion_abonnements_&_commissions" },
+                { name: "Modération Contenus", folder: "modération_contenus" },
+                { name: "Paramètres Système", folder: "paramètres_système" },
+                { name: "Plan de Site & Architecture Flux", folder: "plan_de_site_&_architecture_flux" }
+            ]
+        };
+
+        // Liste complète pour compatibilité
+        const screens = [
+            ...screensByProfile.client,
+            ...screensByProfile.tailleur.filter(s => !screensByProfile.client.find(c => c.folder === s.folder)),
+            ...screensByProfile.admin.filter(s => !screensByProfile.client.find(c => c.folder === s.folder) && !screensByProfile.tailleur.find(t => t.folder === s.folder))
+        ];
+
+        const galleryContainer = document.getElementById('galleryContainer');
+        const searchInput = document.getElementById('searchInput');
+        const totalScreens = document.getElementById('totalScreens');
+        const visibleScreens = document.getElementById('visibleScreens');
+        const noResults = document.getElementById('noResults');
+
+        // Mode Prototype
+        let currentPrototypeIndex = 0;
+        let currentPrototypeProfile = 'all';
+        let currentPrototypeScreens = screens;
+        const galleryView = document.getElementById('galleryView');
+        const prototypeView = document.getElementById('prototypeView');
+        const prototypeIframe = document.getElementById('prototypeIframe');
+        const prototypeTitle = document.getElementById('prototypeTitle');
+        const prototypeProgress = document.getElementById('prototypeProgress');
+        const btnPrev = document.getElementById('btnPrev');
+        const btnNext = document.getElementById('btnNext');
+        const jumpSelect = document.getElementById('jumpSelect');
+        const btnGallery = document.getElementById('btnGallery');
+        const btnPrototype = document.getElementById('btnPrototype');
+
+        let currentFilter = 'all';
+
+        function getScreenProfile(screen) {
+            if (screensByProfile.client.find(s => s.folder === screen.folder)) return 'client';
+            if (screensByProfile.tailleur.find(s => s.folder === screen.folder)) return 'tailleur';
+            if (screensByProfile.admin.find(s => s.folder === screen.folder)) return 'admin';
+            return 'client';
+        }
+
+        function renderScreens(filteredScreens = screens, filter = 'all') {
+            galleryContainer.innerHTML = '';
+            noResults.style.display = filteredScreens.length === 0 ? 'block' : 'none';
+            noResults.style.marginTop = '2rem';
+
+            if (filter === 'all') {
+                // Afficher par sections de profil
+                ['client', 'tailleur', 'admin'].forEach(profile => {
+                    const profileScreens = filteredScreens.filter(s => getScreenProfile(s) === profile);
+                    if (profileScreens.length === 0) return;
+
+                    const section = document.createElement('div');
+                    section.className = 'profile-section';
+
+                    const profileNames = {
+                        client: '👤 Client',
+                        tailleur: '✂️ Tailleur',
+                        admin: '🛠️ Administrateur'
+                    };
+
+                    section.innerHTML = `
+                        <div class="profile-section-title ${profile}">
+                            ${profileNames[profile]}
+                            <span class="profile-badge ${profile}">${profileScreens.length} écran${profileScreens.length > 1 ? 's' : ''}</span>
+                        </div>
+                        <div class="gallery" id="gallery-${profile}"></div>
+                    `;
+
+                    const gallery = section.querySelector(`#gallery-${profile}`);
+
+                    profileScreens.forEach(screen => {
+                        const card = createScreenCard(screen);
+                        gallery.appendChild(card);
+                    });
+
+                    galleryContainer.appendChild(section);
+                });
+            } else {
+                // Afficher une seule section pour le profil filtré
+                const section = document.createElement('div');
+                section.className = 'profile-section';
+
+                const profileNames = {
+                    client: '👤 Client',
+                    tailleur: '✂️ Tailleur',
+                    admin: '🛠️ Administrateur'
+                };
+
+                section.innerHTML = `
+                    <div class="profile-section-title ${filter}">
+                        ${profileNames[filter]}
+                        <span class="profile-badge ${filter}">${filteredScreens.length} écran${filteredScreens.length > 1 ? 's' : ''}</span>
+                    </div>
+                    <div class="gallery" id="gallery-filtered"></div>
+                `;
+
+                const gallery = section.querySelector('#gallery-filtered');
+
+                filteredScreens.forEach(screen => {
+                    const card = createScreenCard(screen);
+                    gallery.appendChild(card);
+                });
+
+                galleryContainer.appendChild(section);
+            }
+
+            visibleScreens.textContent = `Affichés: ${filteredScreens.length}`;
+            totalScreens.textContent = `Total: ${screens.length} écrans`;
+        }
+
+        function createScreenCard(screen) {
+            const card = document.createElement('div');
+            card.className = 'screen-card';
+
+            // Encoder correctement le nom du dossier avec les caractères Unicode
+            // Utiliser encodeURIComponent pour chaque segment du chemin
+            const encodedFolder = encodeURIComponent(screen.folder);
+            const imagePath = `${basePath}/${encodedFolder}/screen.png`;
+            const htmlPath = `${basePath}/${encodedFolder}/code.html`;
+
+            card.innerHTML = `
+                <img src="${imagePath}" alt="${screen.name}" class="screen-image" 
+                     onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22240%22%3E%3Crect fill=%22%23f7fafc%22 width=%22320%22 height=%22240%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23a0aec0%22 font-family=%22sans-serif%22 font-size=%2214%22%3EImage non disponible%3C/text%3E%3C/svg%3E';">
+                <div class="screen-info">
+                    <div class="screen-name">${screen.name}</div>
+                    <div class="screen-actions">
+                        <a href="${htmlPath}" target="_blank" class="btn btn-primary">Voir HTML</a>
+                        <button onclick="openModal('${screen.name.replace(/'/g, "\\'")}', '${htmlPath}')" class="btn btn-secondary">Aperçu</button>
+                    </div>
+                </div>
+            `;
+
+            return card;
+        }
+
+        function filterByProfile(profile) {
+            currentFilter = profile;
+
+            // Mettre à jour les boutons
+            document.querySelectorAll('.profile-filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-profile="${profile}"]`).classList.add('active');
+
+            // Filtrer les écrans
+            let filtered = screens;
+            if (profile !== 'all') {
+                filtered = screens.filter(s => getScreenProfile(s) === profile);
+            }
+
+            // Appliquer aussi la recherche si active
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            if (searchTerm !== '') {
+                filtered = filtered.filter(screen =>
+                    screen.name.toLowerCase().includes(searchTerm) ||
+                    screen.folder.toLowerCase().includes(searchTerm)
+                );
+            }
+
+            renderScreens(filtered, profile);
+        }
+
+        function openModal(name, htmlPath) {
+            const modal = document.getElementById('modal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalIframe = document.getElementById('modalIframe');
+
+            modalTitle.textContent = name;
+            modalIframe.src = htmlPath;
+            modal.classList.add('active');
+
+            // Ajuster la hauteur de l'iframe
+            modalIframe.style.height = window.innerHeight - 120 + 'px';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            const modalIframe = document.getElementById('modalIframe');
+
+            modal.classList.remove('active');
+            modalIframe.src = '';
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+
+            let filtered = screens;
+            if (currentFilter !== 'all') {
+                filtered = screens.filter(s => getScreenProfile(s) === currentFilter);
+            }
+
+            if (searchTerm === '') {
+                renderScreens(filtered, currentFilter);
+                return;
+            }
+
+            filtered = filtered.filter(screen =>
+                screen.name.toLowerCase().includes(searchTerm) ||
+                screen.folder.toLowerCase().includes(searchTerm)
+            );
+
+            renderScreens(filtered, currentFilter);
+        });
+
+        // Fermer la modal en cliquant à l'extérieur
+        document.getElementById('modal').addEventListener('click', (e) => {
+            if (e.target.id === 'modal') {
+                closeModal();
+            }
+        });
+
+        // Fermer la modal avec la touche Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Ajuster la taille de l'iframe lors du redimensionnement
+        window.addEventListener('resize', () => {
+            const modal = document.getElementById('modal');
+            const modalIframe = document.getElementById('modalIframe');
+            if (modal.classList.contains('active')) {
+                modalIframe.style.height = window.innerHeight - 120 + 'px';
+            }
+        });
+
+        // Initialiser l'affichage
+        renderScreens();
+        populateJumpSelect();
+
+        // Fonctions pour le mode prototype
+        function switchMode(mode) {
+            if (mode === 'prototype') {
+                galleryView.classList.add('hidden');
+                prototypeView.classList.add('active');
+                btnGallery.classList.remove('active');
+                btnPrototype.classList.add('active');
+                currentPrototypeScreens = screens;
+                currentPrototypeIndex = 0;
+                populateJumpSelect();
+                loadPrototypeScreen(0);
+            } else {
+                galleryView.classList.remove('hidden');
+                prototypeView.classList.remove('active');
+                btnGallery.classList.add('active');
+                btnPrototype.classList.remove('active');
+            }
+        }
+
+        function switchPrototypeProfile(profile, buttonElement) {
+            currentPrototypeProfile = profile;
+
+            // Mettre à jour les boutons
+            document.querySelectorAll('.profile-select-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            if (buttonElement) {
+                buttonElement.classList.add('active');
+            } else {
+                document.querySelector(`[data-profile="${profile}"]`).classList.add('active');
+            }
+
+            // Changer la liste d'écrans
+            if (profile === 'all') {
+                currentPrototypeScreens = screens;
+            } else {
+                currentPrototypeScreens = screensByProfile[profile];
+            }
+
+            currentPrototypeIndex = 0;
+            populateJumpSelect();
+            loadPrototypeScreen(0);
+        }
+
+        function loadPrototypeScreen(index) {
+            if (index < 0 || index >= currentPrototypeScreens.length) return;
+
+            currentPrototypeIndex = index;
+            const screen = currentPrototypeScreens[index];
+            const encodedFolder = encodeURIComponent(screen.folder);
+            const htmlPath = `${basePath}/${encodedFolder}/code.html`;
+
+            prototypeIframe.src = htmlPath;
+            prototypeTitle.textContent = screen.name;
+            prototypeProgress.textContent = `${index + 1} / ${currentPrototypeScreens.length}`;
+
+            // Mettre à jour la barre de progression
+            const progressPercent = ((index + 1) / currentPrototypeScreens.length) * 100;
+            document.getElementById('progressBar').style.width = progressPercent + '%';
+
+            // Mettre à jour les boutons de navigation
+            btnPrev.disabled = index === 0;
+            btnNext.disabled = index === currentPrototypeScreens.length - 1;
+
+            // Mettre à jour le select
+            jumpSelect.value = index;
+        }
+
+        function navigatePrototype(direction) {
+            const newIndex = currentPrototypeIndex + direction;
+            if (newIndex >= 0 && newIndex < currentPrototypeScreens.length) {
+                loadPrototypeScreen(newIndex);
+            }
+        }
+
+        function jumpToScreen(value) {
+            if (value !== '') {
+                loadPrototypeScreen(parseInt(value));
+            }
+        }
+
+        function populateJumpSelect() {
+            jumpSelect.innerHTML = '<option value="">Sélectionner...</option>';
+            currentPrototypeScreens.forEach((screen, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = `${index + 1}. ${screen.name}`;
+                jumpSelect.appendChild(option);
+            });
+        }
+
+        // Navigation au clavier dans le mode prototype
+        document.addEventListener('keydown', (e) => {
+            if (prototypeView.classList.contains('active')) {
+                if (e.key === 'ArrowLeft' && !btnPrev.disabled) {
+                    navigatePrototype(-1);
+                } else if (e.key === 'ArrowRight' && !btnNext.disabled) {
+                    navigatePrototype(1);
+                } else if (e.key === 'Escape') {
+                    switchMode('gallery');
+                }
+            }
+        });
+
+        // Initialiser avec le filtre "all"
+        renderScreens(screens, 'all');
+    </script>
+</body>
+
+</html>

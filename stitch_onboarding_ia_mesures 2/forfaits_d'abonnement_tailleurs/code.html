@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Forfaits d'Abonnement Tailleurs - Sartoria</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a73b7",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111a21",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-white font-display antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-50">
+<div class="text-primary flex size-12 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</div>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Forfaits Sartoria</h2>
+<div class="size-12"></div> <!-- Spacer for symmetry -->
+</div>
+<!-- HeadlineText -->
+<div class="px-4 pt-8 pb-4">
+<h2 class="text-gray-900 dark:text-white tracking-tight text-[28px] font-bold leading-tight text-center">
+                Choisissez le forfait qui boostera votre atelier
+            </h2>
+<p class="text-gray-500 dark:text-gray-400 text-center mt-2 text-sm">Des outils de haute couture pour tailleurs modernes.</p>
+</div>
+<!-- SegmentedButtons -->
+<div class="flex px-4 py-3 justify-center">
+<div class="flex h-12 w-full max-w-sm items-center justify-center rounded-xl bg-gray-200 dark:bg-[#293138] p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm has-[:checked]:text-primary text-gray-500 dark:text-[#9eadb7] text-sm font-bold leading-normal transition-all">
+<span class="truncate">Mensuel</span>
+<input checked="" class="invisible w-0" name="billing_cycle" type="radio" value="Mensuel"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm has-[:checked]:text-primary text-gray-500 dark:text-[#9eadb7] text-sm font-bold leading-normal transition-all">
+<span class="truncate">Annuel (-20%)</span>
+<input class="invisible w-0" name="billing_cycle" type="radio" value="Annuel"/>
+</label>
+</div>
+</div>
+<!-- PricingCards -->
+<div class="flex flex-col gap-6 px-4 py-6 mb-8">
+<!-- Basic Plan -->
+<div class="flex flex-col gap-6 rounded-xl border border-solid border-gray-200 dark:border-[#3d4952] bg-white dark:bg-[#1c2226] p-6 shadow-sm">
+<div class="flex flex-col gap-1">
+<h1 class="text-gray-900 dark:text-white text-xl font-bold leading-tight">Basic</h1>
+<p class="text-gray-500 dark:text-gray-400 text-sm">Idéal pour débuter</p>
+<p class="flex items-baseline gap-1 mt-2 text-gray-900 dark:text-white">
+<span class="text-4xl font-extrabold leading-tight tracking-[-0.033em]">0€</span>
+<span class="text-base font-bold leading-tight">/mois</span>
+</p>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-gray-100 dark:bg-[#293138] text-gray-900 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="truncate">Choisir Basic</span>
+</button>
+<div class="flex flex-col gap-3">
+<div class="text-[14px] font-medium leading-normal flex gap-3 text-gray-700 dark:text-white">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        5 mesures IA par mois
+                    </div>
+<div class="text-[14px] font-medium leading-normal flex gap-3 text-gray-700 dark:text-white">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Visibilité standard
+                    </div>
+<div class="text-[14px] font-medium leading-normal flex gap-3 text-gray-700 dark:text-white">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Commission 15%
+                    </div>
+</div>
+</div>
+<!-- Pro Plan (Highlighted) -->
+<div class="relative flex flex-col gap-6 rounded-xl border-2 border-solid border-primary bg-white dark:bg-[#1c2226] p-6 shadow-xl transform scale-[1.02] z-10">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary px-4 py-1 rounded-full shadow-lg">
+<p class="text-white text-[10px] font-bold uppercase tracking-widest">Meilleur rapport qualité-prix</p>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<div class="flex items-center justify-between">
+<h1 class="text-gray-900 dark:text-white text-xl font-bold leading-tight">Pro</h1>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm">Pour les ateliers en croissance</p>
+<p class="flex items-baseline gap-1 mt-2 text-gray-900 dark:text-white">
+<span class="text-4xl font-extrabold leading-tight tracking-[-0.033em]">29€</span>
+<span class="text-base font-bold leading-tight">/mois</span>
+</p>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
+<span class="truncate">Choisir Pro</span>
+</button>
+<div class="flex flex-col gap-3">
+<div class="text-[14px] font-medium leading-normal flex gap-3 text-gray-700 dark:text-white">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Mesures IA illimitées
+                    </div>
+<div class="text-[14px] font-medium leading-normal flex gap-3 text-gray-700 dark:text-white">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Visibilité boostée (Top 10)
+                    </div>
+<div class="text-[14px] font-medium leading-normal flex gap-3 text-gray-700 dark:text-white">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Commission 8%
+                    </div>
+<div class="text-[14px] font-medium leading-normal flex gap-3 text-gray-700 dark:text-white">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Support prioritaire 24/7
+                    </div>
+</div>
+</div>
+<!-- Premium Plan -->
+<div class="flex flex-col gap-6 rounded-xl border border-solid border-gray-200 dark:border-[#3d4952] bg-white dark:bg-[#1c2226] p-6 shadow-sm">
+<div class="flex flex-col gap-1">
+<h1 class="text-gray-900 dark:text-white text-xl font-bold leading-tight">Premium</h1>
+<p class="text-gray-500 dark:text-gray-400 text-sm">Expérience Tailleur Ultime</p>
+<p class="flex items-baseline gap-1 mt-2 text-gray-900 dark:text-white">
+<span class="text-4xl font-extrabold leading-tight tracking-[-0.033em]">59€</span>
+<span class="text-base font-bold leading-tight">/mois</span>
+</p>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-gray-100 dark:bg-[#293138] text-gray-900 dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="truncate">Choisir Premium</span>
+</button>
+<div class="flex flex-col gap-3">
+<div class="text-[14px] font-medium leading-normal flex gap-3 text-gray-700 dark:text-white">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Mesures IA illimitées
+                    </div>
+<div class="text-[14px] font-medium leading-normal flex gap-3 text-gray-700 dark:text-white">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Visibilité Premium Marketplace
+                    </div>
+<div class="text-[14px] font-medium leading-normal flex gap-3 text-gray-700 dark:text-white">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Commission réduite 5%
+                    </div>
+<div class="text-[14px] font-medium leading-normal flex gap-3 text-gray-700 dark:text-white">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                        Account Manager dédié
+                    </div>
+</div>
+</div>
+</div>
+<!-- SectionHeader -->
+<div class="bg-gray-50 dark:bg-[#1c2226] py-10 border-t border-gray-200 dark:border-gray-800">
+<h3 class="text-gray-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] px-6 pb-6 text-center">Questions fréquentes</h3>
+<div class="px-6 flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<h4 class="text-primary font-bold text-sm">Puis-je changer de forfait à tout moment ?</h4>
+<p class="text-gray-600 dark:text-gray-400 text-sm">Oui, vous pouvez upgrader ou downgrader votre forfait directement depuis vos réglages sans frais de résiliation.</p>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="text-primary font-bold text-sm">Comment fonctionne la commission ?</h4>
+<p class="text-gray-600 dark:text-gray-400 text-sm">La commission est prélevée uniquement sur les ventes réalisées via la marketplace Sartoria.</p>
+</div>
+</div>
+</div>
+<!-- Footer Contact Link -->
+<div class="p-8 text-center bg-gray-50 dark:bg-[#1c2226]">
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Besoin d'un forfait sur mesure ?</p>
+<a class="text-primary font-bold text-sm underline decoration-primary/30 underline-offset-4" href="#">Contacter notre équipe commerciale</a>
+</div>
+<div class="h-10 bg-gray-50 dark:bg-[#1c2226]"></div>
+</div>
+</body></html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profil Client - Mesures</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73B5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-gray-100 dark:bg-gray-900 text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-white flex justify-center min-h-screen">
+<div class="relative w-full max-w-md h-full min-h-screen bg-background-light dark:bg-background-dark shadow-2xl flex flex-col overflow-hidden">
+<div class="sticky top-0 z-30 flex items-center justify-between p-4 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+<button class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Mesures</h2>
+</div>
+<div class="flex-1 overflow-y-auto no-scrollbar pb-24">
+<div class="px-4 pt-4 pb-2">
+<div class="flex w-full flex-col gap-4">
+<div class="flex items-center gap-4 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-16 w-16 shrink-0 shadow-inner border-2 border-white dark:border-slate-600" data-alt="User profile picture showing a smiling woman" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDI_Ts_RQX9-EIjFoIE1rdVjz09b750trS1amIvuMANMAOF1YT8ZgHAYzh7qft-Dpk6GjpIR2v9uVUIBlN1eEgBv7CPBCJXe3RVFl07urSqvnvGPGWko4bTa-17GU6fZzYhASeqzawFqlKQacAqB61wtDDIbPjpu-rIrKXpQ4a69dDSCNfn5nH55g9sWHPwg17JeSCXXJgPgwbdXEG9qP3DwV9pRbQds5Nr6vGj-B7DpP5FHGLY3aqeNmNJ4GSPahPqizw8glsXlS4u");'>
+</div>
+<div class="flex flex-col justify-center flex-1">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">Marie Koné</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium mt-1">Dernière mise à jour : 2j</p>
+</div>
+<button class="text-primary p-2 -mr-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="px-4 py-2">
+<div class="flex h-12 w-full items-center justify-center rounded-xl bg-gray-200 dark:bg-slate-800 p-1">
+<label class="flex cursor-pointer h-full flex-1 items-center justify-center rounded-lg px-2 shadow-sm bg-white dark:bg-slate-600 text-primary dark:text-white transition-all">
+<span class="truncate text-sm font-semibold">Mes Mesures</span>
+<input checked="" class="invisible w-0 fixed" name="measurements-tab" type="radio" value="my-measurements"/>
+</label>
+<label class="flex cursor-pointer h-full flex-1 items-center justify-center rounded-lg px-2 text-slate-500 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-slate-700 transition-all">
+<span class="truncate text-sm font-medium">Profils Sauvegardés</span>
+<input class="invisible w-0 fixed" name="measurements-tab" type="radio" value="saved-profiles"/>
+</label>
+</div>
+</div>
+<div class="px-4 py-2">
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary/10 to-primary/5 dark:from-primary/20 dark:to-primary/10 p-4 border border-primary/10 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">straighten</span>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-800 dark:text-slate-200">Guide des tailles</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Comment prendre vos mesures correctement ?</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 ml-auto">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center justify-between px-4 pt-4 pb-2">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Mensurations corporelles</h3>
+<span class="text-xs font-medium text-slate-500 bg-gray-100 dark:bg-slate-800 px-2 py-1 rounded-md">cm</span>
+</div>
+<div class="grid grid-cols-2 gap-3 px-4 pb-4">
+<div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-sm border border-gray-100 dark:border-slate-700 aspect-[4/3] flex flex-col justify-between p-4 transition-all active:scale-95">
+<div class="absolute inset-0 opacity-10 dark:opacity-20 pointer-events-none bg-cover bg-center" data-alt="Abstract line pattern representing fabric weave" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAtXc4CRUpSXeuhRTgChu1-BpKjB2Vck_he1vqnG4dMMCzPZHDwZqipvM3ytp6Dn5QAGk-iCwlpiydtFhNHxgbpabP7K1HPb4AP8yVe4qXdI6wBtDd23d5snVz5Aj8Fnv0Dkzg-tMw_akdOH-KPBNJl_xNcfz7uOT0e-AT_CQweqWlJxuTYb9d-WIzptXikT4zr57m7HRKzJBKrSSRtqfkg-8TAKWP7bXgEJ0iaeIPKji7XojvUKmBvvGY7MmWP8M9KPRjPo61m1KI2");'>
+</div>
+<div class="flex justify-between items-start z-10">
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium">Épaules</span>
+<span class="material-symbols-outlined text-primary/60 text-[20px]">accessibility</span>
+</div>
+<div class="z-10 mt-auto">
+<p class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight">40 <span class="text-lg font-medium text-slate-400">cm</span></p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-sm border border-gray-100 dark:border-slate-700 aspect-[4/3] flex flex-col justify-between p-4 transition-all active:scale-95">
+<div class="absolute inset-0 opacity-10 dark:opacity-20 pointer-events-none bg-cover bg-center" data-alt="Abstract line pattern representing fabric weave" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB2cZC8Giku6ycaofLSn1OtnytmCQgMfMZ6x-8L0DUUiDCD1gXaJHNB4ULTHHaFDFcAZaisdnd9CziZXZuff9U0yEhqIxWbPwb5FFlPjKOGf8jkKzd_a9yhifCcQPczEcLe-KyNszJD50W-rXBn5vnKV5fo5cSGyCARSdrmYtlW1MZmtZqqoiAoPAuBngE59_vTnIl3GHnDE1-Tpu-ulsgHop6cb94lfzVOTyuPK8PB1mof8Z-jSJjzUF2HJFPgeeiajlfSy2rm_ZmL");'>
+</div>
+<div class="flex justify-between items-start z-10">
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium">Poitrine</span>
+<span class="material-symbols-outlined text-primary/60 text-[20px]">favorite_border</span>
+</div>
+<div class="z-10 mt-auto">
+<p class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight">92 <span class="text-lg font-medium text-slate-400">cm</span></p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-sm border border-gray-100 dark:border-slate-700 aspect-[4/3] flex flex-col justify-between p-4 transition-all active:scale-95 ring-2 ring-primary ring-offset-2 ring-offset-background-light dark:ring-offset-background-dark">
+<div class="absolute inset-0 bg-primary/5 dark:bg-primary/20 pointer-events-none"></div>
+<div class="flex justify-between items-start z-10">
+<span class="text-primary font-bold text-sm">Taille</span>
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+</div>
+<div class="z-10 mt-auto">
+<p class="text-primary dark:text-primary-300 text-3xl font-bold tracking-tight">70 <span class="text-lg font-medium opacity-60">cm</span></p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-sm border border-gray-100 dark:border-slate-700 aspect-[4/3] flex flex-col justify-between p-4 transition-all active:scale-95">
+<div class="absolute inset-0 opacity-10 dark:opacity-20 pointer-events-none bg-cover bg-center" data-alt="Abstract line pattern representing fabric weave" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnKgpjrMHsocx2x6_za9Obrt_dmoMIurBN5nOjezfUO5Ao_HgQBdIWxTWkRnoLhJ72CK1ORNyzIRj61Qk41HP70Hfcjb6Tq4HBPLYWEoT8j6lsqGTmcNvLi7aAGEnED6adY7ng_aLSyRl18tCYUc2C-7hmq5_JUIOoSAi13N7W_V-SGlRJWKz8qZid6-BUssMr3ztZiCyjOc6Fip-r_4DLgwWzqW5qK410RSmDV--TwMQLMIQgOriOIkT4W8TA2W9TF75y27DdhHu5");'>
+</div>
+<div class="flex justify-between items-start z-10">
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium">Hanches</span>
+<span class="material-symbols-outlined text-primary/60 text-[20px]">accessibility_new</span>
+</div>
+<div class="z-10 mt-auto">
+<p class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight">98 <span class="text-lg font-medium text-slate-400">cm</span></p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-sm border border-gray-100 dark:border-slate-700 aspect-[4/3] flex flex-col justify-between p-4 transition-all active:scale-95">
+<div class="absolute inset-0 opacity-10 dark:opacity-20 pointer-events-none bg-cover bg-center" data-alt="Abstract line pattern representing fabric weave" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBBHvIRzRAb8NBunEkfbGcn4RWA07i3gtbajCM-Wnv37jBw0WpsVN5The1_YbWIRkEHtASlMzCA-7AHX-I2Qff56iQPhftjZEnDhFF-TlYCkONOXF4Xob1WLionRutaXr2kPbAdwOIXzL2oURFXYZi6uZcSmq_4fWOnXhHbAWi9xAgwfK_W-iSTxlpjuUETzv5o9Phavbg82yWaWD27EzOHOhmRZkAeM9tMNT6Scp1dYGOJHEEu4DsyVUr8smc3fjY9Q9wFfcIhWJSg");'>
+</div>
+<div class="flex justify-between items-start z-10">
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium">Bras</span>
+<span class="material-symbols-outlined text-primary/60 text-[20px]">pan_tool</span>
+</div>
+<div class="z-10 mt-auto">
+<p class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight">56 <span class="text-lg font-medium text-slate-400">cm</span></p>
+</div>
+</div>
+<button class="group relative overflow-hidden rounded-2xl bg-gray-50 dark:bg-slate-800/50 border-2 border-dashed border-gray-200 dark:border-slate-700 aspect-[4/3] flex flex-col items-center justify-center p-4 transition-all hover:bg-gray-100 dark:hover:bg-slate-800">
+<div class="flex flex-col items-center gap-2 text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">add_circle</span>
+<span class="text-sm font-medium">Ajouter</span>
+</div>
+</button>
+</div>
+<div class="h-10"></div>
+</div>
+<div class="absolute bottom-6 right-6 z-40">
+<button class="flex items-center justify-center size-14 rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:shadow-xl hover:scale-105 transition-all active:scale-95">
+<span class="material-symbols-outlined text-2xl">edit_square</span>
+</button>
+</div>
+</div>
+
+</body></html>
