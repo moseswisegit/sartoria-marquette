@@ -1,0 +1,19 @@
+{
+  "name": "sartoria-maquettes",
+  "version": "1.0.0",
+  "description": "Galerie des maquettes de l'application Sartoria",
+  "scripts": {
+    "screenshots": "node generate-screenshots.js",
+    "install-deps": "npm install puppeteer"
+  },
+  "keywords": [
+    "sartoria",
+    "maquettes",
+    "prototype"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}

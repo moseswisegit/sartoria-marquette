@@ -42,7 +42,53 @@ Si vous voyez une erreur 404 :
 - Vérifiez que tous les fichiers sont bien commités et pushés
 - Videz le cache de votre navigateur (Ctrl+F5 ou Cmd+Shift+R)
 
+## 📸 Génération des Captures d'Écran
+
+⚠️ **Important** : Les captures doivent être générées **localement** avant de publier sur GitHub. GitHub Pages ne peut pas exécuter de scripts Node.js.
+
+### 🎯 Méthode Recommandée : Assistant Navigateur
+
+1. **Ouvrir l'assistant** :
+   ```bash
+   open generate-screenshots-browser.html
+   # Ou double-cliquez sur le fichier
+   ```
+
+2. **Suivre les instructions** :
+   - Cliquez sur "Ouvrir" pour chaque maquette
+   - Faites la capture d'écran
+   - Enregistrez comme `screen.png`
+   - Marquez comme "fait" dans l'assistant
+
+### Méthode Alternative : Script Shell
+
+```bash
+# Ouvrir tous les fichiers HTML en une fois
+./open-all-html.sh
+
+# Puis faire les captures manuellement
+# Mac: Cmd + Shift + 4
+# Windows: Win + Shift + S
+```
+
+### Méthode Automatique (Si Puppeteer installé)
+
+```bash
+# 1. Installer Puppeteer (une seule fois)
+npm install puppeteer
+
+# 2. Générer toutes les captures
+npm run screenshots
+
+# 3. Commit et push
+git add .
+git commit -m "Add screenshots"
+git push origin master
+```
+
+📖 Voir `generate-screenshots-local.md` pour plus de détails.
+
 ## 📝 Notes
 
 - Les fichiers `screen.png` vides afficheront un placeholder "Image non disponible"
-- Pour ajouter des captures d'écran, ouvrez chaque `code.html` et faites une capture d'écran
+- Format recommandé : 390 x 844 pixels (format mobile)

@@ -849,15 +849,38 @@
             card.className = 'screen-card';
 
             // Encoder correctement le nom du dossier avec les caractères Unicode
-            // encodeURIComponent encode tous les caractères spéciaux y compris &, espaces, etc.
+            // encodeURIComponent encode tous les caractères spéciaux y compris &, espaces, accents, etc.
             const encodedFolder = encodeURIComponent(screen.folder);
             const imagePath = `${basePath}/${encodedFolder}/screen.png`;
             const htmlPath = `${basePath}/${encodedFolder}/code.html`;
 
+            // Placeholder SVG pour les images manquantes
+            const placeholderSvg = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22240%22%3E%3Crect fill=%22%23f7fafc%22 width=%22320%22 height=%22240%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23a0aec0%22 font-family=%22sans-serif%22 font-size=%2214%22%3EImage non disponible%3C/text%3E%3C/svg%3E';
+
+            // Créer l'image avec gestion d'erreur améliorée
+            const img = document.createElement('img');
+            img.className = 'screen-image';
+            img.alt = screen.name;
+            img.loading = 'lazy';
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.3s';
+
+            // Gestionnaire d'erreur
+            img.onerror = function () {
+                this.onerror = null; // Éviter les boucles infinies
+                this.src = placeholderSvg;
+                this.style.opacity = '1';
+            };
+
+            // Gestionnaire de chargement réussi
+            img.onload = function () {
+                this.style.opacity = '1';
+            };
+
+            // Démarrer le chargement
+            img.src = imagePath;
+
             card.innerHTML = `
-                <img src="${imagePath}" alt="${screen.name}" class="screen-image" 
-                     onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22240%22%3E%3Crect fill=%22%23f7fafc%22 width=%22320%22 height=%22240%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23a0aec0%22 font-family=%22sans-serif%22 font-size=%2214%22%3EImage non disponible%3C/text%3E%3C/svg%3E';"
-                     loading="lazy">
                 <div class="screen-info">
                     <div class="screen-name">${screen.name}</div>
                     <div class="screen-actions">
@@ -866,6 +889,9 @@
                     </div>
                 </div>
             `;
+
+            // Insérer l'image au début de la carte
+            card.insertBefore(img, card.firstChild);
 
             return card;
         }
