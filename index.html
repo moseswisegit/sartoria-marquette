@@ -581,8 +581,8 @@
             </div>
 
             <div class="stats">
-                <div class="stat-card" id="totalScreens">Total: 39 écrans</div>
-                <div class="stat-card" id="visibleScreens">Affichés: 39</div>
+                <div class="stat-card" id="totalScreens">Total: 44 écrans</div>
+                <div class="stat-card" id="visibleScreens">Affichés: 44</div>
             </div>
 
             <div class="mode-toggle">
@@ -691,6 +691,7 @@
                 { name: "Onboarding - Marketplace", folder: "onboarding_-_marketplace" },
                 { name: "Onboarding - Essayage Virtuel 3D", folder: "onboarding_-_essayage_virtuel_3d" },
                 { name: "Accueil / Marketplace", folder: "accueil_/_marketplace" },
+                { name: "Recherche Avancée Marketplace", folder: "recherche_avancée_marketplace" },
                 { name: "Prise de Mesures - Instructions", folder: "prise_de_mesures_-_instructions" },
                 { name: "Prise de Mesures - Upload Photo", folder: "prise_de_mesures_-_upload_photo" },
                 { name: "Prise de Mesures - Résumé IA", folder: "prise_de_mesures_-_résumé_ia" },
@@ -702,6 +703,8 @@
                 { name: "Suivi de Commande - Timeline", folder: "suivi_de_commande_-_timeline" },
                 { name: "Calendrier des Rendez-vous", folder: "calendrier_des_rendez-vous" },
                 { name: "Messagerie - Chat", folder: "messagerie_-_chat" },
+                { name: "Centre de Notifications", folder: "centre_de_notifications" },
+                { name: "Notation & Avis Tailleur", folder: "notation_&_avis_tailleur" },
                 { name: "Essayage Virtuel 3D Immersif", folder: "essayage_virtuel_3d_immersif" },
                 { name: "Sélecteur de Textures HD", folder: "sélecteur_de_textures_hd" },
                 { name: "Analyse & Conseils Morpho-Style", folder: "analyse_&_conseils_morpho-style" }
@@ -715,6 +718,9 @@
                 { name: "Gestion des Commandes Tailleur", folder: "gestion_des_commandes_tailleur" },
                 { name: "CRM Tailleur - Fiches Clients", folder: "crm_tailleur_-_fiches_clients" },
                 { name: "Détails Profil Tailleur", folder: "détails_profil_tailleur" },
+                { name: "Portfolio Tailleur", folder: "portfolio_tailleur" },
+                { name: "Gestion Stock Tissus Détaillée", folder: "gestion_stock_tissus_détaillée" },
+                { name: "Centre de Notifications", folder: "centre_de_notifications" },
                 { name: "Facture de Paiement PDF", folder: "facture_de_paiement_pdf" }
             ],
             admin: [
@@ -843,14 +849,15 @@
             card.className = 'screen-card';
 
             // Encoder correctement le nom du dossier avec les caractères Unicode
-            // Utiliser encodeURIComponent pour chaque segment du chemin
+            // encodeURIComponent encode tous les caractères spéciaux y compris &, espaces, etc.
             const encodedFolder = encodeURIComponent(screen.folder);
             const imagePath = `${basePath}/${encodedFolder}/screen.png`;
             const htmlPath = `${basePath}/${encodedFolder}/code.html`;
 
             card.innerHTML = `
                 <img src="${imagePath}" alt="${screen.name}" class="screen-image" 
-                     onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22240%22%3E%3Crect fill=%22%23f7fafc%22 width=%22320%22 height=%22240%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23a0aec0%22 font-family=%22sans-serif%22 font-size=%2214%22%3EImage non disponible%3C/text%3E%3C/svg%3E';">
+                     onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22240%22%3E%3Crect fill=%22%23f7fafc%22 width=%22320%22 height=%22240%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23a0aec0%22 font-family=%22sans-serif%22 font-size=%2214%22%3EImage non disponible%3C/text%3E%3C/svg%3E';"
+                     loading="lazy">
                 <div class="screen-info">
                     <div class="screen-name">${screen.name}</div>
                     <div class="screen-actions">
