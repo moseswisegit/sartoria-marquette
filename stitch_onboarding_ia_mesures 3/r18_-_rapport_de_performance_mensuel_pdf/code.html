@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a73b7",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111a21",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark text-[#111517]text-white antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden pb-24">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-10 flex items-center bg-whitebg-background-dark border-b border-gray-200border-gray-800 p-4 justify-between">
+<div class="text-primary flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-[28px]">chevron_left</span>
+</div>
+<h1 class="text-[#111517]text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Rapport de Performance</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 hover:bg-gray-100hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-primary">ios_share</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex flex-col gap-4 py-4">
+<!-- SectionHeader: Boutique Context -->
+<div class="px-4">
+<h2 class="text-primary text-[22px] font-bold leading-tight tracking-[-0.015em]">Octobre 2023</h2>
+<p class="text-gray-500text-gray-400 font-medium">Boutique Sartoria - Paris IX</p>
+</div>
+<!-- Stats: High Level Overview -->
+<div class="flex flex-wrap gap-3 px-4">
+<div class="flex min-w-[150px] flex-1 flex-col gap-1 rounded-xl p-5 border border-gray-200border-gray-800 bg-whitebg-gray-900 shadow-sm">
+<p class="text-gray-500text-gray-400 text-sm font-medium">Chiffre d'affaires</p>
+<p class="text-[#111517]text-white tracking-tight text-2xl font-bold">12,450 €</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-green-600 text-sm">trending_up</span>
+<p class="text-green-600 text-sm font-bold">+12.5%</p>
+</div>
+</div>
+<div class="flex min-w-[150px] flex-1 flex-col gap-1 rounded-xl p-5 border border-gray-200border-gray-800 bg-whitebg-gray-900 shadow-sm">
+<p class="text-gray-500text-gray-400 text-sm font-medium">Commandes</p>
+<p class="text-[#111517]text-white tracking-tight text-2xl font-bold">142</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-green-600 text-sm">trending_up</span>
+<p class="text-green-600 text-sm font-bold">+5.2%</p>
+</div>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="flex flex-col gap-6 px-4 py-2">
+<!-- Line Chart: CA Evolution -->
+<div class="flex flex-col gap-3 p-5 rounded-xl border border-gray-200border-gray-800 bg-whitebg-gray-900 shadow-sm">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-gray-500text-gray-400 text-sm font-medium">Évolution du CA</p>
+<p class="text-primary tracking-tight text-2xl font-bold">12,450 €</p>
+</div>
+<div class="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold uppercase tracking-wider">Mois / Semaine</div>
+</div>
+<div class="flex flex-col gap-4 mt-2">
+<svg fill="none" height="120" preserveaspectratio="none" viewbox="0 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z" fill="url(#paint0_linear)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#1a73b7" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#1a73b7" stop-opacity="0.3"></stop>
+<stop offset="1" stop-color="#1a73b7" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex justify-between px-2">
+<p class="text-gray-400 text-xs font-bold">Sem. 01</p>
+<p class="text-gray-400 text-xs font-bold">Sem. 02</p>
+<p class="text-gray-400 text-xs font-bold">Sem. 03</p>
+<p class="text-gray-400 text-xs font-bold">Sem. 04</p>
+</div>
+</div>
+</div>
+<!-- Bar Chart: Orders -->
+<div class="flex flex-col gap-3 p-5 rounded-xl border border-gray-200border-gray-800 bg-whitebg-gray-900 shadow-sm">
+<p class="text-gray-500text-gray-400 text-sm font-medium">Volume de commandes</p>
+<div class="grid grid-cols-4 items-end gap-6 h-32 px-2 mt-2">
+<div class="flex flex-col items-center gap-2 h-full justify-end">
+<div class="bg-primary/20 rounded-t w-full h-[60%] border-t-2 border-primary"></div>
+<p class="text-gray-400 text-xs font-bold">S1</p>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end">
+<div class="bg-primary/20 rounded-t w-full h-[85%] border-t-2 border-primary"></div>
+<p class="text-gray-400 text-xs font-bold">S2</p>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end">
+<div class="bg-primary/20 rounded-t w-full h-[40%] border-t-2 border-primary"></div>
+<p class="text-gray-400 text-xs font-bold">S3</p>
+</div>
+<div class="flex flex-col items-center gap-2 h-full justify-end">
+<div class="bg-primary/20 rounded-t w-full h-[95%] border-t-2 border-primary"></div>
+<p class="text-gray-400 text-xs font-bold">S4</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Products -->
+<div class="px-4 py-2">
+<h3 class="text-[#111517]text-white text-lg font-bold leading-tight tracking-[-0.015em] mb-4">Top 3 Produits</h3>
+<div class="flex flex-col gap-3">
+<!-- Product 1 -->
+<div class="flex items-center gap-4 p-3 rounded-xl bg-whitebg-gray-900 border border-gray-200border-gray-800">
+<div class="size-14 rounded-lg bg-gray-100bg-gray-800 flex items-center justify-center shrink-0 overflow-hidden">
+<img class="object-cover size-full" data-alt="Veste de costume élégante en laine" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTzN34OTOZtU7ybIHEYKwlDkpvSgEAmUfgBZZWVyP4QoiIAqulbZEOCm4tEcoU5g-F84b3vwh2WDLifB-DVAk0SO_NLSB44byD9xLMyd8UGI5yNRcUMkYd_WDW3Po0I7LP0neOoXXbEoMWorOJGefy5bRX2mVhvtfLAMrBO7zHSMJMp3K2RXS9ZQdIpPMmMGs6Qknn8GdcF0EEpcPg6D8yL8TZUf6uMZ7LJU50S0JJ-Ao4NqFTMRpeSjsUSpDLQS9DeZbDeHjwKKuv"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">Veste Signature Marine</p>
+<p class="text-xs text-gray-500">42 unités vendues</p>
+</div>
+<div class="text-right shrink-0">
+<p class="text-sm font-bold text-primary">4,580 €</p>
+<p class="text-[10px] text-green-600 font-bold">+8%</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="flex items-center gap-4 p-3 rounded-xl bg-whitebg-gray-900 border border-gray-200border-gray-800">
+<div class="size-14 rounded-lg bg-gray-100bg-gray-800 flex items-center justify-center shrink-0 overflow-hidden">
+<img class="object-cover size-full" data-alt="Chemise blanche cintrée de haute qualité" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYooRYk06wgzp37BcAmSOZnOwtI60CUr-IFPujN03yqs2s4WDKcTyuOmVAPRjrjUu3R2XuZgWqLgq1mVuXQ4KWXm4jmjPNX0POywjIs_FBVGdLqJtEWOb95MJCXzFTs2QM9MTWuERzGvfnRdPHw2e7vdh7-tnsuRgf4LMsUWF7Hb0f4gDa8R3_0XGAvd8lDpQc_oof6rlI9KfTvtOcMMu7o3BIexVD8RT24Sg9wujP23Slz3UIbm8AcgMl2VqoRSmCAZg9QSGnrPHZ"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">Chemise Popeline Blanche</p>
+<p class="text-xs text-gray-500">38 unités vendues</p>
+</div>
+<div class="text-right shrink-0">
+<p class="text-sm font-bold text-primary">2,240 €</p>
+<p class="text-[10px] text-green-600 font-bold">+15%</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="flex items-center gap-4 p-3 rounded-xl bg-whitebg-gray-900 border border-gray-200border-gray-800">
+<div class="size-14 rounded-lg bg-gray-100bg-gray-800 flex items-center justify-center shrink-0 overflow-hidden">
+<img class="object-cover size-full" data-alt="Pantalon de costume gris moderne" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3ryT2QzN1o5KpvZNFePKp8ICvcg43gpVR29Lh3xpFM1yGxwXeVYGfhmFoiOb4mPlzeXXbILmjvCxhHfMQJ1Kpxww5yGZzS-gWyM_HYPvUqHOI1GBvX9uJTLB8Mi9RfrAmqVyOzp2zBv-2GC3ekJgO2Gsb4TrralxW3cXC0M7AkOu85XpgEBRlc2efgY8MuEX2H7JWtkJ_9R0b8syO1N-UKUcdEKzf8GT3kFswMpjWbVxU9QbDWf6riDE8cznbOv120_fxnGUyQYpd"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">Pantalon Slim Gris Anthracite</p>
+<p class="text-xs text-gray-500">29 unités vendues</p>
+</div>
+<div class="text-right shrink-0">
+<p class="text-sm font-bold text-primary">1,950 €</p>
+<p class="text-[10px] text-red-500 font-bold">-2%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Satisfaction Section -->
+<div class="px-4 py-2">
+<h3 class="text-[#111517]text-white text-lg font-bold leading-tight mb-4">Satisfaction &amp; Retours</h3>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-5 rounded-xl border border-gray-200border-gray-800 bg-whitebg-gray-900 text-center">
+<p class="text-gray-500 text-xs font-medium uppercase mb-2">Note Moyenne</p>
+<p class="text-2xl font-bold mb-1">4.8/5</p>
+<div class="flex justify-center text-yellow-400">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star_half</span>
+</div>
+</div>
+<div class="p-5 rounded-xl border border-gray-200border-gray-800 bg-whitebg-gray-900 text-center">
+<p class="text-gray-500 text-xs font-medium uppercase mb-2">Taux de retours</p>
+<p class="text-2xl font-bold text-red-500 mb-1">3.4%</p>
+<p class="text-[10px] text-green-600 font-bold">Stable vs Sept.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Action Buttons -->
+<div class="fixed bottom-0 left-0 right-0 bg-whitebg-background-dark border-t border-gray-200border-gray-800 p-4 flex flex-col gap-3">
+<button class="w-full bg-primary text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+                Télécharger en PDF
+            </button>
+<button class="w-full bg-whitebg-gray-900 text-primary border border-primary font-bold py-3 rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined">mail</span>
+                Envoyer par Email
+            </button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>R06 - Inventaire &amp; Gestion Stock</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3211d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark font-display text-[#121118]text-white transition-colors duration-200">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-50 bg-white/80bg-background-dark/80 backdrop-blur-md border-b border-[#dddbe6]border-white/10 px-4 py-3">
+<div class="flex items-center justify-between">
+<div>
+<h1 class="text-2xl font-bold tracking-tight">Inventaire</h1>
+<p class="text-sm text-[#686189]text-gray-400">452 articles au total</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full hover:bg-gray-100hover:bg-white/10">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+<button class="p-2 rounded-full hover:bg-gray-100hover:bg-white/10">
+<span class="material-symbols-outlined text-2xl">barcode_scanner</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Stats -->
+<div class="flex flex-wrap gap-3 p-4">
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-xl p-4 bg-whitebg-white/5 border border-[#dddbe6]border-white/10 shadow-sm">
+<p class="text-[#686189]text-gray-400 text-xs font-semibold uppercase tracking-wider">Valeur Stock</p>
+<p class="text-2xl font-bold leading-tight">24,500€</p>
+</div>
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-xl p-4 bg-red-50bg-red-900/10 border border-red-100border-red-900/20 shadow-sm">
+<p class="text-red-600text-red-400 text-xs font-semibold uppercase tracking-wider">Alertes Stock</p>
+<p class="text-red-600text-red-400 text-2xl font-bold leading-tight">12</p>
+</div>
+</div>
+<!-- Low Stock Alerts Section -->
+<div class="py-2">
+<h3 class="text-lg font-bold px-4 pb-3">Alertes Stock Bas</h3>
+<div class="flex overflow-x-auto no-scrollbar px-4 gap-3">
+<!-- Alert Card 1 -->
+<div class="flex-none w-64 p-3 rounded-xl bg-whitebg-white/5 border border-[#dddbe6]border-white/10 flex gap-3 items-center">
+<div class="w-16 h-16 rounded-lg bg-cover bg-center shrink-0 border border-gray-100border-white/10" data-alt="Close up of a car battery" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWbsVD8s0rzE6wD1YO6YXobbmFgPGuedTvEV305_5kUHfqS3uwuKyPZSUUpU2lpbu-RC9SLmNvVu0q_mAMUd8vvRFtAi638hmRq6Np0IcROGHxaxxeJGkX4pCfun_-fssVH4TNo7UdvHoqJYB4qpjDzhVlMA_mud2dfbYIuA_TJS81WQWN98MJT92cdjgpd__0vTSDMjcv-OCVb-YMAxbYsqw077KWq45OLitOHMIt6JufuYDCmHcfdLRI0Zk_eS4Zttdfq8dJZNAq');"></div>
+<div class="flex flex-col overflow-hidden">
+<p class="font-bold text-sm truncate">Batterie 12V Pro</p>
+<p class="text-red-500 text-xs font-bold mb-1">Reste: 2 unités</p>
+<div class="w-full bg-gray-200bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-red-500 h-full" style="width: 20%"></div>
+</div>
+</div>
+</div>
+<!-- Alert Card 2 -->
+<div class="flex-none w-64 p-3 rounded-xl bg-whitebg-white/5 border border-[#dddbe6]border-white/10 flex gap-3 items-center">
+<div class="w-16 h-16 rounded-lg bg-cover bg-center shrink-0 border border-gray-100border-white/10" data-alt="Bottle of professional engine oil" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALj_GhXhrhsKXgxqlxeSmX6-oMMYzIsBDy9SB6cij3ejDqFyFMOf86kqpuovyl4wHaHdj4E5jz5OV6VmliLihtgaoiGarkMzzE79riaDDkz9dmrB2rISWnVMCGYl0JH-duVskZMYil4faburBQ2Y62xcqXrcYIUsqfxz4pVnDQRssYhDlzzqc-FpGLVItY2t0CYuG3UUkY6NaAzhIBDISNz-U5tQNW6GOQgnCxal6gm_z1nDJf41ENu0HZQ9pJXMGC7QHuWTeebfrY');"></div>
+<div class="flex flex-col overflow-hidden">
+<p class="font-bold text-sm truncate">Huile Moteur 5W30</p>
+<p class="text-orange-500 text-xs font-bold mb-1">Reste: 5 unités</p>
+<div class="w-full bg-gray-200bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-orange-500 h-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Inventory List -->
+<div class="px-4 pt-6 pb-24">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold">Tous les articles</h3>
+<button class="text-primary font-semibold text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">filter_list</span> Filtrer
+            </button>
+</div>
+<div class="space-y-3">
+<!-- Product Item 1 -->
+<div class="bg-whitebg-white/5 border border-[#dddbe6]border-white/10 rounded-xl p-4 shadow-sm">
+<div class="flex gap-4 items-start mb-4">
+<div class="w-16 h-16 rounded-lg bg-cover bg-center shrink-0" data-alt="Set of new car tires" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBIOJ2tsKLw0zSWU0mpv6K--Du3kHwpQ4iDGqY2NbRDkUuhvx7z5eiswZvz50o6qe8_HoaX-T144IAofOISxiv6mgdMtcb0_yIhXOYUFVCaJevpaedwdJ8MR9WW7sTPue0Id-mFqEeE7kxGf5svzf1SKTk9UGjoUEnRE7EMAcAObr1MQVH2xTc-SDd8wtrtrTvL_rNhjGqZXOmwArqWr-giROIj7-3Wwhqtd0EJwzWtybZ1uB4uJ-zRWJkG4KJOv9rSTOHD2CemQq3S');"></div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-base truncate">Pneu Michelin Primacy</h4>
+<span class="text-sm font-medium text-[#686189]text-gray-400">89€</span>
+</div>
+<p class="text-xs text-[#686189]text-gray-400 mb-2 truncate">SKU: MIC-P4-18R</p>
+<div class="flex items-center gap-2">
+<div class="flex-1 h-2 bg-gray-100bg-white/10 rounded-full overflow-hidden">
+<div class="bg-green-500 h-full" style="width: 85%"></div>
+</div>
+<span class="text-[10px] font-bold text-green-600 uppercase">Sain</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-[#dddbe6]border-white/10">
+<span class="text-sm font-medium">Quantité en stock</span>
+<div class="flex items-center gap-4 bg-background-lightbg-white/10 p-1 rounded-lg">
+<button class="w-8 h-8 flex items-center justify-center bg-whitebg-background-dark rounded shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-xl">remove</span>
+</button>
+<span class="text-base font-bold min-w-[24px] text-center">34</span>
+<button class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Item 2 -->
+<div class="bg-whitebg-white/5 border border-[#dddbe6]border-white/10 rounded-xl p-4 shadow-sm">
+<div class="flex gap-4 items-start mb-4">
+<div class="w-16 h-16 rounded-lg bg-cover bg-center shrink-0" data-alt="Vehicle brake disc component" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPFzzUzsDj2AoHQqY2PJCELkL6kARFQ3369tew9vV_V4nZZYoq8npo3gdyjNshK9-yzo8vHZVmYOC6AzQqZ7vSgzhq_uPH_xYh8s2Kdm_RFQzA5czggnRVFlDtkyig3SbcqiO60wJ7aeg1CRbSyNn3A3yRFB2132zLiiUPvjFbAkc0lBbIKDbkUtQty4-RvjGuFmwehDxBFLEl515SrSzTl7ELwO08grW80lu8glLKmiLFGoYbFLChSiicCz_iTSG81ebq6TZPJf4K');"></div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-base truncate">Plaquettes de frein Brembo</h4>
+<span class="text-sm font-medium text-[#686189]text-gray-400">45€</span>
+</div>
+<p class="text-xs text-[#686189]text-gray-400 mb-2 truncate">SKU: BRE-F45-FR</p>
+<div class="flex items-center gap-2">
+<div class="flex-1 h-2 bg-gray-100bg-white/10 rounded-full overflow-hidden">
+<div class="bg-red-500 h-full" style="width: 15%"></div>
+</div>
+<span class="text-[10px] font-bold text-red-600 uppercase">Bas</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-[#dddbe6]border-white/10">
+<span class="text-sm font-medium">Quantité en stock</span>
+<div class="flex items-center gap-4 bg-background-lightbg-white/10 p-1 rounded-lg">
+<button class="w-8 h-8 flex items-center justify-center bg-whitebg-background-dark rounded shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-xl">remove</span>
+</button>
+<span class="text-base font-bold min-w-[24px] text-center text-red-600">3</span>
+<button class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Item 3 -->
+<div class="bg-whitebg-white/5 border border-[#dddbe6]border-white/10 rounded-xl p-4 shadow-sm opacity-80">
+<div class="flex gap-4 items-start mb-4">
+<div class="w-16 h-16 rounded-lg bg-cover bg-center shrink-0 grayscale" data-alt="Abstract mechanical parts" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuASwgKo51C2KhhWD6-UzBY9AqscpdwgCnmdT_IYSNaVhG3aBBXsJ6nOelOZ8Nw_a_o-bhUNv3kXP96uZrzo-X2-pdx9SvI5daHBICChSENZ8Q3vRY0TVoKYOMPRR8e1IRKYtejuUUlRu4YclUIH7d7AEf1Qud9x3pxlOdycBpYeNm5-Q4Jw7g_tHl_79Xv97P1EEm2uPPPlM5uAXlMJbP2Lc1ijm13_svJa6UcAfooObmEcW6nCJUzkglQiDtN2UKhuo_dL4EZrA9Mh');"></div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-base truncate">Filtre à air Sport</h4>
+<span class="text-sm font-medium text-[#686189]text-gray-400">22€</span>
+</div>
+<p class="text-xs text-[#686189]text-gray-400 mb-2 truncate">SKU: FLT-SP-77</p>
+<div class="flex items-center gap-2">
+<div class="flex-1 h-2 bg-gray-100bg-white/10 rounded-full overflow-hidden">
+<div class="bg-gray-300 h-full" style="width: 0%"></div>
+</div>
+<span class="text-[10px] font-bold text-gray-500 uppercase">Rupture</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-[#dddbe6]border-white/10">
+<span class="text-sm font-medium italic text-gray-400">Besoin de réapprovisionnement</span>
+<div class="flex items-center gap-4 bg-background-lightbg-white/10 p-1 rounded-lg">
+<button class="w-8 h-8 flex items-center justify-center bg-white/50bg-background-dark/50 rounded shadow-none opacity-50" disabled="">
+<span class="material-symbols-outlined text-xl">remove</span>
+</button>
+<span class="text-base font-bold min-w-[24px] text-center text-gray-400">0</span>
+<button class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center z-40 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/90bg-background-dark/90 backdrop-blur-lg border-t border-[#dddbe6]border-white/10 pb-8 pt-3 px-6 z-50">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<div class="flex flex-col items-center gap-1 text-[#686189]text-gray-400">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined font-variation-fill">inventory_2</span>
+<span class="text-[10px] font-bold">Stock</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#686189]text-gray-400">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[10px] font-medium">Commandes</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#686189]text-gray-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Réglages</span>
+</div>
+</div>
+</div>
+</body></html>

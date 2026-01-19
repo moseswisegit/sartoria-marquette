@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Personnalisation de la Boutique</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3211d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark font-display text-[#121118]text-white antialiased">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-30 bg-white/80bg-background-dark/80 backdrop-blur-md border-b border-gray-200border-gray-800">
+<div class="flex items-center p-4 justify-between max-w-md mx-auto">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined cursor-pointer text-[#121118]text-white">arrow_back_ios</span>
+<span class="text-sm font-medium text-primary">Retour</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Personnalisation</h2>
+<div class="w-12"></div> <!-- Spacer for symmetry -->
+</div>
+</div>
+<main class="max-w-md mx-auto pb-32">
+<!-- Section: Visuals -->
+<div class="mt-4">
+<h3 class="text-gray-500text-gray-400 text-xs font-bold uppercase tracking-wider px-4 pb-2 pt-4">Visuels</h3>
+<!-- Banner Upload -->
+<div class="@container">
+<div class="px-4 py-3">
+<div class="relative bg-cover bg-center flex flex-col justify-end overflow-hidden bg-gray-200bg-gray-800 rounded-xl min-h-[180px] border border-gray-100border-gray-700 shadow-sm" data-alt="Banner showing a modern tech store interior" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0hOElcwn3GOWi-8P4rUFSTPCxyGSfT_KAr-YDeNbdNGyPrCX-PfyouH-yhtJv-sJ6BHPTU55SInchZYI0SeFWFsBZyeL61Ig2689x0LzPz1E7qW3GRKksa1oKP59yAyvpCcedkIoNkvnA3x4Wq11oyI5xPSKkR0nEwB9DAoR5eaTTNryZ7QuaseVpLlL0-XPxJoM5wirMVpRw6GjS6ZObK1FbBql7qVVT7BWNbAdcMspVt4UEFAj_-LfNpv_YgSsal--pC7_RAizF");'>
+<div class="absolute top-4 right-4">
+<button class="bg-white/20 backdrop-blur-md text-white p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+</button>
+</div>
+<div class="flex p-4">
+<p class="text-white text-lg font-bold leading-tight">Bannière de la boutique</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Logo Upload -->
+<div class="flex items-center gap-4 bg-whitebg-gray-900 mx-4 mt-2 p-4 rounded-xl border border-gray-100border-gray-700 shadow-sm justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl h-14 w-14 border border-gray-200border-gray-700" data-alt="Modern geometric shop logo icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDFnt5n3l1aeYjNodNPlxBNFKg57wIZ--TjS9wlxkNoX9ZrcfyUpjBWRUsdDSEswbkw1a0g_klCqsD9uOmVeM0AmIdu4fuBycpFA7sc6DsFA9oTLyI2JwC1AIION7aS6eRndFvovAIhJayTLqFn1JM_okfly8H-lfI7GPoG6_3_raRgENg6-zxhe5rzxuh3trmmpiWUzpr8sySDwyNVFB2drj2lH5PqswcFFqj115W4ehRm3UZ0DKrGylcwpMMV8XpAUV_lTRpW9Oi0");'></div>
+<div>
+<p class="text-[#121118]text-white text-base font-semibold">Logo</p>
+<p class="text-gray-500 text-xs">Format carré recommandé</p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-9 px-4 bg-primary/10 text-primary text-sm font-semibold hover:bg-primary/20 transition-colors">
+<span class="truncate">Modifier</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Section: Informations -->
+<div class="mt-6">
+<h3 class="text-gray-500text-gray-400 text-xs font-bold uppercase tracking-wider px-4 pb-2 pt-4">Informations de base</h3>
+<div class="px-4 space-y-4">
+<div class="space-y-1.5">
+<label class="text-sm font-medium text-gray-700text-gray-300 ml-1">Nom de la boutique</label>
+<input class="w-full rounded-xl border-gray-200border-gray-700bg-gray-900text-white focus:border-primary focus:ring-primary h-12 px-4 text-base shadow-sm" type="text" value="ElectroHub Paris"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-sm font-medium text-gray-700text-gray-300 ml-1">À propos de nous</label>
+<textarea class="w-full rounded-xl border-gray-200border-gray-700bg-gray-900text-white focus:border-primary focus:ring-primary p-4 text-base shadow-sm" rows="4">Spécialiste du matériel high-tech reconditionné en plein cœur de Paris. Qualité garantie et service client premium.</textarea>
+<p class="text-right text-[10px] text-gray-400 uppercase font-semibold">108 / 500 caractères</p>
+</div>
+</div>
+</div>
+<!-- Section: Marketplace Preview -->
+<div class="mt-6">
+<div class="flex items-center justify-between px-4 pb-2 pt-4">
+<h3 class="text-gray-500text-gray-400 text-xs font-bold uppercase tracking-wider">Aperçu Marketplace</h3>
+<span class="text-primary text-xs font-bold">LIVE</span>
+</div>
+<div class="px-4">
+<!-- Shop Preview Card Card -->
+<div class="bg-whitebg-gray-900 rounded-2xl overflow-hidden border border-gray-100border-gray-800 shadow-xl">
+<div class="h-32 w-full bg-cover bg-center" data-alt="Preview of the store banner" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzUjUeLv4S9d-CLXCOv4lN6VJBTR9zeBWXzVjgy5rwv4gWphWjY_NNQWv5YJYT_r4ntvD0QEun0FraDjE6b2ebKYpv44p7ERYU5CWpDahGjRyLHLSRviRpPKXDH3e2PfT6lT_OBv_26fEulumm2-BYdIdKjWVUvUwVmnn8sPiz84JuHwOQxJvUe1WMy9djSGGpe4QU1k9r93cwGHViORM2BbAYxge2s2BUA3irLlZGAz0KRsyPad8Qo1aVzcl2VWHEoEU3CvukMm2t");'>
+</div>
+<div class="p-4 relative flex flex-col items-center">
+<div class="absolute -top-10 border-4 border-whiteborder-gray-900 rounded-2xl overflow-hidden shadow-md">
+<div class="h-16 w-16 bg-cover bg-center" data-alt="Preview of the shop logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDkv5Fb7UEt0i-nMQUVVHeZSmcijscOyCwQFTd5_oha6B-wYeY8bw6V3l348Iu70BF9tm7qhHBGzwXOrl8l7S_bDe012-TcFqFeBoJO6V2-Vjlv9RC1YVYqZBUMau_pRwpKpHvaSRSC7LWjYcXzBs55EYEzshEMusyrLzfEDKVx5IWeduSBY11y_zvw3D1c6F3hkCYf2CYlVENE99f01cNWCcEk3JN7CszFkRa9Ud0abvZSXbqYxsh-XAR6sd9I8iOj1n0GCAwOTfEI");'></div>
+</div>
+<div class="mt-8 text-center w-full">
+<h4 class="text-lg font-bold text-gray-900text-white">ElectroHub Paris</h4>
+<div class="flex items-center justify-center gap-1 mt-1">
+<span class="material-symbols-outlined text-yellow-400 text-sm">star</span>
+<span class="text-sm font-medium text-gray-600text-gray-400">4.9 (124 avis)</span>
+</div>
+<p class="text-sm text-gray-500text-gray-400 mt-2 line-clamp-2">Spécialiste du matériel high-tech reconditionné en plein cœur de Paris...</p>
+</div>
+<div class="mt-4 w-full">
+<div class="h-10 bg-gray-100bg-gray-800 rounded-lg flex items-center justify-center text-sm font-semibold text-gray-400 italic">
+                                Profil public de la boutique
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar (Fixed) -->
+<div class="fixed bottom-0 inset-x-0 bg-white/90bg-background-dark/90 backdrop-blur-xl border-t border-gray-200border-gray-800 px-4 pt-4 pb-8 z-50">
+<div class="max-w-md mx-auto grid grid-cols-1 gap-3">
+<button class="w-full bg-primary text-white font-bold h-14 rounded-xl shadow-lg shadow-primary/20 active:scale-95 transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">save</span>
+                Enregistrer les modifications
+            </button>
+<p class="text-center text-[10px] text-gray-400 uppercase font-bold">Dernière modification : Aujourd'hui à 14:32</p>
+</div>
+</div>
+</body></html>

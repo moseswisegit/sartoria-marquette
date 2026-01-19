@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sélecteur de Textures HD - Sartoria</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3211d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .texture-active {
+            border: 3px solid #3211d4;
+            box-shadow: 0 0 15px rgba(50, 17, 212, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark text-white overflow-hidden">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- 3D Viewport Background (Represented by an image) -->
+<div class="absolute inset-0 z-0">
+<div class="h-full w-full bg-cover bg-center" data-alt="3D fashion avatar mannequin standing in a modern studio" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtgV_h409Zf_VZo_klgCNUfr7zZf5xGzwSFybI6b4sS-5XfS3mJ1ZQFsREeUbrHITcUDD5sDrKuxdgi88KwQPm1fq-bLTzNeFdfKExJof-kFiPvEto7O6B0SeZH8U8sy-GqS6iLCcnOGMqvYpRDLJSQsWMYCdAEY7cJJyfAEIYfdrihe1acaWHsXlkYqYF1zSJFnLrohE84Qr3L1rO6BmH-SyTha4cGxLds5oas02V6kpuwxPB0tWFalnUF7XE1YvJu0uyAOfzRxb7');">
+<!-- Overlay for depth -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-background-dark/90"></div>
+</div>
+</div>
+<!-- Top Navigation -->
+<nav class="relative z-10 flex items-center bg-transparent p-4 pb-2 justify-between">
+<div class="text-white flex size-12 shrink-0 items-center cursor-pointer">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center font-display">Sélecteur de Textures</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex size-12 items-center justify-center rounded-lg bg-black/20 backdrop-blur-md text-white">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Area (Spacers for 3D Viewport visibility) -->
+<div class="flex-1 relative z-10 flex flex-col justify-between p-4">
+<!-- 3D Navigation Controls -->
+<div class="flex flex-col items-end gap-3 mt-10">
+<div class="flex flex-col gap-0.5 overflow-hidden rounded-xl">
+<button class="flex size-12 items-center justify-center bg-background-dark/60 backdrop-blur-md text-white hover:bg-primary/40 transition-colors">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+<button class="flex size-12 items-center justify-center bg-background-dark/60 backdrop-blur-md text-white hover:bg-primary/40 transition-colors border-t border-white/10">
+<span class="material-symbols-outlined">zoom_out</span>
+</button>
+</div>
+<button class="flex size-12 items-center justify-center rounded-xl bg-background-dark/60 backdrop-blur-md text-white">
+<span class="material-symbols-outlined">3d_rotation</span>
+</button>
+</div>
+<!-- Empty Space for Avatar Focus -->
+<div class="flex-1"></div>
+</div>
+<!-- Bottom Sheet Selection Interface -->
+<div class="relative z-20 flex flex-col items-stretch bg-background-dark/95 backdrop-blur-xl border-t border-white/10 rounded-t-[2.5rem] shadow-2xl">
+<!-- Handle -->
+<button class="flex h-8 w-full items-center justify-center">
+<div class="h-1.5 w-12 rounded-full bg-white/20"></div>
+</button>
+<!-- Tabs -->
+<div class="pb-2">
+<div class="flex border-b border-white/5 px-6 gap-8 overflow-x-auto no-scrollbar">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-white pb-3 pt-4" href="#">
+<p class="text-white text-sm font-bold leading-normal tracking-[0.015em] font-display uppercase">Wax</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-white/50 pb-3 pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em] font-display uppercase">Soie</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-white/50 pb-3 pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em] font-display uppercase">Coton</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-white/50 pb-3 pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em] font-display uppercase">Linen</p>
+</a>
+</div>
+</div>
+<!-- Section Title & Info -->
+<div class="px-6 py-4 flex justify-between items-end">
+<div>
+<h3 class="text-white text-xl font-bold leading-tight font-display">Échantillons HD</h3>
+<p class="text-white/60 text-xs mt-1">Série Premium Heritage</p>
+</div>
+<div class="flex items-center gap-1 bg-primary/20 px-3 py-1 rounded-full border border-primary/30">
+<span class="material-symbols-outlined text-primary text-sm">verified</span>
+<span class="text-[10px] font-bold text-primary uppercase tracking-wider">Qualité 4K</span>
+</div>
+</div>
+<!-- Horizontal Texture Picker -->
+<div class="flex gap-4 px-6 overflow-x-auto no-scrollbar pb-6 pt-2">
+<!-- Texture 1 Active -->
+<div class="flex flex-col items-center gap-3 shrink-0">
+<div class="size-20 rounded-2xl texture-active bg-cover bg-center cursor-pointer" data-alt="Intricate blue and gold wax fabric pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDijDZ-8ihmQj-N9VeVo9_PCnninIEBg3qnZIgwyXGlE2-I4DEUuAKlYImwx4HIcFXquHut6HdIatMxEKfM_3dtDlZTUjbb92cBiMiv0lavO6lwI7p3RQNBTssPXqMn0_ShA85lhG5tjce9yRrG1tZN6UYfqAt-5FdItVveQQ8-MxsMLVT2Wu7jNoH6pGnCYXJWBaNVT_jW9CEo8SlYUqptx6-zLsDyVu35VRHmKOpEoDkHqy8ChmqsDyQ96AZtuez4V3-nd41Brve0');">
+</div>
+<div class="text-center">
+<p class="text-xs font-bold text-white">Ankara Blue</p>
+<p class="text-[10px] text-white/40">Bénin</p>
+</div>
+</div>
+<!-- Texture 2 -->
+<div class="flex flex-col items-center gap-3 shrink-0">
+<div class="size-20 rounded-2xl border-2 border-transparent bg-cover bg-center cursor-pointer" data-alt="Vibrant orange and green geometric textile pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOCagoDRdLNUWTvmhTS4maNnqyfofnUg9gx00GZaPZE4BcfUaAaa1riL3D7G3fdf1cu4rto_SPkXv-OZ-NR9HiKDeyOdNH9fTaZpD_zGpTf5r6QYCMDIIjvMdWwCm4RuWivir0jqmjSUG1eubOGHxNDGE81JOH-S7-EzYepAdLRg0yWtm5ruVyl2CCBi0cl07RsnEyh7ZM9eCEYdizhPR44VPRZHecYhe2-qAnO2gZkp3CEYLKdSB8kO1DFrFJW0U8iHsj2M8OaVEE');">
+</div>
+<div class="text-center">
+<p class="text-xs font-bold text-white/70">Sun Spirit</p>
+<p class="text-[10px] text-white/40">Ghana</p>
+</div>
+</div>
+<!-- Texture 3 -->
+<div class="flex flex-col items-center gap-3 shrink-0">
+<div class="size-20 rounded-2xl border-2 border-transparent bg-cover bg-center cursor-pointer" data-alt="Earthy brown and cream traditional pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuABenhe_mFK2Y-oPqxk1b9fiNtrwHIzGnM3O_xpKYcqiHh3SnTdmLhZnMgd4ItmADoBwjtmrRH2EET_tlJQfGfiUwS4CRzR4xFCrhTWLDajiTC50CbqKnB_uynsILwittUpkJlxBkfIvXbx2DwWcj0VBPP42RtJM1zsVh_zHZTWIsNXdKft86B454L2_e-h13EE152fKixSeInOhWNUfwVVpl8seYISSf4Ch_evuWqJGJ7ZfTLZn6cFerg_JXz4hZ4UFLsrhlzPEuQH');">
+</div>
+<div class="text-center">
+<p class="text-xs font-bold text-white/70">Terra Nova</p>
+<p class="text-[10px] text-white/40">Mali</p>
+</div>
+</div>
+<!-- Texture 4 -->
+<div class="flex flex-col items-center gap-3 shrink-0">
+<div class="size-20 rounded-2xl border-2 border-transparent bg-cover bg-center cursor-pointer" data-alt="Deep purple and black luxury fabric texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8Vkurd-FgRVvNbnyqhzrn5A2fqTLDOX6A20LYo0yHoLcUgiVhm24MI8ezL6C34xO9zrK5vx4BmTZjbqDScZy9p9GiT_E2t-crHAn7y7FvGzYbyt7raIlbTGdiHMURePKw97PGjqWxH-iMeJJJPcm-YHW4DO1-qXlPZJ3xDAGf_uE3gXmQyOXV0VuwWadDiNVLt6CNKG_Z3m51EsZmng9aDG9ZYxRryTqI6Nu08t_IY3f83mwyG2VIPW12GbXlAC2ddCIZ2N4yVF7F');">
+</div>
+<div class="text-center">
+<p class="text-xs font-bold text-white/70">Royal Night</p>
+<p class="text-[10px] text-white/40">Sénégal</p>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="px-6 pb-10 pt-2 flex gap-4 items-center">
+<button class="flex size-14 items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-white">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-bold h-14 rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-95 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">check_circle</span>
+                    Appliquer sur le Modèle
+                </button>
+</div>
+</div>
+</div>
+<!-- Hidden scrollbar style -->
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

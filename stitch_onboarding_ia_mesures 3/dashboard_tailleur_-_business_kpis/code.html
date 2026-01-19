@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sartoria Tailleur Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a73b7",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111a21",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark font-display text-slate-900text-white">
+<!-- Main Container (iOS Phone Factor) -->
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden pb-24">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-lightbg-background-dark p-4 pb-2 justify-between sticky top-0 z-50 border-b border-slate-200border-slate-800">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8" data-alt="Tailor profile picture professional portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCubepWYrSlunzLHJvo_JnHB1sf3ycj0pA8js2qI7hVKnCNntMbK5_XwmT4DxRKRjXmBiUfNWsjxv27W6V0ejxbacVdT3X0SYX3LQK_wRj2RS2AaNY21IBA_mIEkJaM8LFJqunArTX_OEGvdZO6IxTjXFuLUYD4CDbg3Svd-LVAAOkty71Ls0g4BZMorZkJVvCpL3tMWbxUcXMdfI09UI-1jEMJH6Y6I4gdASUHV6433A0ugyY2Wief9h_kBXjuG8o98LvovsdpuYqL");'>
+</div>
+</div>
+<div class="flex-1 px-3">
+<h2 class="text-slate-900text-white text-base font-bold leading-tight tracking-tight">Sartoria Dashboard</h2>
+<p class="text-[10px] text-slate-500 uppercase font-semibold tracking-widest">Atelier Premium</p>
+</div>
+<div class="flex w-12 items-center justify-end">
+<button class="relative flex cursor-pointer items-center justify-center rounded-lg h-10 w-10 bg-transparent text-slate-600text-slate-300">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 flex h-2 w-2 rounded-full bg-red-500"></span>
+</button>
+</div>
+</div>
+<!-- Section: Commandes Urgentes -->
+<div class="pt-4">
+<div class="flex items-center justify-between px-4">
+<h3 class="text-slate-900text-white text-lg font-bold leading-tight tracking-tight">Commandes Urgentes</h3>
+<span class="text-primary text-sm font-medium">Voir tout</span>
+</div>
+<!-- Carousel -->
+<div class="flex overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+<div class="flex items-stretch p-4 gap-4">
+<!-- Card 1 -->
+<div class="flex h-full w-48 flex-col gap-3 rounded-xl bg-whitebg-slate-800/50 p-3 border border-slate-200border-slate-700 shadow-sm">
+<div class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-lg flex flex-col relative" data-alt="Premium suit fabric detail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDXD_1QqtAKjFx1HmTYbie8u2x2v3dbjsFjkaDWbVvLIsnuZJ6NYTzzGhpY1KRd2eq7DqsevD_P0LxvbRImOWP_R-4wHxHO3oyDOBA1dtnDPS152z1iWMWo4VZUaFd8HLIrEUu0L0ZyHhi22dFrfttmURkaR9tI6ZstVOoSSJeV5t-Xigk0DZW5AgY_g_C7gLpdDtrn9LdKI-CoW9719hvKYMr9qFVWYlpJ1tuI2Dt8jpwXKTaY3zZCgoHJG9uTobLM4FvNBBBOHPKY");'>
+<div class="absolute top-2 right-2 px-2 py-1 bg-red-500 text-white text-[10px] font-bold rounded-full">J-2</div>
+</div>
+<div>
+<p class="text-slate-900text-white text-sm font-bold leading-normal">Jean Dupont</p>
+<p class="text-slate-500text-slate-400 text-xs font-normal leading-normal">Ajustement final • Veste</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex h-full w-48 flex-col gap-3 rounded-xl bg-whitebg-slate-800/50 p-3 border border-slate-200border-slate-700 shadow-sm">
+<div class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-lg flex flex-col relative" data-alt="Luxury blue fabric for shirt" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4mgTFJDq5J8V19XYk7mSfSlmohGQeKnzPLINh8u4ruugOHTNRXi5hCDxKLNsvOvdmyfj4zqUfW7O2j9tSYrwFy61NytJDFpBAaSvRW6zgB6nz-I3Kz_3AZ_wtkB2o3woOPiIvynDopDbENm_39zc3f7K2DstWBYcgf-fwdKXWJnI7aagVrc8FXnx-N6h6nHzWYCRI6vvMtJufAWUjo_TcOWpOVBkJmTy9_kLJ0srXCAHR1sZKusUvSKepwYJ0GXsqJDRqmfAt7_IS");'>
+<div class="absolute top-2 right-2 px-2 py-1 bg-orange-500 text-white text-[10px] font-bold rounded-full">J-3</div>
+</div>
+<div>
+<p class="text-slate-900text-white text-sm font-bold leading-normal">Marie Lefebvre</p>
+<p class="text-slate-500text-slate-400 text-xs font-normal leading-normal">Livraison • Robe Soie</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex h-full w-48 flex-col gap-3 rounded-xl bg-whitebg-slate-800/50 p-3 border border-slate-200border-slate-700 shadow-sm">
+<div class="w-full bg-center bg-no-repeat aspect-[4/3] bg-cover rounded-lg flex flex-col relative" data-alt="Measuring tape on dark fabric" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWztXzHOfw_WwvzXcukye9IrGNl99bM2OwaxPJAkKqWhhkhG5hgCl_y8cPCJprkMf16hzWOaDaFZ4err4B_mvH-K_8INkmkRBHH0Q05khQalOEd5CGaQCkR7wmCWvtz3DLi_garDjRclYxpCrsKG3TpHq-yJfy42_bxlVRKWV96qGq51i8RAcQZ0aHGRHpHRT_KqlbY9PeChpOdjqL-tJjU3hnjNR1QhN7kPgPzfstnk4RloxGfvS1JsF_oOFYTpujmzu0Q_AKxb0E");'>
+<div class="absolute top-2 right-2 px-2 py-1 bg-primary text-white text-[10px] font-bold rounded-full">J-5</div>
+</div>
+<div>
+<p class="text-slate-900text-white text-sm font-bold leading-normal">Pierre Arnaud</p>
+<p class="text-slate-500text-slate-400 text-xs font-normal leading-normal">Coupe • Costume 3P</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Statistiques -->
+<div class="px-4 pt-2">
+<h3 class="text-slate-900text-white text-lg font-bold leading-tight tracking-tight pb-4">Performance du Mois</h3>
+<div class="grid grid-cols-2 gap-4">
+<!-- KPI 1 -->
+<div class="flex flex-col gap-1 rounded-xl p-4 bg-whitebg-slate-800 border border-slate-200border-slate-700 shadow-sm">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-sm">payments</span>
+<p class="text-slate-500text-slate-400 text-xs font-medium uppercase tracking-wider leading-normal">CA Mensuel</p>
+</div>
+<p class="text-slate-900text-white tracking-tight text-xl font-bold leading-tight">12.450 €</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[#0bda5b] text-xs">trending_up</span>
+<p class="text-[#0bda5b] text-xs font-bold">+15%</p>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="flex flex-col gap-1 rounded-xl p-4 bg-whitebg-slate-800 border border-slate-200border-slate-700 shadow-sm">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-sm">shopping_cart</span>
+<p class="text-slate-500text-slate-400 text-xs font-medium uppercase tracking-wider leading-normal">Commandes</p>
+</div>
+<p class="text-slate-900text-white tracking-tight text-xl font-bold leading-tight">18</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[#0bda5b] text-xs">trending_up</span>
+<p class="text-[#0bda5b] text-xs font-bold">+2%</p>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="flex flex-col gap-1 rounded-xl p-4 bg-whitebg-slate-800 border border-slate-200border-slate-700 shadow-sm">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-sm">person_add</span>
+<p class="text-slate-500text-slate-400 text-xs font-medium uppercase tracking-wider leading-normal">Clients</p>
+</div>
+<p class="text-slate-900text-white tracking-tight text-xl font-bold leading-tight">12</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[#0bda5b] text-xs">trending_up</span>
+<p class="text-[#0bda5b] text-xs font-bold">+5%</p>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="flex flex-col gap-1 rounded-xl p-4 bg-whitebg-slate-800 border border-slate-200border-slate-700 shadow-sm">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+<p class="text-slate-500text-slate-400 text-xs font-medium uppercase tracking-wider leading-normal">Panier Moyen</p>
+</div>
+<p class="text-slate-900text-white tracking-tight text-xl font-bold leading-tight">690 €</p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-slate-400 text-xs">remove</span>
+<p class="text-slate-400 text-xs font-bold">0%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Sales Performance Graph (Visual representation) -->
+<div class="px-4 mt-6">
+<div class="bg-whitebg-slate-800 rounded-xl p-5 border border-slate-200border-slate-700 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h4 class="text-slate-900text-white text-sm font-bold">Performance des Ventes</h4>
+<p class="text-slate-500text-slate-400 text-[10px] uppercase font-bold tracking-widest mt-0.5">30 derniers jours</p>
+</div>
+<div class="flex bg-background-lightbg-background-dark p-1 rounded-lg">
+<button class="px-3 py-1 text-[10px] font-bold bg-primary text-white rounded-md shadow-sm">Semaine</button>
+<button class="px-3 py-1 text-[10px] font-bold text-slate-500">Mois</button>
+</div>
+</div>
+<!-- Mock Graph Visualization using Tailwind gradients and shapes -->
+<div class="relative h-40 w-full mt-4 flex items-end justify-between gap-1">
+<div class="flex-1 bg-primary/20 rounded-t-sm h-[30%]"></div>
+<div class="flex-1 bg-primary/30 rounded-t-sm h-[45%]"></div>
+<div class="flex-1 bg-primary/40 rounded-t-sm h-[60%]"></div>
+<div class="flex-1 bg-primary/50 rounded-t-sm h-[40%]"></div>
+<div class="flex-1 bg-primary/60 rounded-t-sm h-[75%]"></div>
+<div class="flex-1 bg-primary/70 rounded-t-sm h-[55%]"></div>
+<div class="flex-1 bg-primary rounded-t-sm h-[90%]"></div>
+<div class="flex-1 bg-primary/60 rounded-t-sm h-[65%]"></div>
+<div class="flex-1 bg-primary/40 rounded-t-sm h-[45%]"></div>
+<div class="flex-1 bg-primary/80 rounded-t-sm h-[100%]"></div>
+<div class="flex-1 bg-primary/50 rounded-t-sm h-[70%]"></div>
+<div class="flex-1 bg-primary rounded-t-sm h-[85%]"></div>
+</div>
+<div class="flex justify-between mt-2 px-1">
+<span class="text-[9px] font-bold text-slate-400">01 JAN</span>
+<span class="text-[9px] font-bold text-slate-400">15 JAN</span>
+<span class="text-[9px] font-bold text-slate-400">30 JAN</span>
+</div>
+</div>
+</div>
+<!-- Floating Action Button -->
+<div class="fixed bottom-24 right-6 z-50">
+<button class="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl">add</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/80bg-slate-900/80 backdrop-blur-md border-t border-slate-200border-slate-800 pb-8 pt-2 z-50">
+<div class="flex justify-around items-center px-4">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<span class="text-[10px] font-bold">Tableau</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400text-slate-500">
+<span class="material-symbols-outlined text-[24px]">content_cut</span>
+<span class="text-[10px] font-bold">Atelier</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400text-slate-500">
+<span class="material-symbols-outlined text-[24px]">person_outline</span>
+<span class="text-[10px] font-bold">Clients</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400text-slate-500">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span class="text-[10px] font-bold">Profil</span>
+</div>
+</div>
+<!-- iOS Home Indicator simulation -->
+<div class="flex justify-center mt-3">
+<div class="w-32 h-1.5 bg-slate-300bg-slate-700 rounded-full"></div>
+</div>
+</div>
+</div>
+</body></html>

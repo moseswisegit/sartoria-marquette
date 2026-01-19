@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding - Revendeur</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73B5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark font-display text-gray-900text-white antialiased">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-hidden">
+<div class="relative w-full h-[55vh] shrink-0">
+<div class="absolute inset-0 w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-neutral-sand/20from-primary/30via-primary/20to-neutral-sand/30 rounded-b-[2rem] overflow-hidden shadow-sm z-0 flex items-center justify-center">
+<div class="w-64 h-64 rounded-full bg-primary/10bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-9xl">store</span>
+</div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+</div>
+<div class="flex flex-1 flex-col items-center justify-between px-6 pt-8 pb-10">
+<div class="flex flex-col items-center w-full max-w-md">
+<div class="flex flex-row items-center justify-center gap-2 mb-6">
+<div class="h-2 w-2 rounded-full bg-gray-300bg-gray-700"></div>
+<div class="h-2 w-2 rounded-full bg-gray-300bg-gray-700"></div>
+<div class="h-2 w-2 rounded-full bg-gray-300bg-gray-700"></div>
+<div class="h-2 w-8 rounded-full bg-primary"></div>
+</div>
+<h1 class="text-3xl font-bold text-center mb-4 text-gray-900text-white">Marketplace Revendeur</h1>
+<p class="text-base text-center text-gray-600text-gray-400 mb-8 leading-relaxed px-2">
+            Vendez vos produits sur Sartoria ! Créez votre boutique en ligne, gérez votre catalogue et développez votre activité avec notre plateforme de marketplace.
+        </p>
+<div class="w-full space-y-4 mb-8">
+<div class="flex items-start gap-4 p-4 bg-whitebg-gray-800/50 rounded-xl border border-gray-100border-gray-800">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl">storefront</span>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900text-white mb-1">Boutique Personnalisée</h3>
+<p class="text-sm text-gray-600text-gray-400">Créez votre propre boutique avec logo, bannière et description personnalisée</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 bg-whitebg-gray-800/50 rounded-xl border border-gray-100border-gray-800">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl">inventory</span>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900text-white mb-1">Gestion Complète</h3>
+<p class="text-sm text-gray-600text-gray-400">Gérez vos produits, stocks, commandes et revenus depuis un seul endroit</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 bg-whitebg-gray-800/50 rounded-xl border border-gray-100border-gray-800">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl">trending_up</span>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900text-white mb-1">Développez Votre Business</h3>
+<p class="text-sm text-gray-600text-gray-400">Accédez à des milliers de clients et développez votre activité en ligne</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full max-w-md flex flex-col gap-3">
+<button class="w-full bg-primary text-white font-semibold py-4 px-6 rounded-xl text-base flex items-center justify-center gap-2 active:scale-95 transition-transform shadow-lg shadow-primary/20">
+            Continuer
+            <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        </button>
+<button class="w-full text-gray-600text-gray-400 font-medium py-3 px-6 rounded-xl text-sm">
+            Passer
+        </button>
+</div>
+</div>
+</div>
+</body></html>

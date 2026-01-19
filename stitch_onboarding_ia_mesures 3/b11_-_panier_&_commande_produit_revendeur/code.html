@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Panier & Commande Produit - Sartoria</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73B5",
+                        "background-light": "#f6f6f8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background-light font-display text-gray-900">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
+        <!-- Header -->
+        <div class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
+            <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
+                <span class="material-symbols-outlined text-gray-700">arrow_back</span>
+            </button>
+            <h2 class="text-gray-900 text-lg font-bold leading-tight">Mon Panier</h2>
+            <button class="text-primary text-sm font-medium hover:underline">Vider</button>
+        </div>
+
+        <!-- Cart Items -->
+        <div class="flex flex-col px-4 pt-6 pb-4 gap-4">
+            <!-- Item 1 -->
+            <div class="flex gap-4 bg-white rounded-xl border border-gray-100 p-4">
+                <div class="bg-gray-100 rounded-lg h-24 w-24 shrink-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBD3H0qFNfv0pHSPM4K_S74zta5oEhytdZc3kHdVAPMiCWyCSjezSwyirN0Dnbah8BaTjR6BpI9Ivh3uj-nnagPT1SYVulvtfbK17A7WlBexdkMm3bQoMO0oJv68Ohh7VSuJG9XEE0Cf5bbWXyWhqJG7nm00YaE-hMbM1rNgo9wirirMgzBMJmeIZqTZshUiUgjvPuDBHDT8zJeqH6gwx2XlUOodZMHG7tcTJUES9_vbrQkzIF49IpJ1Cl0QV8U1_uiOkWakPqfDTaR");'></div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-start justify-between mb-2">
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-gray-900 text-base font-semibold truncate">Tissu Wax Premium</h3>
+                            <p class="text-gray-600 text-xs mt-0.5">Boutique Moderne • Taille: M • Couleur: Bleu</p>
+                        </div>
+                        <button class="text-gray-400 hover:text-red-500 transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">close</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2 border border-gray-200 rounded-lg">
+                            <button class="p-1.5 hover:bg-gray-100 transition-colors">
+                                <span class="material-symbols-outlined text-[18px] text-gray-600">remove</span>
+                            </button>
+                            <span class="text-gray-900 text-sm font-semibold px-3">2</span>
+                            <button class="p-1.5 hover:bg-gray-100 transition-colors">
+                                <span class="material-symbols-outlined text-[18px] text-gray-600">add</span>
+                            </button>
+                        </div>
+                        <p class="text-primary text-lg font-bold">30,000 FCFA</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="flex gap-4 bg-white rounded-xl border border-gray-100 p-4">
+                <div class="bg-gray-100 rounded-lg h-24 w-24 shrink-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBfgXku8auETF2JDa9aWgMuE4dw8vPi9qqgc4J9DNnuR-E8BrpmIwvTmYw0GKoINozTRppZpRxRB0UgNI0k7irfGmdZIGTWL2xXSaOlQlUbLtVNQTTt01Xt1I-TPdSMP_gB5NPrFEs75NoXKb8t8oCAQ--AlGwmTcRydXfa6DTEadc2b7Wv9JmHZF87YtHIfHi48yEPOwyHeP4RX79dxXMaBF8J4-fBQmJQ1AaRnTkrjVd9s7GHuS1jsXcXu2hcePCOl3I5rQcqt_vv");'></div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-start justify-between mb-2">
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-gray-900 text-base font-semibold truncate">Robe Prêt-à-porter</h3>
+                            <p class="text-gray-600 text-xs mt-0.5">Style Afrique • Taille: L • Couleur: Rouge</p>
+                        </div>
+                        <button class="text-gray-400 hover:text-red-500 transition-colors">
+                            <span class="material-symbols-outlined text-[20px]">close</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2 border border-gray-200 rounded-lg">
+                            <button class="p-1.5 hover:bg-gray-100 transition-colors">
+                                <span class="material-symbols-outlined text-[18px] text-gray-600">remove</span>
+                            </button>
+                            <span class="text-gray-900 text-sm font-semibold px-3">1</span>
+                            <button class="p-1.5 hover:bg-gray-100 transition-colors">
+                                <span class="material-symbols-outlined text-[18px] text-gray-600">add</span>
+                            </button>
+                        </div>
+                        <p class="text-primary text-lg font-bold">25,000 FCFA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Delivery Address -->
+        <div class="px-4 mb-4">
+            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100">
+                <div class="flex items-center justify-between mb-2">
+                    <p class="text-gray-900 text-sm font-semibold">Adresse de livraison</p>
+                    <button class="text-primary text-xs font-medium hover:underline">Modifier</button>
+                </div>
+                <div class="flex items-start gap-2">
+                    <span class="material-symbols-outlined text-gray-600 text-[20px]">location_on</span>
+                    <div>
+                        <p class="text-gray-900 text-sm font-medium">Aminata Diallo</p>
+                        <p class="text-gray-600 text-xs mt-0.5">Rue 12, Médina, Dakar, Sénégal</p>
+                        <p class="text-gray-600 text-xs">+221 77 123 45 67</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="px-4 mb-4">
+            <div class="bg-white rounded-xl border border-gray-100 p-4">
+                <h3 class="text-gray-900 text-base font-semibold mb-3">Récapitulatif</h3>
+                <div class="flex items-center justify-between mb-2">
+                    <p class="text-gray-600 text-sm">Sous-total</p>
+                    <p class="text-gray-900 text-sm font-medium">55,000 FCFA</p>
+                </div>
+                <div class="flex items-center justify-between mb-2">
+                    <p class="text-gray-600 text-sm">Livraison</p>
+                    <p class="text-gray-900 text-sm font-medium">5,000 FCFA</p>
+                </div>
+                <div class="border-t border-gray-200 pt-2 mt-2">
+                    <div class="flex items-center justify-between">
+                        <p class="text-gray-900 text-base font-bold">Total</p>
+                        <p class="text-primary text-xl font-black">60,000 FCFA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Button -->
+        <div class="fixed bottom-0 z-30 w-full max-w-md mx-auto bg-white border-t border-gray-100 px-4 py-4 pb-8 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+            <button class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-primary/30 transition-all">
+                <span>Passer la commande</span>
+                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

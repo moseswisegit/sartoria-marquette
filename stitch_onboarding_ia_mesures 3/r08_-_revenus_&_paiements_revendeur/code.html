@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3211d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark min-h-screen text-[#121118]text-white">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-10 flex items-center bg-whitebg-background-dark p-4 border-b border-[#dddbe6]border-white/10 justify-between">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-100hover:bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<h2 class="text-[#121118]text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Revenus et Paiements</h2>
+</div>
+<!-- Main Content -->
+<div class="flex flex-col gap-2 pb-20">
+<!-- Balance Summary Card -->
+<div class="p-4 pt-6">
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-whitebg-white/5 border border-[#dddbe6]border-white/10 shadow-sm">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[#686189]text-white/60 text-sm font-medium leading-normal">Solde disponible</p>
+<p class="text-primarytext-primary tracking-tight text-3xl font-extrabold leading-tight mt-1">1 240,50 €</p>
+</div>
+<div class="bg-green-100bg-green-900/30 text-green-700text-green-400 px-2 py-1 rounded-lg text-xs font-bold">
+                        Prêt au retrait
+                    </div>
+</div>
+</div>
+</div>
+<!-- Withdrawal Button -->
+<div class="px-4 py-2">
+<button class="w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined mr-2">account_balance_wallet</span>
+<span class="truncate">Demander un virement</span>
+</button>
+<p class="text-center text-[#686189]text-white/40 text-xs mt-3">Les virements sont traités sous 2 à 3 jours ouvrables.</p>
+</div>
+<!-- Analytics Section -->
+<div class="mt-4">
+<div class="flex items-center justify-between px-4 pb-2">
+<h3 class="text-[#121118]text-white text-lg font-bold leading-tight tracking-[-0.015em]">Gains nets</h3>
+<span class="material-symbols-outlined text-[#686189]text-white/40 cursor-pointer">info</span>
+</div>
+<!-- Tabs Component -->
+<div class="pb-3 px-4">
+<div class="flex border-b border-[#dddbe6]border-white/10 gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#686189]text-white/40 pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Semaine</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Mois</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#686189]text-white/40 pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Année</p>
+</a>
+</div>
+</div>
+<!-- Visualization Placeholder (Chart) -->
+<div class="px-4 mt-2">
+<div class="bg-whitebg-white/5 border border-[#dddbe6]border-white/10 rounded-xl p-6 h-48 flex flex-col justify-end">
+<div class="flex items-end justify-between h-full gap-2">
+<div class="w-full bg-primary/10bg-primary/20 rounded-t-lg h-[40%]"></div>
+<div class="w-full bg-primary/20bg-primary/30 rounded-t-lg h-[65%]"></div>
+<div class="w-full bg-primary/30bg-primary/40 rounded-t-lg h-[50%]"></div>
+<div class="w-full bg-primary/40bg-primary/50 rounded-t-lg h-[85%]"></div>
+<div class="w-full bg-primarybg-primary rounded-t-lg h-[75%]"></div>
+<div class="w-full bg-primary/30bg-primary/40 rounded-t-lg h-[60%]"></div>
+<div class="w-full bg-primary/20bg-primary/30 rounded-t-lg h-[45%]"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] text-[#686189]text-white/40 font-bold uppercase tracking-wider">
+<span>Sem 1</span>
+<span>Sem 2</span>
+<span>Sem 3</span>
+<span>Sem 4</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Transaction History -->
+<div class="mt-6">
+<h3 class="text-[#121118]text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-4">Historique des transactions</h3>
+<div class="flex flex-col px-4 gap-3">
+<!-- Transaction Item 1 -->
+<div class="flex items-center justify-between p-4 bg-whitebg-white/5 border border-[#dddbe6]border-white/10 rounded-xl">
+<div class="flex items-center gap-3">
+<div class="size-10 flex items-center justify-center bg-green-100bg-green-900/30 text-green-700text-green-400 rounded-full">
+<span class="material-symbols-outlined">add_circle</span>
+</div>
+<div>
+<p class="text-sm font-bold text-[#121118]text-white">Vente #39420</p>
+<p class="text-xs text-[#686189]text-white/40">12 Oct 2023 • Commission 10% déduite</p>
+</div>
+</div>
+<p class="text-sm font-bold text-green-600text-green-400">+ 89,00 €</p>
+</div>
+<!-- Transaction Item 2 -->
+<div class="flex items-center justify-between p-4 bg-whitebg-white/5 border border-[#dddbe6]border-white/10 rounded-xl">
+<div class="flex items-center gap-3">
+<div class="size-10 flex items-center justify-center bg-gray-100bg-white/10 text-gray-700text-white/60 rounded-full">
+<span class="material-symbols-outlined">paid</span>
+</div>
+<div>
+<p class="text-sm font-bold text-[#121118]text-white">Virement bancaire</p>
+<p class="text-xs text-[#686189]text-white/40">08 Oct 2023 • Terminé</p>
+</div>
+</div>
+<p class="text-sm font-bold text-[#121118]text-white">- 500,00 €</p>
+</div>
+<!-- Transaction Item 3 -->
+<div class="flex items-center justify-between p-4 bg-whitebg-white/5 border border-[#dddbe6]border-white/10 rounded-xl">
+<div class="flex items-center gap-3">
+<div class="size-10 flex items-center justify-center bg-green-100bg-green-900/30 text-green-700text-green-400 rounded-full">
+<span class="material-symbols-outlined">add_circle</span>
+</div>
+<div>
+<p class="text-sm font-bold text-[#121118]text-white">Vente #39415</p>
+<p class="text-xs text-[#686189]text-white/40">05 Oct 2023 • Commission 10% déduite</p>
+</div>
+</div>
+<p class="text-sm font-bold text-green-600text-green-400">+ 124,50 €</p>
+</div>
+<!-- Transaction Item 4 -->
+<div class="flex items-center justify-between p-4 bg-whitebg-white/5 border border-[#dddbe6]border-white/10 rounded-xl">
+<div class="flex items-center gap-3">
+<div class="size-10 flex items-center justify-center bg-blue-100bg-blue-900/30 text-blue-700text-blue-400 rounded-full">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<p class="text-sm font-bold text-[#121118]text-white">Virement bancaire</p>
+<p class="text-xs text-[#686189]text-white/40">01 Oct 2023 • En attente</p>
+</div>
+</div>
+<p class="text-sm font-bold text-blue-600text-blue-400">- 250,00 €</p>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="p-8 text-center">
+<button class="text-primary font-bold text-sm hover:underline">
+                    Voir toutes les transactions
+                </button>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar (iOS style) -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/80bg-background-dark/80 backdrop-blur-lg border-t border-[#dddbe6]border-white/10 flex justify-around py-2 px-6">
+<div class="flex flex-col items-center gap-1 text-[#686189]text-white/40">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold">Accueil</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#686189]text-white/40">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[10px] font-bold">Produits</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] font-bold">Revenus</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#686189]text-white/40">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Compte</span>
+</div>
+</div>
+</body></html>

@@ -5,7 +5,7 @@ Plateforme de visualisation des maquettes de l'application Sartoria.
 ## 📋 Structure
 
 - `index.html` - Page principale de la galerie
-- `stitch_onboarding_ia_mesures 2/` - Dossier contenant toutes les maquettes
+- `stitch_onboarding_ia_mesures 3/` - Dossier contenant toutes les maquettes
 
 ## 🚀 Accès au site
 

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>N01 - Sélecteur de Rôle Multi-Profils</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#1a73b7",
+                "background-light": "#f6f7f8",
+                "background-dark": "#0b0c0d",
+              },
+              fontFamily: {
+                "display": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(28, 34, 38, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark text-slate-900text-white min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center p-4 justify-between max-w-md mx-auto">
+<div class="size-10 flex items-center justify-center rounded-full bg-slate-200bg-slate-800">
+<span class="material-symbols-outlined text-slate-600text-slate-300">account_circle</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-primary">Sartoria</h1>
+<button class="size-10 flex items-center justify-center rounded-full bg-slate-200bg-slate-800">
+<span class="material-symbols-outlined text-slate-600text-slate-300 text-[24px]">settings</span>
+</button>
+</div>
+</header>
+<main class="max-w-md mx-auto pb-10">
+<!-- Headline Section -->
+<div class="px-6 pt-8 pb-6 text-center">
+<h2 class="text-3xl font-bold tracking-tight mb-2">Sélecteur de Rôle</h2>
+<p class="text-slate-500text-slate-400 text-sm">Basculez entre vos espaces de travail personnalisés</p>
+</div>
+<div class="space-y-6 px-4">
+<!-- Profil Client Card -->
+<div class="relative group cursor-pointer">
+<div class="absolute -inset-0.5 bg-gradient-to-r from-primary to-blue-400 rounded-xl opacity-20 group-hover:opacity-40 transition duration-300"></div>
+<div class="relative flex flex-col rounded-xl overflow-hidden shadow-xl bg-whitebg-[#1c2226]">
+<div class="h-32 w-full bg-cover bg-center" data-alt="Close-up of high quality blue fabric texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAvrsPJa_f-nEFyOy87pMMWbBrZ3GIYcdCdUQHvZqNhattMmd1srnMCuaQAtanYzwsWNpO0IdKwn_YoqGa3E2XJvehreQHC5cZA1guvEIjiICqkXn20wSlbZJIND6f0QmiHPcp2WofyXZkyfXe1vZpinfO5lfMxo8B2kHhC5JrCXRfihZIoXi9OnhZgqjOvXXsoX1MpekfKSkt4shbHq1Ms5YThnZNkVpHtbtXPxL8F-EeEdjXgdyCi3KWymCDhFz42LjuUI51c4dlS');">
+<div class="w-full h-full bg-black/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-80">checkroom</span>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold leading-tight">Profil Client</h3>
+<p class="text-slate-500text-[#9eadb7] text-sm mt-1">Gérez vos commandes et mesures.</p>
+</div>
+<span class="bg-primary/10 text-primary text-[10px] uppercase font-bold px-2 py-1 rounded">Actif</span>
+</div>
+<div class="grid grid-cols-2 gap-3 py-2 border-y border-slate-100border-slate-700/50">
+<div>
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">En cours</p>
+<p class="text-lg font-bold">2 Commandes</p>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Prochain RV</p>
+<p class="text-lg font-bold">1 Essayage</p>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2">
+<span>Basculer</span>
+<span class="material-symbols-outlined text-sm">sync</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Espace Tailleur Card -->
+<div class="relative group cursor-pointer">
+<div class="relative flex flex-col rounded-xl overflow-hidden shadow-xl bg-whitebg-[#1c2226] border-2 border-transparent hover:border-primary/30 transition-all">
+<div class="h-32 w-full bg-cover bg-center" data-alt="Traditional tailoring tools and measuring tape" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBKPH1IGEzxlLY1c4Sc49C08XLMFS1rOmk9ebJA-YAiicm4M5BY1TfIH-TTQz5_0AZhAFdBaJ2kB5Kg2WNcqcdSno0hbJKOqshM2ODvWdRTftaxKddeYyk7jw34t-FyaoXcz494oe1rHqyF-_v-YV12-zstOPW4j78_PmMX2qTPg2Mkak7XYi0fzfrHjY8oMv7wNg_jPKz4R32Y9JwZAK7L7M2G-qIVJRZIgGSxLKJlkkPeeIm95dusOewD80Go4EN--5m6UwJq37BE');">
+<div class="w-full h-full bg-black/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-80">content_cut</span>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold leading-tight text-primary">Espace Tailleur</h3>
+<p class="text-slate-500text-[#9eadb7] text-sm mt-1">Suivez votre production en temps réel.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 py-2 border-y border-slate-100border-slate-700/50">
+<div>
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">CA du jour</p>
+<p class="text-lg font-bold text-green-500">1,240€</p>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Urgences</p>
+<p class="text-lg font-bold text-red-500">4 Tâches</p>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2">
+<span>Basculer</span>
+<span class="material-symbols-outlined text-sm">sync</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Boutique Revendeur Card -->
+<div class="relative group cursor-pointer">
+<div class="relative flex flex-col rounded-xl overflow-hidden shadow-xl bg-whitebg-[#1c2226] border-2 border-transparent hover:border-primary/30 transition-all">
+<div class="h-32 w-full bg-cover bg-center" data-alt="Luxury boutique interior display" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA6_MreWEIKH1w7JGVHJAzjG_TdrOqpVJOz5-W2aspWYDg-rXzyUOZnvbcWQekEZfLi8I30o3w30402Jdi4Z0f8gBSXm4eeXi2_AjklpXfRhYFadvn4FQQlGnlSOWkE8Y7KB_8BBD1Q873j_i5Aa9y2I1c-ZURnGFtTCqqFGNm4C2FaVifRl1O1fYPdcOB7lafwq1owUOP9clwiZoRTFl0lHcAJDJW7-3kWvQy4BZib8bNvonyTbLTs0-FFMmP-6zPWgtAZ1Zs7ScAu');">
+<div class="w-full h-full bg-black/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-80">storefront</span>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold leading-tight">Boutique Revendeur</h3>
+<p class="text-slate-500text-[#9eadb7] text-sm mt-1">Inventaire et relation clients.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 py-2 border-y border-slate-100border-slate-700/50">
+<div>
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Stock</p>
+<div class="flex items-center gap-1">
+<p class="text-lg font-bold">3 Alertes</p>
+<span class="size-2 bg-orange-500 rounded-full animate-pulse"></span>
+</div>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Messages</p>
+<p class="text-lg font-bold">5 Nouveaux</p>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2">
+<span>Basculer</span>
+<span class="material-symbols-outlined text-sm">sync</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Current Status Footer -->
+<div class="mt-10 px-6 text-center">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100bg-slate-800 text-xs text-slate-500text-slate-400 border border-slate-200border-slate-700">
+<span class="size-2 bg-primary rounded-full"></span>
+                Profil actuel : <span class="font-bold text-slate-800text-white">Jean-Pierre Tailleur (Client)</span>
+</div>
+</div>
+</main>
+<!-- Bottom Bar Spacer for iOS Home Indicator -->
+<div class="h-8"></div>
+</body></html>

@@ -32,8 +32,8 @@ git push origin master
 ### Étapes
 
 1. **Ouvrir chaque fichier HTML** dans votre navigateur :
-   - `stitch_onboarding_ia_mesures 2/mot_de_passe_oublié/code.html`
-   - `stitch_onboarding_ia_mesures 2/recherche_avancée_marketplace/code.html`
+   - `stitch_onboarding_ia_mesures 3/mot_de_passe_oublié/code.html`
+   - `stitch_onboarding_ia_mesures 3/recherche_avancée_marketplace/code.html`
    - etc.
 
 2. **Faire une capture d'écran** :
@@ -85,7 +85,7 @@ Vous pouvez ouvrir tous les fichiers HTML en une fois :
 
 ```bash
 # Sur Mac
-open "stitch_onboarding_ia_mesures 2"/*/code.html
+open "stitch_onboarding_ia_mesures 3"/*/code.html
 ```
 
 Puis faire les captures une par une.

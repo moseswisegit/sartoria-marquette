@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a73b7",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111a21",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>R14 - Gestion des Retours Clients</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark font-display text-[#111517]text-white antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 bg-whitebg-background-dark border-b border-[#e5e7eb]border-[#343d44]">
+<div class="flex items-center p-4 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-[#111517]text-white cursor-pointer">arrow_back_ios</span>
+</div>
+<div class="flex flex-col items-center">
+<h1 class="text-[#111517]text-white text-lg font-bold leading-tight tracking-tight">Retours Clients</h1>
+<p class="text-xs text-[#647887]text-gray-400 font-medium">12 demandes actives</p>
+</div>
+<div class="flex w-12 items-center justify-end">
+<button class="relative flex items-center justify-center rounded-lg h-10 w-10 bg-transparent text-[#111517]text-white">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 flex h-2 w-2 rounded-full bg-red-500"></span>
+</button>
+</div>
+</div>
+<div class="flex gap-3 p-4 overflow-x-auto no-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-red-50bg-red-900/20 border border-red-100border-red-800/30 px-4">
+<span class="material-symbols-outlined text-red-600text-red-400 text-[20px]">warning</span>
+<p class="text-red-700text-red-300 text-sm font-semibold">Urgences</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-whitebg-slate-800 border border-[#e5e7eb]border-[#343d44] px-4">
+<span class="material-symbols-outlined text-[#111517]text-white text-[20px]">pending_actions</span>
+<p class="text-[#111517]text-white text-sm font-medium">En attente</p>
+<span class="material-symbols-outlined text-[#647887] text-[18px]">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-whitebg-slate-800 border border-[#e5e7eb]border-[#343d44] px-4">
+<span class="material-symbols-outlined text-[#111517]text-white text-[20px]">check_circle</span>
+<p class="text-[#111517]text-white text-sm font-medium">Statut</p>
+<span class="material-symbols-outlined text-[#647887] text-[18px]">expand_more</span>
+</button>
+</div>
+</header>
+<main class="flex-1 flex flex-col p-4 space-y-4">
+<div class="bg-whitebg-slate-900 rounded-xl shadow-sm border border-[#e5e7eb]border-[#343d44] overflow-hidden">
+<div class="flex gap-4 px-4 py-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[80px] shadow-inner" data-alt="Détail d'un jean slim noir avec défaut de couture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCCpROATii0qbFYqFsxhy-iS9nZru8R4WZ0mYfNitAiiLdwFKkRdSLetJj1YWQSBNv_CJ29PWVG21xk045T2P34IcHGlR_husbWVP_pGGE6pXJSVDlLX7rtI5sS6kR4ev0qS_htqhIuOM1Xz0viRgRRBd-z0TXL7Flno415_zQ9f8uXHCV2nPszw4l1sIfMYaGNnsJXlRv5sZ-s-tSs_aFJJjCl-tX80siTJteKqHzWS3hHG22nGfLi-8yrGSuPnxYxTIUpZQLonImi");'>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-[#111517]text-white text-base font-bold leading-tight">Jean Slim Noir</h3>
+<span class="bg-orange-100bg-orange-900/30 text-orange-700text-orange-300 text-[10px] uppercase font-bold px-2 py-0.5 rounded">En attente</span>
+</div>
+<p class="text-[#647887]text-gray-400 text-xs mt-0.5">Ref: #ORD-8821 • Marc Dupont</p>
+<div class="mt-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-red-500 text-[14px]">error</span>
+<p class="text-[#111517]text-white text-xs font-medium">Motif: Défaut de couture</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex border-t border-[#e5e7eb]border-[#343d44]">
+<button class="flex-1 flex items-center justify-center gap-2 h-11 bg-whitebg-slate-900 text-red-600text-red-400 text-sm font-bold border-r border-[#e5e7eb]border-[#343d44] hover:bg-red-50hover:bg-red-950/20 transition-colors">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span>Rejeter</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-2 h-11 bg-whitebg-slate-900 text-primary text-sm font-bold hover:bg-blue-50hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>Approuver</span>
+</button>
+</div>
+</div>
+<div class="bg-whitebg-slate-900 rounded-xl shadow-sm border border-[#e5e7eb]border-[#343d44] overflow-hidden opacity-90">
+<div class="flex gap-4 px-4 py-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[80px] shadow-inner" data-alt="Chemise Oxford bleue pliée proprement" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBEhHvFOBb6hkzegirK152yNRhmxWcSv-za-ZSwE3KPSxcbLwYOkyeUm7LEqmVc_JXxlkzfgcU85F_PqbnQOzQ2tqQN9DAl4tFdKtQ9zYL_860YLE3VTc7FkQjutMHlbIAxxuWfC3BZsbWXQ2IhjDjMo2tcvPmPNVltKAk71xPCOcZzPaBqrCAhgtqipyRz0qsYe5xNB05Q_4vu7p6HODu9UjIb26By2hH1xg7ROTnVVCcVQhSAid5PTDyO8ED-VfYNcKF4an-ekMem");'>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-[#111517]text-white text-base font-bold leading-tight">Chemise Oxford</h3>
+<span class="bg-blue-100bg-blue-900/30 text-blue-700text-blue-300 text-[10px] uppercase font-bold px-2 py-0.5 rounded">Approuvé</span>
+</div>
+<p class="text-[#647887]text-gray-400 text-xs mt-0.5">Ref: #ORD-8754 • Sophie Martin</p>
+<div class="mt-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-blue-500 text-[14px]">straighten</span>
+<p class="text-[#111517]text-white text-xs font-medium">Motif: Taille incorrecte (L vs M)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex border-t border-[#e5e7eb]border-[#343d44]">
+<button class="flex-1 flex items-center justify-center gap-2 h-11 bg-primary text-white text-sm font-bold hover:bg-blue-700 transition-colors">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<span>Confirmer réception</span>
+</button>
+</div>
+</div>
+<div class="bg-whitebg-slate-900 rounded-xl shadow-sm border border-[#e5e7eb]border-[#343d44] overflow-hidden">
+<div class="flex gap-4 px-4 py-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[80px] shadow-inner" data-alt="Veste en cuir de couleur marron" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuANEBC31-E0vuqPe9O2YFmxpcGCIjQ-XeQ-K-VjL8g5z3b1tvEFZinsPhjlVYSXg3P_0ivH5CTKde4qELvQ-dajpta1l8TjArEzjD0gryN07N92FBMkziEP38VHMMRpJR50tGKGbN_nXd-u31oivoZal21iBxh4p-L95u6AkTJooW9LstrwUdqPo6RCc6-OS9-_EC9Bejgd67oR1Wa_wK2DV7gqk9XEZi8zwhIXnq3q6fqr677biR3M_l-4kRLNHO9Ko6brbDghA6Vl");'>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-[#111517]text-white text-base font-bold leading-tight">Blouson Cuir</h3>
+<span class="bg-green-100bg-green-900/30 text-green-700text-green-300 text-[10px] uppercase font-bold px-2 py-0.5 rounded">Reçu</span>
+</div>
+<p class="text-[#647887]text-gray-400 text-xs mt-0.5">Ref: #ORD-8692 • Thomas Roux</p>
+<div class="mt-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-gray-500 text-[14px]">info</span>
+<p class="text-[#111517]text-white text-xs font-medium">Motif: Changement d'avis</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex border-t border-[#e5e7eb]border-[#343d44]">
+<button class="flex-1 flex items-center justify-center gap-2 h-11 bg-whitebg-slate-900 text-primary text-sm font-bold hover:bg-blue-50hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span>Déclencher Remboursement</span>
+</button>
+</div>
+</div>
+<div class="bg-whitebg-slate-900 rounded-xl shadow-sm border border-[#e5e7eb]border-[#343d44] overflow-hidden">
+<div class="flex gap-4 px-4 py-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[80px] shadow-inner" data-alt="Paire de sneakers blanches minimalistes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCkM47hTnxylek74cfZxvTcLew1Xkhv_4eeJEmF6Grp1Z5_0dg1cyXweVqUexUCBduIeX3HY5deSewIqFQlk46EzwKcRxW5Qbyr9OofSphMcpXs3-7cA0ydCMKuJUeDgbIUAjKhiAHsu80Bvmt62QQAQGP1jt-tVBjnyNmQL-XZ2jQNPCw-znk6LFGukr8a9vnKl2G9bLUPA889vU1-tyrt9ZgI_DpN8Djc3hQoi2ykONpC9ruAYIMaFScNeYNIwSXN8QoKPzmdTGip");'>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-[#111517]text-white text-base font-bold leading-tight">Sneakers White</h3>
+<span class="bg-orange-100bg-orange-900/30 text-orange-700text-orange-300 text-[10px] uppercase font-bold px-2 py-0.5 rounded">En attente</span>
+</div>
+<p class="text-[#647887]text-gray-400 text-xs mt-0.5">Ref: #ORD-8910 • Julie Leroy</p>
+<div class="mt-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-red-500 text-[14px]">error</span>
+<p class="text-[#111517]text-white text-xs font-medium">Motif: Décoloration semelle</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex border-t border-[#e5e7eb]border-[#343d44]">
+<button class="flex-1 flex items-center justify-center gap-2 h-11 bg-whitebg-slate-900 text-red-600text-red-400 text-sm font-bold border-r border-[#e5e7eb]border-[#343d44] hover:bg-red-50hover:bg-red-950/20 transition-colors">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span>Rejeter</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-2 h-11 bg-whitebg-slate-900 text-primary text-sm font-bold hover:bg-blue-50hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>Approuver</span>
+</button>
+</div>
+</div>
+</main>
+<nav class="sticky bottom-0 bg-whitebg-slate-950 border-t border-[#e5e7eb]border-[#343d44] flex justify-around items-center py-2 px-6">
+<div class="flex flex-col items-center gap-0.5 text-[#647887]">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium">Tableau</span>
+</div>
+<div class="flex flex-col items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined fill-1">assignment_return</span>
+<span class="text-[10px] font-bold">Retours</span>
+</div>
+<div class="flex flex-col items-center gap-0.5 text-[#647887]">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[10px] font-medium">Stock</span>
+</div>
+<div class="flex flex-col items-center gap-0.5 text-[#647887]">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Profil</span>
+</div>
+</nav>
+<div class="h-8 bg-whitebg-slate-950"></div>
+</div>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .fill-1 {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</body></html>

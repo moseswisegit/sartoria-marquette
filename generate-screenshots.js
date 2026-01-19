@@ -23,7 +23,7 @@ const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
 
-const BASE_DIR = path.join(__dirname, 'stitch_onboarding_ia_mesures 2');
+const BASE_DIR = path.join(__dirname, 'stitch_onboarding_ia_mesures 3');
 const OUTPUT_DIR = BASE_DIR;
 
 // Liste des écrans à capturer (dossiers avec code.html)

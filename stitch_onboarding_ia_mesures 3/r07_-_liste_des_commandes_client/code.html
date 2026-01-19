@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>R07 - Liste des Commandes Client</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3211d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark min-h-screen text-[#121118]text-white">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-10 bg-white/80bg-background-dark/80 backdrop-blur-md border-b border-gray-200border-gray-800">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#121118]text-white cursor-pointer">chevron_left</span>
+<h1 class="text-[#121118]text-white text-xl font-bold leading-tight tracking-tight">Commandes Client</h1>
+</div>
+<div class="flex items-center gap-1">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-gray-100hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-[#121118]text-white">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Tabs / Status Filter -->
+<div class="px-4">
+<div class="flex border-b border-gray-100border-gray-800 justify-between">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary text-primary pb-[13px] pt-4 flex-1" href="#">
+<p class="text-sm font-bold tracking-tight">En attente</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-gray-500text-gray-400 pb-[13px] pt-4 flex-1" href="#">
+<p class="text-sm font-bold tracking-tight">Expédié</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-gray-500text-gray-400 pb-[13px] pt-4 flex-1" href="#">
+<p class="text-sm font-bold tracking-tight">Livré</p>
+</a>
+</div>
+</div>
+</header>
+<main class="max-w-md mx-auto pb-24">
+<!-- Search Bar -->
+<div class="px-4 py-4">
+<label class="flex flex-col min-w-40 h-11 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm">
+<div class="text-gray-400 flex border-none bg-whitebg-gray-800 items-center justify-center pl-4 rounded-l-xl">
+<span class="material-symbols-outlined text-lg">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl text-[#121118]text-white focus:outline-0 focus:ring-0 border-none bg-whitebg-gray-800 h-full placeholder:text-gray-400 px-4 pl-2 text-sm font-normal" placeholder="Rechercher un client ou n° de commande" value=""/>
+</div>
+</label>
+</div>
+<!-- Orders List -->
+<div class="flex flex-col gap-4 px-4">
+<!-- Order Card 1 -->
+<div class="flex flex-col gap-4 rounded-xl bg-whitebg-gray-900 p-4 shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100border-gray-800">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-orange-100bg-orange-900/30 text-orange-600text-orange-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">En attente</span>
+<p class="text-gray-400text-gray-500 text-xs font-medium">#ORD-8821</p>
+</div>
+<p class="text-[#121118]text-white text-lg font-bold leading-tight">Jean Dupont</p>
+<p class="text-gray-500text-gray-400 text-sm font-medium">125,50 € • Chronopost (Point Relais)</p>
+</div>
+<div class="size-16 bg-center bg-no-repeat bg-cover rounded-lg shrink-0 border border-gray-50border-gray-800" data-alt="Image small parcel box packaging" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCLsiXDRrAdtNCuNiXS-wrMFM-E6hiKQ5vCXcBKzgPEMYeEdHQ24Jc55CjIIYPafisj0D4AZ-uhJDTz5hF8fTGkpGdoe2gggoQzyPvN5NfJycNFw_lvEJ14ZuKOY8niyTcofGnkDW_8lAAJMfv71HCj_ppb7gHZH9COJB8Ginhz06kzTgo3TSw_YBLrMwClLMZhUAmTKtFR2huB9SsFqgOZrWSCB6w2HpDRdwqyjOq1qWC_NZH4TccdIH86vDecCxerqgduneQNpeam");'></div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white gap-2 text-sm font-semibold transition-all hover:bg-opacity-90 active:scale-[0.98]">
+<span class="material-symbols-outlined text-lg">local_shipping</span>
+<span>Expédier</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-gray-100bg-gray-800 text-gray-600text-gray-300">
+<span class="material-symbols-outlined text-xl">sync</span>
+</button>
+</div>
+</div>
+<!-- Order Card 2 -->
+<div class="flex flex-col gap-4 rounded-xl bg-whitebg-gray-900 p-4 shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100border-gray-800">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-orange-100bg-orange-900/30 text-orange-600text-orange-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">En attente</span>
+<p class="text-gray-400text-gray-500 text-xs font-medium">#ORD-8819</p>
+</div>
+<p class="text-[#121118]text-white text-lg font-bold leading-tight">Marie Lefebvre</p>
+<p class="text-gray-500text-gray-400 text-sm font-medium">84,00 € • Livraison à domicile</p>
+</div>
+<div class="size-16 bg-center bg-no-repeat bg-cover rounded-lg shrink-0 border border-gray-50border-gray-800" data-alt="Modern stylish fashion accessory box" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD3FF13F5mjD5ouB5JF6oU2BFmedQdhZDeADdeUj2JGPRRZlS61pklj1VUWfrP3k1P7BniIK69sArVxQtvcXymUHzjQ0MJwHpSwECo5FTxLrBZLysibnXSreNm-jT_w-UEma9FGwtAzvMQkG5PkbWfWIy4vcji3JlHgKEW6vxyzrT9R_YDsnb7Br4hee3hpvnpXlxm-UyT7XtzTgZs9Etr-ullNvF9TN4xKu55Gd-QhEh_-wiD5TwkCQSql2LKHDgGTz3icauUclds_");'></div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white gap-2 text-sm font-semibold transition-all hover:bg-opacity-90 active:scale-[0.98]">
+<span class="material-symbols-outlined text-lg">local_shipping</span>
+<span>Expédier</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-gray-100bg-gray-800 text-gray-600text-gray-300">
+<span class="material-symbols-outlined text-xl">sync</span>
+</button>
+</div>
+</div>
+<!-- Order Card 3 -->
+<div class="flex flex-col gap-4 rounded-xl bg-whitebg-gray-900 p-4 shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100border-gray-800">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-orange-100bg-orange-900/30 text-orange-600text-orange-400 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">En attente</span>
+<p class="text-gray-400text-gray-500 text-xs font-medium">#ORD-8792</p>
+</div>
+<p class="text-[#121118]text-white text-lg font-bold leading-tight">Thomas Martin</p>
+<p class="text-gray-500text-gray-400 text-sm font-medium">210,00 € • Retrait en magasin</p>
+</div>
+<div class="size-16 bg-center bg-no-repeat bg-cover rounded-lg shrink-0 border border-gray-50border-gray-800" data-alt="Electronics store pickup package bag" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDC3TzoWsSsfbJ7lcd3T0-anDvAY9hK1-eDom1wwb6zG-jy6UMf3TEd-4srZ3Doxil389Rx58qITeo9Qv5dX1dOyuwowkjshIr1lS-F65a3813zb5yWwevHYZ6H30_iJesPYGtb-xq3Q7zET8YxiMnBOvgVL19T3sbN1xTT_E2ko9u65lSdEu89q8ivJ2xmHIp5dxZvs_LO507Y-pxR87_B4KZnOk-3EhV5oRtk7_BjJIkLFrBZU0ZnVSgzo1FHjGAzSMpef0SyOgap");'></div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white gap-2 text-sm font-semibold transition-all hover:bg-opacity-90 active:scale-[0.98]">
+<span class="material-symbols-outlined text-lg">inventory_2</span>
+<span>Prêt pour retrait</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-gray-100bg-gray-800 text-gray-600text-gray-300">
+<span class="material-symbols-outlined text-xl">sync</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90bg-background-dark/90 backdrop-blur-lg border-t border-gray-200border-gray-800 px-6 py-2 pb-8 flex justify-between items-center z-20">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">assignment</span>
+<span class="text-[10px] font-bold">Commandes</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">inventory</span>
+<span class="text-[10px] font-medium">Stocks</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-medium">Clients</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Réglages</span>
+</div>
+</nav>
+</body></html>

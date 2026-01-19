@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture Screenshot - Simple</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1A73B5;
+            margin-bottom: 20px;
+        }
+        .step {
+            background: #e3f2fd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #1A73B5;
+        }
+        .step-number {
+            display: inline-block;
+            background: #1A73B5;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        button {
+            background: #1A73B5;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin: 20px 0;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #155a8f;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .shortcut {
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>📸 Capture Screenshot - Écran d'Inscription</h1>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <strong>Ouvrez la page d'inscription</strong>
+            <p style="margin-top: 10px;">Cliquez sur le bouton ci-dessous pour ouvrir la page dans un nouvel onglet.</p>
+            <button onclick="window.open('stitch_onboarding_ia_mesures 3/écran_d\'inscription/code.html', '_blank')">
+                🔗 Ouvrir la page d'inscription
+            </button>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <strong>Ouvrez Chrome DevTools</strong>
+            <p style="margin-top: 10px;">Sur la page d'inscription, appuyez sur :</p>
+            <div class="shortcut">
+                Mac : <code>Cmd + Option + I</code><br>
+                Windows/Linux : <code>F12</code>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <strong>Capturez le screenshot</strong>
+            <p style="margin-top: 10px;">Dans DevTools, appuyez sur :</p>
+            <div class="shortcut">
+                Mac : <code>Cmd + Shift + P</code><br>
+                Windows/Linux : <code>Ctrl + Shift + P</code>
+            </div>
+            <p style="margin-top: 10px;">Puis tapez : <code>Capture full size screenshot</code></p>
+            <p style="margin-top: 5px; font-size: 14px; color: #666;">L'image sera téléchargée automatiquement.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">4</span>
+            <strong>Enregistrez le fichier</strong>
+            <p style="margin-top: 10px;">Renommez l'image téléchargée en <code>screen.png</code> et remplacez le fichier dans :</p>
+            <div style="background: #f5f5f5; padding: 10px; border-radius: 4px; margin-top: 10px; font-family: monospace; font-size: 12px;">
+                stitch_onboarding_ia_mesures 3/écran_d'inscription/screen.png
+            </div>
+        </div>
+
+        <div style="background: #d4edda; border-left: 4px solid #28a745; padding: 15px; margin-top: 20px; border-radius: 4px;">
+            <strong>✅ C'est tout !</strong> Le screenshot sera mis à jour avec les nouveaux champs (bouton Revendeur, champs conditionnels, etc.)
+        </div>
+    </div>
+</body>
+</html>

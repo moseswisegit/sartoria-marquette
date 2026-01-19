@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Modération Produits Revendeurs - Admin Sartoria</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73B5",
+                        "background-light": "#f6f6f8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background-light font-display antialiased">
+    <div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl">
+        <!-- Header -->
+        <div class="sticky top-0 z-20 flex items-center bg-white p-4 pb-2 justify-between border-b border-gray-100">
+            <div class="flex items-center gap-3">
+                <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
+                    <span class="material-symbols-outlined text-gray-700">arrow_back</span>
+                </button>
+                <h2 class="text-gray-900 text-xl font-bold leading-tight">Modération Produits</h2>
+            </div>
+            <button class="flex items-center justify-center rounded-full w-10 h-10 bg-primary text-white shadow-lg shadow-primary/30">
+                <span class="material-symbols-outlined text-[24px]">filter_list</span>
+            </button>
+        </div>
+
+        <!-- Stats -->
+        <div class="w-full overflow-x-auto pt-4 pb-2 pl-4">
+            <div class="flex gap-4 pr-4 w-max">
+                <div class="flex min-w-[140px] flex-col gap-2 rounded-xl p-4 bg-white border border-gray-100 shadow-sm">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-orange-500 text-[20px]">pending</span>
+                        <p class="text-gray-600 text-sm font-medium">En attente</p>
+                    </div>
+                    <p class="text-gray-900 tracking-tight text-2xl font-bold">47</p>
+                </div>
+                <div class="flex min-w-[140px] flex-col gap-2 rounded-xl p-4 bg-white border border-gray-100 shadow-sm">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-red-500 text-[20px]">flag</span>
+                        <p class="text-gray-600 text-sm font-medium">Signalés</p>
+                    </div>
+                    <p class="text-gray-900 tracking-tight text-2xl font-bold">12</p>
+                </div>
+                <div class="flex min-w-[140px] flex-col gap-2 rounded-xl p-4 bg-white border border-gray-100 shadow-sm">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                        <p class="text-gray-600 text-sm font-medium">Validés</p>
+                    </div>
+                    <p class="text-gray-900 tracking-tight text-2xl font-bold">1,234</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="px-4 pt-4">
+            <div class="flex border-b border-gray-200 justify-between">
+                <a class="flex flex-col items-center justify-center border-b-[3px] border-primary text-gray-900 pb-[13px] pt-4 flex-1 transition-colors" href="#">
+                    <p class="text-sm font-bold leading-normal">En attente (47)</p>
+                </a>
+                <a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-gray-600 hover:text-primary pb-[13px] pt-4 flex-1 transition-colors" href="#">
+                    <p class="text-sm font-bold leading-normal">Signalés (12)</p>
+                </a>
+                <a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-gray-600 hover:text-primary pb-[13px] pt-4 flex-1 transition-colors" href="#">
+                    <p class="text-sm font-bold leading-normal">Validés</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Products List -->
+        <div class="flex flex-col pb-20 px-4 pt-4 gap-4">
+            <!-- Product 1 -->
+            <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+                <div class="flex gap-4 p-4">
+                    <div class="bg-gray-100 rounded-lg h-20 w-20 shrink-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB85ViQ0JZyyTqkR2y8kJ4HffOC7AOJdT_yKBzsip5PPOR_kCrsd40hOqO2s-xBvwGMfgbqmIgJnEbtbhWHj5zJ6trC1zqgAtr03jjQPhhyzFflE0lcRSlKW0d4dba2LRi17pYkjRqI2mmaqtoHo6DUBIpDcg4aYRHMrWfm_qLeFEGRLNpvtZm5USnPlBpUk0MRxZYbzCdPv1WYYPK9e2Gc-Oo-h6R0txjOOC8r-xpZvtq7PSCZspyTa_KZB5luYhNFpymQtGgkf0q3");'></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-start justify-between gap-2">
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-gray-900 text-base font-semibold leading-tight truncate">Robe Wax Premium</h3>
+                                <p class="text-gray-600 text-sm mt-1">Boutique Moderne • Marie Kouassi</p>
+                                <p class="text-primary text-sm font-semibold mt-1">15,000 FCFA</p>
+                            </div>
+                            <span class="inline-flex items-center rounded-sm bg-orange-50 px-2 py-1 text-[10px] font-medium text-orange-700 ring-1 ring-inset ring-orange-600/20 shrink-0">En attente</span>
+                        </div>
+                        <div class="flex items-center gap-2 mt-3">
+                            <button class="flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-3 py-1.5 text-red-600 text-sm font-medium hover:bg-red-100 transition-colors">
+                                <span class="material-symbols-outlined text-[18px]">close</span>
+                                Rejeter
+                            </button>
+                            <button class="flex items-center gap-2 rounded-lg bg-primary px-3 py-1.5 text-white text-sm font-medium hover:bg-primary/90 transition-colors">
+                                <span class="material-symbols-outlined text-[18px]">check</span>
+                                Valider
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="bg-white rounded-xl border border-red-200 shadow-sm overflow-hidden">
+                <div class="flex gap-4 p-4">
+                    <div class="bg-gray-100 rounded-lg h-20 w-20 shrink-0 bg-cover bg-center"></div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-start justify-between gap-2">
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-gray-900 text-base font-semibold leading-tight truncate">Tissu Contrefait</h3>
+                                <p class="text-gray-600 text-sm mt-1">Style Afrique • Aminata Diallo</p>
+                                <p class="text-primary text-sm font-semibold mt-1">8,500 FCFA</p>
+                                <p class="text-red-600 text-xs mt-1 font-medium">⚠️ Signalé: Contenu suspect</p>
+                            </div>
+                            <span class="inline-flex items-center rounded-sm bg-red-50 px-2 py-1 text-[10px] font-medium text-red-700 ring-1 ring-inset ring-red-600/20 shrink-0">Signalé</span>
+                        </div>
+                        <div class="flex items-center gap-2 mt-3">
+                            <button class="flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-3 py-1.5 text-red-600 text-sm font-medium hover:bg-red-100 transition-colors">
+                                <span class="material-symbols-outlined text-[18px]">block</span>
+                                Bloquer
+                            </button>
+                            <button class="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-gray-700 text-sm font-medium hover:bg-gray-50 transition-colors">
+                                <span class="material-symbols-outlined text-[18px]">visibility</span>
+                                Voir détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

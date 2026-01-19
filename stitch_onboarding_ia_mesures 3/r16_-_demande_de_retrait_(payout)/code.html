@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>R16 - Demande de Retrait</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a73b7",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111a21",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .ios-shadow {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark min-h-screen font-display">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-50 flex items-center bg-whitebg-background-dark border-b border-gray-100border-gray-800 p-4 justify-between">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-100hover:bg-gray-800 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</div>
+<h2 class="text-[#111517]text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Demande de Retrait</h2>
+</div>
+<div class="max-w-[480px] mx-auto pb-10">
+<!-- Stats / Balance Section -->
+<div class="flex flex-wrap gap-4 p-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-5 bg-primary text-white shadow-lg shadow-primary/20">
+<p class="text-white/80 text-sm font-medium leading-normal uppercase tracking-wider">Solde disponible</p>
+<div class="flex flex-col">
+<p class="tracking-light text-3xl font-bold leading-tight">45.000 <span class="text-lg font-normal">FCFA</span></p>
+<p class="text-white/70 text-xs mt-1 italic">Retrait min: 5.000 FCFA</p>
+</div>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-5 bg-whitebg-gray-800 border border-gray-100border-gray-700 ios-shadow">
+<p class="text-gray-500text-gray-400 text-sm font-medium leading-normal uppercase tracking-wider">Gains en attente</p>
+<p class="text-[#111517]text-white tracking-light text-2xl font-bold leading-tight">12.500 <span class="text-sm font-normal">FCFA</span></p>
+<div class="flex items-center gap-1 text-orange-500">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="text-[10px] font-medium uppercase">Traitement en cours</span>
+</div>
+</div>
+</div>
+<!-- Withdrawal Form -->
+<div class="px-4 py-2">
+<div class="bg-whitebg-gray-800 rounded-2xl p-4 ios-shadow border border-gray-100border-gray-700">
+<h3 class="text-[#111517]text-white text-base font-bold mb-4">Initier un retrait</h3>
+<!-- Amount Input -->
+<div class="flex flex-col mb-6">
+<label class="text-[#111517]text-gray-300 text-sm font-semibold pb-2 px-1">Montant à retirer (FCFA)</label>
+<div class="relative flex items-center">
+<input class="flex w-full rounded-xl text-[#111517]text-white focus:ring-2 focus:ring-primary/50 border border-[#dce1e5]border-gray-700 bg-gray-50bg-gray-900 h-14 pl-4 pr-20 text-lg font-semibold" placeholder="Ex: 10.000" type="number"/>
+<button class="absolute right-3 bg-primary/10 text-primary px-3 py-1.5 rounded-lg text-xs font-bold uppercase hover:bg-primary/20 transition-colors">
+                            MAX
+                        </button>
+</div>
+<p class="text-gray-400 text-[11px] mt-2 px-1 italic flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">info</span>
+                        Des frais de transaction peuvent s'appliquer selon le mode de paiement.
+                    </p>
+</div>
+<!-- Payment Method Header -->
+<div class="mb-4">
+<h3 class="text-[#111517]text-gray-300 text-sm font-semibold px-1">Mode de paiement</h3>
+</div>
+<!-- Payment Options -->
+<div class="space-y-3 mb-6">
+<!-- Option 1: Mobile Money -->
+<label class="relative flex items-center p-4 rounded-xl border-2 border-primary bg-primary/5 cursor-pointer">
+<input checked="" class="hidden" name="payment" type="radio"/>
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#ffcc00] text-black mr-4">
+<span class="material-symbols-outlined">smartphone</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-[#111517]text-white">MTN Mobile Money</p>
+<p class="text-xs text-gray-500text-gray-400">+225 07 00 00 00 00</p>
+</div>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</label>
+<!-- Option 2: Wave -->
+<label class="relative flex items-center p-4 rounded-xl border border-gray-100border-gray-700 bg-gray-50bg-gray-900 cursor-pointer">
+<input class="hidden" name="payment" type="radio"/>
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#1da1f2] text-white mr-4">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-[#111517]text-white">Wave</p>
+<p class="text-xs text-gray-500text-gray-400">+225 01 00 00 00 00</p>
+</div>
+<span class="material-symbols-outlined text-gray-300">radio_button_unchecked</span>
+</label>
+<!-- Option 3: Bank -->
+<label class="relative flex items-center p-4 rounded-xl border border-gray-100border-gray-700 bg-gray-50bg-gray-900 cursor-pointer">
+<input class="hidden" name="payment" type="radio"/>
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-gray-200bg-gray-700 text-gray-700text-gray-300 mr-4">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-[#111517]text-white">Virement Bancaire</p>
+<p class="text-xs text-gray-500text-gray-400">CI060 01234 56789012345 67</p>
+</div>
+<span class="material-symbols-outlined text-gray-300">radio_button_unchecked</span>
+</label>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/30 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined">lock</span>
+                    Demander le retrait
+                </button>
+</div>
+</div>
+<!-- History Section -->
+<div class="mt-6 px-4">
+<div class="flex items-center justify-between mb-4 px-1">
+<h3 class="text-[#111517]text-white text-lg font-bold tracking-tight">Historique des retraits</h3>
+<button class="text-primary text-sm font-semibold">Voir tout</button>
+</div>
+<div class="space-y-3">
+<!-- Transaction Item 1: Pending -->
+<div class="flex items-center justify-between bg-whitebg-gray-800 p-4 rounded-xl border border-gray-100border-gray-700 ios-shadow">
+<div class="flex items-center gap-3">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-600">
+<span class="material-symbols-outlined">pending</span>
+</div>
+<div>
+<p class="text-sm font-bold text-[#111517]text-white">12.500 FCFA</p>
+<p class="text-[11px] text-gray-500">22 Oct. 2023 • Mobile Money</p>
+</div>
+</div>
+<span class="px-3 py-1 bg-orange-100 text-orange-600 text-[10px] font-bold rounded-full uppercase tracking-tighter">En attente</span>
+</div>
+<!-- Transaction Item 2: Processed -->
+<div class="flex items-center justify-between bg-whitebg-gray-800 p-4 rounded-xl border border-gray-100border-gray-700 ios-shadow">
+<div class="flex items-center gap-3">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div>
+<p class="text-sm font-bold text-[#111517]text-white">25.000 FCFA</p>
+<p class="text-[11px] text-gray-500">15 Oct. 2023 • Virement</p>
+</div>
+</div>
+<span class="px-3 py-1 bg-green-100 text-green-600 text-[10px] font-bold rounded-full uppercase tracking-tighter">Traité</span>
+</div>
+<!-- Transaction Item 3: Rejected -->
+<div class="flex items-center justify-between bg-whitebg-gray-800 p-4 rounded-xl border border-gray-100border-gray-700 ios-shadow">
+<div class="flex items-center gap-3">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-600">
+<span class="material-symbols-outlined">cancel</span>
+</div>
+<div>
+<p class="text-sm font-bold text-[#111517]text-white">5.000 FCFA</p>
+<p class="text-[11px] text-gray-500">08 Oct. 2023 • Mobile Money</p>
+</div>
+</div>
+<span class="px-3 py-1 bg-red-100 text-red-600 text-[10px] font-bold rounded-full uppercase tracking-tighter">Rejeté</span>
+</div>
+</div>
+</div>
+<!-- Safe Transaction Footer -->
+<div class="mt-8 flex flex-col items-center justify-center gap-2 opacity-50">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<p class="text-[10px] font-semibold uppercase tracking-widest text-[#111517]text-white">Paiement Sécurisé Sartoria</p>
+</div>
+<p class="text-[9px] text-center px-10 leading-tighttext-gray-400">Vos transactions sont protégées par un cryptage SSL de bout en bout.</p>
+</div>
+</div>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/80bg-background-dark/80 backdrop-blur-md border-t border-gray-100border-gray-800 flex justify-around items-center h-16 px-4">
+<div class="flex flex-col items-center text-gray-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px]">Accueil</span>
+</div>
+<div class="flex flex-col items-center text-gray-400">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[10px]">Commandes</span>
+</div>
+<div class="flex flex-col items-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">account_balance_wallet</span>
+<span class="text-[10px] font-bold">Portefeuille</span>
+</div>
+<div class="flex flex-col items-center text-gray-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px]">Profil</span>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Paiement de l'Abonnement - Sartoria</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3713ec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                        "card-dark": "#1d1c27",
+                        "border-dark": "#3f3b54",
+                        "text-muted": "#a19db9",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark text-white min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80bg-background-dark/80 backdrop-blur-md px-4 py-4 flex items-center justify-between">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Paiement</h1>
+<div class="w-10"></div> <!-- Spacer for symmetry -->
+</header>
+<main class="flex-1 overflow-y-auto px-4 pb-32">
+<!-- Plan Summary Card -->
+<section class="mt-4 @container">
+<div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start shadow-xl bg-card-dark overflow-hidden border border-border-dark/30">
+<div class="w-full h-32 bg-gradient-to-br from-primary to-[#6e48ff] relative overflow-hidden" data-alt="Abstract vibrant purple and blue gradient pattern">
+<div class="absolute inset-0 opacity-20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[80px]">workspace_premium</span>
+</div>
+</div>
+<div class="flex w-full grow flex-col items-stretch justify-center gap-1 py-4 px-4">
+<p class="text-text-muted text-xs font-bold uppercase tracking-widest leading-normal">Récapitulatif</p>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-white text-xl font-bold leading-tight tracking-tight">Premium Tailleur</p>
+<p class="text-text-muted text-sm font-normal leading-normal">Facturé annuellement</p>
+</div>
+<div class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold border border-primary/30">
+                            -20% Inclus
+                        </div>
+</div>
+<div class="mt-4 pt-4 border-t border-border-dark/50 flex items-center justify-between">
+<p class="text-text-muted text-sm font-normal leading-normal italic">Accès complet aux outils de gestion</p>
+<p class="text-white text-xl font-bold">15.000 FCFA</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Payment Method Selection -->
+<section class="mt-8">
+<h3 class="text-white text-lg font-bold leading-tight tracking-tight mb-4">Mode de paiement</h3>
+<!-- Tabs for Local vs International -->
+<div class="pb-6">
+<div class="flex border-b border-border-dark gap-8">
+<button class="flex flex-col items-center justify-center border-b-2 border-primary text-white pb-3 pt-2">
+<span class="text-sm font-bold tracking-wide">Local (Mobile Money)</span>
+</button>
+<button class="flex flex-col items-center justify-center border-b-2 border-transparent text-text-muted pb-3 pt-2">
+<span class="text-sm font-bold tracking-wide">International</span>
+</button>
+</div>
+</div>
+<!-- Payment Options List -->
+<div class="flex flex-col gap-3" style="--radio-dot-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(255,255,255)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3ccircle cx=%278%27 cy=%278%27 r=%273%27/%3e%3c/svg%3e');">
+<label class="flex items-center gap-4 rounded-xl border border-solid border-border-dark bg-card-dark p-4 flex-row-reverse cursor-pointer transition-all active:scale-[0.98] border-primary/50">
+<input checked="" class="h-5 w-5 border-2 border-border-dark bg-transparent text-transparent checked:border-primary checked:bg-primary checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0" name="payment_method" type="radio"/>
+<div class="flex grow items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-yellow-400 flex items-center justify-center text-black font-bold text-xs" data-alt="Yellow MTN Mobile Money logo icon">MTN</div>
+<div class="flex flex-col">
+<p class="text-white text-sm font-semibold leading-normal">MTN Mobile Money</p>
+<p class="text-text-muted text-xs font-normal leading-normal">Via FedaPay / Bizao</p>
+</div>
+</div>
+</label>
+<label class="flex items-center gap-4 rounded-xl border border-solid border-border-dark bg-card-dark p-4 flex-row-reverse cursor-pointer transition-all active:scale-[0.98]">
+<input class="h-5 w-5 border-2 border-border-dark bg-transparent text-transparent checked:border-primary checked:bg-primary checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0" name="payment_method" type="radio"/>
+<div class="flex grow items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-xs" data-alt="Blue Moov Money logo icon">Moov</div>
+<div class="flex flex-col">
+<p class="text-white text-sm font-semibold leading-normal">Moov Money</p>
+<p class="text-text-muted text-xs font-normal leading-normal">Paiement sécurisé</p>
+</div>
+</div>
+</label>
+<label class="flex items-center gap-4 rounded-xl border border-solid border-border-dark bg-card-dark p-4 flex-row-reverse cursor-pointer transition-all active:scale-[0.98]">
+<input class="h-5 w-5 border-2 border-border-dark bg-transparent text-transparent checked:border-primary checked:bg-primary checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0" name="payment_method" type="radio"/>
+<div class="flex grow items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-sky-400 flex items-center justify-center text-white font-bold text-xs" data-alt="Sky blue Wave money logo icon">Wave</div>
+<div class="flex flex-col">
+<p class="text-white text-sm font-semibold leading-normal">Wave</p>
+<p class="text-text-muted text-xs font-normal leading-normal">Zéro frais supplémentaires</p>
+</div>
+</div>
+</label>
+<label class="flex items-center gap-4 rounded-xl border border-solid border-border-dark bg-card-dark p-4 flex-row-reverse cursor-pointer transition-all active:scale-[0.98]">
+<input class="h-5 w-5 border-2 border-border-dark bg-transparent text-transparent checked:border-primary checked:bg-primary checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0" name="payment_method" type="radio"/>
+<div class="flex grow items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white" data-alt="Credit card icon with Visa and Mastercard logos">
+<span class="material-symbols-outlined text-sm">credit_card</span>
+</div>
+<div class="flex flex-col">
+<p class="text-white text-sm font-semibold leading-normal">Carte Bancaire</p>
+<p class="text-text-muted text-xs font-normal leading-normal">Visa, Mastercard (Stripe)</p>
+</div>
+</div>
+</label>
+</div>
+</section>
+<!-- Trust & Security -->
+<section class="mt-8 flex flex-col items-center gap-2">
+<div class="flex items-center gap-2 text-green-400/80">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Paiement 100% Sécurisé</span>
+</div>
+<p class="text-text-muted text-[10px] text-center px-8 leading-relaxed">
+                Vos informations bancaires sont chiffrées et ne sont jamais stockées sur nos serveurs.
+            </p>
+</section>
+</main>
+<!-- Bottom Action Button Container -->
+<footer class="fixed bottom-0 left-0 right-0 bg-background-light/95bg-background-dark/95 border-t border-border-dark/20 p-4 pb-8 backdrop-blur-lg">
+<div class="max-w-md mx-auto flex flex-col gap-4">
+<div class="flex justify-between items-center px-2">
+<span class="text-text-muted text-sm font-medium">Total à payer</span>
+<span class="text-white text-2xl font-bold tracking-tight">15.000 FCFA</span>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-full shadow-[0_8px_30px_rgb(55,19,236,0.3)] transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl">verified_user</span>
+<span>Confirmer le paiement</span>
+</button>
+<p class="text-center text-[10px] text-text-muted">
+                En confirmant, vous acceptez nos <a class="underline" href="#">Conditions d'Utilisation</a>
+</p>
+</div>
+</footer>
+</body></html>

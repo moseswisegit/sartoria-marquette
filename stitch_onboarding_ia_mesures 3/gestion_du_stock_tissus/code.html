@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestion du Stock Tissus - Sartoria</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3211d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark min-h-screen text-[#121118]text-white">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-30 bg-white/80bg-background-dark/80 backdrop-blur-md border-b border-gray-200border-gray-800">
+<div class="flex items-center p-4 justify-between max-w-md mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#121118]text-white">inventory_2</span>
+<h1 class="text-[#121118]text-white text-lg font-bold leading-tight tracking-tight">Mon Stock</h1>
+</div>
+<button class="flex size-10 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</header>
+<main class="max-w-md mx-auto pb-24">
+<!-- Stats Section -->
+<div class="flex flex-wrap gap-3 p-4">
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-xl p-4 bg-whitebg-gray-900 border border-gray-100border-gray-800 shadow-sm">
+<p class="text-gray-500text-gray-400 text-xs font-medium uppercase tracking-wider">Total Mètres</p>
+<div class="flex items-baseline gap-2">
+<p class="text-[#121118]text-white text-2xl font-bold">1,240</p>
+<span class="text-xs font-bold text-emerald-600">+12%</span>
+</div>
+</div>
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-xl p-4 bg-whitebg-gray-900 border border-gray-100border-gray-800 shadow-sm">
+<p class="text-gray-500text-gray-400 text-xs font-medium uppercase tracking-wider">Stock Bas</p>
+<div class="flex items-baseline gap-2">
+<p class="text-red-500 text-2xl font-bold">5</p>
+<span class="text-xs font-medium text-gray-400">articles</span>
+</div>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-2">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-gray-400">search</span>
+<input class="w-full h-12 pl-12 pr-4 bg-whitebg-gray-900 border-none rounded-xl focus:ring-2 focus:ring-primary/50 text-base shadow-sm placeholder:text-gray-400" placeholder="Rechercher un tissu ou motif..." type="text"/>
+</div>
+</div>
+<!-- Filters Chips -->
+<div class="flex gap-2 p-4 overflow-x-auto hide-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center rounded-full bg-primary px-5 text-white text-sm font-semibold">
+                Tous
+            </button>
+<button class="flex h-9 shrink-0 items-center justify-center rounded-full bg-whitebg-gray-800 border border-gray-100border-gray-700 px-5 text-gray-700text-gray-300 text-sm font-medium">
+                Wax
+            </button>
+<button class="flex h-9 shrink-0 items-center justify-center rounded-full bg-whitebg-gray-800 border border-gray-100border-gray-700 px-5 text-gray-700text-gray-300 text-sm font-medium">
+                Bazin
+            </button>
+<button class="flex h-9 shrink-0 items-center justify-center rounded-full bg-whitebg-gray-800 border border-gray-100border-gray-700 px-5 text-gray-700text-gray-300 text-sm font-medium">
+                Soie
+            </button>
+<button class="flex h-9 shrink-0 items-center justify-center rounded-full bg-whitebg-gray-800 border border-gray-100border-gray-700 px-5 text-gray-700text-gray-300 text-sm font-medium">
+                Lin
+            </button>
+</div>
+<!-- Section Header -->
+<div class="flex items-center justify-between px-4 pt-2 pb-2">
+<h3 class="text-[#121118]text-white text-lg font-bold tracking-tight">Inventaire des Tissus</h3>
+<button class="text-primary text-sm font-semibold">Voir tout</button>
+</div>
+<!-- Fabric Grid -->
+<div class="grid grid-cols-2 gap-4 px-4 pb-8">
+<!-- Item 1: Wax -->
+<div class="flex flex-col bg-whitebg-gray-900 rounded-2xl overflow-hidden border border-gray-100border-gray-800 shadow-sm">
+<div class="relative aspect-square">
+<img alt="Tissu Wax Multicolore" class="w-full h-full object-cover" data-alt="Close up of colorful african wax print fabric" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDliDeO1JFPQ0xxPoH9FfjyMM3xmIWCnRG3VbEMuWwjZ6CnXnfbjmfrkcbfSbZ6B00aXHz9MZJYbFqjDeeib46fknVddY40-DYkyKYDyS5_VwAem_aabEfm9dyvGues2xuZ6prz5XeBHMN-mvZsufvPJGZ_WnObo23L6ZIqZRodcHXYpkV-IZ0JVW3OdVy2oAMtYEBuPqG42TXSVd055FK0vcE1NzMOH6Bm44BkDljYWQ8gFsGMFhV8Fysa0bnxAvjHAelAFsV8di7H"/>
+<span class="absolute top-2 right-2 bg-white/90bg-black/70 backdrop-blur-sm px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">WAX</span>
+</div>
+<div class="p-3 flex flex-col gap-1">
+<h4 class="font-bold text-sm truncate">Motif Royal Blue</h4>
+<div class="flex items-center justify-between mt-1">
+<span class="text-primary font-bold text-base">6.5m</span>
+<span class="text-[10px] text-gray-400">Ref: WX-09</span>
+</div>
+<div class="w-full bg-gray-100bg-gray-800 h-1 rounded-full mt-2">
+<div class="bg-primary h-1 rounded-full w-[80%]"></div>
+</div>
+</div>
+</div>
+<!-- Item 2: Low Stock -->
+<div class="flex flex-col bg-whitebg-gray-900 rounded-2xl overflow-hidden border border-gray-100border-gray-800 shadow-sm ring-1 ring-red-100ring-red-900/30">
+<div class="relative aspect-square">
+<img alt="Tissu Bazin Blanc" class="w-full h-full object-cover" data-alt="White bazin fabric with subtle textured pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaqBLKSkYsUqTsqJ3SfwxeBcPCNdjIsD_0dzSJYJlI6oXXRcblLwJmMc4DM6uBjeZu5wa-CvzjFekK7BvTS09OmIN7u6k2Q22wg2Ic4qEmvN2g0vROFrQejJs-SFWlyFOeUo8eZSvy6I3QoD4kqMeZ0o6IarQqgwNAmaEc3CkQm04TPuPD4BeD7DPaBpdchK7OFpU7eYyShCoWcWkRVvR42SW81WwJnhwC8VGx3MqGeUcm4YOjjodvBrZQdpcOBFWhKSydvteB8cLZ"/>
+<span class="absolute top-2 left-2 bg-red-500 text-white px-2 py-0.5 rounded-lg text-[10px] font-bold">STOCK BAS</span>
+<span class="absolute top-2 right-2 bg-white/90bg-black/70 backdrop-blur-sm px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">BAZIN</span>
+</div>
+<div class="p-3 flex flex-col gap-1">
+<h4 class="font-bold text-sm truncate">Bazin Riche Blanc</h4>
+<div class="flex items-center justify-between mt-1">
+<span class="text-red-500 font-bold text-base">1.2m</span>
+<span class="text-[10px] text-gray-400">Ref: BZ-21</span>
+</div>
+<div class="w-full bg-gray-100bg-gray-800 h-1 rounded-full mt-2">
+<div class="bg-red-500 h-1 rounded-full w-[15%]"></div>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col bg-whitebg-gray-900 rounded-2xl overflow-hidden border border-gray-100border-gray-800 shadow-sm">
+<div class="relative aspect-square">
+<img alt="Soie Emeraude" class="w-full h-full object-cover" data-alt="Elegant emerald green silk fabric flowing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwoZIpjt2XrQQsO587ePT2O5VlDCPLMSW0YgtXkdMBEv1PSlRfUp0I30CuYQ4-wpI0FIzVAphUWtvTGjzz-aEZuEi-nYTXrmJDR8ILhxDaMd4HXCcoMSgAPznw00NeHJ8rFbCpUdOpp1gEy0THf9m-UNuE3dZyz8WKSypw2o2t1wGIdpt4Dp8EZe9dcIV_h3lRxIZuIdZ0rAUprzVjPbQ84dkzhfTdpJPK6ZwXgdydZSZzjI5ZaDrATwOOw_ovMKmQ-OIWfvrnI9oa"/>
+<span class="absolute top-2 right-2 bg-white/90bg-black/70 backdrop-blur-sm px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">SOIE</span>
+</div>
+<div class="p-3 flex flex-col gap-1">
+<h4 class="font-bold text-sm truncate">Soie Vert Émeraude</h4>
+<div class="flex items-center justify-between mt-1">
+<span class="text-primary font-bold text-base">4.0m</span>
+<span class="text-[10px] text-gray-400">Ref: SK-44</span>
+</div>
+<div class="w-full bg-gray-100bg-gray-800 h-1 rounded-full mt-2">
+<div class="bg-primary h-1 rounded-full w-[50%]"></div>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex flex-col bg-whitebg-gray-900 rounded-2xl overflow-hidden border border-gray-100border-gray-800 shadow-sm">
+<div class="relative aspect-square">
+<img alt="Wax Orange Pattern" class="w-full h-full object-cover" data-alt="Vibrant orange and yellow african textile pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyuNG37BXSVhdR8--I7mynFXqcnPmp2C7pCUM4Xw0Dy5KfMstYuvj6FouaX_AE5Dk1BwDdpb4cGfju7EALMWm3GeVwEU8aaxeZ8TyljLfb40IhZSzPJotb_VgnQ7YhZudaMA6w69OJOYCkrMjYAik2RKOQQsoUu6oj49K44H6vb6aD-w_92Zmj2SZzL7IdW8GGk_zy3picFKmOLR4wwP4FI2OXGDHFO0Kjlli8ZRQfdErX1ubjHP8pW9CKNk0fbIHTAymUaJkRgtXW"/>
+<span class="absolute top-2 right-2 bg-white/90bg-black/70 backdrop-blur-sm px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">WAX</span>
+</div>
+<div class="p-3 flex flex-col gap-1">
+<h4 class="font-bold text-sm truncate">Wax Sunshine</h4>
+<div class="flex items-center justify-between mt-1">
+<span class="text-primary font-bold text-base">12.0m</span>
+<span class="text-[10px] text-gray-400">Ref: WX-12</span>
+</div>
+<div class="w-full bg-gray-100bg-gray-800 h-1 rounded-full mt-2">
+<div class="bg-primary h-1 rounded-full w-[100%]"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Navigation Bar (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90bg-background-dark/90 backdrop-blur-xl border-t border-gray-200border-gray-800 pb-safe-area">
+<div class="flex justify-around items-center h-16 max-w-md mx-auto">
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Accueil</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-[10px] font-medium">Commandes</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined fill-1">inventory_2</span>
+<span class="text-[10px] font-bold">Stock</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profil</span>
+</button>
+</div>
+</nav>
+<!-- Low Stock Alert Toast (Optional) -->
+<div class="fixed bottom-20 left-4 right-4 z-40">
+<div class="bg-red-50bg-red-900/20 border border-red-200border-red-800 p-3 rounded-xl flex items-center gap-3 shadow-lg max-w-sm mx-auto">
+<div class="bg-red-100bg-red-900/40 p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-red-600text-red-400 text-xl">warning</span>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold text-red-800text-red-300">Attention</p>
+<p class="text-[11px] text-red-700text-red-400 leading-tight">5 tissus sont presque épuisés.</p>
+</div>
+<button class="material-symbols-outlined text-red-400 text-sm">close</button>
+</div>
+</div>
+</body></html>

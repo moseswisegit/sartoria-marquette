@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sartoria - Création de Coupon</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a73b7",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111a21",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .form-input:focus {
+            border-color: #1a73b7 !important;
+            box-shadow: 0 0 0 1px #1a73b7 !important;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark font-display min-h-screen flex justify-center">
+<!-- Mobile Container (iPhone centered) -->
+<div class="relative w-full max-w-[430px] min-h-screen bg-whitebg-[#111a21] shadow-2xl flex flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<div class="sticky top-0 z-50 flex items-center bg-whitebg-[#111a21] border-b border-gray-100border-gray-800 p-4 pb-3 justify-between">
+<div class="text-[#111517]text-white flex size-10 shrink-0 items-center cursor-pointer">
+<span class="material-symbols-outlined">close</span>
+</div>
+<h2 class="text-[#111517]text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center">Nouveau Coupon</h2>
+<div class="flex w-10 items-center justify-end">
+<p class="text-primary text-base font-semibold leading-normal cursor-pointer">Aide</p>
+</div>
+</div>
+<!-- Content Area -->
+<div class="flex-1 overflow-y-auto pb-32">
+<!-- HeadlineText -->
+<div class="px-4 pt-6">
+<h3 class="text-[#111517]text-white tracking-tight text-2xl font-bold leading-tight pb-1">Détails du coupon</h3>
+<p class="text-gray-500text-gray-400 text-sm">Configurez les paramètres de votre offre promotionnelle.</p>
+</div>
+<!-- Main Info Section -->
+<div class="mt-6">
+<!-- Promo Code -->
+<div class="flex flex-col gap-4 px-4 py-3">
+<label class="flex flex-col flex-1">
+<p class="text-[#111517]text-gray-200 text-sm font-semibold pb-2">Code promo</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input flex w-full min-w-0 flex-1 rounded-l-lg text-[#111517]text-white border border-[#dce1e5]border-gray-700 bg-whitebg-gray-800 focus:outline-0 h-14 placeholder:text-gray-400 p-[15px] border-r-0 text-base font-medium" placeholder="ex: WAX2024" type="text" value="WAX2024"/>
+<div class="text-primary flex border border-[#dce1e5]border-gray-700 bg-whitebg-gray-800 items-center justify-center pr-[15px] rounded-r-lg border-l-0 cursor-pointer">
+<span class="material-symbols-outlined">magic_button</span>
+</div>
+</div>
+</label>
+</div>
+<!-- SectionHeader: Discount Type -->
+<h3 class="text-[#111517]text-white text-base font-bold px-4 pb-2 pt-4">Type de remise</h3>
+<!-- SegmentedButtons -->
+<div class="flex px-4 py-2">
+<div class="flex h-12 flex-1 items-center justify-center rounded-xl bg-[#f0f3f4]bg-gray-800 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-whitehas-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-primary text-gray-500text-gray-400 text-sm font-semibold leading-normal transition-all">
+<span class="truncate">Pourcentage (%)</span>
+<input checked="" class="invisible w-0" name="discount_type" type="radio" value="percentage"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-whitehas-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-primary text-gray-500text-gray-400 text-sm font-semibold leading-normal transition-all">
+<span class="truncate">Montant fixe (€)</span>
+<input class="invisible w-0" name="discount_type" type="radio" value="fixed"/>
+</label>
+</div>
+</div>
+<!-- Discount Value Input -->
+<div class="px-4 py-3">
+<label class="flex flex-col flex-1">
+<p class="text-[#111517]text-gray-200 text-sm font-semibold pb-2">Valeur de la réduction</p>
+<div class="relative">
+<input class="form-input w-full rounded-lg text-[#111517]text-white border border-[#dce1e5]border-gray-700 bg-whitebg-gray-800 h-14 p-[15px] text-base font-medium" placeholder="0" type="number" value="15"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 font-bold">%</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Validity Section -->
+<div class="mt-4 border-t border-gray-100border-gray-800 pt-4">
+<h3 class="text-[#111517]text-white text-base font-bold px-4 pb-4">Période de validité</h3>
+<div class="grid grid-cols-2 gap-4 px-4">
+<div class="flex flex-col">
+<p class="text-gray-500 text-xs font-semibold uppercase mb-2">Date de début</p>
+<div class="flex items-center gap-2 p-3 bg-gray-50bg-gray-800 rounded-lg border border-gray-100border-gray-700">
+<span class="material-symbols-outlined text-primary text-xl">calendar_today</span>
+<span class="text-sm font-mediumtext-white">12 Mai 2024</span>
+</div>
+</div>
+<div class="flex flex-col">
+<p class="text-gray-500 text-xs font-semibold uppercase mb-2">Date de fin</p>
+<div class="flex items-center gap-2 p-3 bg-gray-50bg-gray-800 rounded-lg border border-gray-100border-gray-700">
+<span class="material-symbols-outlined text-primary text-xl">event_busy</span>
+<span class="text-sm font-mediumtext-white">12 Juin 2024</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Advanced Options -->
+<div class="mt-8 border-t border-gray-100border-gray-800 pt-6 px-4">
+<h3 class="text-[#111517]text-white text-base font-bold pb-4">Options avancées</h3>
+<!-- Minimum Order -->
+<div class="flex items-center justify-between py-4 border-b border-gray-50border-gray-800">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">shopping_basket</span>
+</div>
+<div>
+<p class="text-sm font-semiboldtext-white">Commande minimum</p>
+<p class="text-xs text-gray-500">Appliquer à partir de 50€</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peerbg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-allborder-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Usage Limit -->
+<div class="flex items-center justify-between py-4 border-b border-gray-50border-gray-800">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">production_quantity_limits</span>
+</div>
+<div>
+<p class="text-sm font-semiboldtext-white">Limite d'utilisation</p>
+<p class="text-xs text-gray-500">1 fois par client</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peerbg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-allborder-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Product Selection -->
+<div class="flex items-center justify-between py-4">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">inventory_2</span>
+</div>
+<div>
+<p class="text-sm font-semiboldtext-white">Produits spécifiques</p>
+<p class="text-xs text-gray-500">Tous les produits sélectionnés</p>
+</div>
+</div>
+<div class="text-primary font-bold text-sm cursor-pointer">Modifier</div>
+</div>
+</div>
+</div>
+<!-- Sticky Footer Action -->
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-white/80bg-[#111a21]/80 backdrop-blur-md border-t border-gray-100border-gray-800">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-[0.98]">
+                Créer le coupon
+            </button>
+<!-- iOS Home Indicator simulation -->
+<div class="mx-auto w-32 h-1.5 bg-gray-300bg-gray-700 rounded-full mt-6 mb-2"></div>
+</div>
+</div>
+</body></html>

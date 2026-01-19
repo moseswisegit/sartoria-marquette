@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Historique Commandes</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73B5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="relative min-h-screen w-full flex flex-col bg-background-lightbg-background-dark font-display overflow-x-hidden text-slate-900text-white pb-24">
+<header class="sticky top-0 z-20 flex items-center justify-between bg-background-light/95bg-background-dark/95 backdrop-blur-sm px-4 py-3 border-b border-slate-200border-slate-800">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-slate-100hover:bg-slate-800 transition-colors text-primary">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Historique Commandes</h2>
+</header>
+<div class="px-4 py-4 sticky top-[60px] z-10 bg-background-lightbg-background-dark">
+<div class="flex h-12 w-full items-center justify-center rounded-xl bg-slate-200bg-slate-800 p-1">
+<label class="flex cursor-pointer h-full flex-1 items-center justify-center overflow-hidden rounded-lg px-2 bg-whitebg-slate-700 shadow-sm transition-all duration-200">
+<span class="truncate text-primarytext-white text-sm font-semibold">En cours</span>
+<input checked="" class="invisible w-0 absolute" name="order-status" type="radio" value="En cours"/>
+</label>
+<label class="flex cursor-pointer h-full flex-1 items-center justify-center overflow-hidden rounded-lg px-2 text-slate-500text-slate-400 hover:text-slate-700hover:text-slate-200 transition-all duration-200">
+<span class="truncate text-sm font-medium">Terminé</span>
+<input class="invisible w-0 absolute" name="order-status" type="radio" value="Terminé"/>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-4 px-4 mt-2">
+<div class="group flex flex-col bg-whitebg-slate-800 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)]shadow-none border border-slate-100border-slate-700 overflow-hidden cursor-pointer hover:border-primary/30 transition-colors">
+<div class="flex gap-4 p-4">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-[80px] shadow-inner" data-alt="Modern Wax print fabric pattern in orange and blue" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCuMCjsd30iE2NEqm_QmRvJUKdpGsuX41dWZr2XKMjQaQtt1tBhoQuAMFaNOh0XrwWFMAXeri0Pg996Nfa_gQ7IBUnisapF1CSdz2u4e_mTG71yaQKEB_vOuU9eLmo-uPXNMiwKDPcnN28MxJJWXnQpEGgvxgfOIOBenddQvL5gEFdxzhj8lp4v4Xj3zleO0kH1ZHQqNTTaKicAiG3NsLgfkY4SuOy2zbuKmtqwfKAWVzt7gBGqWpEMC_zDMMtPLgh9RSV5lcQEfLOz");'>
+</div>
+</div>
+<div class="flex flex-1 flex-col justify-between py-0.5">
+<div>
+<div class="flex justify-between items-start">
+<p class="text-slate-900text-white text-base font-bold leading-tight">Kofi Styles</p>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors text-xl">chevron_right</span>
+</div>
+<p class="text-slate-500text-slate-400 text-xs font-medium mt-1">CMD #2023-88 • 15 Nov</p>
+<p class="text-slate-700text-slate-300 text-sm font-medium mt-1">Robe Wax Moderne</p>
+</div>
+</div>
+</div>
+<div class="px-4 pb-4 pt-0 flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50bg-blue-900/30 border border-blue-100border-blue-800">
+<span class="material-symbols-outlined text-[16px] text-blue-600text-blue-400">content_cut</span>
+<span class="text-xs font-semibold text-blue-700text-blue-300">En couture</span>
+</div>
+<span class="text-xs text-slate-400 font-medium">Livraison estimée: 22 Nov</span>
+</div>
+</div>
+<div class="group flex flex-col bg-whitebg-slate-800 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)]shadow-none border border-slate-100border-slate-700 overflow-hidden cursor-pointer hover:border-primary/30 transition-colors">
+<div class="flex gap-4 p-4">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-[80px] shadow-inner" data-alt="Rich Bazin fabric texture in deep purple" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnWCxBUOmIRuDpguLSZEtNerzbvGjJM8QAj01tmdQZ7A-u8kKJrGEz4SGG0kYbTiqFfRjjxPeVD9JcgzIf9uBp-HFcYvIsWotsuI-M67e8bvrhldyBpcmkbXGyy55_RBd4xH6whJTriKtZj_W3MapRxEHdDlRsKhmUItYxN3a-dZivjdN_bEjRQ8PisIoi_KWvSqwsLBMMlmZ_bw_ck10HsoALmi89Pq7RqquS7M6ftqnf7aFFaD8XZR7AxW9mPvX5FComV3-G3RcS");'>
+</div>
+</div>
+<div class="flex flex-1 flex-col justify-between py-0.5">
+<div>
+<div class="flex justify-between items-start">
+<p class="text-slate-900text-white text-base font-bold leading-tight">Atelier Mariam</p>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors text-xl">chevron_right</span>
+</div>
+<p class="text-slate-500text-slate-400 text-xs font-medium mt-1">CMD #2023-92 • 10 Nov</p>
+<p class="text-slate-700text-slate-300 text-sm font-medium mt-1">Boubou Bazin Riche</p>
+</div>
+</div>
+</div>
+<div class="px-4 pb-4 pt-0 flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-purple-50bg-purple-900/30 border border-purple-100border-purple-800">
+<span class="material-symbols-outlined text-[16px] text-purple-600text-purple-400">straighten</span>
+<span class="text-xs font-semibold text-purple-700text-purple-300">Prise de mesures</span>
+</div>
+<span class="text-xs text-slate-400 font-medium">En attente client</span>
+</div>
+</div>
+<div class="group flex flex-col bg-whitebg-slate-800 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)]shadow-none border border-slate-100border-slate-700 overflow-hidden cursor-pointer hover:border-primary/30 transition-colors">
+<div class="flex gap-4 p-4">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-[80px] shadow-inner" data-alt="Natural linen fabric texture close up" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDum0yQL6x_4UUHRjMZRWG_vGl-Cr3_DCJccULlU9nFksggAwfnS2MlnLZBhRqrRVRdA4twQ3hHH_639JCme3YoF1X8RQE1UhUIz25AcZb6pFHMEtPvIDkLvlEhfWDU-ClgKw94HXdTY87-xkJ3CLbH-jjftESLV2YPGpme43OTTsTgE3OAb3yXTgyCfHVD4X9mrKbVlpHcJKDEDcWytrndsomGIWa_Mm7NmdEPNZWwVbjS7swy01lFiUWANelClWev_e6LQuetANB5");'>
+</div>
+</div>
+<div class="flex flex-1 flex-col justify-between py-0.5">
+<div>
+<div class="flex justify-between items-start">
+<p class="text-slate-900text-white text-base font-bold leading-tight">Ibrahim Couture</p>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors text-xl">chevron_right</span>
+</div>
+<p class="text-slate-500text-slate-400 text-xs font-medium mt-1">CMD #2023-95 • 02 Nov</p>
+<p class="text-slate-700text-slate-300 text-sm font-medium mt-1">Ensemble Lin 2 Pièces</p>
+</div>
+</div>
+</div>
+<div class="px-4 pb-4 pt-0 flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-50bg-green-900/30 border border-green-100border-green-800">
+<span class="material-symbols-outlined text-[16px] text-green-600text-green-400">inventory_2</span>
+<span class="text-xs font-semibold text-green-700text-green-300">Prêt à livrer</span>
+</div>
+<span class="text-xs text-slate-400 font-medium">Action requise</span>
+</div>
+</div>
+<div class="flex items-center justify-center py-8">
+<p class="text-slate-400 text-xs text-center">Affichage des 3 dernières commandes en cours</p>
+</div>
+</div>
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-whitebg-background-dark border-t border-slate-200border-slate-800 pb-safe">
+<div class="flex items-center justify-around h-16 px-2">
+<a class="flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-primary transition-colors gap-1" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="text-[10px] font-medium">Accueil</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-primary transition-colors gap-1" href="#">
+<span class="material-symbols-outlined text-2xl">search</span>
+<span class="text-[10px] font-medium">Explorer</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-primary gap-1 relative" href="#">
+<div class="absolute -top-1 right-[25%] size-2 rounded-full bg-red-500 border-2 border-whiteborder-background-dark"></div>
+<span class="material-symbols-outlined text-2xl fill-1">shopping_bag</span>
+<span class="text-[10px] font-medium">Commandes</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-primary transition-colors gap-1" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-[10px] font-medium">Profil</span>
+</a>
+</div>
+<div class="h-4 w-full bg-whitebg-background-dark"></div>
+</nav>
+</body></html>

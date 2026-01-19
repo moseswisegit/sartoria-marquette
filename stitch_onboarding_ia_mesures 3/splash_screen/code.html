@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sartoria Splash Screen</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73B5",
+                        "background-light": "#FAFAFC",
+                        "background-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    backgroundImage: {
+                        'subtle-pattern': "radial-gradient(circle at center, #1A73B508 0%, transparent 70%)"
+                    }
+                },
+            },
+        }
+    </script>
+<style>@keyframes loading-bar {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+        .animate-loader {
+            animation: loading-bar 2s ease-in-out infinite;
+        }@keyframes fade-up {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up {
+            animation: fade-up 0.8s ease-out forwards;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light bg-white text-slate-900 text-gray-900 h-screen w-full overflow-hidden relative selection:bg-primary selection:text-white">
+<div class="absolute inset-0 z-0 bg-subtle-pattern pointer-events-none"></div>
+<div class="relative z-10 flex flex-col items-center justify-between h-full w-full py-12 px-6">
+<div class="flex-1"></div>
+<div class="flex flex-col items-center justify-center w-full max-w-xs animate-fade-up">
+<div class="relative mb-6 group">
+<div class="absolute -inset-1 rounded-full bg-gradient-to-tr from-primary/30 to-transparent blur opacity-50 group-hover:opacity-75 transition duration-500"></div>
+<div class="relative w-24 h-24 bg-white bg-white rounded-2xl shadow-[0_8px_30px_rgb(26,115,181,0.15)] shadow-lg flex items-center justify-center ring-1 ring-primary/10 ring-gray-200/10">
+<span class="material-symbols-outlined text-primary text-5xl">cut</span>
+</div>
+</div>
+<h1 class="text-slate-900 text-gray-900 tracking-tight text-4xl font-serif font-bold leading-tight text-center">
+                Sartoria
+            </h1>
+<p class="text-slate-500 text-gray-600 text-[13px] font-medium leading-normal pt-2 text-center tracking-wider uppercase opacity-80">
+                African Fashion, Digitized
+            </p>
+</div>
+<div class="flex-1 flex flex-col justify-end w-full max-w-[160px] gap-8 pb-10">
+<div class="flex flex-col gap-3">
+<div class="w-full rounded-full bg-slate-200 bg-gray-50 h-1 overflow-hidden">
+<div class="h-full rounded-full bg-primary animate-loader" style="width: 30%;"></div>
+</div>
+</div>
+<div class="text-center opacity-40">
+<span class="material-symbols-outlined text-slate-900 text-gray-900 text-base">verified</span>
+</div>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Validation Demandes Retrait - Admin Sartoria</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73B5",
+                        "background-light": "#f6f6f8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background-light font-display antialiased">
+    <div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl">
+        <!-- Header -->
+        <div class="sticky top-0 z-20 flex items-center bg-white p-4 pb-2 justify-between border-b border-gray-100">
+            <div class="flex items-center gap-3">
+                <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
+                    <span class="material-symbols-outlined text-gray-700">arrow_back</span>
+                </button>
+                <h2 class="text-gray-900 text-xl font-bold leading-tight">Demandes Retrait</h2>
+            </div>
+            <button class="flex items-center justify-center rounded-full w-10 h-10 bg-primary text-white shadow-lg shadow-primary/30">
+                <span class="material-symbols-outlined text-[24px]">filter_list</span>
+            </button>
+        </div>
+
+        <!-- Stats -->
+        <div class="w-full overflow-x-auto pt-4 pb-2 pl-4">
+            <div class="flex gap-4 pr-4 w-max">
+                <div class="flex min-w-[140px] flex-col gap-2 rounded-xl p-4 bg-white border border-gray-100 shadow-sm">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-orange-500 text-[20px]">pending</span>
+                        <p class="text-gray-600 text-sm font-medium">En attente</p>
+                    </div>
+                    <p class="text-gray-900 tracking-tight text-2xl font-bold">18</p>
+                </div>
+                <div class="flex min-w-[140px] flex-col gap-2 rounded-xl p-4 bg-white border border-gray-100 shadow-sm">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+                        <p class="text-gray-600 text-sm font-medium">Validées</p>
+                    </div>
+                    <p class="text-gray-900 tracking-tight text-2xl font-bold">245</p>
+                </div>
+                <div class="flex min-w-[140px] flex-col gap-2 rounded-xl p-4 bg-white border border-gray-100 shadow-sm">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-[20px]">payments</span>
+                        <p class="text-gray-600 text-sm font-medium">Total</p>
+                    </div>
+                    <p class="text-gray-900 tracking-tight text-2xl font-bold">8,450,000</p>
+                    <p class="text-gray-500 text-xs">FCFA</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="px-4 pt-4">
+            <div class="flex border-b border-gray-200 justify-between">
+                <a class="flex flex-col items-center justify-center border-b-[3px] border-primary text-gray-900 pb-[13px] pt-4 flex-1 transition-colors" href="#">
+                    <p class="text-sm font-bold leading-normal">En attente (18)</p>
+                </a>
+                <a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-gray-600 hover:text-primary pb-[13px] pt-4 flex-1 transition-colors" href="#">
+                    <p class="text-sm font-bold leading-normal">Validées</p>
+                </a>
+                <a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-gray-600 hover:text-primary pb-[13px] pt-4 flex-1 transition-colors" href="#">
+                    <p class="text-sm font-bold leading-normal">Rejetées</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Demandes List -->
+        <div class="flex flex-col pb-20 px-4 pt-4 gap-4">
+            <!-- Demande 1 -->
+            <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+                <div class="p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-gray-100 rounded-full h-12 w-12 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDV0Uq5MeiBSOkT0FQoFtoqDRSKtLSwJUz0YDqrziRNmvTFS_7dw_ea-5W3MgXF_oRQiIQZilkxX9zfWbwcgcfLYu1G4JnMxR7riGTw_pYZDrAHnW1IwyxQZ7wMCeDR-MBkSIV0B1TO9zH24AZGSDXMKtfbAakCS_h9ihnHb5Hn4LSb7rRot3T-cIdY_gfDdNBDD147CTmOWWeXWCpltKXdhZU_8NAsbOBOeKUtb1SXy02Oxdwv1VncCFlvnrMypwDhh3bLDu-sOhQz");'></div>
+                            <div>
+                                <h3 class="text-gray-900 text-base font-semibold">Boutique Moderne</h3>
+                                <p class="text-gray-600 text-sm">Marie Kouassi</p>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center rounded-sm bg-orange-50 px-2 py-1 text-[10px] font-medium text-orange-700 ring-1 ring-inset ring-orange-600/20">En attente</span>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-3 mb-3">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="text-gray-600 text-sm font-medium">Montant demandé</p>
+                            <p class="text-gray-900 text-xl font-bold">450,000</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p class="text-gray-600 text-sm font-medium">Méthode</p>
+                            <p class="text-gray-900 text-sm font-semibold">MTN Mobile Money</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <p class="text-gray-600 text-sm font-medium">Numéro</p>
+                            <p class="text-gray-900 text-sm font-mono">+229 97 123 45 67</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <p class="text-gray-600 text-sm font-medium">Date demande</p>
+                            <p class="text-gray-900 text-sm">15 Jan 2024 • 14:30</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button class="flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-red-600 text-sm font-medium hover:bg-red-100 transition-colors flex-1">
+                            <span class="material-symbols-outlined text-[18px]">close</span>
+                            Rejeter
+                        </button>
+                        <button class="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-white text-sm font-medium hover:bg-primary/90 transition-colors flex-1">
+                            <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                            Valider
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demande 2 -->
+            <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+                <div class="p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-gray-100 rounded-full h-12 w-12 bg-cover bg-center"></div>
+                            <div>
+                                <h3 class="text-gray-900 text-base font-semibold">Style Afrique</h3>
+                                <p class="text-gray-600 text-sm">Aminata Diallo</p>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center rounded-sm bg-orange-50 px-2 py-1 text-[10px] font-medium text-orange-700 ring-1 ring-inset ring-orange-600/20">En attente</span>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-3 mb-3">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="text-gray-600 text-sm font-medium">Montant demandé</p>
+                            <p class="text-gray-900 text-xl font-bold">320,000</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p class="text-gray-600 text-sm font-medium">Méthode</p>
+                            <p class="text-gray-900 text-sm font-semibold">Moov Money</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <p class="text-gray-600 text-sm font-medium">Numéro</p>
+                            <p class="text-gray-900 text-sm font-mono">+221 77 654 32 10</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-2">
+                            <p class="text-gray-600 text-sm font-medium">Date demande</p>
+                            <p class="text-gray-900 text-sm">15 Jan 2024 • 16:45</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button class="flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-red-600 text-sm font-medium hover:bg-red-100 transition-colors flex-1">
+                            <span class="material-symbols-outlined text-[18px]">close</span>
+                            Rejeter
+                        </button>
+                        <button class="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-white text-sm font-medium hover:bg-primary/90 transition-colors flex-1">
+                            <span class="material-symbols-outlined text-[18px]">check_circle</span>
+                            Valider
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

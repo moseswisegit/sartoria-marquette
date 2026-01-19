@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générer Screenshots Manquants</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1A73B5 0%, #155a8f 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #1A73B5;
+            margin-bottom: 1rem;
+        }
+        .screen-item {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .screen-info {
+            flex: 1;
+        }
+        .screen-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.25rem;
+        }
+        .screen-path {
+            font-size: 0.85rem;
+            color: #666;
+            font-family: monospace;
+        }
+        button {
+            background: #1A73B5;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #155a8f;
+        }
+        .instructions {
+            background: #e3f2fd;
+            border-left: 4px solid #1A73B5;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        .instructions h3 {
+            color: #1A73B5;
+            margin-bottom: 0.5rem;
+        }
+        .instructions ol {
+            margin-left: 1.5rem;
+        }
+        .instructions li {
+            margin: 0.5rem 0;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 Générer les Screenshots Manquants</h1>
+        
+        <div class="instructions">
+            <h3>📋 Instructions :</h3>
+            <ol>
+                <li>Cliquez sur "Ouvrir" pour chaque écran ci-dessous</li>
+                <li>Dans Chrome, appuyez sur <code>F12</code> (ou <code>Cmd+Option+I</code> sur Mac)</li>
+                <li>Appuyez sur <code>Cmd+Shift+P</code> (Mac) ou <code>Ctrl+Shift+P</code> (Windows)</li>
+                <li>Tapez "Capture full size screenshot" et sélectionnez l'option</li>
+                <li>L'image sera téléchargée automatiquement</li>
+                <li>Renommez-la en <code>screen.png</code> et placez-la dans le dossier correspondant</li>
+            </ol>
+        </div>
+
+        <div class="screen-item">
+            <div class="screen-info">
+                <div class="screen-name">A05 - Onboarding Revendeur</div>
+                <div class="screen-path">onboarding_-_revendeur/screen.png</div>
+            </div>
+            <button onclick="window.open('stitch_onboarding_ia_mesures 3/onboarding_-_revendeur/code.html', '_blank')">Ouvrir</button>
+        </div>
+
+        <div class="screen-item">
+            <div class="screen-info">
+                <div class="screen-name">A06 - Écran d'Inscription Client</div>
+                <div class="screen-path">écran_d'inscription_client/screen.png</div>
+            </div>
+            <button onclick="window.open('stitch_onboarding_ia_mesures 3/écran_d\'inscription_client/code.html', '_blank')">Ouvrir</button>
+        </div>
+
+        <div class="screen-item">
+            <div class="screen-info">
+                <div class="screen-name">A06b - Écran d'Inscription Tailleur</div>
+                <div class="screen-path">écran_d'inscription_tailleur/screen.png</div>
+            </div>
+            <button onclick="window.open('stitch_onboarding_ia_mesures 3/écran_d\'inscription_tailleur/code.html', '_blank')">Ouvrir</button>
+        </div>
+
+        <div class="screen-item">
+            <div class="screen-info">
+                <div class="screen-name">A06c - Écran d'Inscription Revendeur</div>
+                <div class="screen-path">écran_d'inscription_revendeur/screen.png</div>
+            </div>
+            <button onclick="window.open('stitch_onboarding_ia_mesures 3/écran_d\'inscription_revendeur/code.html', '_blank')">Ouvrir</button>
+        </div>
+
+        <div style="margin-top: 2rem; padding: 1rem; background: #d4edda; border-left: 4px solid #28a745; border-radius: 4px;">
+            <strong>✅ Astuce :</strong> Vous pouvez ouvrir tous les écrans en même temps dans des onglets séparés et les capturer un par un.
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Messagerie - Chat</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73B5",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark font-display text-slate-900text-white antialiased selection:bg-primary selection:text-white">
+<div class="relative flex flex-col h-screen overflow-hidden max-w-md mx-auto shadow-2xl bg-background-lightbg-background-dark">
+<header class="shrink-0 z-20 flex items-center bg-background-lightbg-background-dark p-4 pb-2 justify-between border-b border-gray-200border-white/5">
+<div class="flex items-center gap-3">
+<button class="text-slate-900text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back_ios_new</span>
+</button>
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 ring-2 ring-primary/20" data-alt="Portrait of a tailor smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAyyBV1NgkDtN5u5M5eTC61gjNb0YAoPOQaTokcD4TdE64lURYm5ZnaUUm5gIhtPLmKgC09Jk6qqJ6gbWdiGJwMJ8RURlJplE5NDqWI9YLBGki3QZip7loqjMramG4xK1nVZ7d1cKuzMG9zp05Vdia0d_-eGReyG4pfC077yP1ddvJLzPeOynNcSibC_ASUwkBpUQB6OzmPGBGlu6jSyupSADUBwcjWoLs8pVpHJP3hr_XsoIrSmEaE7T8cOgEGy5WNaC2kphdU3Nm3");'>
+</div>
+<div class="absolute bottom-0 right-0 size-3 bg-green-500 border-2 border-background-lightborder-background-dark rounded-full"></div>
+</div>
+<div class="flex flex-col">
+<h2 class="text-slate-900text-white text-base font-bold leading-tight">Kofi Tailoring</h2>
+<span class="text-primary text-xs font-medium">En ligne</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center size-10 rounded-full bg-transparent text-slate-900text-white hover:bg-black/5hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">videocam</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">call</span>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto overflow-x-hidden p-4 space-y-6 scroll-smooth bg-background-lightbg-background-dark" id="chat-container">
+<div class="flex justify-center my-4">
+<span class="text-xs font-medium text-gray-500text-gray-400 bg-gray-200bg-white/5 px-3 py-1 rounded-full">Aujourd'hui, 09:41</span>
+</div>
+<div class="flex items-end gap-3 group">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 shrink-0 mb-1" data-alt="Portrait of the tailor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHt9sqdF9yL9qs50OGy3_veKXBJu8kqWxVpPU0s7pu7eRiye-a1YtJEaJF_F1Koc5BM5Xkz-baPd-xW8bFWDJl48fc3MrmZCenwVJhdMEsIk-QhIUODZynsTw3qyo5DKuG8ayPzfgy0FM1lbqDMO7Z8P7_5CK983FrncwJS9V7dGx8-xv06e1htR3HFZQihUE1x2LgbeQ0h9yjoNHIwYm_xLuSZcDZqytOvB1kbls2H6l3WlI3yZhY_SqvyzCxBIXU_mFHeUyRSrWB");'>
+</div>
+<div class="flex flex-col gap-1 items-start max-w-[80%]">
+<div class="relative px-4 py-3 bg-whitebg-[#2b2839] text-slate-900text-white rounded-2xl rounded-bl-none shadow-smshadow-none">
+<p class="text-sm font-normal leading-relaxed">
+                        Bonjour ! Oui, absolument. Ce tissu wax serait magnifique pour une robe longue. Avez-vous une idée du modèle ?
+                    </p>
+</div>
+<span class="text-[11px] text-gray-400 ml-1">09:42</span>
+</div>
+</div>
+<div class="flex items-end gap-3 justify-end group">
+<div class="flex flex-col gap-1 items-end max-w-[80%]">
+<div class="relative px-4 py-3 bg-primary text-white rounded-2xl rounded-br-none shadow-md shadow-primary/20">
+<p class="text-sm font-normal leading-relaxed">
+                        Je pensais à quelque chose comme ça, avec des manches bouffantes.
+                    </p>
+</div>
+<div class="relative mt-1 overflow-hidden rounded-xl border border-gray-200border-white/10 w-full aspect-[3/4] max-w-[240px]">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover hover:scale-105 transition-transform duration-500" data-alt="Sketch of a long dress with puffy sleeves" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBoWrc2cZkhCVd-bcnEw8lf11zID5SnpAy52rt-hnjXv3dKbp9jH3QktEZdeERSOpR_bWwMGxfIPYsOS2syo7eVspL0UgY0NWBV-6r1X_Vc6pwSF9UAivAmw9y-1ioV0xZ9_QHAp8Y3yumCCseTk8Yjx61fDGxscZf3V9rwZtMrOqdxD1bNAF6gRMUQCTLxTuCasSw9NHJYwtfj0CEEz-_VyzBt1ViyxnOlpUQHpVwRDXWz4goSYkKmhNXF6ScouTyhCup_YKa3qlLh");'>
+</div>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<span class="text-[11px] text-gray-400">09:45</span>
+<span class="material-symbols-outlined text-primary text-[14px]">done_all</span>
+</div>
+</div>
+</div>
+<div class="flex items-end gap-3 group">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 shrink-0 mb-1" data-alt="Portrait of the tailor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8gjyBs7Itd0YRJWqyPSWyhvNnznUUkEB_K7t1uehkZvdijAmPZJ_qVo8jsHZ85KxwzSODQcoOB9odHD57xSFun0s7O3VUY3tyE3NkXzTkGHt9Sk1Dm27nDCXTihtbnJHnR3yDbX1xgCmGZem_Ajp4sV_rgBfGDuTzOLczH34WKNGrib0pYwECYWctWNicwE55naezbZWsebZWpqoaM790NrXHzYOSZuyNLcXaT41TbSgZ1lhlTqG-241gC7G5XbktBrwwXb_1WfWu");'>
+</div>
+<div class="flex flex-col gap-1 items-start max-w-[80%]">
+<div class="relative px-4 py-3 bg-whitebg-[#2b2839] text-slate-900text-white rounded-2xl rounded-bl-none shadow-smshadow-none">
+<p class="text-sm font-normal leading-relaxed">
+                        C'est noté. Je peux le faire. Pour les mesures, j'aurai besoin de votre tour de taille et de la longueur souhaitée.
+                    </p>
+</div>
+<span class="text-[11px] text-gray-400 ml-1">09:48</span>
+</div>
+</div>
+<div class="flex items-end gap-3 justify-end group">
+<div class="flex flex-col gap-1 items-end max-w-[80%]">
+<div class="relative p-2 pl-3 bg-primary text-white rounded-2xl rounded-br-none shadow-md shadow-primary/20 min-w-[200px]">
+<div class="flex items-center gap-3">
+<button class="flex shrink-0 items-center justify-center size-8 bg-white/20 rounded-full hover:bg-white/30 transition-colors">
+<span class="material-symbols-outlined text-[20px] ml-0.5">play_arrow</span>
+</button>
+<div class="flex items-center gap-0.5 h-6 flex-1">
+<div class="w-1 h-2 bg-white/40 rounded-full animate-pulse"></div>
+<div class="w-1 h-3 bg-white/60 rounded-full"></div>
+<div class="w-1 h-5 bg-white rounded-full"></div>
+<div class="w-1 h-3 bg-white/70 rounded-full"></div>
+<div class="w-1 h-6 bg-white rounded-full"></div>
+<div class="w-1 h-4 bg-white/50 rounded-full"></div>
+<div class="w-1 h-2 bg-white/30 rounded-full"></div>
+<div class="w-1 h-3 bg-white/60 rounded-full"></div>
+<div class="w-1 h-5 bg-white rounded-full"></div>
+<div class="w-1 h-2 bg-white/40 rounded-full"></div>
+<div class="w-1 h-3 bg-white/60 rounded-full"></div>
+<div class="w-1 h-4 bg-white/80 rounded-full"></div>
+</div>
+<span class="text-xs font-medium pr-2 tabular-nums">0:24</span>
+</div>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<span class="text-[11px] text-gray-400">09:50</span>
+<span class="material-symbols-outlined text-gray-500text-gray-600 text-[14px]">done</span>
+</div>
+</div>
+</div>
+<div class="h-4"></div>
+</main>
+<footer class="shrink-0 z-20 bg-background-lightbg-background-dark border-t border-gray-200border-white/5 p-4 pb-8">
+<div class="flex items-end gap-3">
+<button class="flex shrink-0 items-center justify-center size-10 rounded-full text-gray-500text-gray-400 hover:bg-black/5hover:bg-white/10 transition-colors mb-[2px]">
+<span class="material-symbols-outlined" style="font-size: 26px;">add_circle</span>
+</button>
+<div class="flex-1 bg-whitebg-[#1f1c2e] rounded-[20px] px-4 py-2.5 flex items-center min-h-[44px] shadow-smshadow-none border border-gray-200border-transparent focus-within:border-primary/50focus-within:border-primary/50 transition-colors">
+<input class="bg-transparent border-none outline-none text-sm w-full text-slate-900text-white placeholder-gray-500 focus:ring-0 p-0 leading-relaxed font-normal" placeholder="Envoyer un message..." type="text"/>
+<button class="ml-2 text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 22px;">photo_camera</span>
+</button>
+</div>
+<button class="flex shrink-0 items-center justify-center size-11 rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition-transform active:scale-95 mb-[1px]">
+<span class="material-symbols-outlined" style="font-size: 22px;">mic</span>
+</button>
+</div>
+</footer>
+</div>
+<script>
+    // Simple script to auto-scroll to bottom on load
+    window.onload = function() {
+        var objDiv = document.getElementById("chat-container");
+        objDiv.scrollTop = objDiv.scrollHeight;
+    }
+</script>
+
+</body></html>

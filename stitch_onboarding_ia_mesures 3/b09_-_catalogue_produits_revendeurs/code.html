@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Catalogue Produits Revendeurs - Sartoria</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73B5",
+                        "background-light": "#f6f6f8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light font-display text-gray-900">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-20">
+        <!-- Header -->
+        <div class="flex items-center px-4 py-4 justify-between sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+            <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
+                <span class="material-symbols-outlined text-gray-700">arrow_back</span>
+            </button>
+            <h1 class="text-gray-900 text-lg font-bold leading-tight">Produits Revendeurs</h1>
+            <button class="relative flex items-center justify-center rounded-full w-10 h-10 bg-gray-50 text-gray-900 hover:bg-gray-100 transition-colors">
+                <span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+                <span class="absolute top-1 right-1 size-2 bg-red-500 rounded-full border border-white"></span>
+            </button>
+        </div>
+
+        <!-- Search & Filters -->
+        <div class="px-4 pt-4 pb-2">
+            <div class="relative flex w-full items-center">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-gray-400">
+                    <span class="material-symbols-outlined text-[20px]">search</span>
+                </div>
+                <input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-gray-900 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none border-none h-12 pl-11 pr-4 text-base font-normal placeholder:text-gray-400 transition-all shadow-sm" placeholder="Rechercher un produit..." type="text" />
+                <button class="absolute inset-y-0 right-0 flex items-center pr-3">
+                    <div class="bg-primary text-white p-1.5 rounded-lg flex items-center justify-center shadow-lg shadow-primary/30">
+                        <span class="material-symbols-outlined text-[18px]">tune</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex gap-2 px-4 pb-4 overflow-x-auto no-scrollbar">
+            <button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-4 shadow-md shadow-primary/20">
+                <span class="material-symbols-outlined text-[18px]">grid_view</span>
+                <p class="text-sm font-medium">Tout</p>
+            </button>
+            <button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-100 border border-gray-200 px-4 hover:bg-gray-200 transition-colors">
+                <p class="text-gray-700 text-sm font-medium">Tissus</p>
+            </button>
+            <button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-100 border border-gray-200 px-4 hover:bg-gray-200 transition-colors">
+                <p class="text-gray-700 text-sm font-medium">Prêt-à-porter</p>
+            </button>
+            <button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-100 border border-gray-200 px-4 hover:bg-gray-200 transition-colors">
+                <p class="text-gray-700 text-sm font-medium">Accessoires</p>
+            </button>
+            <button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-100 border border-gray-200 px-4 hover:bg-gray-200 transition-colors">
+                <p class="text-gray-700 text-sm font-medium">Chaussures</p>
+            </button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="px-4 pb-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-gray-900 text-lg font-bold leading-tight">Produits disponibles</h3>
+                <button class="text-sm text-primary font-medium hover:underline">Voir tout</button>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Product 1 -->
+                <div class="flex flex-col gap-2 group cursor-pointer">
+                    <div class="relative aspect-[3/4] w-full bg-gray-100 rounded-xl overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBD3H0qFNfv0pHSPM4K_S74zta5oEhytdZc3kHdVAPMiCWyCSjezSwyirN0Dnbah8BaTjR6BpI9Ivh3uj-nnagPT1SYVulvtfbK17A7WlBexdkMm3bQoMO0oJv68Ohh7VSuJG9XEE0Cf5bbWXyWhqJG7nm00YaE-hMbM1rNgo9wirirMgzBMJmeIZqTZshUiUgjvPuDBHDT8zJeqH6gwx2XlUOodZMHG7tcTJUES9_vbrQkzIF49IpJ1Cl0QV8U1_uiOkWakPqfDTaR");'></div>
+                        <span class="absolute top-2 left-2 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Nouveau</span>
+                        <button class="absolute bottom-2 right-2 bg-white/90 p-1.5 rounded-full shadow-sm hover:bg-white transition-colors">
+                            <span class="material-symbols-outlined text-[20px] text-gray-700">favorite</span>
+                        </button>
+                    </div>
+                    <div>
+                        <p class="text-gray-900 text-sm font-bold truncate">Tissu Wax Premium</p>
+                        <p class="text-gray-600 text-xs mt-0.5 truncate">Boutique Moderne</p>
+                        <div class="flex items-center justify-between mt-1">
+                            <p class="text-primary text-base font-black">15,000 FCFA</p>
+                            <div class="flex items-center gap-0.5">
+                                <span class="material-symbols-outlined text-yellow-400 text-[14px] fill-current">star</span>
+                                <span class="text-gray-600 text-xs font-medium">4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="flex flex-col gap-2 group cursor-pointer">
+                    <div class="relative aspect-[3/4] w-full bg-gray-100 rounded-xl overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBfgXku8auETF2JDa9aWgMuE4dw8vPi9qqgc4J9DNnuR-E8BrpmIwvTmYw0GKoINozTRppZpRxRB0UgNI0k7irfGmdZIGTWL2xXSaOlQlUbLtVNQTTt01Xt1I-TPdSMP_gB5NPrFEs75NoXKb8t8oCAQ--AlGwmTcRydXfa6DTEadc2b7Wv9JmHZF87YtHIfHi48yEPOwyHeP4RX79dxXMaBF8J4-fBQmJQ1AaRnTkrjVd9s7GHuS1jsXcXu2hcePCOl3I5rQcqt_vv");'></div>
+                        <span class="absolute top-2 left-2 bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Promo</span>
+                        <button class="absolute bottom-2 right-2 bg-white/90 p-1.5 rounded-full shadow-sm hover:bg-white transition-colors">
+                            <span class="material-symbols-outlined text-[20px] text-gray-700">favorite</span>
+                        </button>
+                    </div>
+                    <div>
+                        <p class="text-gray-900 text-sm font-bold truncate">Robe Prêt-à-porter</p>
+                        <p class="text-gray-600 text-xs mt-0.5 truncate">Style Afrique</p>
+                        <div class="flex items-center justify-between mt-1">
+                            <div class="flex items-center gap-2">
+                                <p class="text-primary text-base font-black">25,000</p>
+                                <p class="text-gray-400 text-xs line-through">30,000</p>
+                            </div>
+                            <div class="flex items-center gap-0.5">
+                                <span class="material-symbols-outlined text-yellow-400 text-[14px] fill-current">star</span>
+                                <span class="text-gray-600 text-xs font-medium">4.6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="flex flex-col gap-2 group cursor-pointer">
+                    <div class="relative aspect-[3/4] w-full bg-gray-100 rounded-xl overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJGC-3id9mO0FVzKjAlgeGltEkK-iHxXuJ0DgLmUlshvd3eGe_JuhZKh9yYc8k2fVewPFAbSA_OMSIkfrVpDsj-AKp_oS3mkUldSRxzavTGtdU65WsBvyPI4MV-W-RVshQLan0OsE61ZNlmGNhrz3tDhDcEgu2uYQ6igWmf_REY9KyVQV33ZM4RESqRVzyoSV5OQxGCJtXlqveqHbIkg5nOQ4Sy4btaIp0RGMnCvIhnHJH7ZBoTB2QWp0j6DEQw8N028ImBMwZMbBt");'></div>
+                        <button class="absolute bottom-2 right-2 bg-white/90 p-1.5 rounded-full shadow-sm hover:bg-white transition-colors">
+                            <span class="material-symbols-outlined text-[20px] text-gray-700">favorite</span>
+                        </button>
+                    </div>
+                    <div>
+                        <p class="text-gray-900 text-sm font-bold truncate">Tissu Bazin Doré</p>
+                        <p class="text-gray-600 text-xs mt-0.5 truncate">Textiles Premium</p>
+                        <div class="flex items-center justify-between mt-1">
+                            <p class="text-primary text-base font-black">12,500 FCFA</p>
+                            <div class="flex items-center gap-0.5">
+                                <span class="material-symbols-outlined text-yellow-400 text-[14px] fill-current">star</span>
+                                <span class="text-gray-600 text-xs font-medium">4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="flex flex-col gap-2 group cursor-pointer">
+                    <div class="relative aspect-[3/4] w-full bg-gray-100 rounded-xl overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPEegohurm2ORA5rVpCbLKntv9ZTkrnhAHVaK2uC2OCnJD_rugIq-DSONEe02_Acj1OBc3kP-WxEMOMIheq1wkwnWt2Tcs0mokghP8n5hsc8L_PTuWS0SjL-SrNsayam46CEOqhm-QdPkiHTaocN1Ac82MzVkl1WTNd0cZGMEX-eR44SJJzIthT-JWCSsO18qTpTpp_sC_lSq9gQTK1h1sRzoVUsj393JA2wA5jAQt31XQdqpmsjyo2mr2p04LpweJnKp9NJ21sXm1");'></div>
+                        <span class="absolute top-2 left-2 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Stock</span>
+                        <button class="absolute bottom-2 right-2 bg-white/90 p-1.5 rounded-full shadow-sm hover:bg-white transition-colors">
+                            <span class="material-symbols-outlined text-[20px] text-gray-700">favorite</span>
+                        </button>
+                    </div>
+                    <div>
+                        <p class="text-gray-900 text-sm font-bold truncate">Accessoire Mode</p>
+                        <p class="text-gray-600 text-xs mt-0.5 truncate">Boutique Moderne</p>
+                        <div class="flex items-center justify-between mt-1">
+                            <p class="text-primary text-base font-black">8,500 FCFA</p>
+                            <div class="flex items-center gap-0.5">
+                                <span class="material-symbols-outlined text-yellow-400 text-[14px] fill-current">star</span>
+                                <span class="text-gray-600 text-xs font-medium">4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-gray-100 px-6 py-3 flex justify-between items-end z-50 pb-6">
+            <button class="flex flex-col items-center gap-1 text-primary">
+                <span class="material-symbols-outlined text-[28px] fill-current">home</span>
+                <span class="text-[10px] font-medium">Accueil</span>
+            </button>
+            <button class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600 transition-colors">
+                <span class="material-symbols-outlined text-[28px]">store</span>
+                <span class="text-[10px] font-medium">Boutiques</span>
+            </button>
+            <div class="relative -top-6">
+                <button class="size-14 rounded-full bg-primary text-white shadow-lg shadow-primary/40 flex items-center justify-center transform transition hover:scale-105 active:scale-95">
+                    <span class="material-symbols-outlined text-[28px]">shopping_bag</span>
+                </button>
+            </div>
+            <button class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600 transition-colors">
+                <span class="material-symbols-outlined text-[28px]">favorite</span>
+                <span class="text-[10px] font-medium">Favoris</span>
+            </button>
+            <button class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-600 transition-colors">
+                <span class="material-symbols-outlined text-[28px]">person</span>
+                <span class="text-[10px] font-medium">Profil</span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

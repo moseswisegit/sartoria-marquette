@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding - IA Mesures</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1A73B5", 
+              "background-light": "#f8f9fa",
+              "background-dark": "#131022",
+              "text-main": "#1e293b",
+              "text-subtle": "#64748b",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+            spacing: {
+                "safe-top": "env(safe-area-inset-top)",
+                "safe-bottom": "env(safe-area-inset-bottom)",
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {min-height: 100vh;
+            min-height: 100dvh;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark font-display text-text-maintext-white antialiased">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-md mx-auto bg-whitebg-background-dark shadow-2xl">
+<div class="flex w-full items-center justify-end px-6 pt-12 pb-2 z-10 shrink-0">
+<button class="text-text-subtletext-gray-400 text-sm font-semibold hover:text-primaryhover:text-primary transition-colors duration-200">
+                Passer
+            </button>
+</div>
+<div class="flex-1 flex flex-col px-6 pb-8">
+<div class="flex-1 w-full flex items-center justify-center py-6 relative group">
+<div class="absolute w-72 h-72 bg-primary/5 rounded-full blur-3xl transform translate-x-8 -translate-y-8"></div>
+<div class="absolute w-64 h-64 bg-blue-400/10 rounded-full blur-2xl transform -translate-x-8 translate-y-8"></div>
+<div class="relative w-full aspect-[4/5] max-h-[55vh] rounded-3xl overflow-hidden shadow-sm bg-gray-50bg-gray-800 ring-1 ring-black/5ring-white/10">
+<div class="absolute inset-0 bg-center bg-cover bg-no-repeat transition-transform duration-700 ease-out group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1QkwUputx6H-g6GowZKVnD-u9nvRY5gYBhyd9r-15OEu-GybAWTTqE-Pv-TriW_ypDQtHAdhhJ8Bhy0QdXIaZW29mpad1ktjfHYXRdd0Wd7csO_vQ5ntBx09khCIWBfDQ-_YpRN5nYgfxvr6Am6tMLOzYp5B1yFRhLdV7Txmf2G3piXgvi-lvzAFOYLo1ZnyG4V2fxegAmdaH63RpbtxbzD8Ak2cDJcuAsx7ONnY7nHmxsjTgPaAOFm8jjUREDQAwgoCMdMQhmrrr");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-white/20 backdrop-blur-md rounded-full px-4 py-2 border border-white/20 shadow-lg">
+<span class="material-symbols-outlined text-white text-lg animate-pulse">qr_code_scanner</span>
+<span class="text-white text-xs font-medium tracking-wide">Scan IA Actif</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-8 mt-2">
+<div class="flex flex-col items-center gap-3 text-center">
+<h1 class="text-text-maintext-white tracking-tight text-3xl font-extrabold px-2">
+                        Vos mesures <br/>en un <span class="text-primary">clin d'œil</span>
+</h1>
+<p class="text-text-subtletext-gray-400 text-[15px] font-medium leading-relaxed max-w-[90%]">
+                        Notre IA analyse votre silhouette pour une tenue traditionnelle sur-mesure, sans contact et en quelques secondes.
+                    </p>
+</div>
+<div class="flex flex-row items-center justify-center gap-2">
+<div class="h-1.5 w-6 rounded-full bg-primary transition-all duration-300"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-gray-300bg-gray-700"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-gray-300bg-gray-700"></div>
+</div>
+<div class="w-full">
+<button class="group flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-4 px-6 text-white shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 hover:shadow-primary/40 active:scale-[0.98]">
+<span class="text-base font-bold tracking-wide">Suivant</span>
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="h-[env(safe-area-inset-bottom)] w-full bg-transparent"></div>
+</div>
+
+</body></html>

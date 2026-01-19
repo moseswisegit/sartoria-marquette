@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>N03 - Centre de Notifications Global</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a73b7",
+                        "tailleur": "#D4AF37",
+                        "revendeur": "#10b981",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111a21",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for better look */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3d4952;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark text-slate-900text-white min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-background-light/80bg-background-dark/80 backdrop-blur-md border-b border-slate-200border-slate-800">
+<div class="flex items-center p-4 pb-2 justify-between max-w-md mx-auto">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<h2 class="text-slate-900text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center">Notifications</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="text-primary text-sm font-bold hover:opacity-80 transition-opacity">Tout lire</button>
+</div>
+</div>
+<!-- Tabs -->
+<div class="max-w-md mx-auto px-4 mt-2">
+<div class="flex border-b border-slate-200border-slate-800 gap-6 overflow-x-auto no-scrollbar">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-3 pt-2" href="#">
+<p class="text-sm font-bold">Tout</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-slate-500text-slate-400 pb-3 pt-2" href="#">
+<p class="text-sm font-bold">Client</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-slate-500text-slate-400 pb-3 pt-2" href="#">
+<p class="text-sm font-bold">Tailleur</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-slate-500text-slate-400 pb-3 pt-2" href="#">
+<p class="text-sm font-bold">Revendeur</p>
+</a>
+</div>
+</div>
+</header>
+<main class="max-w-md mx-auto pb-20">
+<!-- SectionHeader: Aujourd'hui -->
+<div class="px-4 py-4">
+<h3 class="text-slate-900text-white text-base font-bold leading-tight tracking-tight">Aujourd'hui</h3>
+</div>
+<!-- ListItem: Client (Blue) -->
+<div class="px-4 py-2">
+<div class="bg-whitebg-slate-800/50 rounded-xl p-4 flex gap-4 border border-slate-100border-slate-800/50 shadow-sm relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex items-start gap-4 flex-1">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12">
+<span class="material-symbols-outlined">package_2</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<p class="text-slate-900text-white text-base font-semibold">Commande expédiée</p>
+<span class="text-xs text-slate-400">10 min</span>
+</div>
+<p class="text-primary text-xs font-bold uppercase tracking-wider mt-0.5">Client</p>
+<p class="text-slate-500text-slate-400 text-sm mt-1">Votre costume "Milan Midnight" est en route pour la boutique.</p>
+<div class="mt-3 flex gap-2">
+<button class="bg-primary text-white text-xs font-semibold px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                                Suivre
+                            </button>
+<button class="bg-slate-100bg-slate-700 text-slate-700text-slate-300 text-xs font-semibold px-4 py-2 rounded-lg">
+                                Détails
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ListItem: Tailleur (Gold) -->
+<div class="px-4 py-2">
+<div class="bg-whitebg-slate-800/50 rounded-xl p-4 flex gap-4 border border-slate-100border-slate-800/50 shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-tailleur"></div>
+<div class="flex items-start gap-4 flex-1">
+<div class="text-tailleur flex items-center justify-center rounded-lg bg-tailleur/10 shrink-0 size-12">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<p class="text-slate-900text-white text-base font-semibold">Nouveau rendez-vous</p>
+<span class="text-xs text-slate-400">1h</span>
+</div>
+<p class="text-tailleur text-xs font-bold uppercase tracking-wider mt-0.5">Tailleur</p>
+<p class="text-slate-500text-slate-400 text-sm mt-1">M. Lefebvre a réservé un créneau d'ajustement pour demain à 14h00.</p>
+<div class="mt-3">
+<button class="bg-tailleur text-white text-xs font-semibold px-4 py-2 rounded-lg hover:opacity-90 transition-colors w-full">
+                                Confirmer le rendez-vous
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SectionHeader: Hier -->
+<div class="px-4 py-4 mt-2">
+<h3 class="text-slate-900text-white text-base font-bold leading-tight tracking-tight">Hier</h3>
+</div>
+<!-- ListItem: Revendeur (Green) -->
+<div class="px-4 py-2">
+<div class="bg-whitebg-slate-800/50 rounded-xl p-4 flex gap-4 border border-slate-100border-slate-800/50 shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-revendeur"></div>
+<div class="flex items-start gap-4 flex-1">
+<div class="text-revendeur flex items-center justify-center rounded-lg bg-revendeur/10 shrink-0 size-12">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<p class="text-slate-900text-white text-base font-semibold">Vente effectuée</p>
+<span class="text-xs text-slate-400">Hier</span>
+</div>
+<p class="text-revendeur text-xs font-bold uppercase tracking-wider mt-0.5">Revendeur</p>
+<p class="text-slate-500text-slate-400 text-sm mt-1">Félicitations ! Votre commission sur la vente #8921 a été créditée.</p>
+<div class="mt-3 flex gap-2">
+<button class="bg-revendeur text-white text-xs font-semibold px-4 py-2 rounded-lg hover:opacity-90 transition-colors">
+                                Voir portefeuille
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ListItem: Client (Blue) - Message -->
+<div class="px-4 py-2">
+<div class="bg-whitebg-slate-800/50 rounded-xl p-4 flex gap-4 border border-slate-100border-slate-800/50 shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex items-start gap-4 flex-1">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12">
+<span class="material-symbols-outlined">chat_bubble</span>
+</div>
+<div class="flex flex-1 flex-col">
+<div class="flex justify-between items-start">
+<p class="text-slate-900text-white text-base font-semibold">Nouveau message</p>
+<span class="text-xs text-slate-400">Hier</span>
+</div>
+<p class="text-primary text-xs font-bold uppercase tracking-wider mt-0.5">Client</p>
+<p class="text-slate-500text-slate-400 text-sm mt-1 italic">"Est-il possible de changer la doublure du col avant vendredi ?"</p>
+<div class="mt-3">
+<button class="bg-slate-100bg-slate-700 text-slate-700text-slate-300 text-xs font-semibold px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-slate-200hover:bg-slate-600 transition-colors">
+<span class="material-symbols-outlined text-sm">reply</span>
+                                Répondre au chat
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80bg-background-dark/80 backdrop-blur-lg border-t border-slate-200border-slate-800 px-6 py-2 pb-6">
+<div class="max-w-md mx-auto flex justify-between items-center">
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Accueil</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] font-medium">Explorer</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<div class="relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute -top-1 -right-1 size-2 bg-red-500 rounded-full border-2 border-whiteborder-slate-900"></span>
+</div>
+<span class="text-[10px] font-bold">Alertes</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profil</span>
+</button>
+</div>
+</nav>
+</body></html>

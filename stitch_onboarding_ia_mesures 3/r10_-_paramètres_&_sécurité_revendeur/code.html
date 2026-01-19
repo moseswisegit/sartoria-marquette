@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Paramètres &amp; Sécurité Revendeur</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#3211d4",
+                "background-light": "#f6f6f8",
+                "background-dark": "#131022",
+              },
+              fontFamily: {
+                "display": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark min-h-screen font-display">
+<div class="max-w-[430px] mx-auto min-h-screen shadow-2xl relative bg-whitebg-background-dark overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex items-center bg-white/80bg-background-dark/80 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100border-gray-800">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-100hover:bg-gray-800 transition-colors cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<h2 class="text-gray-900text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Paramètres &amp; Sécurité</h2>
+</header>
+<!-- ProfileHeader -->
+<section class="flex p-6bg-background-dark">
+<div class="flex w-full flex-col gap-4 items-center">
+<div class="flex gap-4 flex-col items-center">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-28 w-28 border-4 border-whiteborder-gray-800 shadow-md" data-alt="Photo de profil du revendeur Jean Dupont" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDeHJnPkmBGft2KzeQWIemXHEexcSLhmWoB849-Uiq2KYvWnb0WQ1v_oX5AY8unOmj8msVBvv4GE0q3OJ14tATfLyXNqtEL8cVhFTLxkDq8HC2R-QnblUp0aEfDTAVOQLbi9FLp0tm2TwQytxrv_pAiExyoTuIoAZuu7uKeo1Bm3MMT4fVGO6kOsN2GW3n-j0DlL48BKCHKYKfVfQuouR6uE75P_xpFlS1nBETnfH5T09z9wSuTetxcdn3EoBMjTPM4TqSxGfmlO_my");'>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary text-white p-2 rounded-full border-2 border-whiteborder-gray-800 shadow-lg cursor-pointer">
+<span class="material-symbols-outlined text-sm">edit</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center">
+<p class="text-gray-900text-white text-[22px] font-bold leading-tight tracking-tight text-center">Jean Dupont</p>
+<p class="text-gray-500text-gray-400 text-sm font-medium leading-normal text-center mt-1">ID Revendeur: #RE-45920</p>
+<p class="text-gray-400text-gray-500 text-xs font-normal leading-normal text-center">Membre depuis Janvier 2023</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Personal Info Section -->
+<section>
+<h3 class="text-gray-400text-gray-500 text-xs font-bold leading-tight tracking-[0.05em] px-6 pb-2 pt-4 uppercase">Informations Personnelles</h3>
+<div class="mx-4 mb-6 rounded-xl overflow-hidden border border-gray-100border-gray-800 bg-whitebg-background-dark shadow-sm">
+<!-- ListItem Email -->
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between border-b border-gray-50border-gray-800 hover:bg-gray-50hover:bg-gray-800/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900text-white text-sm font-medium leading-normal">Email</p>
+<p class="text-gray-500text-gray-400 text-sm font-normal leading-normal">j.dupont@business.fr</p>
+</div>
+</div>
+<div class="shrink-0 text-gray-300text-gray-600">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<!-- ListItem Phone -->
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between hover:bg-gray-50hover:bg-gray-800/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">phone_iphone</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900text-white text-sm font-medium leading-normal">Téléphone</p>
+<p class="text-gray-500text-gray-400 text-sm font-normal leading-normal">+33 6 12 34 56 78</p>
+</div>
+</div>
+<div class="shrink-0 text-gray-300text-gray-600">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Section -->
+<section>
+<h3 class="text-gray-400text-gray-500 text-xs font-bold leading-tight tracking-[0.05em] px-6 pb-2 pt-2 uppercase">Sécurité</h3>
+<div class="mx-4 mb-6 rounded-xl overflow-hidden border border-gray-100border-gray-800 bg-whitebg-background-dark shadow-sm">
+<!-- Change Password -->
+<div class="flex items-center gap-4 px-4 min-h-[64px] py-2 justify-between border-b border-gray-50border-gray-800 hover:bg-gray-50hover:bg-gray-800/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<p class="text-gray-900text-white text-sm font-medium leading-normal">Modifier le mot de passe</p>
+</div>
+<div class="shrink-0 text-gray-300text-gray-600">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<!-- 2FA Toggle -->
+<div class="flex items-center gap-4 px-4 min-h-[64px] py-2 justify-between hover:bg-gray-50hover:bg-gray-800/50 transition-colors">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<p class="text-gray-900text-white text-sm font-medium leading-normal">Authentification à deux facteurs</p>
+</div>
+<div class="shrink-0">
+<div class="w-11 h-6 bg-primary rounded-full relative flex items-center transition-colors">
+<div class="absolute right-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Notifications Section -->
+<section>
+<h3 class="text-gray-400text-gray-500 text-xs font-bold leading-tight tracking-[0.05em] px-6 pb-2 pt-2 uppercase">Notifications</h3>
+<div class="mx-4 mb-8 rounded-xl overflow-hidden border border-gray-100border-gray-800 bg-whitebg-background-dark shadow-sm">
+<!-- Push Notification Sales -->
+<div class="flex items-center gap-4 px-4 min-h-[64px] py-2 justify-between border-b border-gray-50border-gray-800">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">notifications_active</span>
+</div>
+<div class="flex flex-col">
+<p class="text-gray-900text-white text-sm font-medium leading-normal">Alertes de ventes (Push)</p>
+<p class="text-gray-400text-gray-500 text-xs font-normal">Temps réel</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="w-11 h-6 bg-primary rounded-full relative flex items-center transition-colors">
+<div class="absolute right-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Email Weekly Report -->
+<div class="flex items-center gap-4 px-4 min-h-[64px] py-2 justify-between">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">bar_chart</span>
+</div>
+<div class="flex flex-col">
+<p class="text-gray-900text-white text-sm font-medium leading-normal">Rapport hebdomadaire (Email)</p>
+<p class="text-gray-400text-gray-500 text-xs font-normal">Chaque lundi à 9h</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="w-11 h-6 bg-gray-200bg-gray-700 rounded-full relative flex items-center transition-colors">
+<div class="absolute left-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Actions -->
+<div class="px-6 pb-12 flex flex-col gap-4">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg transition-all active:scale-[0.98]">
+                Enregistrer les modifications
+            </button>
+<button class="w-full flex items-center justify-center gap-2 text-red-500 font-semibold py-3 hover:bg-red-50hover:bg-red-500/10 rounded-xl transition-colors">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Se déconnecter
+            </button>
+</div>
+<!-- Support Info Footer -->
+<div class="text-center pb-8">
+<p class="text-gray-400 text-xs">Application Revendeur v2.4.1</p>
+<div class="flex justify-center gap-4 mt-2">
+<a class="text-primary text-xs font-medium underline" href="#">Centre d'aide</a>
+<a class="text-primary text-xs font-medium underline" href="#">Confidentialité</a>
+</div>
+</div>
+</div>
+</body></html>

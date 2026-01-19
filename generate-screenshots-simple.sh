@@ -3,7 +3,7 @@
 # Script simple pour lister les fichiers nécessitant des captures d'écran
 # Usage: ./generate-screenshots-simple.sh
 
-BASE_DIR="stitch_onboarding_ia_mesures 2"
+BASE_DIR="stitch_onboarding_ia_mesures 3"
 
 echo "🎨 Maquettes nécessitant des captures d'écran:"
 echo ""

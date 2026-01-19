@@ -346,6 +346,10 @@
             border-bottom-color: #9f7aea;
         }
 
+        .profile-section-title.revendeur {
+            border-bottom-color: #1A73B5;
+        }
+
         .profile-badge {
             display: inline-block;
             padding: 0.25rem 0.75rem;
@@ -368,6 +372,11 @@
         .profile-badge.admin {
             background: #e9d8fd;
             color: #553c9a;
+        }
+
+        .profile-badge.revendeur {
+            background: #bee3f8;
+            color: #1A73B5;
         }
 
         .prototype-profile-selector {
@@ -571,9 +580,19 @@
 
 <body>
     <div class="container">
-        <div class="header">
+            <div class="header">
             <h1>🎨 Maquette Sartoria - Galerie des Écrans</h1>
             <p>Visualisez toutes les captures d'écran et leurs fichiers HTML associés</p>
+            
+            <div style="margin-top: 20px; padding: 15px; background: #f0f7ff; border-radius: 8px; border-left: 4px solid #1A73B5;">
+                <h3 style="margin: 0 0 10px 0; color: #1A73B5; font-size: 16px;">📚 Guides Développeurs Téléchargeables</h3>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <a href="GUIDE_ECRANS_CLIENT.md" download style="padding: 8px 15px; background: #1A73B5; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">📱 Guide Client</a>
+                    <a href="GUIDE_ECRANS_TAILLEUR.md" download style="padding: 8px 15px; background: #1A73B5; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">✂️ Guide Tailleur</a>
+                    <a href="GUIDE_ECRANS_REVENDEUR.md" download style="padding: 8px 15px; background: #1A73B5; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">🛒 Guide Revendeur</a>
+                    <a href="GUIDE_ECRANS_ADMIN.md" download style="padding: 8px 15px; background: #1A73B5; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">🔧 Guide Admin</a>
+                </div>
+            </div>
 
             <div class="search-bar">
                 <span class="search-icon">🔍</span>
@@ -606,6 +625,9 @@
                 <button class="profile-filter-btn" data-profile="admin" onclick="filterByProfile('admin')">
                     🛠️ Administrateur
                 </button>
+                <button class="profile-filter-btn" data-profile="revendeur" onclick="filterByProfile('revendeur')">
+                    🛒 Revendeur
+                </button>
             </div>
             <div id="galleryContainer"></div>
         </div>
@@ -622,6 +644,8 @@
                         onclick="switchPrototypeProfile('tailleur', this)">Tailleur</button>
                     <button class="profile-select-btn" data-profile="admin"
                         onclick="switchPrototypeProfile('admin', this)">Admin</button>
+                    <button class="profile-select-btn" data-profile="revendeur"
+                        onclick="switchPrototypeProfile('revendeur', this)">Revendeur</button>
                 </div>
                 <div class="prototype-header">
                     <div class="prototype-title" id="prototypeTitle">Splash Screen</div>
@@ -678,62 +702,139 @@
     </div>
 
     <script>
-        const basePath = "stitch_onboarding_ia_mesures 2";
+        const basePath = "stitch_onboarding_ia_mesures 3";
 
         // Organisation des écrans par profil
         const screensByProfile = {
             client: [
-                { name: "Splash Screen", folder: "splash_screen" },
-                { name: "Écran de Connexion", folder: "écran_de_connexion" },
-                { name: "Écran d'Inscription", folder: "écran_d'inscription" },
-                { name: "Mot de Passe Oublié", folder: "mot_de_passe_oublié" },
-                { name: "Onboarding - IA Mesures", folder: "onboarding_-_ia_mesures" },
-                { name: "Onboarding - Marketplace", folder: "onboarding_-_marketplace" },
-                { name: "Onboarding - Essayage Virtuel 3D", folder: "onboarding_-_essayage_virtuel_3d" },
-                { name: "Accueil / Marketplace", folder: "accueil_/_marketplace" },
-                { name: "Recherche Avancée Marketplace", folder: "recherche_avancée_marketplace" },
-                { name: "Prise de Mesures - Instructions", folder: "prise_de_mesures_-_instructions" },
-                { name: "Prise de Mesures - Upload Photo", folder: "prise_de_mesures_-_upload_photo" },
-                { name: "Prise de Mesures - Résumé IA", folder: "prise_de_mesures_-_résumé_ia" },
-                { name: "Profil Client - Infos", folder: "profil_client_-_infos" },
-                { name: "Profil Client - Mesures", folder: "profil_client_-_mesures" },
-                { name: "Profil Client - Historique Commandes", folder: "profil_client_-_historique_commandes" },
-                { name: "Profil Client - Paiements", folder: "profil_client_-_paiements" },
-                { name: "Création de Commande", folder: "création_de_commande" },
-                { name: "Suivi de Commande - Timeline", folder: "suivi_de_commande_-_timeline" },
-                { name: "Calendrier des Rendez-vous", folder: "calendrier_des_rendez-vous" },
-                { name: "Messagerie - Chat", folder: "messagerie_-_chat" },
-                { name: "Centre de Notifications", folder: "centre_de_notifications" },
-                { name: "Notation & Avis Tailleur", folder: "notation_&_avis_tailleur" },
-                { name: "Essayage Virtuel 3D Immersif", folder: "essayage_virtuel_3d_immersif" },
-                { name: "Sélecteur de Textures HD", folder: "sélecteur_de_textures_hd" },
-                { name: "Analyse & Conseils Morpho-Style", folder: "analyse_&_conseils_morpho-style" }
+                // 1. AUTHENTIFICATION & ONBOARDING
+                { name: "A01 - Splash Screen", folder: "splash_screen" },
+                { name: "A02 - Onboarding IA Mesures", folder: "onboarding_-_ia_mesures" },
+                { name: "A03 - Onboarding Essayage Virtuel 3D", folder: "onboarding_-_essayage_virtuel_3d" },
+                { name: "A04 - Onboarding Marketplace", folder: "onboarding_-_marketplace" },
+                { name: "A05 - Onboarding Revendeur", folder: "onboarding_-_revendeur" },
+                { name: "A06 - Écran d'Inscription Client", folder: "écran_d'inscription_client" },
+                { name: "A07 - Écran de Connexion", folder: "écran_de_connexion" },
+                { name: "A08 - Mot de Passe Oublié", folder: "mot_de_passe_oublié" },
+                
+                // 2. MARKETPLACE & DÉCOUVERTE
+                { name: "B01 - Accueil / Marketplace", folder: "accueil_/_marketplace" },
+                // { name: "B02 - Recherche Avancée Marketplace", folder: "recherche_avancée_marketplace" }, // Dossier manquant
+                { name: "B03 - Détails Profil Tailleur", folder: "détails_profil_tailleur" },
+                
+                // 3. COMMANDE TAILLEUR (Sur Mesure avec Mesures IA)
+                { name: "B04 - Commande Sur Mesure Tailleur", folder: "création_de_commande" },
+                { name: "C01 - Instructions Prise Mesures IA", folder: "prise_de_mesures_-_instructions" },
+                { name: "C02 - Capture Photos Mesures IA", folder: "prise_de_mesures_-_upload_photo" },
+                { name: "C03 - Résumé Mesures IA Détectées", folder: "prise_de_mesures_-_résumé_ia" },
+                { name: "C04 - Essayage Virtuel 3D Commande", folder: "essayage_virtuel_3d_immersif" },
+                { name: "C05 - Sélection Textures Tissus", folder: "sélecteur_de_textures_hd" },
+                { name: "C06 - Conseils Style Personnalisés", folder: "analyse_&_conseils_morpho-style" },
+                
+                // 4. ACHAT PRODUITS REVENDEURS (E-commerce)
+                { name: "B12 - Découvrir Boutiques Revendeurs", folder: "b12_-_liste_boutiques_revendeurs" },
+                { name: "B09 - Catalogue Produits Revendeurs", folder: "b09_-_catalogue_produits_revendeurs" },
+                { name: "B10 - Fiche Produit Revendeur", folder: "b10_-_détails_produit_revendeur" },
+                { name: "B11 - Panier & Achat Produit Revendeur", folder: "b11_-_panier_&_commande_produit_revendeur" },
+                
+                // 5. SUIVI & COMMUNICATION
+                { name: "D01 - Suivi Timeline Commande", folder: "suivi_de_commande_-_timeline" },
+                { name: "D02 - Messagerie - Chat", folder: "messagerie_-_chat" },
+                { name: "D03 - Calendrier des Rendez-vous", folder: "calendrier_des_rendez-vous" },
+                
+                // 6. PROFIL & GESTION
+                { name: "B05 - Profil Client - Infos", folder: "profil_client_-_infos" },
+                { name: "B06 - Profil Client - Mesures", folder: "profil_client_-_mesures" },
+                { name: "B07 - Profil Client - Historique Commandes", folder: "profil_client_-_historique_commandes" },
+                { name: "B08 - Profil Client - Paiements", folder: "profil_client_-_paiements" },
+                
+                // 7. NAVIGATION & UTILITAIRES
+                { name: "N02 - Sidebar de Transition Rapide", folder: "n02_-_sidebar_de_transition_rapide" },
+                { name: "N03 - Centre de Notifications Global", folder: "n03_-_centre_de_notifications_global" },
+                // { name: "Notation & Avis Tailleur", folder: "notation_&_avis_tailleur" }, // Dossier manquant
+                // { name: "Sélecteur Rôle Multi-Profils", folder: "u00f4le_multi-profils" } // Dossier avec problème d'encodage
             ],
             tailleur: [
-                { name: "Écran de Connexion", folder: "écran_de_connexion" },
-                { name: "Validation KYC Tailleur", folder: "validation_kyc_tailleur" },
-                { name: "Forfaits d'Abonnement Tailleurs", folder: "forfaits_d'abonnement_tailleurs" },
-                { name: "Paiement de l'Abonnement", folder: "paiement_de_l'abonnement" },
-                { name: "Dashboard Tailleur - Business KPIs", folder: "dashboard_tailleur_-_business_kpis" },
-                { name: "Gestion des Commandes Tailleur", folder: "gestion_des_commandes_tailleur" },
-                { name: "CRM Tailleur - Fiches Clients", folder: "crm_tailleur_-_fiches_clients" },
-                { name: "Détails Profil Tailleur", folder: "détails_profil_tailleur" },
-                { name: "Portfolio Tailleur", folder: "portfolio_tailleur" },
-                { name: "Gestion Stock Tissus Détaillée", folder: "gestion_stock_tissus_détaillée" },
-                { name: "Centre de Notifications", folder: "centre_de_notifications" },
-                { name: "Facture de Paiement PDF", folder: "facture_de_paiement_pdf" }
+                // 1. AUTHENTIFICATION & ONBOARDING
+                { name: "A06b - Écran d'Inscription Tailleur", folder: "écran_d'inscription_tailleur" },
+                { name: "A07 - Écran de Connexion", folder: "écran_de_connexion" },
+                { name: "A09 - Validation KYC Tailleur", folder: "validation_kyc_tailleur" },
+                
+                // 2. ABONNEMENTS & PAIEMENTS
+                { name: "E06 - Forfaits d'Abonnement Tailleurs", folder: "forfaits_d'abonnement_tailleurs" },
+                { name: "E07 - Paiement de l'Abonnement", folder: "paiement_de_l'abonnement" },
+                { name: "E10 - Facture de Paiement PDF", folder: "facture_de_paiement_pdf" },
+                
+                // 3. DASHBOARD & VUE D'ENSEMBLE
+                { name: "E01 - Dashboard Business Tailleur", folder: "dashboard_tailleur_-_business_kpis" },
+                
+                // 4. GESTION OPÉRATIONNELLE
+                { name: "E02 - Gestion des Commandes Tailleur", folder: "gestion_des_commandes_tailleur" },
+                { name: "E03 - CRM Fiches Clients", folder: "crm_tailleur_-_fiches_clients" },
+                { name: "E04 - Gestion du Stock Tissus", folder: "gestion_du_stock_tissus" },
+                { name: "E05 - Calendrier des Rendez-vous", folder: "calendrier_des_rendez-vous" },
+                
+                // 5. PROFIL & PARAMÈTRES
+                { name: "E08 - Détails Profil Tailleur", folder: "détails_profil_tailleur" },
+                // { name: "E09 - Portfolio Tailleur", folder: "portfolio_tailleur" }, // Dossier manquant
+                
+                // 6. NOTIFICATIONS & UTILITAIRES
+                { name: "N03 - Centre de Notifications Global", folder: "n03_-_centre_de_notifications_global" }
+            ],
+            revendeur: [
+                { name: "A05 - Onboarding Revendeur", folder: "onboarding_-_revendeur" },
+                { name: "A06c - Écran d'Inscription Revendeur", folder: "écran_d'inscription_revendeur" },
+                { name: "R01 - Inscription & Choix Type Revendeur", folder: "r01_-_inscription_&_choix_type_revendeur" },
+                { name: "R02 - Dashboard Revendeur Vue d'Ensemble", folder: "r02_-_dashboard_revendeur_vue_d'ensemble" },
+                { name: "R03 - Personnalisation de la Boutique", folder: "r03_-_personnalisation_de_la_boutique" },
+                { name: "R04 - Gestion du Catalogue Produits", folder: "r04_-_gestion_du_catalogue_produits" },
+                { name: "R05 - Formulaire Ajout Produit 1", folder: "r05_-_formulaire_ajout_produit_1" },
+                { name: "R05 - Formulaire Ajout Produit 2", folder: "r05_-_formulaire_ajout_produit_2" },
+                { name: "R06 - Inventaire & Gestion Stock", folder: "r06_-_inventaire_&_gestion_stock" },
+                { name: "R07 - Liste des Commandes Client", folder: "r07_-_liste_des_commandes_client" },
+                { name: "R08 - Revenus & Paiements Revendeur", folder: "r08_-_revenus_&_paiements_revendeur" },
+                { name: "R09 - Détails Commande & Expédition", folder: "r09_-_détails_commande_&_expédition" },
+                { name: "R10 - Paramètres & Sécurité Revendeur", folder: "r10_-_paramètres_&_sécurité_revendeur" },
+                { name: "R11 - Aperçu Public Boutique", folder: "r11_-_aperçu_public_boutique" },
+                { name: "R14 - Gestion des Retours Clients", folder: "r14_-_gestion_des_retours_clients" },
+                { name: "R15 - Détails du Retour & Chat SAV", folder: "r15_-_détails_du_retour_&_chat_sav" },
+                { name: "R16 - Demande de Retrait (Payout)", folder: "r16_-_demande_de_retrait_(payout)" },
+                { name: "R17 - Programme de Parrainage (Referral)", folder: "r17_-_programme_de_parrainage_(referral)" },
+                { name: "R18 - Rapport de Performance Mensuel PDF", folder: "r18_-_rapport_de_performance_mensuel_pdf" }
             ],
             admin: [
-                { name: "Écran de Connexion", folder: "écran_de_connexion" },
-                { name: "Dashboard Statistiques", folder: "dashboard_statistiques" },
-                { name: "Gestion des Utilisateurs", folder: "gestion_des_utilisateurs" },
-                { name: "Gestion du Stock Tissus", folder: "gestion_du_stock_tissus" },
-                { name: "Gestion des Litiges Admin", folder: "gestion_des_litiges_admin" },
-                { name: "Détails & Médiation Litige", folder: "détails_&_médiation_litige" },
-                { name: "Gestion Abonnements & Commissions", folder: "gestion_abonnements_&_commissions" },
-                { name: "Modération Contenus", folder: "modération_contenus" },
-                { name: "Paramètres Système", folder: "paramètres_système" },
-                { name: "Plan de Site & Architecture Flux", folder: "plan_de_site_&_architecture_flux" }
+                // 1. AUTHENTIFICATION
+                { name: "A07 - Écran de Connexion", folder: "écran_de_connexion" },
+                
+                // 2. DASHBOARD & STATISTIQUES
+                { name: "F01 - Dashboard Statistiques", folder: "dashboard_statistiques" },
+                
+                // 3. GESTION UTILISATEURS
+                { name: "F02 - Gestion des Utilisateurs", folder: "gestion_des_utilisateurs" },
+                
+                // 4. GESTION REVENDEURS
+                { name: "F12 - Gestion des Revendeurs", folder: "f12_-_gestion_des_revendeurs" },
+                { name: "F13 - Validation KYC Revendeur", folder: "f13_-_validation_kyc_revendeur" },
+                { name: "F14 - Modération Produits Revendeurs", folder: "f14_-_modération_produits_revendeurs" },
+                { name: "F15 - Gestion Commissions Revendeurs", folder: "f15_-_gestion_commissions_revendeurs" },
+                { name: "F16 - Validation Demandes Retrait", folder: "f16_-_validation_demandes_retrait" },
+                
+                // 5. GESTION LITIGES & MODÉRATION
+                { name: "F03 - Gestion des Litiges Admin", folder: "gestion_des_litiges_admin" },
+                { name: "F04 - Détails & Médiation Litige", folder: "détails_&_médiation_litige" },
+                // { name: "F06 - Modération Contenus", folder: "u00e9ration_contenus" }, // Dossier avec problème d'encodage
+                
+                // 6. GESTION FINANCIÈRE
+                { name: "F05 - Gestion Abonnements & Commissions", folder: "gestion_abonnements_&_commissions" },
+                
+                // 7. GESTION STOCK
+                { name: "F07 - Gestion du Stock Tissus", folder: "gestion_du_stock_tissus" },
+                
+                // 8. CONFIGURATION & DOCUMENTATION
+                // { name: "F08 - Paramètres Système", folder: "paramètres_système" }, // Dossier manquant
+                { name: "F09 - Plan de Site & Architecture Flux 1", folder: "plan_de_site_&_architecture_flux_1" },
+                { name: "F10 - Plan de Site & Architecture Flux 2", folder: "plan_de_site_&_architecture_flux_2" },
+                { name: "F11 - Guide des Interactions & Navigation Flux", folder: "guide_des_interactions_&_navigation_flux" }
             ]
         };
 
@@ -741,7 +842,8 @@
         const screens = [
             ...screensByProfile.client,
             ...screensByProfile.tailleur.filter(s => !screensByProfile.client.find(c => c.folder === s.folder)),
-            ...screensByProfile.admin.filter(s => !screensByProfile.client.find(c => c.folder === s.folder) && !screensByProfile.tailleur.find(t => t.folder === s.folder))
+            ...screensByProfile.admin.filter(s => !screensByProfile.client.find(c => c.folder === s.folder) && !screensByProfile.tailleur.find(t => t.folder === s.folder)),
+            ...screensByProfile.revendeur.filter(s => !screensByProfile.client.find(c => c.folder === s.folder) && !screensByProfile.tailleur.find(t => t.folder === s.folder) && !screensByProfile.admin.find(a => a.folder === s.folder))
         ];
 
         const galleryContainer = document.getElementById('galleryContainer');
@@ -771,6 +873,7 @@
             if (screensByProfile.client.find(s => s.folder === screen.folder)) return 'client';
             if (screensByProfile.tailleur.find(s => s.folder === screen.folder)) return 'tailleur';
             if (screensByProfile.admin.find(s => s.folder === screen.folder)) return 'admin';
+            if (screensByProfile.revendeur.find(s => s.folder === screen.folder)) return 'revendeur';
             return 'client';
         }
 
@@ -781,7 +884,7 @@
 
             if (filter === 'all') {
                 // Afficher par sections de profil
-                ['client', 'tailleur', 'admin'].forEach(profile => {
+                ['client', 'tailleur', 'admin', 'revendeur'].forEach(profile => {
                     const profileScreens = filteredScreens.filter(s => getScreenProfile(s) === profile);
                     if (profileScreens.length === 0) return;
 
@@ -791,7 +894,8 @@
                     const profileNames = {
                         client: '👤 Client',
                         tailleur: '✂️ Tailleur',
-                        admin: '🛠️ Administrateur'
+                        admin: '🛠️ Administrateur',
+                        revendeur: '🛒 Revendeur'
                     };
 
                     section.innerHTML = `
@@ -819,7 +923,8 @@
                 const profileNames = {
                     client: '👤 Client',
                     tailleur: '✂️ Tailleur',
-                    admin: '🛠️ Administrateur'
+                    admin: '🛠️ Administrateur',
+                    revendeur: '🛒 Revendeur'
                 };
 
                 section.innerHTML = `
@@ -888,14 +993,14 @@
 
             // Stratégies de chargement avec fallback pour gérer différents encodages
             let retryCount = 0;
-            
+
             // Construire plusieurs variantes du chemin
             const buildStrategies = () => {
                 const strategies = [];
-                
+
                 // 1. Chemin encodé (normalisé NFC) - stratégie principale
                 strategies.push(imagePath);
-                
+
                 // 2. Chemin avec encodage partiel (garder underscore, tiret, points)
                 try {
                     const parts = imagePath.split('/');
@@ -909,37 +1014,54 @@
                         }
                     }).join('/');
                     if (partialEncoded !== imagePath) strategies.push(partialEncoded);
-                } catch (e) {}
-                
+                } catch (e) { }
+
                 // 3. Chemin avec & non encodé (certains serveurs le gèrent directement)
                 try {
                     const withAmpersand = imagePath.replace(/%26/g, '&');
                     if (withAmpersand !== imagePath && !strategies.includes(withAmpersand)) {
                         strategies.push(withAmpersand);
                     }
-                } catch (e) {}
-                
+                } catch (e) { }
+
                 // 3b. Chemin avec & directement (pour notation_&_avis_tailleur et autres)
                 try {
                     // Remplacer tous les %26 par & dans tout le chemin
                     const withDirectAmpersand = imagePath.replace(/%26/g, '&');
                     // Aussi remplacer dans les noms de dossiers spécifiques
                     const altPath = imagePath.replace(/notation_%26_avis_tailleur/g, 'notation_&_avis_tailleur')
-                                             .replace(/analyse_%26_conseils/g, 'analyse_&_conseils')
-                                             .replace(/détails_%26_médiation/g, 'détails_&_médiation')
-                                             .replace(/gestion_abonnements_%26_commissions/g, 'gestion_abonnements_&_commissions')
-                                             .replace(/plan_de_site_%26_architecture/g, 'plan_de_site_&_architecture');
+                        .replace(/analyse_%26_conseils/g, 'analyse_&_conseils')
+                        .replace(/détails_%26_médiation/g, 'détails_&_médiation')
+                        .replace(/gestion_abonnements_%26_commissions/g, 'gestion_abonnements_&_commissions')
+                        .replace(/plan_de_site_%26_architecture/g, 'plan_de_site_&_architecture');
                     if (altPath !== imagePath && !strategies.includes(altPath)) {
                         strategies.push(altPath);
                     }
-                } catch (e) {}
-                
+                } catch (e) { }
+
+                // 3c. Gestion des dossiers avec encodage Unicode problématique (u00e9ration_contenus, u00f4le_multi-profils)
+                try {
+                    // Décoder les séquences Unicode hexadécimales
+                    let unicodeFixed = imagePath;
+                    // u00e9 = é, u00f4 = ô
+                    unicodeFixed = unicodeFixed.replace(/u00e9/g, 'é').replace(/u00f4/g, 'ô').replace(/u00e7/g, 'ç');
+                    if (unicodeFixed !== imagePath && !strategies.includes(unicodeFixed)) {
+                        strategies.push(unicodeFixed);
+                    }
+                    // Aussi essayer avec le chemin décodé puis réencodé
+                    const decodedUnicode = decodeURIComponent(imagePath);
+                    const reencodedUnicode = decodedUnicode.replace(/u00e9/g, 'é').replace(/u00f4/g, 'ô').replace(/u00e7/g, 'ç');
+                    if (reencodedUnicode !== imagePath && !strategies.includes(reencodedUnicode)) {
+                        strategies.push(reencodedUnicode);
+                    }
+                } catch (e) { }
+
                 // 4. Chemin complètement décodé (pour serveurs qui gèrent l'Unicode directement)
                 try {
                     const decoded = decodeURIComponent(imagePath);
                     if (decoded !== imagePath) strategies.push(decoded);
-                } catch (e) {}
-                
+                } catch (e) { }
+
                 // 5. Chemin avec basePath non encodé mais folder encodé
                 try {
                     const baseParts = basePath.split('/');
@@ -948,8 +1070,8 @@
                     if (altPath !== imagePath && !strategies.includes(altPath)) {
                         strategies.push(altPath);
                     }
-                } catch (e) {}
-                
+                } catch (e) { }
+
                 // 6. Chemin complètement non encodé (pour GitHub Pages qui gère bien l'Unicode)
                 try {
                     const unencodedBase = basePath; // Ne pas encoder le basePath
@@ -958,11 +1080,51 @@
                     if (unencodedPath !== imagePath && !strategies.includes(unencodedPath)) {
                         strategies.push(unencodedPath);
                     }
-                } catch (e) {}
-                
+                } catch (e) { }
+
+                // 6b. Gestion spécifique des apostrophes dans les noms de dossiers
+                try {
+                    // Les dossiers avec apostrophes comme "écran_d'inscription_client"
+                    const apostropheVariants = [
+                        imagePath.replace(/%27/g, "'"), // %27 = apostrophe encodée
+                        imagePath.replace(/'/g, "%27"), // Apostrophe non encodée -> encodée
+                        imagePath.replace(/'/g, "\\'"), // Apostrophe échappée
+                    ];
+                    apostropheVariants.forEach(variant => {
+                        if (variant !== imagePath && !strategies.includes(variant)) {
+                            strategies.push(variant);
+                        }
+                    });
+                } catch (e) { }
+
+                // 7. Gestion spécifique des dossiers avec encodage Unicode problématique
+                try {
+                    // Décoder les séquences Unicode hexadécimales dans les noms de dossiers
+                    let folderFixed = screen.folder;
+                    // u00e9 = é, u00f4 = ô, u00e7 = ç, u00e8 = è
+                    folderFixed = folderFixed.replace(/u00e9/g, 'é')
+                        .replace(/u00f4/g, 'ô')
+                        .replace(/u00e7/g, 'ç')
+                        .replace(/u00e8/g, 'è');
+
+                    if (folderFixed !== screen.folder) {
+                        // Essayer avec le dossier corrigé, encodé
+                        const fixedEncoded = encodePath(folderFixed);
+                        const fixedPath = `${encodePath(basePath)}/${fixedEncoded}/screen.png`;
+                        if (!strategies.includes(fixedPath)) {
+                            strategies.push(fixedPath);
+                        }
+                        // Essayer avec le dossier corrigé, non encodé
+                        const fixedUnencoded = `${basePath}/${folderFixed}/screen.png`;
+                        if (!strategies.includes(fixedUnencoded)) {
+                            strategies.push(fixedUnencoded);
+                        }
+                    }
+                } catch (e) { }
+
                 return strategies;
             };
-            
+
             const strategies = buildStrategies();
 
             // Timeout de sécurité : forcer l'affichage après 3 secondes même si onload ne se déclenche pas
@@ -984,12 +1146,21 @@
                     }
                 }, 3000);
             };
-            
+
             setupSafetyTimeout();
 
             // Gestionnaire de chargement réussi
             img.onload = function () {
                 if (safetyTimeout) clearTimeout(safetyTimeout);
+                // Vérifier si l'image est vide (0 bytes) ou invalide
+                if (this.naturalWidth === 0 || this.naturalHeight === 0) {
+                    console.warn(`Image vide détectée pour ${screen.name}, utilisation du placeholder`);
+                    // Utiliser directement le placeholder sans appeler onerror
+                    this.src = placeholderSvg;
+                    this.style.opacity = '1';
+                    this.style.display = 'block';
+                    return;
+                }
                 this.style.opacity = '1';
                 this.style.display = 'block';
             };
@@ -1016,12 +1187,15 @@
             // Démarrer avec la première stratégie
             img.src = strategies[0];
 
+            // Créer le chemin HTML non encodé pour l'iframe (les iframes gèrent mieux les chemins non encodés)
+            const htmlPathUnencoded = `${basePath}/${screen.folder}/code.html`;
+
             card.innerHTML = `
                 <div class="screen-info">
                     <div class="screen-name">${screen.name}</div>
                     <div class="screen-actions">
                         <a href="${htmlPath}" target="_blank" class="btn btn-primary">Voir HTML</a>
-                        <button onclick="openModal('${screen.name.replace(/'/g, "\\'")}', '${htmlPath}')" class="btn btn-secondary">Aperçu</button>
+                        <button onclick="openModal('${screen.name.replace(/'/g, "\\'").replace(/"/g, "&quot;")}', '${htmlPathUnencoded.replace(/'/g, "\\'").replace(/"/g, "&quot;")}')" class="btn btn-secondary">Aperçu</button>
                     </div>
                 </div>
             `;
@@ -1060,16 +1234,43 @@
         }
 
         function openModal(name, htmlPath) {
+            console.log('Ouverture de la modal:', name, htmlPath);
             const modal = document.getElementById('modal');
             const modalTitle = document.getElementById('modalTitle');
             const modalIframe = document.getElementById('modalIframe');
 
+            if (!modal || !modalTitle || !modalIframe) {
+                console.error('Éléments de la modal non trouvés');
+                return;
+            }
+
             modalTitle.textContent = name;
-            modalIframe.src = htmlPath;
+
+            // Essayer plusieurs variantes du chemin pour compatibilité
+            const pathsToTry = [
+                htmlPath, // Chemin original
+                htmlPath.replace(/%26/g, '&'), // Remplacer %26 par &
+                decodeURIComponent(htmlPath), // Décoder complètement
+                htmlPath.replace(/\\'/g, "'") // Remplacer \' par '
+            ];
+
+            // Essayer le premier chemin qui fonctionne
+            modalIframe.src = pathsToTry[0];
+
+            // Gérer les erreurs de chargement
+            modalIframe.onerror = function () {
+                console.warn('Erreur de chargement, essai avec chemin alternatif');
+                if (pathsToTry.length > 1) {
+                    modalIframe.src = pathsToTry[1];
+                }
+            };
+
             modal.classList.add('active');
 
             // Ajuster la hauteur de l'iframe
             modalIframe.style.height = window.innerHeight - 120 + 'px';
+
+            console.log('Modal ouverte avec:', modalIframe.src);
         }
 
         function closeModal() {

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Détails Produit Revendeur - Sartoria</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73B5",
+                        "background-light": "#f6f6f8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background-light font-display text-gray-900">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
+        <!-- Header -->
+        <div class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
+            <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
+                <span class="material-symbols-outlined text-gray-700">arrow_back</span>
+            </button>
+            <h2 class="text-gray-900 text-lg font-bold leading-tight">Détails Produit</h2>
+            <div class="flex items-center gap-2">
+                <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
+                    <span class="material-symbols-outlined text-gray-700">favorite</span>
+                </button>
+                <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
+                    <span class="material-symbols-outlined text-gray-700">share</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Product Images -->
+        <div class="relative w-full aspect-square bg-gray-100">
+            <div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBD3H0qFNfv0pHSPM4K_S74zta5oEhytdZc3kHdVAPMiCWyCSjezSwyirN0Dnbah8BaTjR6BpI9Ivh3uj-nnagPT1SYVulvtfbK17A7WlBexdkMm3bQoMO0oJv68Ohh7VSuJG9XEE0Cf5bbWXyWhqJG7nm00YaE-hMbM1rNgo9wirirMgzBMJmeIZqTZshUiUgjvPuDBHDT8zJeqH6gwx2XlUOodZMHG7tcTJUES9_vbrQkzIF49IpJ1Cl0QV8U1_uiOkWakPqfDTaR");'></div>
+            <div class="absolute top-4 left-4">
+                <span class="bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Nouveau</span>
+            </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="px-4 pt-6 pb-4">
+            <div class="flex items-start justify-between mb-2">
+                <div class="flex-1">
+                    <h1 class="text-gray-900 text-2xl font-bold leading-tight mb-2">Tissu Wax Premium</h1>
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="flex items-center gap-1">
+                            <span class="material-symbols-outlined text-yellow-400 text-[20px] fill-current">star</span>
+                            <span class="material-symbols-outlined text-yellow-400 text-[20px] fill-current">star</span>
+                            <span class="material-symbols-outlined text-yellow-400 text-[20px] fill-current">star</span>
+                            <span class="material-symbols-outlined text-yellow-400 text-[20px] fill-current">star</span>
+                            <span class="material-symbols-outlined text-yellow-400 text-[20px] fill-current">star</span>
+                        </div>
+                        <span class="text-gray-600 text-sm">4.8 (124 avis)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price -->
+            <div class="flex items-center gap-3 mb-4">
+                <p class="text-primary text-3xl font-black">15,000 FCFA</p>
+                <p class="text-gray-400 text-lg line-through">18,000 FCFA</p>
+                <span class="bg-red-50 text-red-600 text-xs font-bold px-2 py-1 rounded">-17%</span>
+            </div>
+
+            <!-- Seller Info -->
+            <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl mb-4">
+                <div class="bg-gray-200 rounded-full h-12 w-12 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDV0Uq5MeiBSOkT0FQoFtoqDRSKtLSwJUz0YDqrziRNmvTFS_7dw_ea-5W3MgXF_oRQiIQZilkxX9zfWbwcgcfLYu1G4JnMxR7riGTw_pYZDrAHnW1IwyxQZ7wMCeDR-MBkSIV0B1TO9zH24AZGSDXMKtfbAakCS_h9ihnHb5Hn4LSb7rRot3T-cIdY_gfDdNBDD147CTmOWWeXWCpltKXdhZU_8NAsbOBOeKUtb1SXy02Oxdwv1VncCFlvnrMypwDhh3bLDu-sOhQz");'></div>
+                <div class="flex-1">
+                    <p class="text-gray-900 text-sm font-semibold">Boutique Moderne</p>
+                    <p class="text-gray-600 text-xs">Marie Kouassi • Cotonou</p>
+                </div>
+                <button class="text-primary text-sm font-medium hover:underline">Voir boutique</button>
+            </div>
+
+            <!-- Variants -->
+            <div class="mb-4">
+                <p class="text-gray-900 text-sm font-semibold mb-2">Couleur</p>
+                <div class="flex gap-2">
+                    <button class="h-12 w-12 rounded-full border-2 border-primary bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBD3H0qFNfv0pHSPM4K_S74zta5oEhytdZc3kHdVAPMiCWyCSjezSwyirN0Dnbah8BaTjR6BpI9Ivh3uj-nnagPT1SYVulvtfbK17A7WlBexdkMm3bQoMO0oJv68Ohh7VSuJG9XEE0Cf5bbWXyWhqJG7nm00YaE-hMbM1rNgo9wirirMgzBMJmeIZqTZshUiUgjvPuDBHDT8zJeqH6gwx2XlUOodZMHG7tcTJUES9_vbrQkzIF49IpJ1Cl0QV8U1_uiOkWakPqfDTaR");'></button>
+                    <button class="h-12 w-12 rounded-full border-2 border-gray-200 bg-gray-300"></button>
+                    <button class="h-12 w-12 rounded-full border-2 border-gray-200 bg-gray-400"></button>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <p class="text-gray-900 text-sm font-semibold mb-2">Taille</p>
+                <div class="flex gap-2">
+                    <button class="px-4 py-2 rounded-lg border-2 border-primary bg-primary/10 text-primary font-semibold text-sm">S</button>
+                    <button class="px-4 py-2 rounded-lg border-2 border-gray-200 text-gray-700 font-medium text-sm hover:border-primary hover:text-primary">M</button>
+                    <button class="px-4 py-2 rounded-lg border-2 border-gray-200 text-gray-700 font-medium text-sm hover:border-primary hover:text-primary">L</button>
+                    <button class="px-4 py-2 rounded-lg border-2 border-gray-200 text-gray-700 font-medium text-sm hover:border-primary hover:text-primary">XL</button>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-4">
+                <p class="text-gray-900 text-sm font-semibold mb-2">Description</p>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Tissu Wax premium de haute qualité, 100% coton. Idéal pour la confection de vêtements traditionnels et modernes. 
+                    Motifs authentiques et couleurs vives qui ne se délavent pas. Disponible en plusieurs coloris.
+                </p>
+            </div>
+
+            <!-- Stock Info -->
+            <div class="flex items-center gap-2 p-3 bg-green-50 rounded-lg mb-4">
+                <span class="material-symbols-outlined text-green-600 text-[20px]">check_circle</span>
+                <p class="text-green-700 text-sm font-medium">En stock • 15 unités disponibles</p>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="fixed bottom-0 z-30 w-full max-w-md mx-auto bg-white border-t border-gray-100 px-4 py-4 pb-8 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+            <div class="flex items-center gap-3 mb-3">
+                <button class="flex items-center justify-center rounded-xl border-2 border-primary bg-white text-primary font-bold py-3 px-6 hover:bg-primary/5 transition-colors">
+                    <span class="material-symbols-outlined text-[20px] mr-2">shopping_cart</span>
+                    Ajouter au panier
+                </button>
+                <button class="flex-1 flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-primary/30 transition-all">
+                    <span>Acheter maintenant</span>
+                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

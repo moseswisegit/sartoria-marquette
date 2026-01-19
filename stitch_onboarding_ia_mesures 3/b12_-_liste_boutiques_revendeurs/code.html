@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Boutiques Revendeurs - Sartoria</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73B5",
+                        "background-light": "#f6f6f8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light font-display text-gray-900">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-20">
+        <!-- Header -->
+        <div class="flex items-center px-4 py-4 justify-between sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+            <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
+                <span class="material-symbols-outlined text-gray-700">arrow_back</span>
+            </button>
+            <h1 class="text-gray-900 text-lg font-bold leading-tight">Boutiques Revendeurs</h1>
+            <button class="flex items-center justify-center rounded-full w-10 h-10 bg-gray-50 text-gray-900 hover:bg-gray-100 transition-colors">
+                <span class="material-symbols-outlined text-[24px]">search</span>
+            </button>
+        </div>
+
+        <!-- Search & Filters -->
+        <div class="px-4 pt-4 pb-2">
+            <div class="relative flex w-full items-center">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-gray-400">
+                    <span class="material-symbols-outlined text-[20px]">search</span>
+                </div>
+                <input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-gray-900 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-primary focus:outline-none border-none h-12 pl-11 pr-4 text-base font-normal placeholder:text-gray-400 transition-all shadow-sm" placeholder="Rechercher une boutique..." type="text" />
+            </div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex gap-2 px-4 pb-4 overflow-x-auto no-scrollbar">
+            <button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-4 shadow-md shadow-primary/20">
+                <p class="text-sm font-medium">Toutes</p>
+            </button>
+            <button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-100 border border-gray-200 px-4 hover:bg-gray-200 transition-colors">
+                <p class="text-gray-700 text-sm font-medium">Vérifiées</p>
+            </button>
+            <button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-100 border border-gray-200 px-4 hover:bg-gray-200 transition-colors">
+                <p class="text-gray-700 text-sm font-medium">Nouvelles</p>
+            </button>
+            <button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-100 border border-gray-200 px-4 hover:bg-gray-200 transition-colors">
+                <p class="text-gray-700 text-sm font-medium">Top ventes</p>
+            </button>
+        </div>
+
+        <!-- Boutiques List -->
+        <div class="flex flex-col px-4 pb-6 gap-4">
+            <!-- Boutique 1 -->
+            <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden cursor-pointer hover:shadow-md transition-shadow">
+                <div class="relative h-32 w-full bg-gray-200 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4D1YDB3ehql9E0PE6IKWvABi_4VGuJRW9TJcR1KxySgRvF9RKBUawNTrTvA-yOHeizbkF8_J7WqIHo3ZloTDt_9alVCRzkZiVr-PoXeBZMbwBDSuOvYtzvTi64H6E2FrdiaKRGpfGEagzzHUuef2drUxPkr-Dx09Ha8e2ha69-ILW9FxLO0g2cCQINyDDbS75cDN0KeTz1esHUiGgeTioCh0CtcM303purE2RPDvAZi5uCvxRWdvKCyQXMcDBq_YsXewwnN4V5Qik");'></div>
+                <div class="flex flex-col items-center -mt-12 px-4 pb-4">
+                    <div class="bg-gray-100 rounded-full h-20 w-20 border-4 border-white shadow-lg bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDV0Uq5MeiBSOkT0FQoFtoqDRSKtLSwJUz0YDqrziRNmvTFS_7dw_ea-5W3MgXF_oRQiIQZilkxX9zfWbwcgcfLYu1G4JnMxR7riGTw_pYZDrAHnW1IwyxQZ7wMCeDR-MBkSIV0B1TO9zH24AZGSDXMKtfbAakCS_h9ihnHb5Hn4LSb7rRot3T-cIdY_gfDdNBDD147CTmOWWeXWCpltKXdhZU_8NAsbOBOeKUtb1SXy02Oxdwv1VncCFlvnrMypwDhh3bLDu-sOhQz");'></div>
+                    <div class="mt-4 flex flex-col items-center text-center">
+                        <div class="flex items-center gap-1 mb-1">
+                            <h3 class="text-gray-900 text-lg font-bold">Boutique Moderne</h3>
+                            <span class="material-symbols-outlined text-primary text-xl fill-current">verified</span>
+                        </div>
+                        <p class="text-gray-600 text-xs mb-2">Marie Kouassi • Cotonou</p>
+                        <div class="flex items-center gap-1 mb-2">
+                            <span class="material-symbols-outlined text-yellow-400 text-[16px] fill-current">star</span>
+                            <span class="material-symbols-outlined text-yellow-400 text-[16px] fill-current">star</span>
+                            <span class="material-symbols-outlined text-yellow-400 text-[16px] fill-current">star</span>
+                            <span class="material-symbols-outlined text-yellow-400 text-[16px] fill-current">star</span>
+                            <span class="material-symbols-outlined text-yellow-400 text-[16px] fill-current">star</span>
+                            <span class="text-gray-600 text-xs ml-1">4.8 (124 avis)</span>
+                        </div>
+                        <p class="text-gray-500 text-xs">45 produits • 1,234 ventes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boutique 2 -->
+            <div class="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden cursor-pointer hover:shadow-md transition-shadow">
+                <div class="relative h-32 w-full bg-gray-200 bg-cover bg-center"></div>
+                <div class="flex flex-col items-center -mt-12 px-4 pb-4">
+                    <div class="bg-gray-100 rounded-full h-20 w-20 border-4 border-white shadow-lg bg-cover bg-center"></div>
+                    <div class="mt-4 flex flex-col items-center text-center">
+                        <div class="flex items-center gap-1 mb-1">
+                            <h3 class="text-gray-900 text-lg font-bold">Style Afrique</h3>
+                        </div>
+                        <p class="text-gray-600 text-xs mb-2">Aminata Diallo • Dakar</p>
+                        <div class="flex items-center gap-1 mb-2">
+                            <span class="material-symbols-outlined text-yellow-400 text-[16px] fill-current">star</span>
+                            <span class="material-symbols-outlined text-yellow-400 text-[16px] fill-current">star</span>
+                            <span class="material-symbols-outlined text-yellow-400 text-[16px] fill-current">star</span>
+                            <span class="material-symbols-outlined text-yellow-400 text-[16px] fill-current">star</span>
+                            <span class="material-symbols-outlined text-yellow-400 text-[16px]">star_half</span>
+                            <span class="text-gray-600 text-xs ml-1">4.6 (89 avis)</span>
+                        </div>
+                        <p class="text-gray-500 text-xs">32 produits • 856 ventes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-gray-100 px-6 py-3 flex justify-between items-end z-50 pb-6">
+            <button class="flex flex-col items-center gap-1 text-gray-400">
+                <span class="material-symbols-outlined text-[28px]">home</span>
+                <span class="text-[10px] font-medium">Accueil</span>
+            </button>
+            <button class="flex flex-col items-center gap-1 text-primary">
+                <span class="material-symbols-outlined text-[28px] fill-current">store</span>
+                <span class="text-[10px] font-medium">Boutiques</span>
+            </button>
+            <div class="relative -top-6">
+                <button class="size-14 rounded-full bg-primary text-white shadow-lg shadow-primary/40 flex items-center justify-center transform transition hover:scale-105 active:scale-95">
+                    <span class="material-symbols-outlined text-[28px]">shopping_bag</span>
+                </button>
+            </div>
+            <button class="flex flex-col items-center gap-1 text-gray-400">
+                <span class="material-symbols-outlined text-[28px]">favorite</span>
+                <span class="text-[10px] font-medium">Favoris</span>
+            </button>
+            <button class="flex flex-col items-center gap-1 text-gray-400">
+                <span class="material-symbols-outlined text-[28px]">person</span>
+                <span class="text-[10px] font-medium">Profil</span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

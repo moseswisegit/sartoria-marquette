@@ -39,7 +39,7 @@ npm run screenshots
 ## 🔧 Fonctionnement
 
 Le script :
-1. ✅ Scanne le dossier `stitch_onboarding_ia_mesures 2/`
+1. ✅ Scanne le dossier `stitch_onboarding_ia_mesures 3/`
 2. ✅ Trouve tous les dossiers contenant un fichier `code.html`
 3. ✅ Vérifie si `screen.png` existe et n'est pas vide
 4. ✅ Génère automatiquement les captures manquantes

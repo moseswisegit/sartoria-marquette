@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>N02 - Sidebar de Transition Rapide</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3211d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-fill { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark font-display">
+<!-- Sidebar Wrapper -->
+<div class="relative flex h-screen w-full overflow-hidden bg-whitebg-background-dark">
+<!-- Navigation Drawer (Sidebar) -->
+<div class="relative flex h-full w-10/12 max-w-[320px] flex-col bg-whitebg-[#1c1a2e] shadow-2xl border-r border-[#dddbe6]border-[#2a2647] z-50">
+<!-- User Profile Header -->
+<div class="p-6 pb-4">
+<div class="flex items-center gap-4 mb-4">
+<div class="size-12 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden border-2 border-primary/20">
+<img alt="Avatar Utilisateur" class="w-full h-full object-cover" data-alt="Photo de profil de l'utilisateur Marc Antoine" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBko-Vh8pN71DBzmsM4Rjn7H58RLBQtqCjWUaUxAagx-ryduZR078dJDcIufCgJlpV_y8jovGV94YJeAyRcwZJQCpeFtqUYg4p0kiNkXvWs5rRLyD7fH6iaxRnnHk3AQ2mR_8y8QMUcO4vMM9RztDm5a8WsPqRY3HXipvUbFMdJqrTTFLrb_gm5lmiWnC29mHo31GNs_2_cmjy4-oHhDvKrYF5otbBZayM09p7Ggeh055oqdE6GywcU_nG7OYm51yTdlwdrv9Zx_kNq"/>
+</div>
+<div>
+<p class="text-[#121118]text-white text-lg font-bold leading-tight">Marc Antoine</p>
+<span class="inline-flex items-center mt-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary text-white">
+                            Mode Revendeur
+                        </span>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 px-4 py-2 space-y-1">
+<div class="flex h-12 items-center gap-4 rounded-lg px-4 bg-primary/10 text-primary">
+<span class="material-symbols-outlined material-symbols-fill">grid_view</span>
+<p class="text-base font-bold truncate">Tableau de bord</p>
+</div>
+<div class="flex h-12 items-center gap-4 rounded-lg px-4 text-[#121118]text-gray-300 hover:bg-[#f1f0f4]hover:bg-[#2a2647] cursor-pointer">
+<span class="material-symbols-outlined">shopping_bag</span>
+<p class="text-base font-medium truncate">Mes Commandes</p>
+</div>
+<div class="flex h-12 items-center gap-4 rounded-lg px-4 text-[#121118]text-gray-300 hover:bg-[#f1f0f4]hover:bg-[#2a2647] cursor-pointer">
+<span class="material-symbols-outlined">menu_book</span>
+<p class="text-base font-medium truncate">Catalogue</p>
+</div>
+<div class="flex h-12 items-center gap-4 rounded-lg px-4 text-[#121118]text-gray-300 hover:bg-[#f1f0f4]hover:bg-[#2a2647] cursor-pointer">
+<span class="material-symbols-outlined">bar_chart</span>
+<p class="text-base font-medium truncate">Statistiques</p>
+</div>
+<div class="flex h-12 items-center gap-4 rounded-lg px-4 text-[#121118]text-gray-300 hover:bg-[#f1f0f4]hover:bg-[#2a2647] cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-base font-medium truncate">Paramètres</p>
+</div>
+</nav>
+<!-- Transition Section Header -->
+<div class="px-4 py-2 border-t border-[#dddbe6]border-[#2a2647]">
+<h4 class="text-[#686189]text-[#a199c4] text-[10px] font-bold leading-normal tracking-widest uppercase py-2">ÉCOSYSTÈME SARTORIA</h4>
+</div>
+<!-- Transition List / Dropdown Selection -->
+<div class="px-2 space-y-2 mb-4">
+<!-- Transition Panel 1 -->
+<div class="p-2 @container">
+<div class="flex flex-1 items-center justify-between gap-3 rounded-xl border border-[#dddbe6]border-[#2a2647] bg-whitebg-[#1c1a2e] p-3 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-[#f1f0f4]bg-[#2a2647] rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div class="flex flex-col">
+<p class="text-[#121118]text-white text-sm font-bold leading-tight">Mode Client</p>
+<p class="text-[#686189]text-[#a199c4] text-xs font-normal">Accès boutique</p>
+</div>
+</div>
+<button class="flex items-center justify-center rounded-lg h-7 px-3 bg-primary text-white text-[11px] font-bold uppercase tracking-wider">
+<span>Switch</span>
+</button>
+</div>
+</div>
+<!-- Transition Panel 2 -->
+<div class="p-2 @container">
+<div class="flex flex-1 items-center justify-between gap-3 rounded-xl border border-[#dddbe6]border-[#2a2647] bg-whitebg-[#1c1a2e] p-3 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-[#f1f0f4]bg-[#2a2647] rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">straighten</span>
+</div>
+<div class="flex flex-col">
+<p class="text-[#121118]text-white text-sm font-bold leading-tight">Mode Tailleur</p>
+<p class="text-[#686189]text-[#a199c4] text-xs font-normal">Outils mesures</p>
+</div>
+</div>
+<button class="flex items-center justify-center rounded-lg h-7 px-3 bg-primary text-white text-[11px] font-bold uppercase tracking-wider">
+<span>Switch</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Profile Switcher Footer Trigger (iOS Style) -->
+<div class="mt-auto border-t border-[#dddbe6]border-[#2a2647] bg-gray-50bg-[#131022] p-4">
+<div class="flex items-center gap-4 justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">account_circle</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-[#121118]text-white text-sm font-semibold leading-normal">Changer de profil</p>
+<p class="text-[#686189]text-[#a199c4] text-[11px] font-normal leading-normal">Client ou Tailleur</p>
+</div>
+</div>
+<div class="shrink-0 text-gray-400 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">keyboard_arrow_up</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Overlay (Simulated) -->
+<div class="absolute inset-0 bg-black/40 z-40"></div>
+<!-- Mock Content Background (Blurred) -->
+<div class="flex-1 h-full p-6 flex flex-col gap-6 filter blur-sm">
+<div class="h-8 w-48 bg-gray-200 rounded-lg"></div>
+<div class="grid grid-cols-2 gap-4">
+<div class="h-32 bg-gray-100 rounded-xl"></div>
+<div class="h-32 bg-gray-100 rounded-xl"></div>
+</div>
+<div class="h-64 bg-gray-50 rounded-xl"></div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>R04 - Gestion du Catalogue Produits</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter & Noto Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#3211d4",
+                "background-light": "#f6f6f8",
+                "background-dark": "#131022",
+              },
+              fontFamily: {
+                "display": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark min-h-screen text-[#121118]text-white transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-50 bg-white/80bg-background-dark/80 backdrop-blur-md border-b border-gray-200border-gray-800">
+<div class="flex items-center px-4 py-3 justify-between">
+<div class="flex items-center gap-3">
+<button class="p-1 -ml-1 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">arrow_back_ios</span>
+</button>
+<div>
+<h1 class="text-xl font-bold leading-tight tracking-tight">Catalogue Produits</h1>
+<p class="text-xs font-medium text-gray-500text-gray-400">124 articles au total</p>
+</div>
+</div>
+<button class="flex items-center gap-1 bg-primary text-white px-3 py-1.5 rounded-lg font-semibold text-sm shadow-sm hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined !text-[20px]">add</span>
+<span>Ajouter</span>
+</button>
+</div>
+</div>
+<!-- Search and Filter Section -->
+<div class="p-4 space-y-4">
+<!-- SearchBar Component -->
+<label class="flex flex-col w-full">
+<div class="flex w-full h-11 items-stretch rounded-xl overflow-hidden bg-whitebg-gray-800 border border-gray-200border-gray-700 shadow-sm">
+<div class="flex items-center justify-center pl-4 text-gray-400">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full border-none bg-transparent focus:ring-0 text-base placeholder:text-gray-400" placeholder="Rechercher un produit ou SKU..." value=""/>
+<div class="flex items-center justify-center pr-4 text-gray-400">
+<span class="material-symbols-outlined">filter_list</span>
+</div>
+</div>
+</label>
+<!-- Chips Component: Categories -->
+<div class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-primary text-white px-4">
+<span class="text-sm font-semibold">Tous</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-whitebg-gray-800 border border-gray-200border-gray-700 px-4">
+<span class="text-sm font-medium">Électronique</span>
+<span class="material-symbols-outlined !text-[18px] text-gray-400">keyboard_arrow_down</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-whitebg-gray-800 border border-gray-200border-gray-700 px-4">
+<span class="text-sm font-medium">Mode</span>
+<span class="material-symbols-outlined !text-[18px] text-gray-400">keyboard_arrow_down</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-1.5 rounded-full bg-whitebg-gray-800 border border-gray-200border-gray-700 px-4">
+<span class="text-sm font-medium">Maison</span>
+<span class="material-symbols-outlined !text-[18px] text-gray-400">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- Product List -->
+<div class="px-4 pb-24 space-y-3">
+<!-- ListItem: iPhone 15 Pro -->
+<div class="flex flex-col bg-whitebg-gray-800 rounded-xl p-3 border border-gray-100border-gray-700 shadow-sm">
+<div class="flex gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-20 shrink-0" data-alt="Photographie rapprochée d'un smartphone haut de gamme gris titane" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCq5E9StgKbEETnEnzaCWN1TYM5Z5aISS-Ey-quuxl4jZXRRAyGw6aolgm9eCITcBw_BEM6pphguvEFEs5_RxWaVeDvZKXKxwipOqhvQ733XyE9FLjAyJQw-GseKRhrAYwRzJAJWRx7en5Spl-6PS-3rkbeLi51Nzqtf4lQbYViitfcXcEz92W_XE77ZkthYpmQ_coTa8EAfoRR2QvCW_uH1UN99PGZpT1Vo10gWvnh5v82Re34xiOJsHdxh8khbYeCcblDby7DA3yZ");'>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-[#121118]text-white text-base font-bold leading-tight">iPhone 15 Pro</h3>
+<span class="material-symbols-outlined text-gray-400 !text-[20px]">more_vert</span>
+</div>
+<p class="text-gray-500text-gray-400 text-xs mt-0.5">Électronique • SKU: IP15-P-256</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<p class="text-primarytext-primary font-bold text-base">1 229,00 €</p>
+<div class="flex items-center gap-1.5 bg-green-50bg-green-900/20 px-2 py-1 rounded-md">
+<div class="size-2 rounded-full bg-green-500"></div>
+<span class="text-[10px] font-bold text-green-700text-green-400 uppercase tracking-wider">Disponible</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-gray-50border-gray-700 flex items-center justify-between">
+<div class="flex items-center gap-2 flex-1 mr-4">
+<div class="h-1.5 w-full bg-gray-100bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[45%]" style="width: 45%;"></div>
+</div>
+<span class="text-xs font-semibold text-gray-600text-gray-300">45</span>
+</div>
+<p class="text-xs text-gray-400 font-medium">Stock actuel</p>
+</div>
+</div>
+<!-- ListItem: MacBook Air M2 -->
+<div class="flex flex-col bg-whitebg-gray-800 rounded-xl p-3 border border-gray-100border-gray-700 shadow-sm">
+<div class="flex gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-20 shrink-0" data-alt="Ordinateur portable ultra fin gris sidéral ouvert" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDzdGLbmtpQ7J1QStISuKNtXmd5xMZcCeWoLdbY8uStgAHaAgSXDNMiNDhewyT51Rhc1Ax5Oe9EMDhb1WF-d5NezI3K9S9fuIOiNWedTs7ZIadMEsxcabt8aaPgiLteoaJLMWOixgPLaRM3SdtA0fnIGjT_RNvSK7MAcftAX6mKRGcmF7KcuwK2K4BqjBBQYJ5Ll1BwFXkWhYzd4yYJQPIMO2vtXaLO4tSU4UpV2WXiWRaah8Wztmcl-kZ7PlJBH09j1WHijuUafRy-");'>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-[#121118]text-white text-base font-bold leading-tight">MacBook Air M2</h3>
+<span class="material-symbols-outlined text-gray-400 !text-[20px]">more_vert</span>
+</div>
+<p class="text-gray-500text-gray-400 text-xs mt-0.5">Électronique • SKU: MBA-M2-512</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<p class="text-primarytext-primary font-bold text-base">1 499,00 €</p>
+<div class="flex items-center gap-1.5 bg-red-50bg-red-900/20 px-2 py-1 rounded-md">
+<div class="size-2 rounded-full bg-red-500"></div>
+<span class="text-[10px] font-bold text-red-700text-red-400 uppercase tracking-wider">Rupture</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-gray-50border-gray-700 flex items-center justify-between opacity-60">
+<div class="flex items-center gap-2 flex-1 mr-4">
+<div class="h-1.5 w-full bg-gray-100bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-red-500 w-0"></div>
+</div>
+<span class="text-xs font-semibold text-gray-600text-gray-300">0</span>
+</div>
+<p class="text-xs text-gray-400 font-medium">Stock actuel</p>
+</div>
+</div>
+<!-- ListItem: Sony WH-1000XM5 -->
+<div class="flex flex-col bg-whitebg-gray-800 rounded-xl p-3 border border-gray-100border-gray-700 shadow-sm">
+<div class="flex gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-20 shrink-0" data-alt="Casque audio noir sans fil posé sur une surface neutre" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBM1QmLcoGsq5Kh9FUU5GocgPegUBRqcnSTj2hjH_dnkxpSUX7OnCQmq7535-auOU6cwewPjL6YWyQ5-rjx4dTAv8qHw8c0EyQk14cjMeioiR_7esUiAieyGsElqh_LPzAKBFcTYHRGCtkFtv70u5bPCWAR_Iy9tsFrH2gpbJQ_PD9vabVeFzs6RNwIUe7sxSsi2UtInF7fme_3QHsac29dZQq44Yhe8w0bdtWJmsplzBMeZtNz4vXWt3Tcbq0rWhINHZ68J9R05ehZ");'>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-[#121118]text-white text-base font-bold leading-tight">Sony WH-1000XM5</h3>
+<span class="material-symbols-outlined text-gray-400 !text-[20px]">more_vert</span>
+</div>
+<p class="text-gray-500text-gray-400 text-xs mt-0.5">Audio • SKU: SNY-WH-XM5</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<p class="text-primarytext-primary font-bold text-base">349,00 €</p>
+<div class="flex items-center gap-1.5 bg-orange-50bg-orange-900/20 px-2 py-1 rounded-md">
+<div class="size-2 rounded-full bg-orange-500"></div>
+<span class="text-[10px] font-bold text-orange-700text-orange-400 uppercase tracking-wider">Faible Stock</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-gray-50border-gray-700 flex items-center justify-between">
+<div class="flex items-center gap-2 flex-1 mr-4">
+<div class="h-1.5 w-full bg-gray-100bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-orange-400 w-[8%]" style="width: 8%;"></div>
+</div>
+<span class="text-xs font-semibold text-gray-600text-gray-300">8</span>
+</div>
+<p class="text-xs text-gray-400 font-medium">Stock actuel</p>
+</div>
+</div>
+<!-- ListItem: iPad Air -->
+<div class="flex flex-col bg-whitebg-gray-800 rounded-xl p-3 border border-gray-100border-gray-700 shadow-sm">
+<div class="flex gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-20 shrink-0" data-alt="Tablette numérique posée sur un bureau" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDNU5OkVaTMEeOI7KcCUCt7yEQtvRYzPL-xS2duB1k8WzrhTNVCQJfYPWgjf69fUXAbXFm_8XuULZhDhMWaicA-MlUwII1QncAQ75BGNjQeJWtuQEh8xjoqeCzQ5hwpL1W0W-oChE3rjn9COADWYgTCaX3cxWQ5L0Ym63JP59vD9BmkY3cuGhNaHz4_FvIfmJcWUNj70M0itqlxLKhQCKh4iZmDM1YD_z7Lwq4MH53v4p4jHYAHjwEljiRZ4yz82DGeGAdgmbVwE_kr");'>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-[#121118]text-white text-base font-bold leading-tight">iPad Air 5th Gen</h3>
+<span class="material-symbols-outlined text-gray-400 !text-[20px]">more_vert</span>
+</div>
+<p class="text-gray-500text-gray-400 text-xs mt-0.5">Tablettes • SKU: IPAD-A5-64</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<p class="text-primarytext-primary font-bold text-base">769,00 €</p>
+<div class="flex items-center gap-1.5 bg-green-50bg-green-900/20 px-2 py-1 rounded-md">
+<div class="size-2 rounded-full bg-green-500"></div>
+<span class="text-[10px] font-bold text-green-700text-green-400 uppercase tracking-wider">Disponible</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-gray-50border-gray-700 flex items-center justify-between">
+<div class="flex items-center gap-2 flex-1 mr-4">
+<div class="h-1.5 w-full bg-gray-100bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[72%]" style="width: 72%;"></div>
+</div>
+<span class="text-xs font-semibold text-gray-600text-gray-300">72</span>
+</div>
+<p class="text-xs text-gray-400 font-medium">Stock actuel</p>
+</div>
+</div>
+</div>
+<!-- Floating Action Button (Alternative iOS style) -->
+<div class="fixed bottom-6 right-6">
+<button class="flex items-center justify-center size-14 rounded-full bg-primary text-white shadow-xl hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined !text-[32px]">add</span>
+</button>
+</div>
+<!-- iOS Bottom Tab Bar (Contextual) -->
+<div class="fixed bottom-0 left-0 right-0 h-20 bg-white/90bg-background-dark/90 backdrop-blur-md border-t border-gray-200border-gray-800 flex items-center justify-around px-6 pb-4">
+<div class="flex flex-col items-center text-primary">
+<span class="material-symbols-outlined !text-[28px]">inventory_2</span>
+<span class="text-[10px] font-bold mt-0.5">Catalogue</span>
+</div>
+<div class="flex flex-col items-center text-gray-400">
+<span class="material-symbols-outlined !text-[28px]">receipt_long</span>
+<span class="text-[10px] font-bold mt-0.5">Commandes</span>
+</div>
+<div class="flex flex-col items-center text-gray-400">
+<span class="material-symbols-outlined !text-[28px]">monitoring</span>
+<span class="text-[10px] font-bold mt-0.5">Analyses</span>
+</div>
+<div class="flex flex-col items-center text-gray-400">
+<span class="material-symbols-outlined !text-[28px]">settings</span>
+<span class="text-[10px] font-bold mt-0.5">Compte</span>
+</div>
+</div>
+</body></html>

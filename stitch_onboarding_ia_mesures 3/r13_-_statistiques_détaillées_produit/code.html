@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>R13 - Statistiques Détaillées Produit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a73b7",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111a21",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-lightbg-background-dark min-h-screen text-[#111517]text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden max-w-md mx-auto bg-whitebg-background-dark shadow-xl">
+<!-- TopAppBar -->
+<div class="flex items-center bg-whitebg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-[#dce1e5]border-[#2d3944]">
+<div class="text-[#111517]text-white flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined cursor-pointer">arrow_back_ios</span>
+</div>
+<h2 class="text-[#111517]text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Détails Performance</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-[#111517]text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined">ios_share</span>
+</button>
+</div>
+</div>
+<!-- ProfileHeader -->
+<div class="flex p-4 @container bg-whitebg-background-dark">
+<div class="flex w-full flex-col gap-4">
+<div class="flex gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg min-h-24 w-24" data-alt="T-shirt bleu de haute qualité plié" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3TQmD2dM28kpH6oF4zbohJXfj5Hji1y1TvCH-d1A9wpA8GfIPdiR68-Yo-iF1y_TQYmnzxhM6ntgXCpv3tMejozSP40_CHggMNXBZKAlwt6bUbsgcDmaTSEec2440lku47H5bBH9AFekDRiyKLCoq8aRnQpT-cAS519059RZYeBAPmQNypD-CnfWyWaM78n3MY2Xeh3WMSApjECv8hoB4sCib260VNg5c6JGuF1LeWCTU-SxAXM6wJYzBvlregljuVSW5y6zfMyxH");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-[#111517]text-white text-xl font-bold leading-tight tracking-[-0.015em]">T-Shirt Premium Sartoria</p>
+<p class="text-[#647887]text-slate-400 text-sm font-normal leading-normal">SKU: SAR-2024-013</p>
+<div class="flex items-center gap-1 mt-1 text-primary">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<p class="text-sm font-medium">30 derniers jours</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="flex flex-wrap gap-3 p-4 bg-whitebg-background-dark">
+<div class="flex min-w-[160px] flex-1 flex-col gap-1 rounded-xl p-4 border border-[#dce1e5]border-[#2d3944] bg-background-lightbg-[#1c262e]">
+<p class="text-[#647887]text-slate-400 text-xs font-medium uppercase tracking-wider">Vues</p>
+<div class="flex items-baseline gap-2">
+<p class="text-[#111517]text-white tracking-light text-xl font-bold">1 240</p>
+<span class="text-[#078838] text-xs font-bold">+5%</span>
+</div>
+</div>
+<div class="flex min-w-[160px] flex-1 flex-col gap-1 rounded-xl p-4 border border-[#dce1e5]border-[#2d3944] bg-background-lightbg-[#1c262e]">
+<p class="text-[#647887]text-slate-400 text-xs font-medium uppercase tracking-wider">Conversion</p>
+<div class="flex items-baseline gap-2">
+<p class="text-[#111517]text-white tracking-light text-xl font-bold">3.2%</p>
+<span class="text-[#e73908] text-xs font-bold">-1%</span>
+</div>
+</div>
+<div class="flex min-w-[160px] flex-1 flex-col gap-1 rounded-xl p-4 border border-[#dce1e5]border-[#2d3944] bg-background-lightbg-[#1c262e]">
+<p class="text-[#647887]text-slate-400 text-xs font-medium uppercase tracking-wider">Ventes</p>
+<div class="flex items-baseline gap-2">
+<p class="text-[#111517]text-white tracking-light text-xl font-bold">40</p>
+<span class="text-[#078838] text-xs font-bold">+12%</span>
+</div>
+</div>
+<div class="flex min-w-[160px] flex-1 flex-col gap-1 rounded-xl p-4 border border-primary/30border-primary/50 bg-primary/5bg-primary/10">
+<p class="text-primary text-xs font-bold uppercase tracking-wider">Revenus</p>
+<div class="flex items-baseline gap-2">
+<p class="text-primary tracking-light text-xl font-bold">1 560 €</p>
+<span class="text-[#078838] text-xs font-bold">+8%</span>
+</div>
+</div>
+</div>
+<!-- SectionHeader - Chart -->
+<div class="bg-whitebg-background-dark">
+<h2 class="text-[#111517]text-white text-[18px] font-bold leading-tight tracking-[-0.015em] px-4 pt-4">Évolution des ventes</h2>
+</div>
+<!-- Charts -->
+<div class="bg-whitebg-background-dark px-4 py-2">
+<div class="flex flex-col gap-2 rounded-xl border border-[#dce1e5]border-[#2d3944] p-4 bg-background-light/50bg-background-dark/50">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-primary tracking-light text-3xl font-extrabold leading-tight">40 <span class="text-sm font-normal text-[#647887]text-slate-400">unités</span></p>
+</div>
+<div class="flex items-center gap-1 bg-[#078838]/10 text-[#078838] px-2 py-1 rounded-full text-xs font-bold">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                        12%
+                    </div>
+</div>
+<div class="flex min-h-[160px] flex-col gap-4 py-2">
+<svg fill="none" height="120" preserveaspectratio="none" viewbox="0 0 480 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H0V109Z" fill="url(#paint0_linear_custom)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#1a73b7" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_custom" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#1a73b7" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#1a73b7" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex justify-between px-2">
+<p class="text-[#647887]text-slate-400 text-[11px] font-bold">01 Mai</p>
+<p class="text-[#647887]text-slate-400 text-[11px] font-bold">15 Mai</p>
+<p class="text-[#647887]text-slate-400 text-[11px] font-bold">30 Mai</p>
+</div>
+</div>
+</div>
+</div>
+<!-- SectionHeader - Variants -->
+<div class="bg-whitebg-background-dark">
+<div class="flex items-center justify-between px-4 pt-6 pb-2">
+<h2 class="text-[#111517]text-white text-[18px] font-bold leading-tight tracking-[-0.015em]">Top Variantes</h2>
+<span class="text-primary text-sm font-semibold cursor-pointer">Voir tout</span>
+</div>
+</div>
+<!-- Variant Table Component -->
+<div class="bg-whitebg-background-dark p-4">
+<div class="overflow-hidden rounded-xl border border-[#dce1e5]border-[#2d3944]">
+<table class="w-full text-left text-sm border-collapse">
+<thead class="bg-background-lightbg-[#1c262e] text-[#647887]text-slate-400">
+<tr>
+<th class="px-4 py-3 font-semibold">Variante</th>
+<th class="px-4 py-3 font-semibold text-right">Ventes</th>
+<th class="px-4 py-3 font-semibold text-right">Stock</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#dce1e5]divide-[#2d3944]">
+<tr class="hover:bg-background-light/30hover:bg-white/5">
+<td class="px-4 py-3">
+<div class="flex flex-col">
+<span class="font-bold text-[#111517]text-white">Noir / L</span>
+<span class="text-xs text-[#647887]text-slate-400">Best Seller</span>
+</div>
+</td>
+<td class="px-4 py-3 text-right font-bold text-[#111517]text-white">15</td>
+<td class="px-4 py-3 text-right">
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded text-xs font-bold">12</span>
+</td>
+</tr>
+<tr class="hover:bg-background-light/30hover:bg-white/5">
+<td class="px-4 py-3">
+<div class="flex flex-col">
+<span class="font-bold text-[#111517]text-white">Bleu / M</span>
+<span class="text-xs text-[#647887]text-slate-400">En hausse</span>
+</div>
+</td>
+<td class="px-4 py-3 text-right font-bold text-[#111517]text-white">10</td>
+<td class="px-4 py-3 text-right">
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded text-xs font-bold">45</span>
+</td>
+</tr>
+<tr class="hover:bg-background-light/30hover:bg-white/5">
+<td class="px-4 py-3">
+<div class="flex flex-col">
+<span class="font-bold text-[#111517]text-white">Blanc / S</span>
+<span class="text-xs text-[#647887]text-slate-400">-</span>
+</div>
+</td>
+<td class="px-4 py-3 text-right font-bold text-[#111517]text-white">8</td>
+<td class="px-4 py-3 text-right">
+<span class="bg-orange-100 text-orange-600 px-2 py-0.5 rounded text-xs font-bold">3</span>
+</td>
+</tr>
+<tr class="hover:bg-background-light/30hover:bg-white/5">
+<td class="px-4 py-3">
+<div class="flex flex-col">
+<span class="font-bold text-[#111517]text-white">Gris / XL</span>
+<span class="text-xs text-[#647887]text-slate-400">-</span>
+</div>
+</td>
+<td class="px-4 py-3 text-right font-bold text-[#111517]text-white">7</td>
+<td class="px-4 py-3 text-right">
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded text-xs font-bold">28</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Bottom Action Button -->
+<div class="p-4 mb-6">
+<button class="w-full bg-primary text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:bg-primary/90">
+<span class="material-symbols-outlined">download</span>
+                Exporter le rapport complet
+            </button>
+</div>
+<div class="h-10 bg-whitebg-background-dark"></div>
+</div>
+</body></html>

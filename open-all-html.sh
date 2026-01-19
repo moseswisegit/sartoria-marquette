@@ -3,7 +3,7 @@
 # Script pour ouvrir tous les fichiers HTML dans le navigateur
 # Utile pour faire les captures d'écran manuellement
 
-BASE_DIR="stitch_onboarding_ia_mesures 2"
+BASE_DIR="stitch_onboarding_ia_mesures 3"
 
 echo "🌐 Ouverture de tous les fichiers HTML dans le navigateur..."
 echo ""
