@@ -1,13 +1,13 @@
 {
-  "name": "sartoria-maquettes",
+  "name": "couturioshop-maquettes",
   "version": "1.0.0",
-  "description": "Galerie des maquettes de l'application Sartoria",
+  "description": "Galerie des maquettes de l'application CouturioShop",
   "scripts": {
     "screenshots": "node generate-screenshots.js",
     "install-deps": "npm install puppeteer"
   },
   "keywords": [
-    "sartoria",
+    "couturioshop",
     "maquettes",
     "prototype"
   ],

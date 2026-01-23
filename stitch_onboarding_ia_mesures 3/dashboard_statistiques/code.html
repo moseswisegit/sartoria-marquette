@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html class="light" lang="fr"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sartoria Dashboard</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html class="light" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CouturioShop Dashboard</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -23,278 +28,340 @@
                     fontFamily: {
                         "display": ["Inter", "sans-serif"]
                     },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
                 },
             },
         }
     </script>
-<style>.no-scrollbar::-webkit-scrollbar {
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
             display: none;
-        }.no-scrollbar {
-            -ms-overflow-style: none;scrollbar-width: none;}
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background-lightbg-background-dark font-display text-slate-900text-white pb-24 transition-colors duration-300">
-<div class="sticky top-0 z-20 flex items-center bg-background-light/95bg-background-dark/95 backdrop-blur-sm p-4 pb-2 justify-between border-b border-gray-200border-white/5">
-<div class="flex items-center gap-3">
-<div class="relative">
-<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="Portrait of a smiling fashion administrator" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDrZSFXd4mj4YqLtxzzTmnkKgAGKrVASEIe7t-B_IjztjcgZswZIJH8uDsKuAHn11kGiOQ8jGoIdGMIeZKtrmkjV6ssJGNlSsTU_0NjNuez4iXMCl775kM7a4sQKSXWp2uqpWoWt2cy98DNmHxAzfYYbEzGf_xvWZQqtcUr_w_57tCPtcZHbLHPSxiiiEBOsc-CLJXCuOie0NtRvk1Sc_XQ3rapu-g59y-DVhU8sJWEsvpZuQOBbclTtf-6SE9E_faXElA00yAoGPY0");'>
-</div>
-<div class="absolute bottom-0 right-0 size-3 bg-green-500 border-2 border-whiteborder-background-dark rounded-full"></div>
-</div>
-<div class="flex flex-col">
-<h2 class="text-slate-900text-white text-lg font-bold leading-tight tracking-tight">Bonjour, Aïcha</h2>
-<span class="text-xs text-slate-500text-slate-400 font-medium">Admin Sartoria</span>
-</div>
-</div>
-<div class="flex items-center justify-end">
-<button class="flex items-center justify-center rounded-full size-10 bg-whitebg-white/10 text-slate-900text-white shadow-sm hover:bg-gray-50hover:bg-white/20 transition-colors">
-<span class="material-symbols-outlined text-[24px]">notifications</span>
-</button>
-</div>
-</div>
-<div class="w-full overflow-x-auto no-scrollbar py-2">
-<div class="flex gap-3 px-4 min-w-max">
-<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-5 shadow-lg shadow-primary/25 transition-transform active:scale-95">
-<span class="text-sm font-semibold">Ce mois</span>
-</button>
-<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-whitebg-card-dark border border-gray-200border-white/10 px-5 text-slate-600text-slate-300 transition-colors active:bg-gray-50active:bg-white/5">
-<span class="text-sm font-medium">30 jours</span>
-</button>
-<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-whitebg-card-dark border border-gray-200border-white/10 px-5 text-slate-600text-slate-300 transition-colors active:bg-gray-50active:bg-white/5">
-<span class="text-sm font-medium">Cette année</span>
-</button>
-</div>
-</div>
-<div class="grid grid-cols-2 gap-3 p-4">
-<div class="col-span-2 flex flex-col gap-1 rounded-2xl p-5 bg-card-lightbg-card-dark shadow-sm border border-gray-100border-white/5 relative overflow-hidden">
-<div class="absolute top-0 right-0 p-4 opacity-10">
-<span class="material-symbols-outlined text-[64px] text-primary">payments</span>
-</div>
-<div class="flex justify-between items-start z-10">
-<p class="text-slate-500text-slate-400 text-sm font-medium">Revenus Totaux</p>
-<div class="flex items-center gap-1 bg-green-50bg-green-500/10 px-2 py-1 rounded-md">
-<span class="material-symbols-outlined text-[14px] text-green-600text-green-400">trending_up</span>
-<p class="text-green-600text-green-400 text-xs font-bold">+12%</p>
-</div>
-</div>
-<p class="text-slate-900text-white tracking-tight text-3xl font-bold z-10">12 450 €</p>
-</div>
-<div class="flex flex-col gap-2 rounded-2xl p-4 bg-card-lightbg-card-dark shadow-sm border border-gray-100border-white/5">
-<div class="size-8 rounded-lg bg-blue-50bg-blue-500/10 flex items-center justify-center text-blue-600text-blue-400">
-<span class="material-symbols-outlined text-[20px]">group</span>
-</div>
-<div>
-<p class="text-slate-500text-slate-400 text-xs font-medium">Utilisateurs</p>
-<p class="text-slate-900text-white tracking-tight text-xl font-bold">1 204</p>
-</div>
-<p class="text-green-600text-green-400 text-xs font-medium">+5%</p>
-</div>
-<div class="flex flex-col gap-2 rounded-2xl p-4 bg-card-lightbg-card-dark shadow-sm border border-gray-100border-white/5">
-<div class="size-8 rounded-lg bg-orange-50bg-orange-500/10 flex items-center justify-center text-orange-600text-orange-400">
-<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
-</div>
-<div>
-<p class="text-slate-500text-slate-400 text-xs font-medium">Commandes</p>
-<p class="text-slate-900text-white tracking-tight text-xl font-bold">85</p>
-</div>
-<p class="text-green-600text-green-400 text-xs font-medium">+8%</p>
-</div>
-</div>
-<div class="px-4 py-2">
-<h3 class="text-slate-900text-white text-lg font-bold mb-3">Croissance Utilisateurs</h3>
-<div class="bg-card-lightbg-card-dark rounded-2xl p-5 shadow-sm border border-gray-100border-white/5">
-<div class="flex justify-between items-end mb-4">
-<div>
-<p class="text-2xl font-bold text-slate-900text-white">1 204</p>
-<p class="text-xs text-slate-400">Utilisateurs actifs</p>
-</div>
-<div class="bg-blue-50bg-blue-500/10 text-blue-600text-blue-400 px-2 py-1 rounded-md text-xs font-bold">
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-lightbg-background-dark font-display text-slate-900text-white pb-24 transition-colors duration-300">
+    <div
+        class="sticky top-0 z-20 flex items-center bg-background-light/95bg-background-dark/95 backdrop-blur-sm p-4 pb-2 justify-between border-b border-gray-200border-white/5">
+        <div class="flex items-center gap-3">
+            <div class="relative">
+                <div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-primary/20"
+                    data-alt="Portrait of a smiling fashion administrator"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDrZSFXd4mj4YqLtxzzTmnkKgAGKrVASEIe7t-B_IjztjcgZswZIJH8uDsKuAHn11kGiOQ8jGoIdGMIeZKtrmkjV6ssJGNlSsTU_0NjNuez4iXMCl775kM7a4sQKSXWp2uqpWoWt2cy98DNmHxAzfYYbEzGf_xvWZQqtcUr_w_57tCPtcZHbLHPSxiiiEBOsc-CLJXCuOie0NtRvk1Sc_XQ3rapu-g59y-DVhU8sJWEsvpZuQOBbclTtf-6SE9E_faXElA00yAoGPY0");'>
+                </div>
+                <div
+                    class="absolute bottom-0 right-0 size-3 bg-green-500 border-2 border-whiteborder-background-dark rounded-full">
+                </div>
+            </div>
+            <div class="flex flex-col">
+                <h2 class="text-slate-900text-white text-lg font-bold leading-tight tracking-tight">Bonjour, Aïcha</h2>
+                <span class="text-xs text-slate-500text-slate-400 font-medium">Admin CouturioShop</span>
+            </div>
+        </div>
+        <div class="flex items-center justify-end">
+            <button
+                class="flex items-center justify-center rounded-full size-10 bg-whitebg-white/10 text-slate-900text-white shadow-sm hover:bg-gray-50hover:bg-white/20 transition-colors">
+                <span class="material-symbols-outlined text-[24px]">notifications</span>
+            </button>
+        </div>
+    </div>
+    <div class="w-full overflow-x-auto no-scrollbar py-2">
+        <div class="flex gap-3 px-4 min-w-max">
+            <button
+                class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-5 shadow-lg shadow-primary/25 transition-transform active:scale-95">
+                <span class="text-sm font-semibold">Ce mois</span>
+            </button>
+            <button
+                class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-whitebg-card-dark border border-gray-200border-white/10 px-5 text-slate-600text-slate-300 transition-colors active:bg-gray-50active:bg-white/5">
+                <span class="text-sm font-medium">30 jours</span>
+            </button>
+            <button
+                class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-whitebg-card-dark border border-gray-200border-white/10 px-5 text-slate-600text-slate-300 transition-colors active:bg-gray-50active:bg-white/5">
+                <span class="text-sm font-medium">Cette année</span>
+            </button>
+        </div>
+    </div>
+    <div class="grid grid-cols-2 gap-3 p-4">
+        <div
+            class="col-span-2 flex flex-col gap-1 rounded-2xl p-5 bg-card-lightbg-card-dark shadow-sm border border-gray-100border-white/5 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+                <span class="material-symbols-outlined text-[64px] text-primary">payments</span>
+            </div>
+            <div class="flex justify-between items-start z-10">
+                <p class="text-slate-500text-slate-400 text-sm font-medium">Revenus Totaux</p>
+                <div class="flex items-center gap-1 bg-green-50bg-green-500/10 px-2 py-1 rounded-md">
+                    <span class="material-symbols-outlined text-[14px] text-green-600text-green-400">trending_up</span>
+                    <p class="text-green-600text-green-400 text-xs font-bold">+12%</p>
+                </div>
+            </div>
+            <p class="text-slate-900text-white tracking-tight text-3xl font-bold z-10">12 450 €</p>
+        </div>
+        <div
+            class="flex flex-col gap-2 rounded-2xl p-4 bg-card-lightbg-card-dark shadow-sm border border-gray-100border-white/5">
+            <div
+                class="size-8 rounded-lg bg-blue-50bg-blue-500/10 flex items-center justify-center text-blue-600text-blue-400">
+                <span class="material-symbols-outlined text-[20px]">group</span>
+            </div>
+            <div>
+                <p class="text-slate-500text-slate-400 text-xs font-medium">Utilisateurs</p>
+                <p class="text-slate-900text-white tracking-tight text-xl font-bold">1 204</p>
+            </div>
+            <p class="text-green-600text-green-400 text-xs font-medium">+5%</p>
+        </div>
+        <div
+            class="flex flex-col gap-2 rounded-2xl p-4 bg-card-lightbg-card-dark shadow-sm border border-gray-100border-white/5">
+            <div
+                class="size-8 rounded-lg bg-orange-50bg-orange-500/10 flex items-center justify-center text-orange-600text-orange-400">
+                <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+            </div>
+            <div>
+                <p class="text-slate-500text-slate-400 text-xs font-medium">Commandes</p>
+                <p class="text-slate-900text-white tracking-tight text-xl font-bold">85</p>
+            </div>
+            <p class="text-green-600text-green-400 text-xs font-medium">+8%</p>
+        </div>
+    </div>
+    <div class="px-4 py-2">
+        <h3 class="text-slate-900text-white text-lg font-bold mb-3">Croissance Utilisateurs</h3>
+        <div class="bg-card-lightbg-card-dark rounded-2xl p-5 shadow-sm border border-gray-100border-white/5">
+            <div class="flex justify-between items-end mb-4">
+                <div>
+                    <p class="text-2xl font-bold text-slate-900text-white">1 204</p>
+                    <p class="text-xs text-slate-400">Utilisateurs actifs</p>
+                </div>
+                <div class="bg-blue-50bg-blue-500/10 text-blue-600text-blue-400 px-2 py-1 rounded-md text-xs font-bold">
                     +5.2% cette semaine
                 </div>
-</div>
-<div class="w-full h-[120px] relative">
-<svg fill="none" height="100%" preserveAspectRatio="none" viewBox="0 0 400 120" width="100%" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<linearGradient gradientUnits="userSpaceOnUse" id="user_gradient" x1="200" x2="200" y1="0" y2="120">
-<stop stop-color="#3b82f6" stop-opacity="0.2"></stop>
-<stop offset="1" stop-color="#3b82f6" stop-opacity="0"></stop>
-</linearGradient>
-</defs>
-<path d="M0,100 C60,100 80,60 140,70 C200,80 220,40 280,30 C340,20 360,30 400,10 V120 H0 Z" fill="url(#user_gradient)"></path>
-<path d="M0,100 C60,100 80,60 140,70 C200,80 220,40 280,30 C340,20 360,30 400,10" stroke="#3b82f6" stroke-linecap="round" stroke-width="3"></path>
-</svg>
-</div>
-<div class="flex justify-between mt-2 px-1">
-<p class="text-slate-400 text-[10px] font-semibold">Sem 1</p>
-<p class="text-slate-400 text-[10px] font-semibold">Sem 2</p>
-<p class="text-slate-400 text-[10px] font-semibold">Sem 3</p>
-<p class="text-slate-400 text-[10px] font-semibold">Sem 4</p>
-</div>
-</div>
-</div>
-<div class="px-4 py-2">
-<h3 class="text-slate-900text-white text-lg font-bold mb-3">Revenus Mensuels</h3>
-<div class="bg-card-lightbg-card-dark rounded-2xl p-5 shadow-sm border border-gray-100border-white/5">
-<div class="flex items-center justify-between mb-6">
-<div>
-<p class="text-2xl font-bold text-slate-900text-white">12.4k €</p>
-<p class="text-xs text-slate-400">Total généré</p>
-</div>
-<div class="flex gap-2">
-<div class="flex items-center gap-1">
-<span class="size-2 rounded-full bg-primary"></span>
-<span class="text-[10px] text-slate-500">2024</span>
-</div>
-</div>
-</div>
-<div class="h-40 w-full flex items-end justify-between gap-3 px-1">
-<div class="w-full bg-indigo-50bg-indigo-500/10 rounded-t-md relative group h-[40%] hover:bg-indigo-100hover:bg-indigo-500/20 transition-all">
-<div class="w-full absolute bottom-0 bg-primary/30 rounded-t-md h-[80%]"></div>
-</div>
-<div class="w-full bg-indigo-50bg-indigo-500/10 rounded-t-md relative group h-[55%] hover:bg-indigo-100hover:bg-indigo-500/20 transition-all">
-<div class="w-full absolute bottom-0 bg-primary/40 rounded-t-md h-[100%]"></div>
-</div>
-<div class="w-full bg-indigo-50bg-indigo-500/10 rounded-t-md relative group h-[45%] hover:bg-indigo-100hover:bg-indigo-500/20 transition-all">
-<div class="w-full absolute bottom-0 bg-primary/40 rounded-t-md h-[90%]"></div>
-</div>
-<div class="w-full bg-indigo-50bg-indigo-500/10 rounded-t-md relative group h-[70%] hover:bg-indigo-100hover:bg-indigo-500/20 transition-all">
-<div class="w-full absolute bottom-0 bg-primary/60 rounded-t-md h-[100%]"></div>
-</div>
-<div class="w-full bg-indigo-50bg-indigo-500/10 rounded-t-md relative group h-[85%] hover:bg-indigo-100hover:bg-indigo-500/20 transition-all">
-<div class="w-full absolute bottom-0 bg-primary rounded-t-md h-[100%] relative">
-<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-[10px] py-1 px-2 rounded opacity-100 shadow-lg">
-                             Top
-                         </div>
-</div>
-</div>
-<div class="w-full bg-indigo-50bg-indigo-500/10 rounded-t-md relative group h-[60%] hover:bg-indigo-100hover:bg-indigo-500/20 transition-all">
-<div class="w-full absolute bottom-0 bg-primary/50 rounded-t-md h-[100%]"></div>
-</div>
-</div>
-<div class="flex justify-between mt-3 text-[10px] text-slate-400 font-medium px-1 uppercase">
-<span class="w-full text-center">Jan</span>
-<span class="w-full text-center">Fév</span>
-<span class="w-full text-center">Mar</span>
-<span class="w-full text-center">Avr</span>
-<span class="w-full text-center">Mai</span>
-<span class="w-full text-center">Juin</span>
-</div>
-</div>
-</div>
-<div class="px-4 py-2">
-<h3 class="text-slate-900text-white text-lg font-bold mb-3">Répartition Commandes</h3>
-<div class="bg-card-lightbg-card-dark rounded-2xl p-5 shadow-sm border border-gray-100border-white/5">
-<div class="flex items-center justify-between gap-6">
-<div class="relative size-32 shrink-0">
-<svg class="size-full -rotate-90" viewBox="0 0 36 36">
-<path class="text-gray-100text-white/5" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
-<path class="text-primary drop-shadow-md" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="45, 100" stroke-linecap="round" stroke-width="3"></path>
-<path class="text-purple-500 drop-shadow-md" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="30, 100" stroke-dashoffset="-48" stroke-linecap="round" stroke-width="3"></path>
-<path class="text-pink-500 drop-shadow-md" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="20, 100" stroke-dashoffset="-81" stroke-linecap="round" stroke-width="3"></path>
-</svg>
-<div class="absolute inset-0 flex flex-col items-center justify-center">
-<span class="text-2xl font-bold text-slate-900text-white">85</span>
-<span class="text-[10px] text-slate-400 uppercase tracking-wider">Total</span>
-</div>
-</div>
-<div class="flex flex-col gap-4 w-full">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-2">
-<span class="size-3 rounded-full bg-primary"></span>
-<span class="text-sm text-slate-600text-slate-300">Robes</span>
-</div>
-<span class="text-sm font-bold text-slate-900text-white">45%</span>
-</div>
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-2">
-<span class="size-3 rounded-full bg-purple-500"></span>
-<span class="text-sm text-slate-600text-slate-300">Tissus Wax</span>
-</div>
-<span class="text-sm font-bold text-slate-900text-white">30%</span>
-</div>
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-2">
-<span class="size-3 rounded-full bg-pink-500"></span>
-<span class="text-sm text-slate-600text-slate-300">Accessoires</span>
-</div>
-<span class="text-sm font-bold text-slate-900text-white">20%</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="px-4 py-2">
-<div class="flex justify-between items-center mb-3 px-1">
-<h3 class="text-slate-900text-white text-lg font-bold">Activité Récente</h3>
-<button class="text-primary text-sm font-semibold">Voir tout</button>
-</div>
-<div class="flex flex-col gap-3">
-<div class="flex items-center gap-3 p-3 bg-card-lightbg-card-dark rounded-xl shadow-sm border border-gray-100border-white/5">
-<div class="bg-center bg-no-repeat bg-cover rounded-lg size-12 shrink-0" data-alt="Colorful fabric pattern for user Awa Diop" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAFYdgNwRU1L2-D-PjtBxfYXPGwyHQYSfHyy5JqWJCyaoG6YZNdqYtv3gYErkjY350E5qOB8iZZ58n6Q5cDyZ1yhU6r1nzSpyHXhzXypNw6oufhsNEDLw4cvirKLosIvzc3jzgoFTBQYR9MRpBNzDlK4U8RnLXExJCs4dXeCyaiNWginBLeleOsRqRWU-tcsJ_lWqj5ZzaWS-9VfTzELZ0bjD8w4vHQgHR36ahZbfZlPdwRAOYYAfl-GHU6XawfHRBlQ4sz3Jan_O53");'></div>
-<div class="flex-1 min-w-0">
-<p class="text-slate-900text-white text-sm font-bold truncate">Commande #4023</p>
-<p class="text-slate-500text-slate-400 text-xs truncate">Awa Diop • Il y a 2 min</p>
-</div>
-<div class="text-right">
-<p class="text-slate-900text-white text-sm font-bold">150 €</p>
-<p class="text-green-600text-green-400 text-xs font-medium">Payé</p>
-</div>
-</div>
-<div class="flex items-center gap-3 p-3 bg-card-lightbg-card-dark rounded-xl shadow-sm border border-gray-100border-white/5">
-<div class="bg-center bg-no-repeat bg-cover rounded-lg size-12 shrink-0" data-alt="Modern geometric pattern for user Moussa Koné" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD98CbPNRcPsLkW6u8SQWf7jQkxmxZ7VAaVuu5iQ0ThB2DjEmCkdDBijdrK7A2ymS-n53yBG8_GeHtCQJ1ySkIVQtynKn6YL9Pep00f_yvu5Ps2O2-PJlZ0sDef3PJqDg6tFTCr_hy7RL-dLtLzS0pErbZoYMFe0VfmlNTIFiuwVwchu7Kw8W_pZRVCrgiVj8F4tHKitdN8b3jODyzhrMlCGExgAZ8mO5jwvfGkePTnjpu3rakY6CxL1NdWCZzqco1ZoGvve9arI38r");'></div>
-<div class="flex-1 min-w-0">
-<p class="text-slate-900text-white text-sm font-bold truncate">Commande #4022</p>
-<p class="text-slate-500text-slate-400 text-xs truncate">Moussa Koné • Il y a 15 min</p>
-</div>
-<div class="text-right">
-<p class="text-slate-900text-white text-sm font-bold">85 €</p>
-<p class="text-orange-500 text-xs font-medium">En attente</p>
-</div>
-</div>
-<div class="flex items-center gap-3 p-3 bg-card-lightbg-card-dark rounded-xl shadow-sm border border-gray-100border-white/5">
-<div class="bg-center bg-no-repeat bg-cover rounded-lg size-12 shrink-0" data-alt="New user registration avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCCif5EWhqUFO5jMuFfi72DyD764VFgmDJfBXa-IJJrBv8P08r7kj3hMY58QWB74JlIAC0Gs2sGU8h52K356Y4KEyb-xvXplJANO_iXN4S2wQBPtebMD9lx8MP2jDzNk2RY7d8pjl2oTIl4SfYn4NsbZzyRAEPptyHLjd1c1K9ELxOI-1guQ2NJnMgJAbRZzgbSRNPPfg6ObYKyFfTHArKrCrDLrdXdxuz_EbIUJaXMJCMRpcNu5VtjUufCmlzzPdDAQiVkP-iiPI1l");'></div>
-<div class="flex-1 min-w-0">
-<p class="text-slate-900text-white text-sm font-bold truncate">Nouveau Membre</p>
-<p class="text-slate-500text-slate-400 text-xs truncate">Fatou Sarr • Il y a 1 h</p>
-</div>
-<div class="text-right">
-<div class="bg-blue-100bg-blue-900/30 text-primarytext-blue-300 rounded-md px-2 py-1 text-xs font-bold">
+            </div>
+            <div class="w-full h-[120px] relative">
+                <svg fill="none" height="100%" preserveAspectRatio="none" viewBox="0 0 400 120" width="100%"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient gradientUnits="userSpaceOnUse" id="user_gradient" x1="200" x2="200" y1="0"
+                            y2="120">
+                            <stop stop-color="#3b82f6" stop-opacity="0.2"></stop>
+                            <stop offset="1" stop-color="#3b82f6" stop-opacity="0"></stop>
+                        </linearGradient>
+                    </defs>
+                    <path d="M0,100 C60,100 80,60 140,70 C200,80 220,40 280,30 C340,20 360,30 400,10 V120 H0 Z"
+                        fill="url(#user_gradient)"></path>
+                    <path d="M0,100 C60,100 80,60 140,70 C200,80 220,40 280,30 C340,20 360,30 400,10" stroke="#3b82f6"
+                        stroke-linecap="round" stroke-width="3"></path>
+                </svg>
+            </div>
+            <div class="flex justify-between mt-2 px-1">
+                <p class="text-slate-400 text-[10px] font-semibold">Sem 1</p>
+                <p class="text-slate-400 text-[10px] font-semibold">Sem 2</p>
+                <p class="text-slate-400 text-[10px] font-semibold">Sem 3</p>
+                <p class="text-slate-400 text-[10px] font-semibold">Sem 4</p>
+            </div>
+        </div>
+    </div>
+    <div class="px-4 py-2">
+        <h3 class="text-slate-900text-white text-lg font-bold mb-3">Revenus Mensuels</h3>
+        <div class="bg-card-lightbg-card-dark rounded-2xl p-5 shadow-sm border border-gray-100border-white/5">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <p class="text-2xl font-bold text-slate-900text-white">12.4k €</p>
+                    <p class="text-xs text-slate-400">Total généré</p>
+                </div>
+                <div class="flex gap-2">
+                    <div class="flex items-center gap-1">
+                        <span class="size-2 rounded-full bg-primary"></span>
+                        <span class="text-[10px] text-slate-500">2024</span>
+                    </div>
+                </div>
+            </div>
+            <div class="h-40 w-full flex items-end justify-between gap-3 px-1">
+                <div
+                    class="w-full bg-indigo-50bg-indigo-500/10 rounded-t-md relative group h-[40%] hover:bg-indigo-100hover:bg-indigo-500/20 transition-all">
+                    <div class="w-full absolute bottom-0 bg-primary/30 rounded-t-md h-[80%]"></div>
+                </div>
+                <div
+                    class="w-full bg-indigo-50bg-indigo-500/10 rounded-t-md relative group h-[55%] hover:bg-indigo-100hover:bg-indigo-500/20 transition-all">
+                    <div class="w-full absolute bottom-0 bg-primary/40 rounded-t-md h-[100%]"></div>
+                </div>
+                <div
+                    class="w-full bg-indigo-50bg-indigo-500/10 rounded-t-md relative group h-[45%] hover:bg-indigo-100hover:bg-indigo-500/20 transition-all">
+                    <div class="w-full absolute bottom-0 bg-primary/40 rounded-t-md h-[90%]"></div>
+                </div>
+                <div
+                    class="w-full bg-indigo-50bg-indigo-500/10 rounded-t-md relative group h-[70%] hover:bg-indigo-100hover:bg-indigo-500/20 transition-all">
+                    <div class="w-full absolute bottom-0 bg-primary/60 rounded-t-md h-[100%]"></div>
+                </div>
+                <div
+                    class="w-full bg-indigo-50bg-indigo-500/10 rounded-t-md relative group h-[85%] hover:bg-indigo-100hover:bg-indigo-500/20 transition-all">
+                    <div class="w-full absolute bottom-0 bg-primary rounded-t-md h-[100%] relative">
+                        <div
+                            class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-[10px] py-1 px-2 rounded opacity-100 shadow-lg">
+                            Top
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="w-full bg-indigo-50bg-indigo-500/10 rounded-t-md relative group h-[60%] hover:bg-indigo-100hover:bg-indigo-500/20 transition-all">
+                    <div class="w-full absolute bottom-0 bg-primary/50 rounded-t-md h-[100%]"></div>
+                </div>
+            </div>
+            <div class="flex justify-between mt-3 text-[10px] text-slate-400 font-medium px-1 uppercase">
+                <span class="w-full text-center">Jan</span>
+                <span class="w-full text-center">Fév</span>
+                <span class="w-full text-center">Mar</span>
+                <span class="w-full text-center">Avr</span>
+                <span class="w-full text-center">Mai</span>
+                <span class="w-full text-center">Juin</span>
+            </div>
+        </div>
+    </div>
+    <div class="px-4 py-2">
+        <h3 class="text-slate-900text-white text-lg font-bold mb-3">Répartition Commandes</h3>
+        <div class="bg-card-lightbg-card-dark rounded-2xl p-5 shadow-sm border border-gray-100border-white/5">
+            <div class="flex items-center justify-between gap-6">
+                <div class="relative size-32 shrink-0">
+                    <svg class="size-full -rotate-90" viewBox="0 0 36 36">
+                        <path class="text-gray-100text-white/5"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                            fill="none" stroke="currentColor" stroke-width="3"></path>
+                        <path class="text-primary drop-shadow-md"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                            fill="none" stroke="currentColor" stroke-dasharray="45, 100" stroke-linecap="round"
+                            stroke-width="3"></path>
+                        <path class="text-purple-500 drop-shadow-md"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                            fill="none" stroke="currentColor" stroke-dasharray="30, 100" stroke-dashoffset="-48"
+                            stroke-linecap="round" stroke-width="3"></path>
+                        <path class="text-pink-500 drop-shadow-md"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                            fill="none" stroke="currentColor" stroke-dasharray="20, 100" stroke-dashoffset="-81"
+                            stroke-linecap="round" stroke-width="3"></path>
+                    </svg>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center">
+                        <span class="text-2xl font-bold text-slate-900text-white">85</span>
+                        <span class="text-[10px] text-slate-400 uppercase tracking-wider">Total</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4 w-full">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="size-3 rounded-full bg-primary"></span>
+                            <span class="text-sm text-slate-600text-slate-300">Robes</span>
+                        </div>
+                        <span class="text-sm font-bold text-slate-900text-white">45%</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="size-3 rounded-full bg-purple-500"></span>
+                            <span class="text-sm text-slate-600text-slate-300">Tissus Wax</span>
+                        </div>
+                        <span class="text-sm font-bold text-slate-900text-white">30%</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="size-3 rounded-full bg-pink-500"></span>
+                            <span class="text-sm text-slate-600text-slate-300">Accessoires</span>
+                        </div>
+                        <span class="text-sm font-bold text-slate-900text-white">20%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="px-4 py-2">
+        <div class="flex justify-between items-center mb-3 px-1">
+            <h3 class="text-slate-900text-white text-lg font-bold">Activité Récente</h3>
+            <button class="text-primary text-sm font-semibold">Voir tout</button>
+        </div>
+        <div class="flex flex-col gap-3">
+            <div
+                class="flex items-center gap-3 p-3 bg-card-lightbg-card-dark rounded-xl shadow-sm border border-gray-100border-white/5">
+                <div class="bg-center bg-no-repeat bg-cover rounded-lg size-12 shrink-0"
+                    data-alt="Colorful fabric pattern for user Awa Diop"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAFYdgNwRU1L2-D-PjtBxfYXPGwyHQYSfHyy5JqWJCyaoG6YZNdqYtv3gYErkjY350E5qOB8iZZ58n6Q5cDyZ1yhU6r1nzSpyHXhzXypNw6oufhsNEDLw4cvirKLosIvzc3jzgoFTBQYR9MRpBNzDlK4U8RnLXExJCs4dXeCyaiNWginBLeleOsRqRWU-tcsJ_lWqj5ZzaWS-9VfTzELZ0bjD8w4vHQgHR36ahZbfZlPdwRAOYYAfl-GHU6XawfHRBlQ4sz3Jan_O53");'>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-slate-900text-white text-sm font-bold truncate">Commande #4023</p>
+                    <p class="text-slate-500text-slate-400 text-xs truncate">Awa Diop • Il y a 2 min</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-slate-900text-white text-sm font-bold">150 €</p>
+                    <p class="text-green-600text-green-400 text-xs font-medium">Payé</p>
+                </div>
+            </div>
+            <div
+                class="flex items-center gap-3 p-3 bg-card-lightbg-card-dark rounded-xl shadow-sm border border-gray-100border-white/5">
+                <div class="bg-center bg-no-repeat bg-cover rounded-lg size-12 shrink-0"
+                    data-alt="Modern geometric pattern for user Moussa Koné"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD98CbPNRcPsLkW6u8SQWf7jQkxmxZ7VAaVuu5iQ0ThB2DjEmCkdDBijdrK7A2ymS-n53yBG8_GeHtCQJ1ySkIVQtynKn6YL9Pep00f_yvu5Ps2O2-PJlZ0sDef3PJqDg6tFTCr_hy7RL-dLtLzS0pErbZoYMFe0VfmlNTIFiuwVwchu7Kw8W_pZRVCrgiVj8F4tHKitdN8b3jODyzhrMlCGExgAZ8mO5jwvfGkePTnjpu3rakY6CxL1NdWCZzqco1ZoGvve9arI38r");'>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-slate-900text-white text-sm font-bold truncate">Commande #4022</p>
+                    <p class="text-slate-500text-slate-400 text-xs truncate">Moussa Koné • Il y a 15 min</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-slate-900text-white text-sm font-bold">85 €</p>
+                    <p class="text-orange-500 text-xs font-medium">En attente</p>
+                </div>
+            </div>
+            <div
+                class="flex items-center gap-3 p-3 bg-card-lightbg-card-dark rounded-xl shadow-sm border border-gray-100border-white/5">
+                <div class="bg-center bg-no-repeat bg-cover rounded-lg size-12 shrink-0"
+                    data-alt="New user registration avatar placeholder"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCCif5EWhqUFO5jMuFfi72DyD764VFgmDJfBXa-IJJrBv8P08r7kj3hMY58QWB74JlIAC0Gs2sGU8h52K356Y4KEyb-xvXplJANO_iXN4S2wQBPtebMD9lx8MP2jDzNk2RY7d8pjl2oTIl4SfYn4NsbZzyRAEPptyHLjd1c1K9ELxOI-1guQ2NJnMgJAbRZzgbSRNPPfg6ObYKyFfTHArKrCrDLrdXdxuz_EbIUJaXMJCMRpcNu5VtjUufCmlzzPdDAQiVkP-iiPI1l");'>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-slate-900text-white text-sm font-bold truncate">Nouveau Membre</p>
+                    <p class="text-slate-500text-slate-400 text-xs truncate">Fatou Sarr • Il y a 1 h</p>
+                </div>
+                <div class="text-right">
+                    <div
+                        class="bg-blue-100bg-blue-900/30 text-primarytext-blue-300 rounded-md px-2 py-1 text-xs font-bold">
                         Nouveau
                     </div>
-</div>
-</div>
-</div>
-</div>
-<div class="fixed bottom-0 left-0 w-full bg-whitebg-[#131022] border-t border-gray-200border-white/5 px-6 py-3 pb-6 z-50 shadow-[0_-5px_15px_rgba(0,0,0,0.02)]">
-<div class="flex justify-between items-center max-w-md mx-auto">
-<button class="flex flex-col items-center gap-1 text-primary">
-<span class="material-symbols-outlined filled text-[24px]">grid_view</span>
-<span class="text-[10px] font-medium">Accueil</span>
-</button>
-<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600hover:text-slate-300 transition-colors">
-<span class="material-symbols-outlined text-[24px]">shopping_bag</span>
-<span class="text-[10px] font-medium">Commandes</span>
-</button>
-<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600hover:text-slate-300 transition-colors">
-<span class="material-symbols-outlined text-[24px]">styler</span>
-<span class="text-[10px] font-medium">Produits</span>
-</button>
-<button class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600hover:text-slate-300 transition-colors">
-<span class="material-symbols-outlined text-[24px]">settings</span>
-<span class="text-[10px] font-medium">Réglages</span>
-</button>
-</div>
-</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div
+        class="fixed bottom-0 left-0 w-full bg-whitebg-[#131022] border-t border-gray-200border-white/5 px-6 py-3 pb-6 z-50 shadow-[0_-5px_15px_rgba(0,0,0,0.02)]">
+        <div class="flex justify-between items-center max-w-md mx-auto">
+            <button class="flex flex-col items-center gap-1 text-primary">
+                <span class="material-symbols-outlined filled text-[24px]">grid_view</span>
+                <span class="text-[10px] font-medium">Accueil</span>
+            </button>
+            <button
+                class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600hover:text-slate-300 transition-colors">
+                <span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+                <span class="text-[10px] font-medium">Commandes</span>
+            </button>
+            <button
+                class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600hover:text-slate-300 transition-colors">
+                <span class="material-symbols-outlined text-[24px]">styler</span>
+                <span class="text-[10px] font-medium">Produits</span>
+            </button>
+            <button
+                class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600hover:text-slate-300 transition-colors">
+                <span class="material-symbols-outlined text-[24px]">settings</span>
+                <span class="text-[10px] font-medium">Réglages</span>
+            </button>
+        </div>
+    </div>
 
-</body></html>
+</body>
+
+</html>

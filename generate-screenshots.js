@@ -100,7 +100,7 @@ async function captureScreenshot(browser, screen, index, total) {
 }
 
 async function main() {
-    console.log('🎨 Génération des captures d\'écran pour les maquettes Sartoria\n');
+    console.log('🎨 Génération des captures d\'écran pour les maquettes CouturioShop\n');
     
     // Vérifier si Puppeteer est installé
     try {

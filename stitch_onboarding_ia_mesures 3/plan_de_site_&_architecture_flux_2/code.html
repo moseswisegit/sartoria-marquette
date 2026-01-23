@@ -1,203 +1,243 @@
 <!DOCTYPE html>
-<html class="light" lang="fr"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sartoria - Architecture &amp; Sitemap (MAJ)</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              colors: {
-                "primary": "#3211d4",
-                "background-light": "#f6f6f8",
-                "background-dark": "#131022",
-                "reseller": "#0ea5e9",
-              },
-              fontFamily: {
-                "display": ["Inter", "sans-serif"]
-              },
-              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-            },
+<html class="light" lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>CouturioShop - Architecture &amp; Sitemap (MAJ)</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#3211d4",
+            "background-light": "#f6f6f8",
+            "background-dark": "#131022",
+            "reseller": "#0ea5e9",
           },
-        }
-      </script>
-<style type="text/tailwindcss">
-        body { font-family: 'Inter', sans-serif; }
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style type="text/tailwindcss">
+    body { font-family: 'Inter', sans-serif; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .connector-dot { @apply size-2 bg-gray-300bg-white/20 rounded-full relative z-10; }
         .connector-line-v { @apply w-0.5 bg-gray-200bg-white/10 absolute left-[15px] top-8 bottom-0; }
     </style>
-<style>
+  <style>
     body {
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head>
-<body class="bg-background-lightbg-background-dark text-[#121118]text-white min-h-screen">
-<header class="sticky top-0 z-50 bg-white/80bg-background-dark/80 backdrop-blur-md border-b border-[#dddbe6]border-white/10">
-<div class="flex items-center p-4 justify-between max-w-md mx-auto">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary">account_tree</span>
-<h1 class="text-[#121118]text-white text-lg font-bold leading-tight tracking-tight">Architecture Sartoria</h1>
-</div>
-<div class="flex gap-1">
-<span class="text-[10px] font-bold bg-primary/10 text-primary px-2 py-1 rounded">v2.4 (MAJ)</span>
-</div>
-</div>
-<div class="px-4 overflow-x-auto no-scrollbar">
-<div class="flex gap-6 min-w-max border-b border-[#dddbe6]border-white/10">
-<a class="flex flex-col items-center py-3 border-b-2 border-primary text-primary" href="#flux-a">
-<span class="text-[10px] font-bold uppercase tracking-wider">A. Auth</span>
-</a>
-<a class="flex flex-col items-center py-3 border-b-2 border-transparent text-[#686189]text-gray-400" href="#flux-b">
-<span class="text-[10px] font-bold uppercase tracking-wider">B. Client</span>
-</a>
-<a class="flex flex-col items-center py-3 border-b-2 border-transparent text-[#686189]text-gray-400" href="#flux-r">
-<span class="text-[10px] font-bold uppercase tracking-wider text-reseller">R. Revendeur</span>
-</a>
-<a class="flex flex-col items-center py-3 border-b-2 border-transparent text-[#686189]text-gray-400" href="#flux-e">
-<span class="text-[10px] font-bold uppercase tracking-wider">E. Business</span>
-</a>
-</div>
-</div>
-</header>
-<main class="max-w-md mx-auto p-4 space-y-12 pb-32">
-<section id="flux-r">
-<div class="flex items-center justify-between mb-4">
-<div class="flex items-center gap-3">
-<span class="flex items-center justify-center size-8 bg-reseller text-white rounded-lg font-bold">R</span>
-<div>
-<h2 class="text-xl font-boldtext-white leading-none">Revendeur Marketplace</h2>
-<p class="text-[10px] text-reseller font-bold uppercase mt-1">Nouveau Flux (18 écrans)</p>
-</div>
-</div>
-<span class="text-[10px] font-bold bg-blue-100 text-blue-700 px-2 py-1 rounded-full uppercase">Sprint 4</span>
-</div>
-<div class="relative pl-8 space-y-4">
-<div class="connector-line-v !bg-reseller/30"></div>
-<div class="relative bg-whitebg-white/5 p-4 rounded-xl border border-reseller/30 shadow-sm">
-<div class="absolute -left-8 top-5 size-4 bg-reseller rounded-full border-2 border-whiteborder-background-dark"></div>
-<div class="flex justify-between items-start">
-<div>
-<p class="text-xs text-reseller font-bold mb-1">R01 - R03</p>
-<h3 class="font-semibold text-base mb-1">Inscription &amp; Validation</h3>
-<p class="text-sm text-[#686189]text-gray-400 leading-tight">KYC, vérification boutique et Dashboard principal.</p>
-</div>
-<span class="material-symbols-outlined text-reseller/40">storefront</span>
-</div>
-</div>
-<div class="relative bg-whitebg-white/5 p-4 rounded-xl border border-[#dddbe6]border-white/10 shadow-sm">
-<div class="absolute -left-8 top-5 size-3 bg-gray-300bg-white/20 rounded-full border-2 border-whiteborder-background-dark"></div>
-<div class="flex justify-between items-start">
-<div>
-<p class="text-xs text-reseller font-bold mb-1">R04 - R10</p>
-<h3 class="font-semibold text-base mb-1">Catalogue &amp; Commandes</h3>
-<p class="text-sm text-[#686189]text-gray-400 leading-tight">Gestion des stocks, fiches produits revendeur et suivi des ventes.</p>
-</div>
-</div>
-</div>
-<div class="relative bg-whitebg-white/5 p-4 rounded-xl border border-[#dddbe6]border-white/10 shadow-sm">
-<div class="absolute -left-8 top-5 size-3 bg-gray-300bg-white/20 rounded-full border-2 border-whiteborder-background-dark"></div>
-<div class="flex justify-between items-start">
-<div>
-<p class="text-xs text-reseller font-bold mb-1">R11 - R18</p>
-<h3 class="font-semibold text-base mb-1">Payout &amp; Portefeuille</h3>
-<p class="text-sm text-[#686189]text-gray-400 leading-tight">Historique des transactions, commissions et retraits (Payout R16).</p>
-</div>
-<span class="material-symbols-outlined text-green-500/50">payments</span>
-</div>
-</div>
-</div>
-</section>
-<section id="flux-a">
-<div class="flex items-center justify-between mb-4">
-<div class="flex items-center gap-3">
-<span class="flex items-center justify-center size-8 bg-primary text-white rounded-lg font-bold">A</span>
-<h2 class="text-xl font-boldtext-white">Auth &amp; Onboarding</h2>
-</div>
-<span class="text-[10px] font-bold bg-green-100 text-green-700 px-2 py-1 rounded-full uppercase">Validé</span>
-</div>
-<div class="relative pl-8 space-y-4">
-<div class="connector-line-v"></div>
-<div class="relative bg-whitebg-white/5 p-4 rounded-xl border border-[#dddbe6]border-white/10 shadow-sm">
-<div class="absolute -left-8 top-5 size-3 bg-primary rounded-full border-2 border-whiteborder-background-dark"></div>
-<p class="text-xs text-primary font-bold mb-1">A01 - A05</p>
-<h3 class="font-semibold text-base mb-1">Tunnel d'entrée</h3>
-<p class="text-sm text-[#686189]text-gray-400">Welcome, Login, Register &amp; OTP Verification.</p>
-</div>
-</div>
-</section>
-<section id="flux-b">
-<div class="flex items-center justify-between mb-4">
-<div class="flex items-center gap-3">
-<span class="flex items-center justify-center size-8 bg-gray-200bg-white/10 text-gray-700text-white rounded-lg font-bold">B/C</span>
-<h2 class="text-xl font-boldtext-white">Client &amp; Smart-Fit AI</h2>
-</div>
-</div>
-<div class="relative pl-8 space-y-4">
-<div class="connector-line-v"></div>
-<div class="relative bg-whitebg-white/5 p-4 rounded-xl border border-[#dddbe6]border-white/10 shadow-sm">
-<div class="absolute -left-8 top-5 size-3 bg-gray-300bg-white/20 rounded-full border-2 border-whiteborder-background-dark"></div>
-<p class="text-xs text-primary font-bold mb-1">B01 - B12</p>
-<h3 class="font-semibold text-base mb-1">Expérience Marketplace</h3>
-<p class="text-sm text-[#686189]text-gray-400">Exploration, Panier, et Personnalisation.</p>
-</div>
-<div class="relative bg-whitebg-white/5 p-4 rounded-xl border border-dashed border-primary/30 shadow-sm">
-<div class="absolute -left-8 top-5 size-3 bg-primary/40 rounded-full border-2 border-whiteborder-background-dark"></div>
-<p class="text-xs text-primary font-bold mb-1">C01 - C08</p>
-<h3 class="font-semibold text-base mb-1">Smart-Fit AI / 3D</h3>
-<p class="text-sm text-[#686189]text-gray-400">Scan corporel, Modèle 3D et Essayage virtuel.</p>
-</div>
-</div>
-</section>
-<section id="flux-e">
-<div class="flex items-center justify-between mb-4">
-<div class="flex items-center gap-3">
-<span class="flex items-center justify-center size-8 bg-blackbg-white text-whitetext-black rounded-lg font-bold">E/F</span>
-<h2 class="text-xl font-boldtext-white">Business &amp; Admin</h2>
-</div>
-</div>
-<div class="grid grid-cols-1 gap-4">
-<div class="bg-whitebg-white/5 p-4 rounded-xl border border-[#dddbe6]border-white/10 shadow-sm flex items-center justify-between">
-<div>
-<p class="text-[10px] font-bold text-gray-400">D &amp; E</p>
-<h4 class="font-semibold text-sm">Dashboard Tailleur</h4>
-</div>
-<span class="text-xs font-medium bg-gray-100bg-white/10 px-2 py-1 rounded">12 écrans</span>
-</div>
-<div class="bg-whitebg-white/5 p-4 rounded-xl border border-[#dddbe6]border-white/10 shadow-sm flex items-center justify-between">
-<div>
-<p class="text-[10px] font-bold text-gray-400">F</p>
-<h4 class="font-semibold text-sm">Admin Web Console</h4>
-</div>
-<span class="text-xs font-medium bg-gray-100bg-white/10 px-2 py-1 rounded">8 modules</span>
-</div>
-</div>
-</section>
-</main>
-<div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-sm bg-whitebg-[#1f1b3d] rounded-2xl shadow-2xl border border-primary/20 p-4 flex items-center justify-between z-[100]">
-<div class="flex items-center gap-3">
-<div class="flex -space-x-2">
-<div class="size-8 rounded-full border-2 border-whiteborder-background-dark bg-blue-500 flex items-center justify-center text-[10px] text-white font-bold">PM</div>
-<div class="size-8 rounded-full border-2 border-whiteborder-background-dark bg-reseller flex items-center justify-center text-[10px] text-white font-bold">UX</div>
-<div class="size-8 rounded-full border-2 border-whiteborder-background-dark bg-gray-200 flex items-center justify-center text-[10px] text-gray-600 font-bold">+3</div>
-</div>
-<div class="h-6 w-px bg-gray-200bg-white/10"></div>
-<div class="flex flex-col">
-<p class="text-[10px] font-bold text-primary uppercase">Sync. Live</p>
-<p class="text-xs font-medium text-[#121118]text-white leading-none">64 Écrans totaux</p>
-</div>
-</div>
-<button class="bg-primary text-white h-10 px-4 rounded-xl text-sm font-bold flex items-center gap-2 shadow-lg shadow-primary/20 active:scale-95 transition-transform">
-<span class="material-symbols-outlined text-sm">share</span>
-        Partager
-    </button>
-</div>
-<div class="fixed inset-0 pointer-events-none opacity-[0.03]opacity-[0.05] z-[-1]" style="background-image: radial-gradient(#3211d4 1px, transparent 1px); background-size: 20px 20px;"></div>
+</head>
 
-</body></html>
+<body class="bg-background-lightbg-background-dark text-[#121118]text-white min-h-screen">
+  <header
+    class="sticky top-0 z-50 bg-white/80bg-background-dark/80 backdrop-blur-md border-b border-[#dddbe6]border-white/10">
+    <div class="flex items-center p-4 justify-between max-w-md mx-auto">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary">account_tree</span>
+        <h1 class="text-[#121118]text-white text-lg font-bold leading-tight tracking-tight">Architecture CouturioShop
+        </h1>
+      </div>
+      <div class="flex gap-1">
+        <span class="text-[10px] font-bold bg-primary/10 text-primary px-2 py-1 rounded">v2.4 (MAJ)</span>
+      </div>
+    </div>
+    <div class="px-4 overflow-x-auto no-scrollbar">
+      <div class="flex gap-6 min-w-max border-b border-[#dddbe6]border-white/10">
+        <a class="flex flex-col items-center py-3 border-b-2 border-primary text-primary" href="#flux-a">
+          <span class="text-[10px] font-bold uppercase tracking-wider">A. Auth</span>
+        </a>
+        <a class="flex flex-col items-center py-3 border-b-2 border-transparent text-[#686189]text-gray-400"
+          href="#flux-b">
+          <span class="text-[10px] font-bold uppercase tracking-wider">B. Client</span>
+        </a>
+        <a class="flex flex-col items-center py-3 border-b-2 border-transparent text-[#686189]text-gray-400"
+          href="#flux-r">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-reseller">R. Revendeur</span>
+        </a>
+        <a class="flex flex-col items-center py-3 border-b-2 border-transparent text-[#686189]text-gray-400"
+          href="#flux-e">
+          <span class="text-[10px] font-bold uppercase tracking-wider">E. Business</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <main class="max-w-md mx-auto p-4 space-y-12 pb-32">
+    <section id="flux-r">
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+          <span class="flex items-center justify-center size-8 bg-reseller text-white rounded-lg font-bold">R</span>
+          <div>
+            <h2 class="text-xl font-boldtext-white leading-none">Revendeur Marketplace</h2>
+            <p class="text-[10px] text-reseller font-bold uppercase mt-1">Nouveau Flux (18 écrans)</p>
+          </div>
+        </div>
+        <span class="text-[10px] font-bold bg-blue-100 text-blue-700 px-2 py-1 rounded-full uppercase">Sprint 4</span>
+      </div>
+      <div class="relative pl-8 space-y-4">
+        <div class="connector-line-v !bg-reseller/30"></div>
+        <div class="relative bg-whitebg-white/5 p-4 rounded-xl border border-reseller/30 shadow-sm">
+          <div
+            class="absolute -left-8 top-5 size-4 bg-reseller rounded-full border-2 border-whiteborder-background-dark">
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="text-xs text-reseller font-bold mb-1">R01 - R03</p>
+              <h3 class="font-semibold text-base mb-1">Inscription &amp; Validation</h3>
+              <p class="text-sm text-[#686189]text-gray-400 leading-tight">KYC, vérification boutique et Dashboard
+                principal.</p>
+            </div>
+            <span class="material-symbols-outlined text-reseller/40">storefront</span>
+          </div>
+        </div>
+        <div class="relative bg-whitebg-white/5 p-4 rounded-xl border border-[#dddbe6]border-white/10 shadow-sm">
+          <div
+            class="absolute -left-8 top-5 size-3 bg-gray-300bg-white/20 rounded-full border-2 border-whiteborder-background-dark">
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="text-xs text-reseller font-bold mb-1">R04 - R10</p>
+              <h3 class="font-semibold text-base mb-1">Catalogue &amp; Commandes</h3>
+              <p class="text-sm text-[#686189]text-gray-400 leading-tight">Gestion des stocks, fiches produits revendeur
+                et suivi des ventes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative bg-whitebg-white/5 p-4 rounded-xl border border-[#dddbe6]border-white/10 shadow-sm">
+          <div
+            class="absolute -left-8 top-5 size-3 bg-gray-300bg-white/20 rounded-full border-2 border-whiteborder-background-dark">
+          </div>
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="text-xs text-reseller font-bold mb-1">R11 - R18</p>
+              <h3 class="font-semibold text-base mb-1">Payout &amp; Portefeuille</h3>
+              <p class="text-sm text-[#686189]text-gray-400 leading-tight">Historique des transactions, commissions et
+                retraits (Payout R16).</p>
+            </div>
+            <span class="material-symbols-outlined text-green-500/50">payments</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="flux-a">
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+          <span class="flex items-center justify-center size-8 bg-primary text-white rounded-lg font-bold">A</span>
+          <h2 class="text-xl font-boldtext-white">Auth &amp; Onboarding</h2>
+        </div>
+        <span class="text-[10px] font-bold bg-green-100 text-green-700 px-2 py-1 rounded-full uppercase">Validé</span>
+      </div>
+      <div class="relative pl-8 space-y-4">
+        <div class="connector-line-v"></div>
+        <div class="relative bg-whitebg-white/5 p-4 rounded-xl border border-[#dddbe6]border-white/10 shadow-sm">
+          <div
+            class="absolute -left-8 top-5 size-3 bg-primary rounded-full border-2 border-whiteborder-background-dark">
+          </div>
+          <p class="text-xs text-primary font-bold mb-1">A01 - A05</p>
+          <h3 class="font-semibold text-base mb-1">Tunnel d'entrée</h3>
+          <p class="text-sm text-[#686189]text-gray-400">Welcome, Login, Register &amp; OTP Verification.</p>
+        </div>
+      </div>
+    </section>
+    <section id="flux-b">
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+          <span
+            class="flex items-center justify-center size-8 bg-gray-200bg-white/10 text-gray-700text-white rounded-lg font-bold">B/C</span>
+          <h2 class="text-xl font-boldtext-white">Client &amp; Smart-Fit AI</h2>
+        </div>
+      </div>
+      <div class="relative pl-8 space-y-4">
+        <div class="connector-line-v"></div>
+        <div class="relative bg-whitebg-white/5 p-4 rounded-xl border border-[#dddbe6]border-white/10 shadow-sm">
+          <div
+            class="absolute -left-8 top-5 size-3 bg-gray-300bg-white/20 rounded-full border-2 border-whiteborder-background-dark">
+          </div>
+          <p class="text-xs text-primary font-bold mb-1">B01 - B12</p>
+          <h3 class="font-semibold text-base mb-1">Expérience Marketplace</h3>
+          <p class="text-sm text-[#686189]text-gray-400">Exploration, Panier, et Personnalisation.</p>
+        </div>
+        <div class="relative bg-whitebg-white/5 p-4 rounded-xl border border-dashed border-primary/30 shadow-sm">
+          <div
+            class="absolute -left-8 top-5 size-3 bg-primary/40 rounded-full border-2 border-whiteborder-background-dark">
+          </div>
+          <p class="text-xs text-primary font-bold mb-1">C01 - C08</p>
+          <h3 class="font-semibold text-base mb-1">Smart-Fit AI / 3D</h3>
+          <p class="text-sm text-[#686189]text-gray-400">Scan corporel, Modèle 3D et Essayage virtuel.</p>
+        </div>
+      </div>
+    </section>
+    <section id="flux-e">
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-3">
+          <span
+            class="flex items-center justify-center size-8 bg-blackbg-white text-whitetext-black rounded-lg font-bold">E/F</span>
+          <h2 class="text-xl font-boldtext-white">Business &amp; Admin</h2>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-4">
+        <div
+          class="bg-whitebg-white/5 p-4 rounded-xl border border-[#dddbe6]border-white/10 shadow-sm flex items-center justify-between">
+          <div>
+            <p class="text-[10px] font-bold text-gray-400">D &amp; E</p>
+            <h4 class="font-semibold text-sm">Dashboard Tailleur</h4>
+          </div>
+          <span class="text-xs font-medium bg-gray-100bg-white/10 px-2 py-1 rounded">12 écrans</span>
+        </div>
+        <div
+          class="bg-whitebg-white/5 p-4 rounded-xl border border-[#dddbe6]border-white/10 shadow-sm flex items-center justify-between">
+          <div>
+            <p class="text-[10px] font-bold text-gray-400">F</p>
+            <h4 class="font-semibold text-sm">Admin Web Console</h4>
+          </div>
+          <span class="text-xs font-medium bg-gray-100bg-white/10 px-2 py-1 rounded">8 modules</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div
+    class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-sm bg-whitebg-[#1f1b3d] rounded-2xl shadow-2xl border border-primary/20 p-4 flex items-center justify-between z-[100]">
+    <div class="flex items-center gap-3">
+      <div class="flex -space-x-2">
+        <div
+          class="size-8 rounded-full border-2 border-whiteborder-background-dark bg-blue-500 flex items-center justify-center text-[10px] text-white font-bold">
+          PM</div>
+        <div
+          class="size-8 rounded-full border-2 border-whiteborder-background-dark bg-reseller flex items-center justify-center text-[10px] text-white font-bold">
+          UX</div>
+        <div
+          class="size-8 rounded-full border-2 border-whiteborder-background-dark bg-gray-200 flex items-center justify-center text-[10px] text-gray-600 font-bold">
+          +3</div>
+      </div>
+      <div class="h-6 w-px bg-gray-200bg-white/10"></div>
+      <div class="flex flex-col">
+        <p class="text-[10px] font-bold text-primary uppercase">Sync. Live</p>
+        <p class="text-xs font-medium text-[#121118]text-white leading-none">64 Écrans totaux</p>
+      </div>
+    </div>
+    <button
+      class="bg-primary text-white h-10 px-4 rounded-xl text-sm font-bold flex items-center gap-2 shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+      <span class="material-symbols-outlined text-sm">share</span>
+      Partager
+    </button>
+  </div>
+  <div class="fixed inset-0 pointer-events-none opacity-[0.03]opacity-[0.05] z-[-1]"
+    style="background-image: radial-gradient(#3211d4 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+</body>
+
+</html>

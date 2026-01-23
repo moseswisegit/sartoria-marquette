@@ -24,7 +24,7 @@ Le profil Client permet aux utilisateurs finaux de :
 ### 1. AUTHENTIFICATION & ONBOARDING (8 écrans)
 
 #### A01 - Splash Screen
-**Description :** Écran de chargement initial avec le logo Sartoria  
+**Description :** Écran de chargement initial avec le logo CouturioShop  
 **Fichier :** `splash_screen/code.html`  
 **Fonctionnalités :**
 - Affichage du logo et animation de chargement

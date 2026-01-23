@@ -1,4 +1,4 @@
-# 🔍 AUDIT COMPLET DU PROJET SARTORIA
+# 🔍 AUDIT COMPLET DU PROJET COUTURIOSHOP
 **Date :** 2025-01-XX  
 **Rôle :** Designer & Développeur Senior  
 **Objectif :** Vérifier l'ordre des écrans et identifier les éléments manquants

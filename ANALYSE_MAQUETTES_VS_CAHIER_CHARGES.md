@@ -1,4 +1,4 @@
-# 📊 ANALYSE : MAQUETTES vs CAHIER DES CHARGES SARTORIA
+# 📊 ANALYSE : MAQUETTES vs CAHIER DES CHARGES COUTURIOSHOP
 
 **Date d'analyse :** 2025-01-XX  
 **Version maquettes :** 39 écrans  

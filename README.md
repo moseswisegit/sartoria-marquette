@@ -1,6 +1,6 @@
-# 🎨 Sartoria - Galerie des Maquettes
+# 🎨 CouturioShop - Galerie des Maquettes
 
-Plateforme de visualisation des maquettes de l'application Sartoria.
+Plateforme de visualisation des maquettes de l'application CouturioShop.
 
 ## 📋 Structure
 
@@ -9,7 +9,7 @@ Plateforme de visualisation des maquettes de l'application Sartoria.
 
 ## 🚀 Accès au site
 
-Le site est hébergé sur GitHub Pages : [https://moseswisegit.github.io/sartoria-marquette/](https://moseswisegit.github.io/sartoria-marquette/)
+Le site est hébergé sur GitHub Pages : [https://moseswisegit.github.io/couturioshop-marquette/](https://moseswisegit.github.io/couturioshop-marquette/)
 
 ## 📱 Fonctionnalités
 

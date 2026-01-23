@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script de commit pour les modifications du projet Sartoria
+# Script de commit pour les modifications du projet CouturioShop
 
 cd "/Users/mac/DOSSIER_MOSES/MOSESWISE/STYLISTE APP/Marquette"
 

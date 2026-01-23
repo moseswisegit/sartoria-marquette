@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="fr"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Guide des Interactions &amp; Navigation Flux - Sartoria</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="dark" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Guide des Interactions &amp; Navigation Flux - CouturioShop</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -21,209 +28,246 @@
                     fontFamily: {
                         "display": ["Inter"]
                     },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
                 },
             },
         }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .flow-grid {
             background-image: radial-gradient(#3d4952 0.5px, transparent 0.5px);
             background-size: 20px 20px;
         }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background-lightbg-background-dark font-display text-slate-900text-slate-100 antialiased overflow-hidden h-screen flex flex-col">
-<!-- TopAppBar -->
-<header class="flex items-center bg-background-lightbg-background-dark p-4 pb-2 justify-between border-b border-slate-200border-slate-800 z-50">
-<div class="text-slate-900text-white flex size-12 shrink-0 items-center">
-<span class="material-symbols-outlined text-2xl">arrow_back</span>
-</div>
-<div class="flex flex-col flex-1">
-<h2 class="text-slate-900text-white text-lg font-bold leading-tight tracking-[-0.015em]">Sartoria Interaction Guide</h2>
-<p class="text-xs text-slate-500text-[#9eadb7]">Flux Technique v1.2</p>
-</div>
-<div class="flex w-12 items-center justify-end">
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-slate-900text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
-<span class="material-symbols-outlined">layers</span>
-</button>
-</div>
-</header>
-<!-- Tabs -->
-<nav class="bg-background-lightbg-background-dark z-50">
-<div class="flex border-b border-slate-200border-[#3d4952] px-4 gap-8">
-<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-[13px] pt-4" href="#">
-<p class="text-sm font-bold leading-normal tracking-[0.015em]">Flux Critique</p>
-</a>
-<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-slate-500text-[#9eadb7] pb-[13px] pt-4" href="#">
-<p class="text-sm font-bold leading-normal tracking-[0.015em]">Par Rôle</p>
-</a>
-<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-slate-500text-[#9eadb7] pb-[13px] pt-4" href="#">
-<p class="text-sm font-bold leading-normal tracking-[0.015em]">Modules</p>
-</a>
-</div>
-</nav>
-<!-- Flow Canvas (Interactive Area) -->
-<main class="flex-1 overflow-auto flow-grid relative p-8">
-<!-- Section Header for Grouping -->
-<div class="mb-12">
-<h3 class="text-slate-900text-white text-lg font-bold leading-tight tracking-[-0.015em] mb-2">Tunnel Critique: Mesures &amp; Commande</h3>
-<div class="h-1 w-24 bg-primary rounded-full"></div>
-</div>
-<div class="flex flex-col gap-12 items-center max-w-lg mx-auto pb-32">
-<!-- A01 Splash -->
-<div class="flex flex-col items-center w-full">
-<div class="flex items-stretch justify-between gap-4 rounded-lg bg-whitebg-[#1c2226] p-4 shadow-lg border border-slate-200border-slate-700 w-full">
-<div class="flex flex-[2_2_0px] flex-col gap-4">
-<div class="flex flex-col gap-1">
-<span class="text-[10px] font-bold text-primary uppercase tracking-wider">Lancement</span>
-<p class="text-slate-900text-white text-base font-bold leading-tight">Splash Screen (A01)</p>
-<p class="text-slate-500text-[#9eadb7] text-xs">Initialisation des assets</p>
-</div>
-</div>
-<div class="w-20 h-12 bg-gradient-to-br from-primary to-blue-400 rounded-lg flex items-center justify-center" data-alt="Abstract blue gradient representing splash screen">
-<span class="material-symbols-outlined text-white">bolt</span>
-</div>
-</div>
-<div class="flex flex-col items-center gap-1 my-2">
-<div class="w-[2px] bg-primary h-8"></div>
-<span class="text-[10px] font-medium text-[#9eadb7]">AUTO-REDIRECT</span>
-<span class="material-symbols-outlined text-primary text-sm">keyboard_arrow_down</span>
-</div>
-</div>
-<!-- N01 Role Selector -->
-<div class="flex flex-col items-center w-full">
-<div class="flex items-stretch justify-between gap-4 rounded-lg bg-whitebg-[#1c2226] p-4 shadow-lg border-2 border-primary w-full relative">
-<div class="absolute -top-3 left-4 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded">NODE DÉCISIF</div>
-<div class="flex flex-[2_2_0px] flex-col gap-4">
-<div class="flex flex-col gap-1">
-<p class="text-slate-900text-white text-base font-bold leading-tight">Sélecteur de Rôle (N01)</p>
-<p class="text-slate-500text-[#9eadb7] text-xs">Client | Tailleur | Revendeur</p>
-</div>
-</div>
-<div class="w-20 h-12 bg-slate-200bg-[#293138] rounded-lg flex items-center justify-center" data-alt="Dark gray rectangle icon for role selector">
-<span class="material-symbols-outlined text-primary">group</span>
-</div>
-</div>
-<!-- Branching Logic Visualization -->
-<div class="relative w-full h-24 flex justify-between px-10">
-<svg class="absolute inset-0 w-full h-full pointer-events-none" style="overflow: visible;">
-<path d="M 50% 0 L 50% 40 L 10% 40 L 10% 80" fill="none" stroke="#3d4952" stroke-width="2"></path>
-<path d="M 50% 0 L 50% 80" fill="none" stroke="#1a73b7" stroke-width="2"></path>
-<path d="M 50% 0 L 50% 40 L 90% 40 L 90% 80" fill="none" stroke="#3d4952" stroke-width="2"></path>
-</svg>
-<div class="mt-20 text-[10px] text-slate-500 uppercase font-bold text-center">Tailleur<br/>(E01)</div>
-<div class="mt-20 text-[10px] text-primary uppercase font-bold text-center">Client<br/>(B01)</div>
-<div class="mt-20 text-[10px] text-slate-500 uppercase font-bold text-center">Revendeur<br/>(R02)</div>
-</div>
-</div>
-<!-- B01 Main Hub -->
-<div class="flex flex-col items-center w-full mt-4">
-<div class="flex items-stretch justify-between gap-4 rounded-lg bg-whitebg-[#1c2226] p-4 shadow-lg border border-slate-200border-slate-700 w-full">
-<div class="flex flex-[2_2_0px] flex-col gap-4">
-<div class="flex flex-col gap-1">
-<p class="text-slate-900text-white text-base font-bold leading-tight">Accueil (B01)</p>
-<p class="text-slate-500text-[#9eadb7] text-xs">Tableau de bord Client</p>
-</div>
-<div class="flex gap-2">
-<span class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded">HUB</span>
-<span class="bg-emerald-500/20 text-emerald-500 text-[10px] font-bold px-2 py-0.5 rounded">AUTH</span>
-</div>
-</div>
-<div class="w-20 h-12 bg-slate-200bg-[#293138] rounded-lg flex items-center justify-center" data-alt="Dark gray rectangle icon for home screen">
-<span class="material-symbols-outlined text-slate-400">home</span>
-</div>
-</div>
-<div class="flex flex-col items-center gap-1 my-2">
-<div class="w-[2px] bg-primary h-8"></div>
-<span class="material-symbols-outlined text-primary text-sm">keyboard_arrow_down</span>
-</div>
-</div>
-<!-- Critical Tunnel Group -->
-<div class="w-full bg-primary/5bg-primary/10 border-2 border-dashed border-primary/30 rounded-xl p-4 flex flex-col gap-6">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
-<span class="text-[10px] font-bold text-primary uppercase">Tunnel de Mesures IA</span>
-</div>
-<!-- C01-C03 Mesures -->
-<div class="flex items-stretch justify-between gap-4 rounded-lg bg-whitebg-[#1c2226] p-4 shadow-md border border-slate-200border-slate-700 w-full">
-<div class="flex flex-1 flex-col gap-1">
-<p class="text-slate-900text-white text-sm font-bold leading-tight">Mesures IA (C01-C03)</p>
-<p class="text-slate-500text-[#9eadb7] text-xs">Scanning corporel temps réel</p>
-</div>
-<div class="w-16 h-10 bg-primary rounded-lg flex items-center justify-center" data-alt="Blue icon representing AI measurement scanning">
-<span class="material-symbols-outlined text-white text-sm">straighten</span>
-</div>
-</div>
-<div class="flex flex-col items-center gap-1 -my-4">
-<div class="w-[2px] bg-primary h-6"></div>
-<span class="material-symbols-outlined text-primary text-sm">keyboard_arrow_down</span>
-</div>
-<!-- C04 3D Fitting -->
-<div class="flex items-stretch justify-between gap-4 rounded-lg bg-whitebg-[#1c2226] p-4 shadow-md border border-slate-200border-slate-700 w-full">
-<div class="flex flex-1 flex-col gap-1">
-<p class="text-slate-900text-white text-sm font-bold leading-tight">Essayage 3D (C04)</p>
-<p class="text-slate-500text-[#9eadb7] text-xs">Simulation de coupe en AR</p>
-</div>
-<div class="w-16 h-10 bg-slate-200bg-[#293138] rounded-lg flex items-center justify-center" data-alt="Grey icon for 3D modeling fitting">
-<span class="material-symbols-outlined text-slate-400 text-sm">view_in_ar</span>
-</div>
-</div>
-</div>
-<!-- B03 Order -->
-<div class="flex flex-col items-center w-full mt-4">
-<div class="flex flex-col items-center gap-1 mb-2">
-<div class="w-[2px] bg-primary h-8"></div>
-<span class="material-symbols-outlined text-primary text-sm">keyboard_arrow_down</span>
-</div>
-<div class="flex items-stretch justify-between gap-4 rounded-lg bg-whitebg-[#1c2226] p-4 shadow-lg border border-slate-200border-slate-700 w-full">
-<div class="flex flex-[2_2_0px] flex-col gap-4">
-<div class="flex flex-col gap-1">
-<p class="text-slate-900text-white text-base font-bold leading-tight">Commande (B03)</p>
-<p class="text-slate-500text-[#9eadb7] text-xs">Finalisation &amp; Paiement</p>
-</div>
-</div>
-<div class="w-20 h-12 bg-emerald-500 rounded-lg flex items-center justify-center" data-alt="Green icon for checkout and payment confirmation">
-<span class="material-symbols-outlined text-white">shopping_bag</span>
-</div>
-</div>
-</div>
-</div>
-</main>
-<!-- Floating UI Elements -->
-<!-- Mini-Map / Zoom Controls -->
-<div class="fixed bottom-24 right-4 flex flex-col gap-2 z-50">
-<button class="size-12 rounded-full bg-whitebg-[#1c2226] shadow-xl border border-slate-200border-slate-700 flex items-center justify-center text-slate-700text-white">
-<span class="material-symbols-outlined">add</span>
-</button>
-<button class="size-12 rounded-full bg-whitebg-[#1c2226] shadow-xl border border-slate-200border-slate-700 flex items-center justify-center text-slate-700text-white">
-<span class="material-symbols-outlined">remove</span>
-</button>
-<button class="size-12 rounded-full bg-primary shadow-xl flex items-center justify-center text-white">
-<span class="material-symbols-outlined">center_focus_strong</span>
-</button>
-</div>
-<!-- Legend Overlay -->
-<div class="fixed bottom-0 left-0 right-0 p-4 bg-white/80bg-[#111a21]/80 backdrop-blur-md border-t border-slate-200border-slate-800 flex justify-around items-center z-50">
-<div class="flex items-center gap-2">
-<div class="size-2 bg-primary rounded-full"></div>
-<span class="text-[10px] font-bold text-slate-500text-[#9eadb7] uppercase">Flux Principal</span>
-</div>
-<div class="flex items-center gap-2">
-<div class="size-2 bg-slate-400 rounded-full"></div>
-<span class="text-[10px] font-bold text-slate-500text-[#9eadb7] uppercase">Flux Secondaire</span>
-</div>
-<div class="flex items-center gap-2">
-<div class="size-2 bg-emerald-500 rounded-full"></div>
-<span class="text-[10px] font-bold text-slate-500text-[#9eadb7] uppercase">Conversion</span>
-</div>
-</div>
-</body></html>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-lightbg-background-dark font-display text-slate-900text-slate-100 antialiased overflow-hidden h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header
+        class="flex items-center bg-background-lightbg-background-dark p-4 pb-2 justify-between border-b border-slate-200border-slate-800 z-50">
+        <div class="text-slate-900text-white flex size-12 shrink-0 items-center">
+            <span class="material-symbols-outlined text-2xl">arrow_back</span>
+        </div>
+        <div class="flex flex-col flex-1">
+            <h2 class="text-slate-900text-white text-lg font-bold leading-tight tracking-[-0.015em]">CouturioShop
+                Interaction Guide</h2>
+            <p class="text-xs text-slate-500text-[#9eadb7]">Flux Technique v1.2</p>
+        </div>
+        <div class="flex w-12 items-center justify-end">
+            <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-slate-900text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+                <span class="material-symbols-outlined">layers</span>
+            </button>
+        </div>
+    </header>
+    <!-- Tabs -->
+    <nav class="bg-background-lightbg-background-dark z-50">
+        <div class="flex border-b border-slate-200border-[#3d4952] px-4 gap-8">
+            <a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-[13px] pt-4"
+                href="#">
+                <p class="text-sm font-bold leading-normal tracking-[0.015em]">Flux Critique</p>
+            </a>
+            <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-slate-500text-[#9eadb7] pb-[13px] pt-4"
+                href="#">
+                <p class="text-sm font-bold leading-normal tracking-[0.015em]">Par Rôle</p>
+            </a>
+            <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-slate-500text-[#9eadb7] pb-[13px] pt-4"
+                href="#">
+                <p class="text-sm font-bold leading-normal tracking-[0.015em]">Modules</p>
+            </a>
+        </div>
+    </nav>
+    <!-- Flow Canvas (Interactive Area) -->
+    <main class="flex-1 overflow-auto flow-grid relative p-8">
+        <!-- Section Header for Grouping -->
+        <div class="mb-12">
+            <h3 class="text-slate-900text-white text-lg font-bold leading-tight tracking-[-0.015em] mb-2">Tunnel
+                Critique: Mesures &amp; Commande</h3>
+            <div class="h-1 w-24 bg-primary rounded-full"></div>
+        </div>
+        <div class="flex flex-col gap-12 items-center max-w-lg mx-auto pb-32">
+            <!-- A01 Splash -->
+            <div class="flex flex-col items-center w-full">
+                <div
+                    class="flex items-stretch justify-between gap-4 rounded-lg bg-whitebg-[#1c2226] p-4 shadow-lg border border-slate-200border-slate-700 w-full">
+                    <div class="flex flex-[2_2_0px] flex-col gap-4">
+                        <div class="flex flex-col gap-1">
+                            <span class="text-[10px] font-bold text-primary uppercase tracking-wider">Lancement</span>
+                            <p class="text-slate-900text-white text-base font-bold leading-tight">Splash Screen (A01)
+                            </p>
+                            <p class="text-slate-500text-[#9eadb7] text-xs">Initialisation des assets</p>
+                        </div>
+                    </div>
+                    <div class="w-20 h-12 bg-gradient-to-br from-primary to-blue-400 rounded-lg flex items-center justify-center"
+                        data-alt="Abstract blue gradient representing splash screen">
+                        <span class="material-symbols-outlined text-white">bolt</span>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-1 my-2">
+                    <div class="w-[2px] bg-primary h-8"></div>
+                    <span class="text-[10px] font-medium text-[#9eadb7]">AUTO-REDIRECT</span>
+                    <span class="material-symbols-outlined text-primary text-sm">keyboard_arrow_down</span>
+                </div>
+            </div>
+            <!-- N01 Role Selector -->
+            <div class="flex flex-col items-center w-full">
+                <div
+                    class="flex items-stretch justify-between gap-4 rounded-lg bg-whitebg-[#1c2226] p-4 shadow-lg border-2 border-primary w-full relative">
+                    <div class="absolute -top-3 left-4 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded">
+                        NODE DÉCISIF</div>
+                    <div class="flex flex-[2_2_0px] flex-col gap-4">
+                        <div class="flex flex-col gap-1">
+                            <p class="text-slate-900text-white text-base font-bold leading-tight">Sélecteur de Rôle
+                                (N01)</p>
+                            <p class="text-slate-500text-[#9eadb7] text-xs">Client | Tailleur | Revendeur</p>
+                        </div>
+                    </div>
+                    <div class="w-20 h-12 bg-slate-200bg-[#293138] rounded-lg flex items-center justify-center"
+                        data-alt="Dark gray rectangle icon for role selector">
+                        <span class="material-symbols-outlined text-primary">group</span>
+                    </div>
+                </div>
+                <!-- Branching Logic Visualization -->
+                <div class="relative w-full h-24 flex justify-between px-10">
+                    <svg class="absolute inset-0 w-full h-full pointer-events-none" style="overflow: visible;">
+                        <path d="M 50% 0 L 50% 40 L 10% 40 L 10% 80" fill="none" stroke="#3d4952" stroke-width="2">
+                        </path>
+                        <path d="M 50% 0 L 50% 80" fill="none" stroke="#1a73b7" stroke-width="2"></path>
+                        <path d="M 50% 0 L 50% 40 L 90% 40 L 90% 80" fill="none" stroke="#3d4952" stroke-width="2">
+                        </path>
+                    </svg>
+                    <div class="mt-20 text-[10px] text-slate-500 uppercase font-bold text-center">Tailleur<br />(E01)
+                    </div>
+                    <div class="mt-20 text-[10px] text-primary uppercase font-bold text-center">Client<br />(B01)</div>
+                    <div class="mt-20 text-[10px] text-slate-500 uppercase font-bold text-center">Revendeur<br />(R02)
+                    </div>
+                </div>
+            </div>
+            <!-- B01 Main Hub -->
+            <div class="flex flex-col items-center w-full mt-4">
+                <div
+                    class="flex items-stretch justify-between gap-4 rounded-lg bg-whitebg-[#1c2226] p-4 shadow-lg border border-slate-200border-slate-700 w-full">
+                    <div class="flex flex-[2_2_0px] flex-col gap-4">
+                        <div class="flex flex-col gap-1">
+                            <p class="text-slate-900text-white text-base font-bold leading-tight">Accueil (B01)</p>
+                            <p class="text-slate-500text-[#9eadb7] text-xs">Tableau de bord Client</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded">HUB</span>
+                            <span
+                                class="bg-emerald-500/20 text-emerald-500 text-[10px] font-bold px-2 py-0.5 rounded">AUTH</span>
+                        </div>
+                    </div>
+                    <div class="w-20 h-12 bg-slate-200bg-[#293138] rounded-lg flex items-center justify-center"
+                        data-alt="Dark gray rectangle icon for home screen">
+                        <span class="material-symbols-outlined text-slate-400">home</span>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-1 my-2">
+                    <div class="w-[2px] bg-primary h-8"></div>
+                    <span class="material-symbols-outlined text-primary text-sm">keyboard_arrow_down</span>
+                </div>
+            </div>
+            <!-- Critical Tunnel Group -->
+            <div
+                class="w-full bg-primary/5bg-primary/10 border-2 border-dashed border-primary/30 rounded-xl p-4 flex flex-col gap-6">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+                    <span class="text-[10px] font-bold text-primary uppercase">Tunnel de Mesures IA</span>
+                </div>
+                <!-- C01-C03 Mesures -->
+                <div
+                    class="flex items-stretch justify-between gap-4 rounded-lg bg-whitebg-[#1c2226] p-4 shadow-md border border-slate-200border-slate-700 w-full">
+                    <div class="flex flex-1 flex-col gap-1">
+                        <p class="text-slate-900text-white text-sm font-bold leading-tight">Mesures IA (C01-C03)</p>
+                        <p class="text-slate-500text-[#9eadb7] text-xs">Scanning corporel temps réel</p>
+                    </div>
+                    <div class="w-16 h-10 bg-primary rounded-lg flex items-center justify-center"
+                        data-alt="Blue icon representing AI measurement scanning">
+                        <span class="material-symbols-outlined text-white text-sm">straighten</span>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-1 -my-4">
+                    <div class="w-[2px] bg-primary h-6"></div>
+                    <span class="material-symbols-outlined text-primary text-sm">keyboard_arrow_down</span>
+                </div>
+                <!-- C04 3D Fitting -->
+                <div
+                    class="flex items-stretch justify-between gap-4 rounded-lg bg-whitebg-[#1c2226] p-4 shadow-md border border-slate-200border-slate-700 w-full">
+                    <div class="flex flex-1 flex-col gap-1">
+                        <p class="text-slate-900text-white text-sm font-bold leading-tight">Essayage 3D (C04)</p>
+                        <p class="text-slate-500text-[#9eadb7] text-xs">Simulation de coupe en AR</p>
+                    </div>
+                    <div class="w-16 h-10 bg-slate-200bg-[#293138] rounded-lg flex items-center justify-center"
+                        data-alt="Grey icon for 3D modeling fitting">
+                        <span class="material-symbols-outlined text-slate-400 text-sm">view_in_ar</span>
+                    </div>
+                </div>
+            </div>
+            <!-- B03 Order -->
+            <div class="flex flex-col items-center w-full mt-4">
+                <div class="flex flex-col items-center gap-1 mb-2">
+                    <div class="w-[2px] bg-primary h-8"></div>
+                    <span class="material-symbols-outlined text-primary text-sm">keyboard_arrow_down</span>
+                </div>
+                <div
+                    class="flex items-stretch justify-between gap-4 rounded-lg bg-whitebg-[#1c2226] p-4 shadow-lg border border-slate-200border-slate-700 w-full">
+                    <div class="flex flex-[2_2_0px] flex-col gap-4">
+                        <div class="flex flex-col gap-1">
+                            <p class="text-slate-900text-white text-base font-bold leading-tight">Commande (B03)</p>
+                            <p class="text-slate-500text-[#9eadb7] text-xs">Finalisation &amp; Paiement</p>
+                        </div>
+                    </div>
+                    <div class="w-20 h-12 bg-emerald-500 rounded-lg flex items-center justify-center"
+                        data-alt="Green icon for checkout and payment confirmation">
+                        <span class="material-symbols-outlined text-white">shopping_bag</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Floating UI Elements -->
+    <!-- Mini-Map / Zoom Controls -->
+    <div class="fixed bottom-24 right-4 flex flex-col gap-2 z-50">
+        <button
+            class="size-12 rounded-full bg-whitebg-[#1c2226] shadow-xl border border-slate-200border-slate-700 flex items-center justify-center text-slate-700text-white">
+            <span class="material-symbols-outlined">add</span>
+        </button>
+        <button
+            class="size-12 rounded-full bg-whitebg-[#1c2226] shadow-xl border border-slate-200border-slate-700 flex items-center justify-center text-slate-700text-white">
+            <span class="material-symbols-outlined">remove</span>
+        </button>
+        <button class="size-12 rounded-full bg-primary shadow-xl flex items-center justify-center text-white">
+            <span class="material-symbols-outlined">center_focus_strong</span>
+        </button>
+    </div>
+    <!-- Legend Overlay -->
+    <div
+        class="fixed bottom-0 left-0 right-0 p-4 bg-white/80bg-[#111a21]/80 backdrop-blur-md border-t border-slate-200border-slate-800 flex justify-around items-center z-50">
+        <div class="flex items-center gap-2">
+            <div class="size-2 bg-primary rounded-full"></div>
+            <span class="text-[10px] font-bold text-slate-500text-[#9eadb7] uppercase">Flux Principal</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <div class="size-2 bg-slate-400 rounded-full"></div>
+            <span class="text-[10px] font-bold text-slate-500text-[#9eadb7] uppercase">Flux Secondaire</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <div class="size-2 bg-emerald-500 rounded-full"></div>
+            <span class="text-[10px] font-bold text-slate-500text-[#9eadb7] uppercase">Conversion</span>
+        </div>
+    </div>
+</body>
+
+</html>
