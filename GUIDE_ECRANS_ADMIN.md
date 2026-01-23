@@ -16,7 +16,7 @@ Le profil Administrateur permet de :
 - Configurer les paramètres système
 - Analyser les performances globales
 
-**Total d'écrans :** 16 écrans
+**Total d'écrans :** 17 écrans
 
 ---
 
@@ -70,7 +70,7 @@ Le profil Administrateur permet de :
 
 ---
 
-### 3. GESTION UTILISATEURS (1 écran)
+### 3. GESTION UTILISATEURS (2 écrans)
 
 #### F02 - Gestion des Utilisateurs
 **Description :** Liste et gestion de tous les utilisateurs de la plateforme  
@@ -96,16 +96,50 @@ Le profil Administrateur permet de :
 
 **Navigation :**
 - ← Retour (F01)
-- → A09 (Validation KYC Tailleur) pour un tailleur
-- → F13 (Validation KYC Revendeur) pour un revendeur
+- → F03 (Validation KYC Tailleur) pour un tailleur
+- → F14 (Validation KYC Revendeur) pour un revendeur
+
+---
+
+#### F03 - Validation KYC Tailleur
+**Description :** Validation détaillée du KYC d'un tailleur  
+**Fichier :** `validation_kyc_tailleur/code.html`  
+**Fonctionnalités :**
+- **Onglets :**
+  - En attente (avec compteur)
+  - Validés
+  - Rejetés
+- **Dossier tailleur en cours d'examen :**
+  - Informations personnelles (nom, photo, atelier)
+  - Numéro d'identification national
+  - Téléphone
+  - Adresse de l'atelier
+  - Documents justificatifs :
+    - CNI/Passeport (recto et verso)
+    - Justificatif de domicile
+    - Photo de l'atelier (optionnel)
+  - Validation IA des documents (badge "Identité vérifiée par IA")
+- **Statut de priorité :**
+  - Urgent (badge orange)
+  - Normal
+- **Actions :**
+  - Valider le KYC
+  - Rejeter avec raison
+  - Demander documents supplémentaires
+  - Voir dossier complet
+
+**Navigation :**
+- ← Retour (F02)
+- → F02 (Gestion Utilisateurs) après validation
 
 ---
 
 ### 4. GESTION REVENDEURS (5 écrans)
 
-#### F12 - Gestion des Revendeurs
+#### F13 - Gestion des Revendeurs
 **Description :** Liste et gestion de tous les revendeurs  
 **Fichier :** `f12_-_gestion_des_revendeurs/code.html`  
+**Note :** Le dossier reste `f12_-_gestion_des_revendeurs` mais l'écran est numéroté F13 dans la liste admin  
 **Fonctionnalités :**
 - **Statistiques :**
   - Total revendeurs
@@ -129,14 +163,15 @@ Le profil Administrateur permet de :
 
 **Navigation :**
 - ← Retour (F01)
-- → F13 (Validation KYC Revendeur)
-- → F14 (Modération Produits)
+- → F14 (Validation KYC Revendeur)
+- → F15 (Modération Produits)
 
 ---
 
-#### F13 - Validation KYC Revendeur
+#### F14 - Validation KYC Revendeur
 **Description :** Validation détaillée du KYC d'un revendeur  
 **Fichier :** `f13_-_validation_kyc_revendeur/code.html`  
+**Note :** Le dossier reste `f13_-_validation_kyc_revendeur` mais l'écran est numéroté F14 dans la liste admin  
 **Fonctionnalités :**
 - **Onglets :**
   - En attente
@@ -156,14 +191,15 @@ Le profil Administrateur permet de :
   - Demander documents supplémentaires
 
 **Navigation :**
-- ← Retour (F12)
-- → F12 (Gestion Revendeurs) après validation
+- ← Retour (F13)
+- → F13 (Gestion Revendeurs) après validation
 
 ---
 
-#### F14 - Modération Produits Revendeurs
+#### F15 - Modération Produits Revendeurs
 **Description :** Modération des produits soumis par les revendeurs  
 **Fichier :** `f14_-_modération_produits_revendeurs/code.html`  
+**Note :** Le dossier reste `f14_-_modération_produits_revendeurs` mais l'écran est numéroté F15 dans la liste admin  
 **Fonctionnalités :**
 - **Statistiques :**
   - En attente

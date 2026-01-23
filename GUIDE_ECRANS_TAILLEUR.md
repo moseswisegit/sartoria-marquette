@@ -15,13 +15,13 @@ Le profil Tailleur permet aux artisans couturiers de :
 - Gérer leurs abonnements et paiements
 - Organiser leur calendrier de rendez-vous
 
-**Total d'écrans :** 12 écrans
+**Total d'écrans :** 11 écrans
 
 ---
 
 ## 🗂️ Organisation des Écrans
 
-### 1. AUTHENTIFICATION & ONBOARDING (3 écrans)
+### 1. AUTHENTIFICATION & ONBOARDING (2 écrans)
 
 #### A06b - Écran d'Inscription Tailleur
 **Description :** Formulaire d'inscription spécifique pour les tailleurs  
@@ -39,7 +39,6 @@ Le profil Tailleur permet aux artisans couturiers de :
 
 **Navigation :**
 - → A07 (Connexion) après inscription réussie
-- → A09 (Validation KYC) après connexion
 
 ---
 
@@ -54,29 +53,7 @@ Le profil Tailleur permet aux artisans couturiers de :
 
 **Navigation :**
 - → E01 (Dashboard Business) après connexion réussie
-- → A09 (Validation KYC) si KYC non validé
-
----
-
-#### A09 - Validation KYC Tailleur
-**Description :** Processus de vérification d'identité pour validation du compte  
-**Fichier :** `validation_kyc_tailleur/code.html`  
-**Fonctionnalités :**
-- Upload de documents justificatifs :
-  - CNI/Passeport (recto et verso)
-  - Justificatif de domicile
-  - Photo de l'atelier (optionnel)
-- Informations complémentaires :
-  - Numéro d'identification national
-  - Adresse complète de l'atelier
-  - Téléphone vérifié
-- Statut de validation (En attente, Validé, Rejeté)
-- Notifications de changement de statut
-
-**Navigation :**
-- ← Retour (A07)
-- → E01 (Dashboard Business) si KYC validé
-- → E06 (Forfaits d'Abonnement) après validation
+- ⚠️ Si KYC non validé, le tailleur sera redirigé vers un message d'attente (la validation KYC est gérée par l'admin via F03)
 
 ---
 
@@ -366,7 +343,7 @@ Le profil Tailleur permet aux artisans couturiers de :
 ```
 A06b (Inscription Tailleur) 
   → A07 (Connexion) 
-  → A09 (Validation KYC) 
+  → [Attente validation KYC par admin - F03]
   → E06 (Forfaits Abonnement) 
   → E07 (Paiement) 
   → E01 (Dashboard)
@@ -394,7 +371,7 @@ E01 (Dashboard)
 
 ## 🎯 Points Clés pour les Développeurs
 
-1. **KYC obligatoire :** Le tailleur doit valider son KYC avant d'accéder aux fonctionnalités complètes
+1. **KYC obligatoire :** Le tailleur doit avoir son KYC validé par l'admin (F03) avant d'accéder aux fonctionnalités complètes. Le tailleur soumet ses documents lors de l'inscription, puis attend la validation de l'admin.
 
 2. **Abonnement requis :** Accès limité sans abonnement actif
 
