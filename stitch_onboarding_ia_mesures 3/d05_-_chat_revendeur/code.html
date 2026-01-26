@@ -43,18 +43,80 @@
         </div>
 
         <!-- Contenu -->
-        <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
+        <div class="flex flex-col h-full">
+            <!-- Header Chat -->
+            <div class="flex items-center gap-3 p-4 border-b border-gray-200 bg-white">
+                <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary">store</span>
+                </div>
+                <div class="flex-1">
+                    <p class="font-semibold text-gray-900">Boutique Mode</p>
+                    <p class="text-xs text-gray-600">En ligne</p>
+                </div>
+                <button class="text-gray-600 hover:text-gray-900">
+                    <span class="material-symbols-outlined text-xl">more_vert</span>
+                </button>
+            </div>
             
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
+            <!-- Messages -->
+            <div class="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+                <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-primary text-sm">store</span>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Chat Revendeur</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+                    <div class="flex-1">
+                        <div class="bg-white rounded-2xl rounded-tl-sm p-3 shadow-sm">
+                            <p class="text-sm text-gray-900">Bonjour ! Comment puis-je vous aider ?</p>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 ml-1">14:20</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start gap-3 justify-end">
+                    <div class="flex-1 flex flex-col items-end">
+                        <div class="bg-primary text-white rounded-2xl rounded-tr-sm p-3 max-w-[80%]">
+                            <p class="text-sm">Bonjour, j'ai une question sur ma commande #CMD-2025-001234</p>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 mr-1">14:25</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-gray-600 text-sm">person</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-primary text-sm">store</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="bg-white rounded-2xl rounded-tl-sm p-3 shadow-sm">
+                            <p class="text-sm text-gray-900">Bien sûr ! Votre commande est en cours de préparation. Elle sera expédiée demain.</p>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 ml-1">14:26</p>
+                    </div>
                 </div>
             </div>
             
+            <!-- Info Commande -->
+            <div class="p-4 bg-white border-t border-gray-200">
+                <div class="bg-gray-50 rounded-xl p-3 mb-3">
+                    <p class="text-xs font-semibold text-gray-900 mb-1">Commande #CMD-2025-001234</p>
+                    <p class="text-sm text-gray-700">Robe élégante • 25,000 FCFA</p>
+                </div>
+            </div>
+            
+            <!-- Input -->
+            <div class="p-4 bg-white border-t border-gray-200">
+                <div class="flex items-center gap-2">
+                    <button class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors">
+                        <span class="material-symbols-outlined text-xl">attach_file</span>
+                    </button>
+                    <input type="text" placeholder="Tapez un message..." class="flex-1 rounded-full border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none" />
+                    <button class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors">
+                        <span class="material-symbols-outlined text-xl">send</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

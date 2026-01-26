@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="fr">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -7,7 +8,8 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
@@ -31,10 +33,13 @@
         }
     </style>
 </head>
+
 <body class="bg-background-light font-display text-gray-900">
-    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
         <!-- Header -->
-        <div class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
+        <div
+            class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
             <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
                 <span class="material-symbols-outlined text-gray-700">arrow_back</span>
             </button>
@@ -44,18 +49,70 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
-            
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
+            <!-- Commande -->
+            <div class="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                <p class="text-xs text-gray-600 mb-2">Commande #CMD-2025-001234</p>
+                <div class="flex gap-3">
+                    <div class="w-16 h-16 rounded-lg bg-gray-200 bg-cover bg-center"
+                        style='background-image: url("https://via.placeholder.com/64");'></div>
+                    <div class="flex-1">
+                        <p class="font-semibold text-gray-900">Robe élégante</p>
+                        <p class="text-sm text-gray-600">Taille: M • Quantité: 1</p>
+                        <p class="text-sm font-semibold text-primary mt-1">25,000 FCFA</p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Demande de Retour</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
                 </div>
             </div>
-            
+
+            <!-- Formulaire -->
+            <form class="flex flex-col gap-5" onsubmit="event.preventDefault()">
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-medium text-gray-700">Raison du retour</label>
+                    <select
+                        class="w-full rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+                        <option>Sélectionner une raison</option>
+                        <option>Produit défectueux</option>
+                        <option>Taille incorrecte</option>
+                        <option>Ne correspond pas à la description</option>
+                        <option>Changement d'avis</option>
+                        <option>Autre</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-medium text-gray-700">Description détaillée</label>
+                    <textarea rows="4"
+                        class="w-full rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none"
+                        placeholder="Décrivez le problème ou la raison du retour..."></textarea>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-medium text-gray-700">Photos (optionnel)</label>
+                    <div class="flex gap-3">
+                        <div
+                            class="w-20 h-20 rounded-xl bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-gray-400 text-2xl">add_a_photo</span>
+                        </div>
+                        <div
+                            class="w-20 h-20 rounded-xl bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-gray-400 text-2xl">add_a_photo</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-600">Ajoutez jusqu'à 3 photos</p>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-medium text-gray-700">Date souhaitée de collecte</label>
+                    <input type="date"
+                        class="w-full rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none" />
+                </div>
+
+                <button type="submit"
+                    class="w-full mt-4 flex items-center justify-center rounded-xl h-14 px-5 bg-primary text-white text-base font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-colors">
+                    <span>Soumettre la demande</span>
+                </button>
+            </form>
         </div>
     </div>
 </body>
+
 </html>

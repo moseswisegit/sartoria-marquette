@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="fr">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -7,7 +8,8 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
@@ -31,10 +33,13 @@
         }
     </style>
 </head>
+
 <body class="bg-background-light font-display text-gray-900">
-    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
         <!-- Header -->
-        <div class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
+        <div
+            class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
             <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
                 <span class="material-symbols-outlined text-gray-700">arrow_back</span>
             </button>
@@ -44,18 +49,92 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
-            
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-gray-900 font-bold">Produits comparés (2)</h3>
+                <button class="text-primary text-sm font-medium hover:underline">Ajouter</button>
+            </div>
+
+            <!-- Produits -->
+            <div class="grid grid-cols-2 gap-3">
+                <!-- Produit 1 -->
+                <div class="border border-gray-200 rounded-xl p-3">
+                    <div class="aspect-square bg-gray-100 rounded-lg mb-2 bg-cover bg-center"
+                        style='background-image: url("https://via.placeholder.com/150");'></div>
+                    <button
+                        class="absolute top-2 right-2 w-6 h-6 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-600 hover:text-red-600">
+                        <span class="material-symbols-outlined text-sm">close</span>
+                    </button>
+                    <p class="text-sm font-semibold text-gray-900 mb-1">Robe élégante</p>
+                    <p class="text-xs text-gray-600 mb-2">Boutique Mode</p>
+                    <p class="text-lg font-bold text-primary">25,000 FCFA</p>
+                    <div class="flex items-center gap-1 mt-2">
+                        <span class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                        <span class="text-xs text-gray-600">4.5 (120)</span>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Comparaison Produits</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+                </div>
+
+                <!-- Produit 2 -->
+                <div class="border border-gray-200 rounded-xl p-3">
+                    <div class="aspect-square bg-gray-100 rounded-lg mb-2 bg-cover bg-center"
+                        style='background-image: url("https://via.placeholder.com/150");'></div>
+                    <button
+                        class="absolute top-2 right-2 w-6 h-6 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-600 hover:text-red-600">
+                        <span class="material-symbols-outlined text-sm">close</span>
+                    </button>
+                    <p class="text-sm font-semibold text-gray-900 mb-1">Robe premium</p>
+                    <p class="text-xs text-gray-600 mb-2">Fashion Store</p>
+                    <p class="text-lg font-bold text-primary">32,000 FCFA</p>
+                    <div class="flex items-center gap-1 mt-2">
+                        <span class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                        <span class="text-xs text-gray-600">4.8 (89)</span>
+                    </div>
                 </div>
             </div>
-            
+
+            <!-- Comparaison -->
+            <div class="border-t border-gray-200 pt-4">
+                <h4 class="text-gray-900 font-bold mb-3">Comparaison</h4>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                        <span class="text-sm text-gray-600">Prix</span>
+                        <div class="flex gap-4">
+                            <span class="text-sm font-semibold text-gray-900">25,000 FCFA</span>
+                            <span class="text-sm font-semibold text-gray-900">32,000 FCFA</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                        <span class="text-sm text-gray-600">Note</span>
+                        <div class="flex gap-4">
+                            <span class="text-sm font-semibold text-gray-900">4.5 ⭐</span>
+                            <span class="text-sm font-semibold text-gray-900">4.8 ⭐</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                        <span class="text-sm text-gray-600">Livraison</span>
+                        <div class="flex gap-4">
+                            <span class="text-sm font-semibold text-gray-900">Gratuite</span>
+                            <span class="text-sm font-semibold text-gray-900">2,000 FCFA</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                        <span class="text-sm text-gray-600">Retour</span>
+                        <div class="flex gap-4">
+                            <span class="text-sm font-semibold text-green-600">✓ Oui</span>
+                            <span class="text-sm font-semibold text-green-600">✓ Oui</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-3 pt-4">
+                <button
+                    class="flex-1 flex items-center justify-center gap-2 rounded-xl h-12 px-5 bg-primary text-white text-base font-semibold hover:bg-primary/90 transition-colors">
+                    <span class="material-symbols-outlined text-xl">shopping_cart</span>
+                    <span>Ajouter au panier</span>
+                </button>
+            </div>
         </div>
     </div>
 </body>
+
 </html>

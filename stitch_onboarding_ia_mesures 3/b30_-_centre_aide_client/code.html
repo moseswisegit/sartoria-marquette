@@ -44,17 +44,78 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
+            <!-- Recherche -->
+            <div class="relative">
+                <input type="text" placeholder="Rechercher dans l'aide..." class="w-full rounded-xl border border-gray-300 bg-white p-3.5 pl-12 text-base text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none" />
+                <span class="material-symbols-outlined text-gray-400 absolute left-4 top-1/2 -translate-y-1/2 text-xl">search</span>
+            </div>
             
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Centre d'Aide</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+            <!-- Catégories -->
+            <div>
+                <h3 class="text-gray-900 font-bold mb-3">Catégories</h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="#" class="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition-colors">
+                        <span class="material-symbols-outlined text-primary text-3xl">shopping_bag</span>
+                        <span class="text-sm font-semibold text-gray-900">Commandes</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition-colors">
+                        <span class="material-symbols-outlined text-primary text-3xl">payment</span>
+                        <span class="text-sm font-semibold text-gray-900">Paiements</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition-colors">
+                        <span class="material-symbols-outlined text-primary text-3xl">local_shipping</span>
+                        <span class="text-sm font-semibold text-gray-900">Livraisons</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition-colors">
+                        <span class="material-symbols-outlined text-primary text-3xl">assignment_return</span>
+                        <span class="text-sm font-semibold text-gray-900">Retours</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition-colors">
+                        <span class="material-symbols-outlined text-primary text-3xl">account_circle</span>
+                        <span class="text-sm font-semibold text-gray-900">Compte</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center gap-2 p-4 bg-gray-50 rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition-colors">
+                        <span class="material-symbols-outlined text-primary text-3xl">help</span>
+                        <span class="text-sm font-semibold text-gray-900">Autre</span>
+                    </a>
                 </div>
             </div>
             
+            <!-- Articles Populaires -->
+            <div>
+                <h3 class="text-gray-900 font-bold mb-3">Articles populaires</h3>
+                <div class="space-y-2">
+                    <a href="#" class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition-colors">
+                        <div>
+                            <p class="font-semibold text-gray-900">Comment suivre ma commande ?</p>
+                            <p class="text-xs text-gray-600 mt-1">Guide complet pour suivre vos commandes</p>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-400 text-xl">chevron_right</span>
+                    </a>
+                    <a href="#" class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition-colors">
+                        <div>
+                            <p class="font-semibold text-gray-900">Politique de retour</p>
+                            <p class="text-xs text-gray-600 mt-1">Conditions et délais de retour</p>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-400 text-xl">chevron_right</span>
+                    </a>
+                    <a href="#" class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition-colors">
+                        <div>
+                            <p class="font-semibold text-gray-900">Méthodes de paiement</p>
+                            <p class="text-xs text-gray-600 mt-1">Comment payer vos commandes</p>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-400 text-xl">chevron_right</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Contact Support -->
+            <div class="pt-4 border-t border-gray-200">
+                <button class="w-full flex items-center justify-center gap-2 rounded-xl h-12 px-5 bg-primary text-white text-base font-semibold hover:bg-primary/90 transition-colors">
+                    <span class="material-symbols-outlined text-xl">chat</span>
+                    <span>Contacter le support</span>
+                </button>
+            </div>
         </div>
     </div>
 </body>

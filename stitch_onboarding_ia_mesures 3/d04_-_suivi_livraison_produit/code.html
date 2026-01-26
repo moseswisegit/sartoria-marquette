@@ -44,17 +44,99 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
-            
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
+            <!-- Info Commande -->
+            <div class="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-4 border border-primary/20">
+                <p class="text-xs font-mono text-gray-600 mb-1">#CMD-2025-001234</p>
+                <p class="font-semibold text-gray-900 mb-2">Robe élégante</p>
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-xs text-gray-600">Transporteur</p>
+                        <p class="text-sm font-semibold text-gray-900">DHL Express</p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Suivi Livraison</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+                    <div class="text-right">
+                        <p class="text-xs text-gray-600">Numéro de suivi</p>
+                        <p class="text-sm font-semibold text-gray-900">1234567890</p>
+                    </div>
                 </div>
             </div>
             
+            <!-- Timeline -->
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Suivi de livraison</h3>
+                <div class="space-y-4">
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">✓</div>
+                            <div class="w-0.5 h-8 bg-gray-200 mt-2"></div>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-gray-900">Commande confirmée</p>
+                            <p class="text-xs text-gray-600">20 Jan 2025, 14:30</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">✓</div>
+                            <div class="w-0.5 h-8 bg-gray-200 mt-2"></div>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-gray-900">En préparation</p>
+                            <p class="text-xs text-gray-600">21 Jan 2025, 09:15</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">✓</div>
+                            <div class="w-0.5 h-8 bg-gray-200 mt-2"></div>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-gray-900">Expédié</p>
+                            <p class="text-xs text-gray-600">22 Jan 2025, 11:20</p>
+                            <p class="text-xs text-gray-500 mt-1">Entrepôt Cotonou</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">4</div>
+                            <div class="w-0.5 h-8 bg-gray-200 mt-2"></div>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-gray-900">En transit</p>
+                            <p class="text-xs text-gray-600">En cours</p>
+                            <p class="text-xs text-primary mt-1">Position: Route vers votre ville</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-400 flex items-center justify-center font-bold">5</div>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-gray-400">En livraison</p>
+                            <p class="text-xs text-gray-400">À venir</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Estimation -->
+            <div class="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="material-symbols-outlined text-blue-600 text-xl">schedule</span>
+                    <p class="font-semibold text-blue-900">Estimation de livraison</p>
+                </div>
+                <p class="text-sm text-blue-800">Livraison prévue le <span class="font-bold">25 Janvier 2025</span> entre 10h et 16h</p>
+            </div>
+            
+            <!-- Actions -->
+            <div class="flex gap-3">
+                <button class="flex-1 flex items-center justify-center gap-2 rounded-xl h-12 px-5 bg-primary text-white text-base font-semibold hover:bg-primary/90 transition-colors">
+                    <span class="material-symbols-outlined text-xl">phone</span>
+                    <span>Contacter</span>
+                </button>
+                <button class="flex items-center justify-center rounded-xl h-12 w-12 bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">
+                    <span class="material-symbols-outlined text-xl">share</span>
+                </button>
+            </div>
         </div>
     </div>
 </body>

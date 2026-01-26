@@ -44,17 +44,74 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
-            
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Paramètres Notifications</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Types de notifications</h3>
+                <div class="space-y-3">
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Commandes</p>
+                            <p class="text-xs text-gray-600">Statut, livraison, confirmations</p>
+                        </div>
+                        <input type="checkbox" checked class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Messages</p>
+                            <p class="text-xs text-gray-600">Nouveaux messages des tailleurs/revendeurs</p>
+                        </div>
+                        <input type="checkbox" checked class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Promotions</p>
+                            <p class="text-xs text-gray-600">Offres spéciales et réductions</p>
+                        </div>
+                        <input type="checkbox" class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
                 </div>
             </div>
             
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Canaux</h3>
+                <div class="space-y-3">
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Notifications push</p>
+                            <p class="text-xs text-gray-600">Sur votre appareil</p>
+                        </div>
+                        <input type="checkbox" checked class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Email</p>
+                            <p class="text-xs text-gray-600">jean.dupont@email.com</p>
+                        </div>
+                        <input type="checkbox" checked class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">SMS</p>
+                            <p class="text-xs text-gray-600">+33 6 12 34 56 78</p>
+                        </div>
+                        <input type="checkbox" class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Heures silencieuses</h3>
+                <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                    <div class="flex items-center justify-between mb-3">
+                        <p class="font-semibold text-gray-900">Activer</p>
+                        <input type="checkbox" class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </div>
+                    <div class="flex gap-3 mt-3">
+                        <input type="time" value="22:00" class="flex-1 rounded-lg border border-gray-300 bg-white p-2 text-sm" />
+                        <span class="text-gray-600 self-center">à</span>
+                        <input type="time" value="08:00" class="flex-1 rounded-lg border border-gray-300 bg-white p-2 text-sm" />
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
