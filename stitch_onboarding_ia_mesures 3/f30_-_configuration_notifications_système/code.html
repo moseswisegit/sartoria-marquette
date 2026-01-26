@@ -45,15 +45,81 @@
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
             
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Notifications Système</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Types de notifications système</h3>
+                <div class="space-y-3">
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Alertes sécurité</p>
+                            <p class="text-xs text-gray-600">Tentatives de connexion suspectes</p>
+                        </div>
+                        <input type="checkbox" checked class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Maintenance système</p>
+                            <p class="text-xs text-gray-600">Notifications de maintenance planifiée</p>
+                        </div>
+                        <input type="checkbox" checked class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Nouveaux utilisateurs</p>
+                            <p class="text-xs text-gray-600">Inscriptions importantes</p>
+                        </div>
+                        <input type="checkbox" checked class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Problèmes système</p>
+                            <p class="text-xs text-gray-600">Erreurs critiques et bugs</p>
+                        </div>
+                        <input type="checkbox" checked class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
                 </div>
             </div>
+            
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Destinataires</h3>
+                <div class="space-y-2">
+                    <div class="p-3 bg-gray-50 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="font-semibold text-gray-900 text-sm">admin@couturioshop.com</p>
+                                <p class="text-xs text-gray-600">Email principal</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" checked class="sr-only peer" />
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <button class="w-full flex items-center justify-center gap-2 rounded-xl h-10 px-4 bg-white border-2 border-primary text-primary text-sm font-semibold hover:bg-primary/5 transition-colors">
+                        <span class="material-symbols-outlined text-lg">add</span>
+                        <span>Ajouter un destinataire</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Seuils d'alerte</h3>
+                <div class="space-y-3">
+                    <div class="flex flex-col gap-2">
+                        <label class="text-sm font-medium text-gray-700">Seuil erreurs critiques</label>
+                        <input type="number" value="10" min="1" class="w-full rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none" />
+                        <p class="text-xs text-gray-600">Alerte si plus de 10 erreurs par heure</p>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-sm font-medium text-gray-700">Seuil utilisateurs simultanés</label>
+                        <input type="number" value="5000" min="1" class="w-full rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none" />
+                        <p class="text-xs text-gray-600">Alerte si plus de 5000 utilisateurs connectés</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="w-full mt-4 flex items-center justify-center rounded-xl h-14 px-5 bg-primary text-white text-base font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-colors">
+                <span>Enregistrer la configuration</span>
+            </button>
             
         </div>
     </div>

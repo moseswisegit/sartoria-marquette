@@ -44,17 +44,108 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-gray-900 font-bold text-lg">Personnalisation</h3>
+                <button class="px-4 py-2 bg-primary text-white rounded-xl text-sm font-semibold hover:bg-primary/90 transition-colors">
+                    <span>Mode édition</span>
+                </button>
+            </div>
             
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
+            <!-- Widgets Disponibles -->
+            <div>
+                <h3 class="text-gray-900 font-bold mb-3">Widgets disponibles</h3>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl border border-gray-200">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary text-xl">bar_chart</span>
+                            <span class="font-semibold text-gray-900 text-sm">Graphique revenus</span>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" checked class="sr-only peer" />
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Dashboard Personnalisable</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl border border-gray-200">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary text-xl">people</span>
+                            <span class="font-semibold text-gray-900 text-sm">Statistiques utilisateurs</span>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" checked class="sr-only peer" />
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl border border-gray-200">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary text-xl">shopping_cart</span>
+                            <span class="font-semibold text-gray-900 text-sm">Commandes récentes</span>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" checked class="sr-only peer" />
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl border border-gray-200">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary text-xl">trending_up</span>
+                            <span class="font-semibold text-gray-900 text-sm">Tendances</span>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" />
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl border border-gray-200">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary text-xl">notifications</span>
+                            <span class="font-semibold text-gray-900 text-sm">Alertes système</span>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" checked class="sr-only peer" />
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
+                    </div>
                 </div>
             </div>
             
+            <!-- Ordre d'affichage -->
+            <div>
+                <h3 class="text-gray-900 font-bold mb-3">Ordre d'affichage</h3>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl border border-gray-200">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-gray-400 text-xl">drag_handle</span>
+                            <span class="font-semibold text-gray-900 text-sm">Graphique revenus</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="text-gray-600 hover:text-gray-900">
+                                <span class="material-symbols-outlined text-xl">arrow_upward</span>
+                            </button>
+                            <button class="text-gray-600 hover:text-gray-900">
+                                <span class="material-symbols-outlined text-xl">arrow_downward</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl border border-gray-200">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-gray-400 text-xl">drag_handle</span>
+                            <span class="font-semibold text-gray-900 text-sm">Statistiques utilisateurs</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="text-gray-600 hover:text-gray-900">
+                                <span class="material-symbols-outlined text-xl">arrow_upward</span>
+                            </button>
+                            <button class="text-gray-600 hover:text-gray-900">
+                                <span class="material-symbols-outlined text-xl">arrow_downward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="w-full mt-4 flex items-center justify-center rounded-xl h-12 px-5 bg-primary text-white text-base font-semibold hover:bg-primary/90 transition-colors">
+                <span>Enregistrer la configuration</span>
+            </button>
         </div>
     </div>
 </body>
