@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="fr">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -7,7 +8,8 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
@@ -31,10 +33,13 @@
         }
     </style>
 </head>
+
 <body class="bg-background-light font-display text-gray-900">
-    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
         <!-- Header -->
-        <div class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
+        <div
+            class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
             <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
                 <span class="material-symbols-outlined text-gray-700">arrow_back</span>
             </button>
@@ -44,18 +49,111 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
-            
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
+            <!-- Calendrier -->
+            <div class="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-gray-900 font-bold">Janvier 2025</h3>
+                    <div class="flex gap-2">
+                        <button
+                            class="w-8 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center hover:bg-gray-50">
+                            <span class="material-symbols-outlined text-gray-600 text-sm">chevron_left</span>
+                        </button>
+                        <button
+                            class="w-8 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center hover:bg-gray-50">
+                            <span class="material-symbols-outlined text-gray-600 text-sm">chevron_right</span>
+                        </button>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Gestion Disponibilités</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+                </div>
+                <div class="grid grid-cols-7 gap-1 text-xs">
+                    <div class="text-center text-gray-600 font-semibold py-2">L</div>
+                    <div class="text-center text-gray-600 font-semibold py-2">M</div>
+                    <div class="text-center text-gray-600 font-semibold py-2">M</div>
+                    <div class="text-center text-gray-600 font-semibold py-2">J</div>
+                    <div class="text-center text-gray-600 font-semibold py-2">V</div>
+                    <div class="text-center text-gray-600 font-semibold py-2">S</div>
+                    <div class="text-center text-gray-600 font-semibold py-2">D</div>
+                    <div class="text-center py-2 text-gray-400">1</div>
+                    <div class="text-center py-2 text-gray-400">2</div>
+                    <div class="text-center py-2 text-gray-400">3</div>
+                    <div class="text-center py-2 text-gray-400">4</div>
+                    <div class="text-center py-2 text-gray-400">5</div>
+                    <div class="text-center py-2 bg-primary/20 text-primary font-bold rounded">6</div>
+                    <div class="text-center py-2 bg-primary/20 text-primary font-bold rounded">7</div>
+                    <div class="text-center py-2 bg-primary/20 text-primary font-bold rounded">8</div>
+                    <div class="text-center py-2 bg-primary/20 text-primary font-bold rounded">9</div>
+                    <div class="text-center py-2 bg-primary/20 text-primary font-bold rounded">10</div>
+                    <div class="text-center py-2 bg-primary/20 text-primary font-bold rounded">11</div>
+                    <div class="text-center py-2 bg-primary/20 text-primary font-bold rounded">12</div>
                 </div>
             </div>
-            
+
+            <!-- Horaires -->
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Horaires disponibles</h3>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                        <div>
+                            <p class="font-semibold text-gray-900">Lundi - Vendredi</p>
+                            <p class="text-xs text-gray-600">08:00 - 18:00</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" checked class="sr-only peer" />
+                            <div
+                                class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                        <div>
+                            <p class="font-semibold text-gray-900">Samedi</p>
+                            <p class="text-xs text-gray-600">09:00 - 15:00</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" checked class="sr-only peer" />
+                            <div
+                                class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                        <div>
+                            <p class="font-semibold text-gray-900">Dimanche</p>
+                            <p class="text-xs text-gray-600">Fermé</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" />
+                            <div
+                                class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Périodes Indisponibles -->
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Périodes d'indisponibilité</h3>
+                <div class="space-y-2">
+                    <div class="p-3 bg-gray-50 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="font-semibold text-gray-900">Vacances</p>
+                                <p class="text-xs text-gray-600">15 Fév - 1er Mar 2025</p>
+                            </div>
+                            <button class="text-red-600 hover:text-red-700">
+                                <span class="material-symbols-outlined text-xl">delete</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="w-full mt-3 flex items-center justify-center gap-2 rounded-xl h-10 px-4 bg-white border-2 border-primary text-primary text-sm font-semibold hover:bg-primary/5 transition-colors">
+                    <span class="material-symbols-outlined text-lg">add</span>
+                    <span>Ajouter une période</span>
+                </button>
+            </div>
         </div>
     </div>
 </body>
+
 </html>

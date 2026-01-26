@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="fr">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -7,7 +8,8 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
@@ -31,10 +33,13 @@
         }
     </style>
 </head>
+
 <body class="bg-background-light font-display text-gray-900">
-    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
         <!-- Header -->
-        <div class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
+        <div
+            class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
             <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
                 <span class="material-symbols-outlined text-gray-700">arrow_back</span>
             </button>
@@ -44,18 +49,78 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
-            
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
+            <!-- Solde Disponible -->
+            <div class="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-5 border border-primary/20">
+                <p class="text-sm text-gray-600 mb-2">Solde disponible</p>
+                <p class="text-4xl font-bold text-primary mb-4">125,000 FCFA</p>
+                <button
+                    class="w-full flex items-center justify-center gap-2 rounded-xl h-12 px-5 bg-primary text-white text-base font-semibold hover:bg-primary/90 transition-colors">
+                    <span class="material-symbols-outlined text-xl">account_balance_wallet</span>
+                    <span>Demander un retrait</span>
+                </button>
+            </div>
+
+            <!-- Historique -->
+            <div>
+                <h3 class="text-gray-900 font-bold mb-3">Historique des retraits</h3>
+                <div class="space-y-2">
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <div>
+                                <p class="font-mono text-xs text-gray-600 mb-1">#RET-2025-000123</p>
+                                <p class="font-semibold text-gray-900">50,000 FCFA</p>
+                            </div>
+                            <span
+                                class="px-2 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded">Complété</span>
+                        </div>
+                        <div class="space-y-1 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Date demande</span>
+                                <span class="font-semibold text-gray-900">18 Jan 2025</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Date traitement</span>
+                                <span class="font-semibold text-gray-900">20 Jan 2025</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Méthode</span>
+                                <span class="font-semibold text-gray-900">Virement bancaire</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Compte</span>
+                                <span class="font-semibold text-gray-900">FR76 1234 5678 9012</span>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Historique Retraits</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <div>
+                                <p class="font-mono text-xs text-gray-600 mb-1">#RET-2025-000098</p>
+                                <p class="font-semibold text-gray-900">30,000 FCFA</p>
+                            </div>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded">En
+                                cours</span>
+                        </div>
+                        <div class="space-y-1 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Date demande</span>
+                                <span class="font-semibold text-gray-900">22 Jan 2025</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Statut</span>
+                                <span class="font-semibold text-gray-900">Traitement en cours</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Délai estimé</span>
+                                <span class="font-semibold text-gray-900">2-3 jours ouvrés</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
         </div>
     </div>
 </body>
+
 </html>

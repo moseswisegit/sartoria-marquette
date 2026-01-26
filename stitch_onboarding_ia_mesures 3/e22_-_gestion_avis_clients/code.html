@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="fr">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -7,7 +8,8 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
@@ -31,10 +33,13 @@
         }
     </style>
 </head>
+
 <body class="bg-background-light font-display text-gray-900">
-    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
         <!-- Header -->
-        <div class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
+        <div
+            class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
             <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
                 <span class="material-symbols-outlined text-gray-700">arrow_back</span>
             </button>
@@ -44,18 +49,96 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
-            
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
+            <!-- Filtres -->
+            <div class="flex gap-2 overflow-x-auto pb-2">
+                <button
+                    class="px-4 py-2 rounded-full bg-primary text-white text-sm font-semibold whitespace-nowrap">Tous
+                    (24)</button>
+                <button class="px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium whitespace-nowrap">5
+                    étoiles (18)</button>
+                <button class="px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium whitespace-nowrap">4
+                    étoiles (5)</button>
+                <button class="px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium whitespace-nowrap">3
+                    étoiles (1)</button>
+            </div>
+
+            <!-- Liste Avis -->
+            <div class="space-y-3">
+                <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                    <div class="flex items-start justify-between mb-2">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                                    <span class="text-sm font-bold text-primary">JD</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Jean Dupont</p>
+                                    <div class="flex items-center gap-1">
+                                        <span class="text-yellow-400 text-sm">★★★★★</span>
+                                        <span class="text-xs text-gray-600">20 Jan 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 mt-2">Excellent travail ! Le costume est parfaitement ajusté
+                                et la qualité est au rendez-vous. Je recommande vivement ce tailleur.</p>
+                            <div class="flex gap-2 mt-3">
+                                <div class="w-16 h-16 rounded-lg bg-gray-200 bg-cover bg-center"
+                                    style='background-image: url("https://via.placeholder.com/64");'></div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Gestion Avis</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+                    <div class="flex gap-2 mt-3">
+                        <button class="text-sm text-primary hover:underline font-medium">Répondre</button>
+                        <button class="text-sm text-gray-600 hover:underline">Masquer</button>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                    <div class="flex items-start justify-between mb-2">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                                    <span class="text-sm font-bold text-primary">ML</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Marie Lefebvre</p>
+                                    <div class="flex items-center gap-1">
+                                        <span class="text-yellow-400 text-sm">★★★★☆</span>
+                                        <span class="text-xs text-gray-600">18 Jan 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 mt-2">Très satisfaite de ma robe. Le délai a été respecté et
+                                le résultat est magnifique. Un petit point sur la finition mais rien de grave.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mt-3">
+                        <button class="text-sm text-primary hover:underline font-medium">Répondre</button>
+                        <button class="text-sm text-gray-600 hover:underline">Masquer</button>
+                    </div>
                 </div>
             </div>
-            
+
+            <!-- Statistiques -->
+            <div class="pt-4 border-t border-gray-200">
+                <h3 class="text-gray-900 font-bold mb-3">Statistiques</h3>
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="text-center p-3 bg-gray-50 rounded-xl">
+                        <p class="text-2xl font-bold text-primary">4.8</p>
+                        <p class="text-xs text-gray-600">Note moyenne</p>
+                    </div>
+                    <div class="text-center p-3 bg-gray-50 rounded-xl">
+                        <p class="text-2xl font-bold text-primary">24</p>
+                        <p class="text-xs text-gray-600">Total avis</p>
+                    </div>
+                    <div class="text-center p-3 bg-gray-50 rounded-xl">
+                        <p class="text-2xl font-bold text-primary">18</p>
+                        <p class="text-xs text-gray-600">5 étoiles</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="fr">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -7,7 +8,8 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
@@ -31,10 +33,13 @@
         }
     </style>
 </head>
+
 <body class="bg-background-light font-display text-gray-900">
-    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
         <!-- Header -->
-        <div class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
+        <div
+            class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
             <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
                 <span class="material-symbols-outlined text-gray-700">arrow_back</span>
             </button>
@@ -44,18 +49,94 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
-            
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
+            <!-- Positionnement Prix -->
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Positionnement prix par catégorie</h3>
+                <div class="space-y-3">
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between mb-3">
+                            <p class="font-semibold text-gray-900">Robes</p>
+                            <span
+                                class="px-2 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded">Compétitif</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-600">Prix moyen marché</span>
+                                <span class="font-semibold text-gray-900">28,000 FCFA</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-600">Votre prix moyen</span>
+                                <span class="font-bold text-primary">25,000 FCFA</span>
+                            </div>
+                            <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden mt-2">
+                                <div class="bg-primary h-full rounded-full" style="width: 89%;"></div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Analyse Concurrentielle</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between mb-3">
+                            <p class="font-semibold text-gray-900">Sacs</p>
+                            <span
+                                class="px-2 py-1 bg-orange-100 text-orange-700 text-xs font-semibold rounded">Au-dessus</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-600">Prix moyen marché</span>
+                                <span class="font-semibold text-gray-900">15,000 FCFA</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-600">Votre prix moyen</span>
+                                <span class="font-bold text-primary">18,000 FCFA</span>
+                            </div>
+                            <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden mt-2">
+                                <div class="bg-orange-500 h-full rounded-full" style="width: 120%;"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
+
+            <!-- Recommandations -->
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Recommandations</h3>
+                <div class="space-y-2">
+                    <div class="flex items-start gap-3 p-4 bg-blue-50 rounded-xl border border-blue-200">
+                        <span class="material-symbols-outlined text-blue-600 text-xl">lightbulb</span>
+                        <div>
+                            <p class="font-semibold text-blue-900 text-sm mb-1">Optimiser les prix des sacs</p>
+                            <p class="text-xs text-blue-800">Vos prix sont 20% au-dessus de la moyenne. Considérez une
+                                réduction pour améliorer la compétitivité.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 bg-green-50 rounded-xl border border-green-200">
+                        <span class="material-symbols-outlined text-green-600 text-xl">check_circle</span>
+                        <div>
+                            <p class="font-semibold text-green-900 text-sm mb-1">Robes bien positionnées</p>
+                            <p class="text-xs text-green-800">Vos prix sont compétitifs. Continuez ainsi !</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tendances Marché -->
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Tendances du marché</h3>
+                <div class="space-y-2">
+                    <div class="p-3 bg-gray-50 rounded-xl">
+                        <p class="text-sm font-semibold text-gray-900 mb-1">Demande en hausse</p>
+                        <p class="text-xs text-gray-600">Les robes (+15%) et accessoires (+12%) connaissent une forte
+                            demande ce mois-ci.</p>
+                    </div>
+                    <div class="p-3 bg-gray-50 rounded-xl">
+                        <p class="text-sm font-semibold text-gray-900 mb-1">Saisonnalité</p>
+                        <p class="text-xs text-gray-600">Période de forte activité attendue en Février-Mars (saison des
+                            mariages).</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+
 </html>

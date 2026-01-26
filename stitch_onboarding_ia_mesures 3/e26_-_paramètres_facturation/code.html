@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="fr">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -7,7 +8,8 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
@@ -31,10 +33,13 @@
         }
     </style>
 </head>
+
 <body class="bg-background-light font-display text-gray-900">
-    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
         <!-- Header -->
-        <div class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
+        <div
+            class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
             <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
                 <span class="material-symbols-outlined text-gray-700">arrow_back</span>
             </button>
@@ -44,18 +49,94 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
-            
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
+            <form class="flex flex-col gap-5" onsubmit="event.preventDefault()">
+                <!-- Informations Fiscales -->
+                <div>
+                    <h3 class="text-gray-900 font-bold mb-4">Informations fiscales</h3>
+                    <div class="space-y-3">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-sm font-medium text-gray-700">Raison sociale</label>
+                            <input type="text" placeholder="Atelier CouturioShop"
+                                class="w-full rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-sm font-medium text-gray-700">Numéro SIRET (optionnel)</label>
+                            <input type="text" placeholder="123 456 789 00012"
+                                class="w-full rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-sm font-medium text-gray-700">Numéro TVA (optionnel)</label>
+                            <input type="text" placeholder="FR 12 345678901"
+                                class="w-full rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none" />
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Paramètres Facturation</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
                 </div>
-            </div>
-            
+
+                <!-- Adresse de Facturation -->
+                <div>
+                    <h3 class="text-gray-900 font-bold mb-4">Adresse de facturation</h3>
+                    <div class="space-y-3">
+                        <input type="text" placeholder="Adresse complète"
+                            class="w-full rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none" />
+                        <div class="grid grid-cols-2 gap-3">
+                            <input type="text" placeholder="Ville"
+                                class="rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none" />
+                            <input type="text" placeholder="Code postal"
+                                class="rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none" />
+                        </div>
+                        <input type="text" placeholder="Pays"
+                            class="w-full rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none" />
+                    </div>
+                </div>
+
+                <!-- Modèle de Facture -->
+                <div>
+                    <h3 class="text-gray-900 font-bold mb-4">Modèle de facture</h3>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl cursor-pointer">
+                            <input type="radio" name="invoice_template" value="standard" checked
+                                class="h-5 w-5 text-primary border-gray-300 focus:ring-primary" />
+                            <div>
+                                <p class="font-semibold text-gray-900 text-sm">Standard</p>
+                                <p class="text-xs text-gray-600">Modèle classique</p>
+                            </div>
+                        </label>
+                        <label class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl cursor-pointer">
+                            <input type="radio" name="invoice_template" value="premium"
+                                class="h-5 w-5 text-primary border-gray-300 focus:ring-primary" />
+                            <div>
+                                <p class="font-semibold text-gray-900 text-sm">Premium</p>
+                                <p class="text-xs text-gray-600">Modèle avec logo</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Conditions de Paiement -->
+                <div>
+                    <h3 class="text-gray-900 font-bold mb-4">Conditions de paiement</h3>
+                    <div class="space-y-3">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-sm font-medium text-gray-700">Délai de paiement (jours)</label>
+                            <input type="number" value="30" min="0" max="90"
+                                class="w-full rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-sm font-medium text-gray-700">Conditions spéciales</label>
+                            <textarea rows="3"
+                                class="w-full rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 placeholder:text-gray-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none"
+                                placeholder="Ex: Paiement à la livraison accepté..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit"
+                    class="w-full mt-4 flex items-center justify-center rounded-xl h-14 px-5 bg-primary text-white text-base font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-colors">
+                    <span>Enregistrer les paramètres</span>
+                </button>
+            </form>
         </div>
     </div>
 </body>
+
 </html>

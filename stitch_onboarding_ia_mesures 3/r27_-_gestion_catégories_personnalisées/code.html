@@ -44,17 +44,72 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-gray-900 font-bold text-lg">Mes catégories</h3>
+                <button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-xl text-sm font-semibold hover:bg-primary/90 transition-colors">
+                    <span class="material-symbols-outlined text-lg">add</span>
+                    <span>Créer</span>
+                </button>
+            </div>
             
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
+            <!-- Catégories Standard -->
+            <div>
+                <h4 class="text-gray-900 font-semibold mb-3">Catégories standard</h4>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">👗</span>
+                            <span class="font-semibold text-gray-900">Vêtements</span>
+                        </div>
+                        <span class="text-xs text-gray-600">45 produits</span>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Catégories Personnalisées</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">👜</span>
+                            <span class="font-semibold text-gray-900">Accessoires</span>
+                        </div>
+                        <span class="text-xs text-gray-600">28 produits</span>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">👠</span>
+                            <span class="font-semibold text-gray-900">Chaussures</span>
+                        </div>
+                        <span class="text-xs text-gray-600">15 produits</span>
+                    </div>
                 </div>
             </div>
             
+            <!-- Catégories Personnalisées -->
+            <div>
+                <h4 class="text-gray-900 font-semibold mb-3">Catégories personnalisées</h4>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between p-3 bg-white rounded-xl border border-gray-200">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">⭐</span>
+                            <div>
+                                <p class="font-semibold text-gray-900">Collection Premium</p>
+                                <p class="text-xs text-gray-600">12 produits</p>
+                            </div>
+                        </div>
+                        <button class="text-gray-600 hover:text-gray-900">
+                            <span class="material-symbols-outlined text-xl">more_vert</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-white rounded-xl border border-gray-200">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🔥</span>
+                            <div>
+                                <p class="font-semibold text-gray-900">Tendances</p>
+                                <p class="text-xs text-gray-600">8 produits</p>
+                            </div>
+                        </div>
+                        <button class="text-gray-600 hover:text-gray-900">
+                            <span class="material-symbols-outlined text-xl">more_vert</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

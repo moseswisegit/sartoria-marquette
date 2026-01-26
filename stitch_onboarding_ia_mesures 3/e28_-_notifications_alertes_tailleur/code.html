@@ -44,17 +44,90 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
-            
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Notifications Tailleur</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Types de notifications</h3>
+                <div class="space-y-3">
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Nouvelles commandes</p>
+                            <p class="text-xs text-gray-600">Notifications pour chaque nouvelle commande</p>
+                        </div>
+                        <input type="checkbox" checked class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Messages clients</p>
+                            <p class="text-xs text-gray-600">Nouveaux messages des clients</p>
+                        </div>
+                        <input type="checkbox" checked class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Paiements reçus</p>
+                            <p class="text-xs text-gray-600">Confirmation de paiement</p>
+                        </div>
+                        <input type="checkbox" checked class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Alertes urgentes</p>
+                            <p class="text-xs text-gray-600">Commandes avec délais serrés</p>
+                        </div>
+                        <input type="checkbox" checked class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Nouveaux avis</p>
+                            <p class="text-xs text-gray-600">Avis clients publiés</p>
+                        </div>
+                        <input type="checkbox" class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
                 </div>
             </div>
             
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Canaux</h3>
+                <div class="space-y-3">
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Notifications push</p>
+                            <p class="text-xs text-gray-600">Sur votre appareil</p>
+                        </div>
+                        <input type="checkbox" checked class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Email</p>
+                            <p class="text-xs text-gray-600">tailleur@email.com</p>
+                        </div>
+                        <input type="checkbox" checked class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200 cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">SMS</p>
+                            <p class="text-xs text-gray-600">+229 XX XX XX XX</p>
+                        </div>
+                        <input type="checkbox" class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Alertes urgentes</h3>
+                <div class="p-4 bg-orange-50 border border-orange-200 rounded-xl">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="material-symbols-outlined text-orange-600 text-xl">warning</span>
+                        <p class="font-semibold text-orange-900">Seuil d'alerte</p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-700">Jours restants avant alerte</span>
+                            <input type="number" value="3" min="1" max="7" class="w-20 rounded-lg border border-gray-300 bg-white p-2 text-center text-sm font-semibold" />
+                        </div>
+                        <p class="text-xs text-orange-700">Vous serez alerté si une commande a moins de 3 jours restants</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
