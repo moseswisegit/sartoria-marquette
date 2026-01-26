@@ -716,10 +716,13 @@
                 { name: "A06 - Écran d'Inscription Client", folder: "écran_d'inscription_client" },
                 { name: "A07 - Écran de Connexion", folder: "écran_de_connexion" },
                 { name: "A08 - Mot de Passe Oublié", folder: "mot_de_passe_oublié" },
+                { name: "A09 - Réinitialisation Mot de Passe", folder: "a09_-_réinitialisation_mot_de_passe" },
+                { name: "A10 - Confirmation Inscription", folder: "a10_-_confirmation_inscription" },
+                { name: "A11 - Vérification Email", folder: "a11_-_vérification_email" },
                 
                 // 2. MARKETPLACE & DÉCOUVERTE
                 { name: "B01 - Accueil / Marketplace", folder: "accueil_/_marketplace" },
-                // { name: "B02 - Recherche Avancée Marketplace", folder: "recherche_avancée_marketplace" }, // Dossier manquant
+                { name: "B02 - Recherche Avancée Marketplace", folder: "b02_-_recherche_avancée_marketplace" },
                 { name: "B03 - Détails Profil Tailleur", folder: "détails_profil_tailleur" },
                 
                 // 3. COMMANDE TAILLEUR (Sur Mesure avec Mesures IA)
@@ -730,23 +733,47 @@
                 { name: "C04 - Essayage Virtuel 3D Commande", folder: "essayage_virtuel_3d_immersif" },
                 { name: "C05 - Sélection Textures Tissus", folder: "sélecteur_de_textures_hd" },
                 { name: "C06 - Conseils Style Personnalisés", folder: "analyse_&_conseils_morpho-style" },
+                { name: "C07 - Paiement Commande Tailleur", folder: "c07_-_paiement_commande_tailleur" },
                 
                 // 4. ACHAT PRODUITS REVENDEURS (E-commerce)
                 { name: "B12 - Découvrir Boutiques Revendeurs", folder: "b12_-_liste_boutiques_revendeurs" },
                 { name: "B09 - Catalogue Produits Revendeurs", folder: "b09_-_catalogue_produits_revendeurs" },
                 { name: "B10 - Fiche Produit Revendeur", folder: "b10_-_détails_produit_revendeur" },
                 { name: "B11 - Panier & Achat Produit Revendeur", folder: "b11_-_panier_&_commande_produit_revendeur" },
+                { name: "B15 - Filtres Avancés Produits Revendeurs", folder: "b15_-_filtres_avancés_produits_revendeurs" },
+                { name: "B16 - Comparaison de Produits", folder: "b16_-_comparaison_produits" },
+                { name: "B17 - Favoris / Wishlist", folder: "b17_-_favoris_wishlist" },
+                { name: "B18 - Paiement Achat Produit Revendeur", folder: "b18_-_paiement_achat_produit_revendeur" },
                 
                 // 5. SUIVI & COMMUNICATION
                 { name: "D01 - Suivi Timeline Commande", folder: "suivi_de_commande_-_timeline" },
                 { name: "D02 - Messagerie - Chat", folder: "messagerie_-_chat" },
                 { name: "D03 - Calendrier des Rendez-vous", folder: "calendrier_des_rendez-vous" },
+                { name: "D04 - Suivi de Livraison Produit", folder: "d04_-_suivi_livraison_produit" },
+                { name: "D05 - Chat avec Revendeur", folder: "d05_-_chat_revendeur" },
                 
                 // 6. PROFIL & GESTION
                 { name: "B05 - Profil Client - Infos", folder: "profil_client_-_infos" },
                 { name: "B06 - Profil Client - Mesures", folder: "profil_client_-_mesures" },
                 { name: "B07 - Profil Client - Historique Commandes", folder: "profil_client_-_historique_commandes" },
                 { name: "B08 - Profil Client - Paiements", folder: "profil_client_-_paiements" },
+                { name: "B13 - Changement Mot de Passe", folder: "b13_-_changement_mot_de_passe_client" },
+                { name: "B14 - Paramètres Sécurité & Confidentialité", folder: "b14_-_paramètres_sécurité_confidentialité" },
+                { name: "B19 - Facture / Ticket de Caisse", folder: "b19_-_facture_ticket_caisse" },
+                { name: "B20 - Gestion Méthodes de Paiement", folder: "b20_-_gestion_méthodes_paiement" },
+                { name: "B21 - Sélection Adresse de Livraison", folder: "b21_-_sélection_adresse_livraison" },
+                { name: "B22 - Gestion des Adresses", folder: "b22_-_gestion_adresses_client" },
+                { name: "B23 - Demande de Retour Produit", folder: "b23_-_demande_retour_produit" },
+                { name: "B24 - Paramètres Notifications", folder: "b24_-_paramètres_notifications_client" },
+                { name: "B25 - Notation & Avis Tailleur", folder: "b25_-_notation_&_avis_tailleur" },
+                { name: "B26 - Notation & Avis Produit Revendeur", folder: "b26_-_notation_avis_produit" },
+                { name: "B27 - Application Code Promo", folder: "b27_-_application_code_promo" },
+                { name: "B28 - Programme de Fidélité", folder: "b28_-_programme_fidélité" },
+                { name: "B29 - Parrainage Client", folder: "b29_-_parrainage_client" },
+                { name: "B30 - Centre d'Aide", folder: "b30_-_centre_aide_client" },
+                { name: "B31 - FAQ", folder: "b31_-_faq_client" },
+                { name: "B32 - Contact Support", folder: "b32_-_contact_support_client" },
+                { name: "B33 - Conditions Générales & CGV", folder: "b33_-_conditions_générales_client" },
                 
                 // 7. NAVIGATION & UTILITAIRES
                 { name: "N02 - Sidebar de Transition Rapide", folder: "n02_-_sidebar_de_transition_rapide" },
@@ -775,7 +802,25 @@
                 
                 // 5. PROFIL & PARAMÈTRES
                 { name: "E08 - Détails Profil Tailleur", folder: "détails_profil_tailleur" },
-                // { name: "E09 - Portfolio Tailleur", folder: "portfolio_tailleur" }, // Dossier manquant
+                { name: "E09 - Portfolio Tailleur", folder: "e09_-_portfolio_tailleur" },
+                { name: "E11 - Réinitialisation Mot de Passe Tailleur", folder: "e11_-_réinitialisation_mot_de_passe_tailleur" },
+                { name: "E12 - Changement Mot de Passe Tailleur", folder: "e12_-_changement_mot_de_passe_tailleur" },
+                { name: "E13 - Paramètres Sécurité Tailleur", folder: "e13_-_paramètres_sécurité_tailleur" },
+                { name: "E14 - Analytics Détaillées Tailleur", folder: "e14_-_analytics_détaillées_tailleur" },
+                { name: "E15 - Rapport Mensuel Tailleur", folder: "e15_-_rapport_mensuel_tailleur" },
+                { name: "E16 - Statistiques Clients", folder: "e16_-_statistiques_clients" },
+                { name: "E17 - Performance Types Vêtements", folder: "e17_-_performance_types_vêtements" },
+                { name: "E18 - Détails Commande Tailleur (Vue Complète)", folder: "e18_-_détails_commande_tailleur_complet" },
+                { name: "E19 - Création Commande Manuelle", folder: "e19_-_création_commande_manuelle" },
+                { name: "E20 - Templates de Commandes", folder: "e20_-_templates_commandes" },
+                { name: "E21 - Historique Modifications Commande", folder: "e21_-_historique_modifications_commande" },
+                { name: "E22 - Gestion Avis Clients", folder: "e22_-_gestion_avis_clients" },
+                { name: "E23 - Marketing & Promotions", folder: "e23_-_marketing_promotions" },
+                { name: "E24 - Gestion Factures", folder: "e24_-_gestion_factures" },
+                { name: "E25 - Revenus & Paiements Reçus", folder: "e25_-_revenus_paiements_tailleur" },
+                { name: "E26 - Paramètres Facturation", folder: "e26_-_paramètres_facturation" },
+                { name: "E27 - Gestion Disponibilités", folder: "e27_-_gestion_disponibilités" },
+                { name: "E28 - Notifications & Alertes Tailleur", folder: "e28_-_notifications_alertes_tailleur" },
                 
                 // 6. NOTIFICATIONS & UTILITAIRES
                 { name: "N03 - Centre de Notifications Global", folder: "n03_-_centre_de_notifications_global" }
@@ -799,7 +844,22 @@
                 { name: "R15 - Détails du Retour & Chat SAV", folder: "r15_-_détails_du_retour_&_chat_sav" },
                 { name: "R16 - Demande de Retrait (Payout)", folder: "r16_-_demande_de_retrait_(payout)" },
                 { name: "R17 - Programme de Parrainage (Referral)", folder: "r17_-_programme_de_parrainage_(referral)" },
-                { name: "R18 - Rapport de Performance Mensuel PDF", folder: "r18_-_rapport_de_performance_mensuel_pdf" }
+                { name: "R18 - Rapport de Performance Mensuel PDF", folder: "r18_-_rapport_de_performance_mensuel_pdf" },
+                { name: "R19 - Réinitialisation Mot de Passe Revendeur", folder: "r19_-_réinitialisation_mot_de_passe_revendeur" },
+                { name: "R20 - Changement Mot de Passe Revendeur", folder: "r20_-_changement_mot_de_passe_revendeur" },
+                { name: "R21 - Analytics Avancées Revendeur", folder: "r21_-_analytics_avancées_revendeur" },
+                { name: "R22 - Rapport Personnalisé", folder: "r22_-_rapport_personnalisé" },
+                { name: "R23 - Analyse Concurrentielle", folder: "r23_-_analyse_concurrentielle" },
+                { name: "R24 - Import/Export Produits", folder: "r24_-_import_export_produits" },
+                { name: "R25 - Gestion Variantes Avancée", folder: "r25_-_gestion_variantes_avancée" },
+                { name: "R26 - Gestion Collections", folder: "r26_-_gestion_collections" },
+                { name: "R27 - Gestion Catégories Personnalisées", folder: "r27_-_gestion_catégories_personnalisées" },
+                { name: "R28 - Détails Transactions", folder: "r28_-_détails_transactions" },
+                { name: "R29 - Historique Retraits", folder: "r29_-_historique_retraits" },
+                { name: "R30 - Campagnes Marketing", folder: "r30_-_campagnes_marketing" },
+                { name: "R31 - Communication Clients", folder: "r31_-_communication_clients" },
+                { name: "R32 - Paramètres Notifications Revendeur", folder: "r32_-_paramètres_notifications_revendeur" },
+                { name: "R33 - Intégrations & API", folder: "r33_-_intégrations_api" }
             ],
             admin: [
                 // 1. AUTHENTIFICATION
@@ -831,10 +891,27 @@
                 { name: "F08 - Gestion du Stock Tissus", folder: "gestion_du_stock_tissus" },
                 
                 // 8. CONFIGURATION & DOCUMENTATION
-                // { name: "F09 - Paramètres Système", folder: "paramètres_système" }, // Dossier manquant
+                { name: "F09 - Paramètres Système", folder: "paramètres_système" },
                 { name: "F10 - Plan de Site & Architecture Flux 1", folder: "plan_de_site_&_architecture_flux_1" },
                 { name: "F11 - Plan de Site & Architecture Flux 2", folder: "plan_de_site_&_architecture_flux_2" },
-                { name: "F12 - Guide des Interactions & Navigation Flux", folder: "guide_des_interactions_&_navigation_flux" }
+                { name: "F12 - Guide des Interactions & Navigation Flux", folder: "guide_des_interactions_&_navigation_flux" },
+                { name: "F18 - Logs Système & Audit", folder: "f18_-_logs_système_audit_admin" },
+                { name: "F19 - Gestion Sessions Actives", folder: "f19_-_gestion_sessions_actives_admin" },
+                { name: "F20 - Paramètres Sécurité Admin", folder: "f20_-_paramètres_sécurité_admin" },
+                { name: "F21 - Détails Utilisateur Complet", folder: "f21_-_détails_utilisateur_complet_admin" },
+                { name: "F22 - Gestion Rôles & Permissions", folder: "f22_-_gestion_rôles_permissions_admin" },
+                { name: "F23 - Bannissement & Suspension", folder: "f23_-_bannissement_suspension_admin" },
+                { name: "F24 - Import/Export Utilisateurs", folder: "f24_-_import_export_utilisateurs" },
+                { name: "F25 - Analytics Avancées Admin", folder: "f25_-_analytics_avancées_admin" },
+                { name: "F26 - Rapports Personnalisés", folder: "f26_-_rapports_personnalisés" },
+                { name: "F27 - Tableau de Bord Personnalisable", folder: "f27_-_tableau_bord_personnalisable" },
+                { name: "F28 - Gestion Taxes & TVA", folder: "f28_-_gestion_taxes_tva" },
+                { name: "F29 - Gestion Commissions Détaillée", folder: "f29_-_gestion_commissions_détaillée" },
+                { name: "F30 - Configuration Notifications Système", folder: "f30_-_configuration_notifications_système" },
+                { name: "F31 - Centre Support Admin", folder: "f31_-_centre_support_admin" },
+                { name: "F32 - Communication Globale", folder: "f32_-_communication_globale" },
+                { name: "F33 - Gestion Signalements", folder: "f33_-_gestion_signalements" },
+                { name: "F06 - Modération Contenus", folder: "modération_contenus" }
             ]
         };
 

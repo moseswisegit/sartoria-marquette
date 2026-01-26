@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sélection Adresse de Livraison - CouturioShop</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73B5",
+                        "background-light": "#f6f6f8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background-light font-display text-gray-900">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
+        <!-- Header -->
+        <div class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
+            <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
+                <span class="material-symbols-outlined text-gray-700">arrow_back</span>
+            </button>
+            <h2 class="text-gray-900 text-lg font-bold leading-tight">Adresse de livraison</h2>
+            <div class="w-10"></div>
+        </div>
+
+        <!-- Contenu -->
+        <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
+            
+            <div class="space-y-4">
+                <button class="w-full flex items-center justify-center gap-2 rounded-xl h-12 px-5 bg-primary text-white text-base font-semibold hover:bg-primary/90 transition-colors">
+                    <span class="material-symbols-outlined">add</span>
+                    <span>Ajouter une nouvelle adresse</span>
+                </button>
+                
+                <div class="space-y-3">
+                    <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-primary bg-primary/5 cursor-pointer">
+                        <input type="radio" name="address" value="1" checked class="mt-1 h-5 w-5 text-primary border-gray-300 focus:ring-primary" />
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <p class="font-semibold text-gray-900">Domicile</p>
+                                <span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded">Par défaut</span>
+                            </div>
+                            <p class="text-sm text-gray-600">Jean Dupont</p>
+                            <p class="text-sm text-gray-600">123 Rue de la République</p>
+                            <p class="text-sm text-gray-600">Cotonou, Bénin</p>
+                            <p class="text-sm text-gray-600 mt-1">+229 XX XX XX XX</p>
+                            <div class="flex gap-2 mt-2">
+                                <button class="text-xs text-primary hover:underline">Modifier</button>
+                                <button class="text-xs text-red-600 hover:underline">Supprimer</button>
+                            </div>
+                        </div>
+                    </label>
+                    
+                    <label class="flex items-start gap-4 p-4 rounded-xl border border-gray-200 bg-white cursor-pointer hover:border-primary/50 transition-colors">
+                        <input type="radio" name="address" value="2" class="mt-1 h-5 w-5 text-primary border-gray-300 focus:ring-primary" />
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <p class="font-semibold text-gray-900">Travail</p>
+                            </div>
+                            <p class="text-sm text-gray-600">Jean Dupont</p>
+                            <p class="text-sm text-gray-600">456 Avenue de la Paix</p>
+                            <p class="text-sm text-gray-600">Cotonou, Bénin</p>
+                            <p class="text-sm text-gray-600 mt-1">+229 XX XX XX XX</p>
+                            <div class="flex gap-2 mt-2">
+                                <button class="text-xs text-primary hover:underline">Modifier</button>
+                                <button class="text-xs text-red-600 hover:underline">Supprimer</button>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <button class="w-full flex items-center justify-center rounded-xl h-14 px-5 bg-primary text-white text-base font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-colors mt-6">
+                    <span>Confirmer l'adresse</span>
+                </button>
+            </div>
+        
+        </div>
+    </div>
+</body>
+</html>

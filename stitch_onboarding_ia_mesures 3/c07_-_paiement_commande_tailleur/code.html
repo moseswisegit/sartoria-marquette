@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Paiement Commande Tailleur - CouturioShop</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1A73B5",
+                        "background-light": "#f6f6f8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background-light font-display text-gray-900">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
+        <!-- Header -->
+        <div class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
+            <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
+                <span class="material-symbols-outlined text-gray-700">arrow_back</span>
+            </button>
+            <h2 class="text-gray-900 text-lg font-bold leading-tight">Paiement</h2>
+            <div class="w-10"></div>
+        </div>
+
+        <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
+            <!-- Récapitulatif Commande -->
+            <div class="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-5 border border-primary/20">
+                <h3 class="text-sm font-bold text-primary uppercase tracking-wider mb-4">Récapitulatif de la commande</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-gray-900 font-semibold">Boubou sur mesure</p>
+                            <p class="text-gray-600 text-sm mt-1">Tailleur: Atelier Moderne</p>
+                            <p class="text-gray-600 text-sm">Tissu: Wax Premium</p>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-primary/20">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray-600">Prix du vêtement</span>
+                            <span class="text-gray-900 font-semibold">45,000 FCFA</span>
+                        </div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-gray-600">Acompte (30%)</span>
+                            <span class="text-gray-900 font-semibold">13,500 FCFA</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-600">Solde à la livraison</span>
+                            <span class="text-gray-900 font-semibold">31,500 FCFA</span>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-primary/20 flex justify-between items-center">
+                        <span class="text-gray-900 font-bold text-lg">Total à payer</span>
+                        <span class="text-primary font-bold text-xl">13,500 FCFA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Méthodes de paiement -->
+            <div>
+                <h3 class="text-gray-900 text-lg font-bold mb-4">Mode de paiement</h3>
+                
+                <!-- Tabs Local/International -->
+                <div class="flex border-b border-gray-200 mb-4">
+                    <button class="flex-1 pb-3 text-center font-semibold text-primary border-b-2 border-primary">
+                        Local (Mobile Money)
+                    </button>
+                    <button class="flex-1 pb-3 text-center font-semibold text-gray-500 border-b-2 border-transparent">
+                        International
+                    </button>
+                </div>
+
+                <!-- Options de paiement -->
+                <div class="space-y-3">
+                    <label class="flex items-center gap-4 rounded-xl border-2 border-primary bg-primary/5 p-4 cursor-pointer">
+                        <input type="radio" name="payment_method" value="mtn" checked class="h-5 w-5 text-primary border-gray-300 focus:ring-primary" />
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="material-symbols-outlined text-primary">phone_android</span>
+                                <span class="font-semibold text-gray-900">MTN Mobile Money</span>
+                            </div>
+                            <p class="text-xs text-gray-600">Paiement instantané via MTN</p>
+                        </div>
+                    </label>
+
+                    <label class="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 cursor-pointer hover:border-primary/50 transition-colors">
+                        <input type="radio" name="payment_method" value="moov" class="h-5 w-5 text-primary border-gray-300 focus:ring-primary" />
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="material-symbols-outlined text-gray-700">phone_android</span>
+                                <span class="font-semibold text-gray-900">Moov Money</span>
+                            </div>
+                            <p class="text-xs text-gray-600">Paiement instantané via Moov</p>
+                        </div>
+                    </label>
+
+                    <label class="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 cursor-pointer hover:border-primary/50 transition-colors">
+                        <input type="radio" name="payment_method" value="wave" class="h-5 w-5 text-primary border-gray-300 focus:ring-primary" />
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="material-symbols-outlined text-gray-700">account_balance_wallet</span>
+                                <span class="font-semibold text-gray-900">Wave</span>
+                            </div>
+                            <p class="text-xs text-gray-600">Paiement instantané via Wave</p>
+                        </div>
+                    </label>
+
+                    <label class="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 cursor-pointer hover:border-primary/50 transition-colors">
+                        <input type="radio" name="payment_method" value="card" class="h-5 w-5 text-primary border-gray-300 focus:ring-primary" />
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="material-symbols-outlined text-gray-700">credit_card</span>
+                                <span class="font-semibold text-gray-900">Carte bancaire</span>
+                            </div>
+                            <p class="text-xs text-gray-600">Visa, Mastercard, etc.</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Informations de facturation -->
+            <div>
+                <h3 class="text-gray-900 text-lg font-bold mb-4">Informations de facturation</h3>
+                <div class="space-y-3">
+                    <div>
+                        <label class="text-sm font-medium text-gray-700 mb-1 block">Nom complet</label>
+                        <input type="text" value="Jean Dupont" class="w-full rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none" readonly />
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium text-gray-700 mb-1 block">Email</label>
+                        <input type="email" value="jean@exemple.com" class="w-full rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none" readonly />
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium text-gray-700 mb-1 block">Téléphone</label>
+                        <input type="tel" placeholder="+229 XX XX XX XX" class="w-full rounded-xl border border-gray-300 bg-white p-3.5 text-base text-gray-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none" required />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conditions -->
+            <div class="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" class="mt-1 h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary" required />
+                    <span class="text-xs text-gray-700">J'accepte les <a href="#" class="text-primary underline">conditions générales de vente</a> et la <a href="#" class="text-primary underline">politique de confidentialité</a></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Fixed Bottom Button -->
+        <div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto p-4 bg-white/95 backdrop-blur-md border-t border-gray-200">
+            <button class="w-full flex items-center justify-center rounded-xl h-14 px-5 bg-primary text-white text-base font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-colors">
+                <span>Payer 13,500 FCFA</span>
+                <span class="material-symbols-outlined ml-2">lock</span>
+            </button>
+            <p class="text-xs text-center text-gray-500 mt-2">Paiement sécurisé par CouturioShop</p>
+        </div>
+    </div>
+</body>
+</html>
