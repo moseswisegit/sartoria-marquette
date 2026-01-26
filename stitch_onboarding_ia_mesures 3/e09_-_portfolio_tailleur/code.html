@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="fr">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -7,7 +8,8 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
@@ -31,10 +33,13 @@
         }
     </style>
 </head>
+
 <body class="bg-background-light font-display text-gray-900">
-    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
         <!-- Header -->
-        <div class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
+        <div
+            class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
             <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
                 <span class="material-symbols-outlined text-gray-700">arrow_back</span>
             </button>
@@ -44,18 +49,110 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
-            
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-gray-900 font-bold text-lg">Mes réalisations</h3>
+                <button
+                    class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-xl text-sm font-semibold hover:bg-primary/90 transition-colors">
+                    <span class="material-symbols-outlined text-lg">add</span>
+                    <span>Ajouter</span>
+                </button>
+            </div>
+
+            <!-- Filtres Catégories -->
+            <div class="flex gap-2 overflow-x-auto pb-2">
+                <button
+                    class="px-4 py-2 rounded-full bg-primary text-white text-sm font-semibold whitespace-nowrap">Tous</button>
+                <button
+                    class="px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium whitespace-nowrap">Boubou</button>
+                <button
+                    class="px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium whitespace-nowrap">Robe</button>
+                <button
+                    class="px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium whitespace-nowrap">Costume</button>
+                <button
+                    class="px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium whitespace-nowrap">Tenue
+                    traditionnelle</button>
+            </div>
+
+            <!-- Galerie -->
+            <div class="grid grid-cols-2 gap-3">
+                <div class="relative group">
+                    <div class="aspect-square rounded-xl bg-gray-100 bg-cover bg-center"
+                        style='background-image: url("https://via.placeholder.com/200");'></div>
+                    <div
+                        class="absolute inset-0 bg-black/0 group-hover:bg-black/20 rounded-xl transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <button
+                            class="text-white bg-white/20 backdrop-blur px-3 py-1.5 rounded-lg text-sm font-medium">Modifier</button>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Portfolio Tailleur</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+                    <div class="absolute top-2 right-2">
+                        <span class="px-2 py-1 bg-white/90 backdrop-blur text-xs font-semibold rounded">Public</span>
+                    </div>
+                    <p class="text-sm font-semibold text-gray-900 mt-2">Costume Premium</p>
+                    <p class="text-xs text-gray-600">Jan 2025</p>
+                </div>
+                <div class="relative group">
+                    <div class="aspect-square rounded-xl bg-gray-100 bg-cover bg-center"
+                        style='background-image: url("https://via.placeholder.com/200");'></div>
+                    <div
+                        class="absolute inset-0 bg-black/0 group-hover:bg-black/20 rounded-xl transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <button
+                            class="text-white bg-white/20 backdrop-blur px-3 py-1.5 rounded-lg text-sm font-medium">Modifier</button>
+                    </div>
+                    <div class="absolute top-2 right-2">
+                        <span
+                            class="px-2 py-1 bg-gray-800/90 backdrop-blur text-white text-xs font-semibold rounded">Privé</span>
+                    </div>
+                    <p class="text-sm font-semibold text-gray-900 mt-2">Robe de mariée</p>
+                    <p class="text-xs text-gray-600">Déc 2024</p>
+                </div>
+                <div class="relative group">
+                    <div class="aspect-square rounded-xl bg-gray-100 bg-cover bg-center"
+                        style='background-image: url("https://via.placeholder.com/200");'></div>
+                    <div
+                        class="absolute inset-0 bg-black/0 group-hover:bg-black/20 rounded-xl transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <button
+                            class="text-white bg-white/20 backdrop-blur px-3 py-1.5 rounded-lg text-sm font-medium">Modifier</button>
+                    </div>
+                    <div class="absolute top-2 right-2">
+                        <span class="px-2 py-1 bg-white/90 backdrop-blur text-xs font-semibold rounded">Public</span>
+                    </div>
+                    <p class="text-sm font-semibold text-gray-900 mt-2">Boubou Wax</p>
+                    <p class="text-xs text-gray-600">Nov 2024</p>
+                </div>
+                <div class="relative group">
+                    <div
+                        class="aspect-square rounded-xl bg-gray-100 bg-cover bg-center border-2 border-dashed border-gray-300 flex items-center justify-center">
+                        <div class="text-center">
+                            <span class="material-symbols-outlined text-4xl text-gray-400 mb-2">add_a_photo</span>
+                            <p class="text-xs text-gray-600 font-medium">Ajouter</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
+
+            <!-- Paramètres -->
+            <div class="pt-4 border-t border-gray-200">
+                <h4 class="text-gray-900 font-semibold mb-3">Paramètres du portfolio</h4>
+                <div class="space-y-3">
+                    <label class="flex items-center justify-between p-3 bg-gray-50 rounded-xl cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Portfolio public</p>
+                            <p class="text-xs text-gray-600">Visible sur votre profil</p>
+                        </div>
+                        <input type="checkbox" class="h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
+                            checked />
+                    </label>
+                    <label class="flex items-center justify-between p-3 bg-gray-50 rounded-xl cursor-pointer">
+                        <div>
+                            <p class="font-semibold text-gray-900">Ordre d'affichage</p>
+                            <p class="text-xs text-gray-600">Récent en premier</p>
+                        </div>
+                        <input type="checkbox" class="h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary"
+                            checked />
+                    </label>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+
 </html>

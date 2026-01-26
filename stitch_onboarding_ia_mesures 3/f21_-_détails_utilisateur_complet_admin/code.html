@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="fr">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -7,7 +8,8 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
@@ -31,10 +33,13 @@
         }
     </style>
 </head>
+
 <body class="bg-background-light font-display text-gray-900">
-    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
         <!-- Header -->
-        <div class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
+        <div
+            class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
             <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
                 <span class="material-symbols-outlined text-gray-700">arrow_back</span>
             </button>
@@ -44,18 +49,102 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
-            
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
+            <!-- Profil -->
+            <div class="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-5 border border-primary/20">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-3xl">person</span>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Détails Utilisateur</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-900">Jean Dupont</h3>
+                        <p class="text-sm text-gray-600">Client • Actif</p>
+                    </div>
+                    <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Vérifié</span>
+                </div>
+                <div class="grid grid-cols-2 gap-3 text-sm">
+                    <div>
+                        <p class="text-gray-600">Email</p>
+                        <p class="font-semibold text-gray-900">jean.dupont@email.com</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-600">Téléphone</p>
+                        <p class="font-semibold text-gray-900">+33 6 12 34 56 78</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-600">Inscription</p>
+                        <p class="font-semibold text-gray-900">15 Jan 2024</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-600">Dernière connexion</p>
+                        <p class="font-semibold text-gray-900">Aujourd'hui 14:30</p>
+                    </div>
                 </div>
             </div>
-            
+
+            <!-- Statistiques -->
+            <div>
+                <h4 class="text-gray-900 font-bold mb-3">Statistiques</h4>
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-200 text-center">
+                        <p class="text-2xl font-bold text-primary">12</p>
+                        <p class="text-xs text-gray-600">Commandes</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-200 text-center">
+                        <p class="text-2xl font-bold text-primary">450K</p>
+                        <p class="text-xs text-gray-600">FCFA dépensés</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-200 text-center">
+                        <p class="text-2xl font-bold text-primary">4.8</p>
+                        <p class="text-xs text-gray-600">Note moyenne</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Onglets -->
+            <div class="flex gap-2 border-b border-gray-200">
+                <button
+                    class="px-4 py-2 border-b-2 border-primary text-primary font-semibold text-sm">Commandes</button>
+                <button class="px-4 py-2 text-gray-600 font-medium text-sm">Paiements</button>
+                <button class="px-4 py-2 text-gray-600 font-medium text-sm">Messages</button>
+                <button class="px-4 py-2 text-gray-600 font-medium text-sm">Avis</button>
+            </div>
+
+            <!-- Liste Commandes -->
+            <div class="space-y-3">
+                <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                    <div class="flex items-center justify-between mb-2">
+                        <p class="font-semibold text-gray-900">#ST-2045</p>
+                        <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs font-semibold rounded">En
+                            cours</span>
+                    </div>
+                    <p class="text-sm text-gray-600">Costume 3 pièces • 45,000 FCFA</p>
+                    <p class="text-xs text-gray-500 mt-1">15 Jan 2025</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                    <div class="flex items-center justify-between mb-2">
+                        <p class="font-semibold text-gray-900">#ST-1987</p>
+                        <span class="px-2 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded">Livré</span>
+                    </div>
+                    <p class="text-sm text-gray-600">Robe de soirée • 35,000 FCFA</p>
+                    <p class="text-xs text-gray-500 mt-1">10 Déc 2024</p>
+                </div>
+            </div>
+
+            <!-- Actions Admin -->
+            <div class="pt-4 border-t border-gray-200 space-y-2">
+                <button
+                    class="w-full flex items-center justify-center gap-2 rounded-xl h-12 px-5 bg-white border-2 border-primary text-primary text-base font-semibold hover:bg-primary/5 transition-colors">
+                    <span class="material-symbols-outlined text-xl">edit</span>
+                    <span>Modifier le profil</span>
+                </button>
+                <button
+                    class="w-full flex items-center justify-center gap-2 rounded-xl h-12 px-5 bg-white border border-gray-200 text-gray-700 text-base font-semibold hover:bg-gray-50 transition-colors">
+                    <span class="material-symbols-outlined text-xl">block</span>
+                    <span>Suspendre le compte</span>
+                </button>
+            </div>
         </div>
     </div>
 </body>
+
 </html>

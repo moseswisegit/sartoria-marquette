@@ -44,17 +44,64 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
-            
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Sécurité du compte</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200">
+                        <div>
+                            <p class="font-semibold text-gray-900">Authentification à deux facteurs</p>
+                            <p class="text-sm text-gray-600">Protégez votre compte avec 2FA</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" />
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                        </label>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Sécurité Tailleur</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+                    <a href="#" class="flex items-center justify-between p-4 bg-white rounded-xl border border-gray-200 hover:border-primary transition-colors">
+                        <div>
+                            <p class="font-semibold text-gray-900">Changer le mot de passe</p>
+                            <p class="text-sm text-gray-600">Mettre à jour votre mot de passe</p>
+                        </div>
+                        <span class="material-symbols-outlined text-gray-400">chevron_right</span>
+                    </a>
                 </div>
             </div>
             
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Appareils connectés</h3>
+                <div class="space-y-3">
+                    <div class="p-4 bg-white rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary">phone_android</span>
+                                <div>
+                                    <p class="font-semibold text-gray-900">iPhone 13 Pro</p>
+                                    <p class="text-xs text-gray-600">Connecté il y a 2 heures</p>
+                                </div>
+                            </div>
+                            <span class="text-xs text-green-600 font-medium">Actuel</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-gray-400">computer</span>
+                                <div>
+                                    <p class="font-semibold text-gray-900">MacBook Pro</p>
+                                    <p class="text-xs text-gray-600">Connecté il y a 5 jours</p>
+                                </div>
+                            </div>
+                            <button class="text-red-600 text-sm font-medium hover:underline">Déconnecter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-4 border-t border-gray-200">
+                <button class="w-full flex items-center justify-center rounded-xl h-12 px-5 bg-red-50 text-red-600 text-base font-semibold border border-red-200 hover:bg-red-100 transition-colors">
+                    <span>Désactiver mon compte</span>
+                </button>
+            </div>
         </div>
     </div>
 </body>

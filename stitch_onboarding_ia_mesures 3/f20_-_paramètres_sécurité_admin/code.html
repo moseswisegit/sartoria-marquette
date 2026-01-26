@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="fr">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -7,7 +8,8 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
@@ -31,10 +33,13 @@
         }
     </style>
 </head>
+
 <body class="bg-background-light font-display text-gray-900">
-    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
         <!-- Header -->
-        <div class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
+        <div
+            class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
             <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
                 <span class="material-symbols-outlined text-gray-700">arrow_back</span>
             </button>
@@ -44,18 +49,86 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
-            
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Sécurité Admin</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Politique de mots de passe</h3>
+                <div class="space-y-3">
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200">
+                        <div>
+                            <p class="font-semibold text-gray-900">Longueur minimale</p>
+                            <p class="text-xs text-gray-600">Nombre de caractères requis</p>
+                        </div>
+                        <input type="number" value="8" min="6" max="20"
+                            class="w-20 rounded-lg border border-gray-300 bg-white p-2 text-center text-sm font-semibold" />
+                    </label>
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200">
+                        <div>
+                            <p class="font-semibold text-gray-900">Exiger majuscules</p>
+                            <p class="text-xs text-gray-600">Au moins une lettre majuscule</p>
+                        </div>
+                        <input type="checkbox" checked
+                            class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200">
+                        <div>
+                            <p class="font-semibold text-gray-900">Exiger chiffres</p>
+                            <p class="text-xs text-gray-600">Au moins un chiffre</p>
+                        </div>
+                        <input type="checkbox" checked
+                            class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
                 </div>
             </div>
-            
+
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Authentification</h3>
+                <div class="space-y-3">
+                    <label class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-200">
+                        <div>
+                            <p class="font-semibold text-gray-900">2FA obligatoire</p>
+                            <p class="text-xs text-gray-600">Pour tous les administrateurs</p>
+                        </div>
+                        <input type="checkbox" checked
+                            class="h-5 w-5 text-primary border-gray-300 rounded focus:ring-primary" />
+                    </label>
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                        <p class="font-semibold text-gray-900 mb-2">Durée de session</p>
+                        <input type="range" min="15" max="480" value="60" class="w-full" />
+                        <div class="flex justify-between text-xs text-gray-600 mt-1">
+                            <span>15 min</span>
+                            <span class="font-semibold text-primary">60 min</span>
+                            <span>8h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Protection</h3>
+                <div class="space-y-3">
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                        <p class="font-semibold text-gray-900 mb-2">Blocage après tentatives</p>
+                        <input type="number" value="5" min="3" max="10"
+                            class="w-full rounded-lg border border-gray-300 bg-white p-2 text-center text-sm font-semibold" />
+                        <p class="text-xs text-gray-600 mt-1">Nombre de tentatives avant blocage</p>
+                    </div>
+                    <div class="p-4 bg-gray-50 rounded-xl border border-gray-200">
+                        <p class="font-semibold text-gray-900 mb-2">Durée de blocage</p>
+                        <select class="w-full rounded-lg border border-gray-300 bg-white p-2 text-sm">
+                            <option>15 minutes</option>
+                            <option>30 minutes</option>
+                            <option>1 heure</option>
+                            <option>24 heures</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <button
+                class="w-full mt-4 flex items-center justify-center rounded-xl h-12 px-5 bg-primary text-white text-base font-semibold hover:bg-primary/90 transition-colors">
+                <span>Enregistrer les paramètres</span>
+            </button>
         </div>
     </div>
 </body>
+
 </html>

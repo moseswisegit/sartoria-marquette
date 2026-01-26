@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="light" lang="fr">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -7,7 +8,8 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
@@ -31,10 +33,13 @@
         }
     </style>
 </head>
+
 <body class="bg-background-light font-display text-gray-900">
-    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
+    <div
+        class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white shadow-xl pb-32">
         <!-- Header -->
-        <div class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
+        <div
+            class="sticky top-0 z-50 flex items-center bg-white/90 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-100">
             <button class="flex items-center justify-center rounded-full w-10 h-10 hover:bg-gray-100 transition-colors">
                 <span class="material-symbols-outlined text-gray-700">arrow_back</span>
             </button>
@@ -44,18 +49,152 @@
 
         <!-- Contenu -->
         <div class="flex flex-col px-4 pt-6 pb-4 gap-6">
-            
-            <div class="space-y-4">
-                <div class="text-center py-8">
-                    <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span class="material-symbols-outlined text-primary text-4xl">info</span>
+            <!-- Informations Commande -->
+            <div class="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-5 border border-primary/20">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-xs font-mono text-gray-600 mb-1">#ST-2045</p>
+                        <h3 class="text-xl font-bold text-gray-900">Costume 3 pièces</h3>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Détails Commande Tailleur</h3>
-                    <p class="text-gray-600 text-sm">Écran en cours de développement</p>
+                    <span class="px-3 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full">En cours</span>
+                </div>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Client</span>
+                        <span class="font-semibold text-gray-900">Jean Dupont</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Date commande</span>
+                        <span class="font-semibold text-gray-900">15 Jan 2025</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Livraison prévue</span>
+                        <span class="font-semibold text-gray-900">25 Jan 2025</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Prix total</span>
+                        <span class="font-bold text-primary text-lg">45,000 FCFA</span>
+                    </div>
                 </div>
             </div>
-            
+
+            <!-- Timeline Production -->
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Avancement de la production</h3>
+                <div class="space-y-4">
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">
+                                ✓</div>
+                            <div class="w-0.5 h-8 bg-gray-200 mt-2"></div>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-gray-900">Commande reçue</p>
+                            <p class="text-xs text-gray-600">15 Jan 2025, 10:30</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">
+                                ✓</div>
+                            <div class="w-0.5 h-8 bg-gray-200 mt-2"></div>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-gray-900">Mesures validées</p>
+                            <p class="text-xs text-gray-600">16 Jan 2025, 14:20</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">
+                                ✓</div>
+                            <div class="w-0.5 h-8 bg-gray-200 mt-2"></div>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-gray-900">Coupe</p>
+                            <p class="text-xs text-gray-600">18 Jan 2025, 09:15</p>
+                            <div class="mt-2 flex gap-2">
+                                <div class="w-16 h-16 rounded-lg bg-gray-100 bg-cover"
+                                    style='background-image: url("https://via.placeholder.com/64");'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">
+                                3</div>
+                            <div class="w-0.5 h-8 bg-gray-200 mt-2"></div>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-gray-900">Couture</p>
+                            <p class="text-xs text-gray-600">En cours</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-gray-200 text-gray-400 flex items-center justify-center font-bold">
+                                4</div>
+                        </div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-gray-400">Essayage</p>
+                            <p class="text-xs text-gray-400">À venir</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mesures -->
+            <div>
+                <h3 class="text-gray-900 font-bold mb-4">Mesures du client</h3>
+                <div class="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div>
+                            <p class="text-gray-600">Tour de poitrine</p>
+                            <p class="font-semibold text-gray-900">98 cm</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600">Tour de taille</p>
+                            <p class="font-semibold text-gray-900">82 cm</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600">Tour de hanches</p>
+                            <p class="font-semibold text-gray-900">100 cm</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600">Longueur veste</p>
+                            <p class="font-semibold text-gray-900">72 cm</p>
+                        </div>
+                    </div>
+                    <button class="mt-3 text-primary text-sm font-medium hover:underline">Voir toutes les mesures
+                        (30+)</button>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="space-y-2">
+                <button
+                    class="w-full flex items-center justify-center gap-2 rounded-xl h-12 px-5 bg-primary text-white text-base font-semibold hover:bg-primary/90 transition-colors">
+                    <span class="material-symbols-outlined text-xl">photo_camera</span>
+                    <span>Ajouter des photos</span>
+                </button>
+                <button
+                    class="w-full flex items-center justify-center gap-2 rounded-xl h-12 px-5 bg-white border-2 border-primary text-primary text-base font-semibold hover:bg-primary/5 transition-colors">
+                    <span class="material-symbols-outlined text-xl">chat</span>
+                    <span>Contacter le client</span>
+                </button>
+                <button
+                    class="w-full flex items-center justify-center gap-2 rounded-xl h-12 px-5 bg-white border border-gray-200 text-gray-700 text-base font-semibold hover:bg-gray-50 transition-colors">
+                    <span class="material-symbols-outlined text-xl">receipt</span>
+                    <span>Générer la facture</span>
+                </button>
+            </div>
         </div>
     </div>
 </body>
+
 </html>
